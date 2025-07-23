@@ -1,41 +1,38 @@
-import { defineConfig } from "vitepress"; // ★★★ この行が抜けていました ★★★
+import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Vive with Gemini",
   description: "A VitePress Site",
 
-  // サイトのテーマに関する設定
   themeConfig: {
-    // ナビゲーションメニューの設定
     nav: [
-      { text: "ホーム", link: "/" },
-      { text: "インセプションデッキ", link: "/inception-deck" },
-      { text: "デモシナリオ", link: "/demo-scenario" },
-      { text: "コード集", link: "/code-snippets" },
-      { text: "Q&A", link: "/q-and-a" }, // ★この行を追加
+      { text: 'ホーム', link: '/' },
+      { text: 'インセプションデッキ', link: '/inception-deck' },
+      { text: 'デモシナリオ', link: '/demo-scenario' },
+      { text: 'コード集', link: '/code-snippets' },
+      { text: 'Tips集', link: '/tips' },
+      { text: 'Q&A', link: '/q-and-a' } // ★Q&Aへのリンクを追加
     ],
 
-    // サイドバーの設定
-    // サイドバーの設定
     sidebar: [
       {
-        text: "プロジェクト資料",
+        text: 'プロジェクト資料',
         collapsible: true,
         items: [
-          { text: "インセプションデッキ", link: "/inception-deck" },
-          { text: "デモシナリオ", link: "/demo-scenario" },
-          { text: "コード集", link: "/code-snippets" },
-          { text: "Q&A", link: "/q-and-a" },
-        ],
+          { text: 'インセプションデッキ', link: '/inception-deck' },
+          { text: 'デモシナリオ', link: '/demo-scenario' },
+          { text: 'コード集', link: '/code-snippets' },
+          { text: 'Tips集', link: '/tips' },
+          { text: 'Q&A', link: '/q-and-a' } // ★Q&Aへのリンクを追加
+        ]
       },
       {
-        text: "ケーススタディ",
+        text: 'ケーススタディ',
         collapsible: true,
         items: [
-          { text: "AIマーケットアナリスト開発記", link: "/development-story" }, // ★テキストを修正
-        ],
-      },
-    ],
-  },
-});
+          { text: 'AIマーケットアナリスト開発記', link: '/development-story' }
+        ]
+      }
+    ]
+  }
+})
