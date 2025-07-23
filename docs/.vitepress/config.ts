@@ -25,7 +25,7 @@ export default defineConfig({
         collapsible: true,
         items: [
           { text: '私たちが目指すもの', link: '/' },
-          { text: '設計思想 (Inception Deck)', link: '/inception-deck' },
+          { text: '共通認識 (Inception Deck)', link: '/inception-deck' },
           { text: 'AIマーケットアナリスト開発記', link: '/development-story' },
           { text: 'リファクタリング実践', link: '/refactoring' },
         ]
