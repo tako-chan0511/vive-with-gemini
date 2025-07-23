@@ -4,6 +4,14 @@ export default defineConfig({
   title: "Vive with Gemini",
   description: "A VitePress Site",
 
+  // ★ headセクションを追記します ★
+  head: [
+    // Mermaidライブラリの読み込み
+    ['script', { src: 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js' }],
+    // Mermaidの初期化
+    ['script', {}, `mermaid.initialize({ startOnLoad: true });`]
+  ],
+
   themeConfig: {
     nav: [
       { text: 'ホーム', link: '/' },
@@ -19,7 +27,7 @@ export default defineConfig({
           { text: '私たちが目指すもの', link: '/' },
           { text: '設計思想 (Inception Deck)', link: '/inception-deck' },
           { text: 'AIマーケットアナリスト開発記', link: '/development-story' },
-          { text: 'リファクタリング実践', link: '/refactoring' }, // ★リンクを修正
+          { text: 'リファクタリング実践', link: '/refactoring' },
         ]
       },
       {
