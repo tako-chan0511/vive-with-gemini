@@ -13,7 +13,10 @@ export default defineConfig({
     nav: [
       { text: 'ホーム', link: '/' },
       { text: '開発ストーリー', link: '/development-story' },
-      { text: 'Tips集', link: '/tips' }
+      { text: 'Tips集', link: '/tips' },
+      // 以下2行を追記しました
+      { text: 'SkillTrail', link: 'https://hara0511skilltrail.vercel.app/' },
+      { text: 'GameHub', link: 'https://toppage-five.vercel.app/' }
     ],
 
     sidebar: [
@@ -24,7 +27,6 @@ export default defineConfig({
           { text: '私たちが目指すもの', link: '/' },
           { text: '共通認識 (Inception Deck)', link: '/inception-deck' },
           { text: 'AIマーケットアナリスト開発記', link: '/development-story' },
-          // こちらのテキストを修正しました
           { text: '実践：AI駆動TDD', link: '/refactoring' },
         ]
       },
@@ -32,7 +34,7 @@ export default defineConfig({
         text: '各種資料',
         collapsible: true,
         items: [
-          { text: 'コード集', link: '/code-snippets' },
+          // { text: 'コード集', link: '/code-snippets' }, // この行を削除しました
           { text: 'Tips集', link: '/tips' },
           { text: 'Q&A', link: '/q-and-a' },
           { text: '付録：環境構築ガイド', link: '/appendix-environment' } 
