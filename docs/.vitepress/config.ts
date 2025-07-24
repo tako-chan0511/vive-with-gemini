@@ -6,7 +6,9 @@ export default defineConfig({
 
   head: [
     ['script', { src: 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js' }],
-    ['script', {}, `mermaid.initialize({ startOnLoad: true });`]
+    ['script', {}, `mermaid.initialize({ startOnLoad: true });`],
+    // カスタムCSSファイルを読み込むためのリンクを追加
+    // ['link', { rel: 'stylesheet', href: '/custom.css' }]
   ],
 
   themeConfig: {
@@ -14,7 +16,7 @@ export default defineConfig({
       { text: 'ホーム', link: '/' },
       { text: '開発ストーリー', link: '/development-story' },
       { text: 'Tips集', link: '/tips' },
-      // 以下2行を追記しました
+      // 関連リンクを追加
       { text: 'SkillTrail', link: 'https://hara0511skilltrail.vercel.app/' },
       { text: 'GameHub', link: 'https://toppage-five.vercel.app/' }
     ],
@@ -24,17 +26,18 @@ export default defineConfig({
         text: '私たちの物語',
         collapsible: true,
         items: [
-          { text: '私たちが目指すもの', link: '/' },
-          { text: '共通認識 (Inception Deck)', link: '/inception-deck' },
-          { text: 'AIマーケットアナリスト開発記', link: '/development-story' },
-          { text: '実践：AI駆動TDD', link: '/refactoring' },
+          // 物語の順序がわかるように番号を追加
+          { text: '1. 私たちが目指すもの', link: '/' },
+          { text: '2. 共通認識 (Inception Deck)', link: '/inception-deck' },
+          { text: '3. AIマーケットアナリスト開発記', link: '/development-story' },
+          { text: '4. 実践：AI駆動TDD', link: '/refactoring' },
         ]
       },
       {
         text: '各種資料',
         collapsible: true,
         items: [
-          // { text: 'コード集', link: '/code-snippets' }, // この行を削除しました
+          // 'コード集'を削除
           { text: 'Tips集', link: '/tips' },
           { text: 'Q&A', link: '/q-and-a' },
           { text: '付録：環境構築ガイド', link: '/appendix-environment' } 
