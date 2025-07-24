@@ -11,8 +11,6 @@
 
 ## フェーズ1：【TDD】新機能「注目度スコア」の実装
 
-（このセクションで紹介するテスト環境の構築手順は、[付録：環境構築ガイド](/appendix-environment#フェーズ1-ローカル環境のセットアップ)にまとめています。）
-
 ### Step 1: 要求の定義 (PBI)
 
 すべては、プロダクトオーナーからのこんな一言から始まります。
@@ -20,7 +18,16 @@
 > **PBI: レポートの注目度を可視化したい**
 > AIが生成したレポートが、どれくらい重要なのか一目でわかるように、「注目度スコア」機能を追加してほしい。
 
-### Step 2: RED - 失敗するテストを先に書く
+### Step 2: TDDを支える高速テストフレームワーク Vitest
+
+今回のTDDを支えるのが、`Vite`をベースとしたテストフレームワーク**`Vitest`**です。私たちがこれを選択した理由は、その圧倒的な「速さ」にあります。
+
+-   **特徴**: Viteの高速なサーバーをそのままテストに利用するため、変更を保存した瞬間にテストが完了します。この高速なフィードバックループが、TDDの「RED→GREEN→REFACTOR」のサイクルを快適に回すための鍵となります。
+-   **実行方法**: ターミナルで `npm run test` を実行すると、Vitestはファイルの変更を監視する「ウォッチモード」で起動し、コードを修正するたびに自動でテストを再実行してくれます。
+
+詳細な環境設定の手順は、[付録：環境構築ガイド](/appendix-environment#_3-テスト環境-vitest-のセットアップ)にまとめています。
+
+### Step 3: RED - 失敗するテストを先に書く
 
 TDDの第一歩は、これから作る機能の「仕様」を、テストコードとして記述することです。まだ実装コードは存在しないので、このテストは<strong>必ず失敗します。</strong>
 
@@ -40,7 +47,7 @@ describe('calculateAttentionScore', () => {
 ```
 <a href="/downloads/tdd-demo/phase1-attentionScore.test.ts" download="attentionScore.test.ts" class="download-button">📄 attentionScore.test.ts をダウンロード</a>
 
-### Step 3: GREEN - テストをパスさせる
+### Step 4: GREEN - テストをパスさせる
 
 次に、この赤いテストを緑の「PASS」に変えるための、最小限のコードを実装します。
 
@@ -60,7 +67,7 @@ export const calculateAttentionScore = (reportText: string): number => {
 ```
 <a href="/downloads/tdd-demo/phase1-attentionScore.ts" download="attentionScore.ts" class="download-button">📄 attentionScore.ts をダウンロード</a>
 
-### Step 4: UIへの反映
+### Step 5: UIへの反映
 
 テスト済みのロジックをUIに組み込み、ユーザーに価値を届けます。
 
@@ -108,7 +115,7 @@ const attentionScore = computed(() => {
 
 ### Step 2: RED - 新しい仕様をテストで表現する
 
-既存のテストファイルに、この**新しい仕様を表現するテストを追記**します。
+既存のテストファイルに、この<strong>新しい仕様を表現するテストを追記</strong>します。
 
 **`src/utils/attentionScore.test.ts` (追記)**
 ```typescript
