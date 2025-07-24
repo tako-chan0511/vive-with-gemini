@@ -37,6 +37,7 @@ export default defineConfig({
           { text: 'コード集', link: '/code-snippets' },
           { text: 'Tips集', link: '/tips' },
           { text: 'Q&A', link: '/q-and-a' },
+          { text: '付録：環境構築ガイド', link: '/appendix-environment' } 
         ]
       }
     ]
