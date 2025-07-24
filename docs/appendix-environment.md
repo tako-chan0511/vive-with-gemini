@@ -31,29 +31,57 @@
         git commit -m "Initial commit"
         ```
 
-3.  **プロジェクト固有の設定**
-    * ここから、私たちの「AIマーケットアナリスト」を開発するために必要な、具体的な設定を追加していきます。
+3.  **テスト環境 (Vitest) のセットアップ**
+    * TDDを実践するため、テストフレームワーク`Vitest`と関連ライブラリをインストールします。
+        ```bash
+        npm install -D vitest @vitest/ui happy-dom @vue/test-utils
+        ```
+    * `vite.config.ts`を編集し、Vitestの設定を追加します。（`defineConfig`のインポート元を`vitest/config`に変更するのがポイントです）
+        ```typescript
+        import { defineConfig } from 'vitest/config'
+        import vue from '@vitejs/plugin-vue'
 
-    #### **`package.json` (ライブラリの追加)**
-    APIとの通信を行うための`axios`や、Vercel Functionsの型定義を扱うための`@vercel/node`をインストールします。
-    ```bash
-    npm install axios
-    npm install -D @vercel/node
-    ```
+        export default defineConfig({
+          plugins: [vue()],
+          test: {
+            globals: true,
+            environment: 'happy-dom',
+          },
+        })
+        ```
+    * `package.json`の`scripts`に、テスト実行用のコマンドを追加します。
+        ```json
+        "scripts": {
+          "dev": "vite",
+          "build": "vue-tsc -b && vite build",
+          "preview": "vite preview",
+          "test": "vitest",
+          "test:ui": "vitest --ui"
+        },
+        ```
+
+4.  **プロジェクト固有の設定**
+    * ここから、私たちの「AIマーケットアナリスト」を開発するために必要な、具体的な設定を追加していきます。
 
     #### **`vite.config.ts` (ローカル開発用プロキシ設定)**
     ローカル開発中に、フロントエンドから`/api/`へのリクエストをバックエンドのVercel Functionsへ転送し、CORSエラーを回避するために、以下のプロキシ設定を追加します。
 
     ```typescript
-    import { defineConfig } from 'vite'
+    import { defineConfig } from 'vitest/config'
     import vue from '@vitejs/plugin-vue'
 
     export default defineConfig({
       plugins: [vue()],
+      // Vitestの設定と共存させる
+      test: {
+        globals: true,
+        environment: 'happy-dom',
+      },
       server: {
         proxy: {
           '/api': {
-            target: 'http://localhost:3000', // vercel devが起動するポート
+            // ローカルでVercel Functionsを動かす際のデフォルトポート
+            target: 'http://localhost:3000', 
             changeOrigin: true,
           },
         },
@@ -142,4 +170,4 @@
         git add .
         git commit -m "変更内容のメッセージ"
         git push
-        ```
+        

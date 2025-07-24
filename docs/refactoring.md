@@ -1,95 +1,200 @@
-# リファクタリング実践 (デモシナリオ)
+# 実践：AIと駆動するテスト駆動開発（TDD）
 
-## 仕様変更に追随する「進化するテスト」の実演
+## 安全な「仕様変更」こそ、アジャイルの心臓部
 
 **[私のトーク（導入）]**
-「本日は、私とAIの相棒であるGeminiが、日常的にどのように協力して開発を進めているか、その一端を『バイブコーディング』と名付けてお見せします。テーマは、アジャイル開発における永遠の課題、『テストコードの保守』です。テストは品質の砦ですが、仕様変更のたびに修正するのは大きなコストになります。このコストを、私たちがどうやってROIの高い活動に変えているか、ご覧ください。」
+「ビジネスは常に変化します。昨日決まった仕様が、今日には変わる。この『変化』に、いかに迅速かつ安全に対応できるか。それこそが、開発チームの価値、ひいては事業のROIを決定づけます。
+
+これからお見せするのは、単なるリファクタリングではありません。AIという相棒を得た私たちが、<strong>テスト駆動開発（TDD）</strong>というアジャイルの原則を武器に、<strong>予測不能な仕様変更という荒波をどう乗りこなすか</strong>、そのライブセッションです。私たちの『バイブコーディング』が、いかにして変化を『コスト』から『価値向上のチャンス』に変えるか、ご覧ください。」
 
 ---
 
-### ステップ1：テストが存在しない状態
+## フェーズ1：【TDD】新機能「注目度スコア」の実装
 
-**[アクション]**
-1.  `companyAnalysis.ts` ファイルを開き、`getCompanyAttentionLevel` 関数を見せる。
-2.  対応するテストファイルが空であることを見せる。
+（このセクションで紹介するテスト環境の構築手順は、[付録：環境構築ガイド](/appendix-environment#フェーズ1-ローカル環境のセットアップ)にまとめています。）
 
-**[私のトーク]**
-「ここに、企業の注目度を判定する簡単な関数があります。まずは、この関数に対するテストコードを、私の相棒にゼロから作成してもらいます。」
+### Step 1: 要求の定義 (PBI)
 
-**`companyAnalysis.ts`**
+すべては、プロダクトオーナーからのこんな一言から始まります。
+
+> **PBI: レポートの注目度を可視化したい**
+> AIが生成したレポートが、どれくらい重要なのか一目でわかるように、「注目度スコア」機能を追加してほしい。
+
+### Step 2: RED - 失敗するテストを先に書く
+
+TDDの第一歩は、これから作る機能の「仕様」を、テストコードとして記述することです。まだ実装コードは存在しないので、このテストは<strong>必ず失敗します。</strong>
+
+**`src/utils/attentionScore.test.ts`**
 ```typescript
-export function getCompanyAttentionLevel(newsCount: number): '高' | '中' | '低' {
-  if (newsCount >= 20) {
-    return '高';
-  } else if (newsCount >= 5) {
-    return '中';
-  } else {
-    return '低';
-  }
-}
+import { describe, it, expect } from 'vitest';
+// calculateAttentionScore はまだないので、当然エラーになる
+import { calculateAttentionScore } from './attentionScore';
+
+describe('calculateAttentionScore', () => {
+  it('キーワードに基づきスコアを計算する', () => {
+    const reportText = '当社の新製品は、市場のDXを推進します。';
+    // 「新製品」(+10), 「DX」(+10) = 20点
+    expect(calculateAttentionScore(reportText)).toBe(20);
+  });
+});
 ```
+<a href="/downloads/tdd-demo/phase1-attentionScore.test.ts" download="attentionScore.test.ts" class="download-button">📄 attentionScore.test.ts をダウンロード</a>
 
----
+### Step 3: GREEN - テストをパスさせる
 
-### ステップ2：AIによるテストの初回作成
+次に、この赤いテストを緑の「PASS」に変えるための、最小限のコードを実装します。
 
-**[アクション]**
-1.  Geminiのチャット画面を開き、関数のコードを貼り付け、プロンプトを入力する。
-
-**[私のトーク]**
-「では、彼にこう頼んでみましょう。『この関数の全ルートを網羅するテストを、Vitestで作って』と。ここでのポイントは、私が細かいテストケースを考えなくても良い、という点です。」
-
-**[私からGeminiへのプロンプト]**
-> この`getCompanyAttentionLevel`関数の単体テストを、C1網羅率100%になるようにVitestで作成してください。
-
-**[アクション]**
-1.  Geminiが生成したテストコードをコピーし、テストファイルに貼り付けて保存する。
-2.  ターミナルで `npx vitest run --coverage` を実行し、カバレッジレポートを見せる。
-    *[注：このコマンドは`package.json`のscripts設定に依存します]*
-
-**[私のトーク]**
-「はい、提案してくれました。これを貼り付けて、テストを実行します…。ご覧ください。ほんの数十秒の対話で、エッジケースまで考慮された網羅率100%のテストスイートが完成しました。通常なら数十分かかるこの作業コストが、ほぼゼロになった瞬間です。」
-
----
-
-### ステップ3：仕様変更とテストの自動追随
-
-**[アクション]**
-1.  `companyAnalysis.ts` ファイルのロジックを直接編集する。
-
-**[私のトーク]**
-「ここで、ビジネスサイドから緊急の仕様変更依頼が来たと仮定します。『注目度: 高の基準を上げ、新たに"超高"ランクを追加する』という内容です。私がまず、仕様通りに関数のロジックだけを修正します。」
-
-**`companyAnalysis.ts` (変更後)**
+**`src/utils/attentionScore.ts`**
 ```typescript
-export function getCompanyAttentionLevel(newsCount: number): '超高' | '高' | '中' | '低' {
-  if (newsCount >= 50) { // "超高"ランクを追加
-    return '超高';
-  } else if (newsCount >= 30) { // 基準を20から30に変更
-    return '高';
-  } else if (newsCount >= 5) {
-    return '中';
-  } else {
-    return '低';
+const KEYWORD_SCORES = { '新製品': 10, 'DX': 10, '提携': 10, '課題': 5 };
+
+export const calculateAttentionScore = (reportText: string): number => {
+  let score = 0;
+  for (const keyword in KEYWORD_SCORES) {
+    if (reportText.includes(keyword)) {
+      score += KEYWORD_SCORES[keyword as keyof typeof KEYWORD_SCORES];
+    }
   }
-}
+  return score;
+};
 ```
+<a href="/downloads/tdd-demo/phase1-attentionScore.ts" download="attentionScore.ts" class="download-button">📄 attentionScore.ts をダウンロード</a>
 
-**[アクション]**
-1.  古いテストコードのまま、再度テストを実行し、テストが**失敗**する様子を見せる。
+### Step 4: UIへの反映
 
-**[私のトーク]**
-「当然ですが、既存のテストは失敗します。しかし、これは良いサインです。私たちの『品質のセーフティーネット』が、仕様変更を正しく検知した証拠ですからね。ここからが私たちの本番です。この状況を、今度はそのまま相棒に伝えて、テストの修正を依頼します。」
+テスト済みのロジックをUIに組み込み、ユーザーに価値を届けます。
 
-**[アクション]**
-1.  Geminiのチャット画面に、**変更後の関数コード**と**古いテストコード**を両方貼り付け、プロンプトを入力する。
+**`src/App.vue`**
+```vue
+<script setup lang="ts">
+import { ref, computed } from 'vue';
+import { calculateAttentionScore } from './utils/attentionScore'; // 作成した関数をインポート
 
-**[私からGeminiへのプロンプト]**
-> この関数の仕様が変わったんだ。この新しいロジックに合わせて、既存のテストコードを修正・更新してくれないかな？もちろん、網羅率100%はキープしてほしい。
+const analysisReport = ref(""); // レポート本文
 
-**[アクション]**
-1.  Geminiが生成した**更新版のテストコード**をテストファイルに貼り付け、上書き保存する。
-2.  再度テストを実行し、全てのテストが通り、カバレッジも100%に復帰することを見せる。
+// 注目度スコアを算出する算出プロパティ
+const attentionScore = computed(() => {
+  return calculateAttentionScore(analysisReport.value);
+});
+</script>
+
+<template>
+  <!-- ... -->
+  <section v-if="analysisReport" class="analysis-report">
+    <!-- この部分を追加 -->
+    <div class="attention-score-wrapper">
+      <strong>注目度スコア: </strong>
+      <span class="attention-score">{{ attentionScore }}</span>
+    </div>
+    <div class="markdown-body" v-html="marked(analysisReport)"></div>
+    <!-- ... -->
+  </section>
+</template>
+```
+<a href="/downloads/tdd-demo/phase1-App.vue" download="App.vue" class="download-button">📄 App.vue をダウンロード</a>
+
+---
+
+## フェーズ2：【アジャイル】急な仕様変更への対応
+
+機能リリース後、ユーザーからこんなフィードバックが届きました。
+
+> 「スコアの数字だけだと、高いのか低いのか分かりにくい！『高・中・低』で表示してほしい！」
+
+### Step 1: 要求の再定義 (新しいPBI)
+
+> **PBI: 注目度を「レベル表示」に対応させる**
+> スコアを元に「高・中・低」のレベルを判定し、「注目度: 高 (35)」のように表示してほしい。
+
+### Step 2: RED - 新しい仕様をテストで表現する
+
+既存のテストファイルに、この**新しい仕様を表現するテストを追記**します。
+
+**`src/utils/attentionScore.test.ts` (追記)**
+```typescript
+// ... 既存のテスト ...
+
+// --- 新しい仕様のテストを追加 ---
+describe('getAttentionLevel', () => {
+  it('スコアが30以上なら「高」を返す', () => {
+    expect(getAttentionLevel(30)).toBe('高');
+  });
+});
+```
+<a href="/downloads/tdd-demo/phase2-attentionScore.test.ts" download="attentionScore.test.ts" class="download-button">📄 attentionScore.test.ts をダウンロード</a>
+
+### Step 3: GREEN - 新しい要求を実装する
+
+この新しいテストをパスさせるため、`attentionScore.ts`に新しい関数を追加します。
+
+**`src/utils/attentionScore.ts` (追記)**
+```typescript
+export type AttentionLevel = '高' | '中' | '低';
+
+export const getAttentionLevel = (score: number): AttentionLevel => {
+  if (score >= 30) return '高';
+  if (score >= 10) return '中';
+  return '低';
+};
+```
+<a href="/downloads/tdd-demo/phase2-attentionScore.ts" download="attentionScore.ts" class="download-button">📄 attentionScore.ts をダウンロード</a>
+
+### Step 4: UIへの最終反映
+
+最後に、テスト済みの新しいロジックをUIに反映させ、デモを完成させます。
+
+**`src/App.vue` (最終版)**
+```vue
+<script setup lang="ts">
+import { computed } from 'vue';
+// getAttentionLevel もインポート
+import { calculateAttentionScore, getAttentionLevel } from './utils/attentionScore';
+
+const attentionScore = computed(() => /* ... */);
+
+// スコアからレベルを判定する新しい算出プロパティを追加
+const attentionLevel = computed(() => {
+  return getAttentionLevel(attentionScore.value);
+});
+</script>
+
+<template>
+  <!-- 表示をリッチにする -->
+  <strong>注目度: {{ attentionLevel }} ({{ attentionScore }})</strong>
+</template>
+```
+<a href="/downloads/tdd-demo/phase2-App.vue" download="App.vue" class="download-button">📄 App.vue をダウンロード</a>
+
+---
+
+## まとめ：変化を恐れない開発スタイル
 
 **[私のトーク（まとめ）]**
-「彼が更新してくれたコードを貼り付けます…。はい、ご覧ください。新しい仕様に完璧に追随したテストに修正され、再びオールグリーンになりました。仕様変更に伴うテスト修正という、開発で最もコストのかかる作業の一つが、創造的な対話に変わりました。このように、**変化への対応コストを劇的に下げ、常に品質を高く保つ**こと。これが、私たちの『バイブコーディング』がもたらす、最も大きな価値であり、ROI向上への直接的な貢献です。」
+「ご覧いただいたように、私たちの開発プロセスでは、テストは『後から書く面倒な作業』ではありません。<strong>未来の仕様変更から私たちを守り、高速な意思決定を支える『投資』</strong>です。
+
+TDDサイクルを回すことで、
+
+- 要求がコードレベルで明確になり
+- 常に動くものが手元にあり
+- デグレードを恐れずにリファクタリングや仕様変更に挑める
+
+という、アジャイル開発の理想的な状態が生まれます。AIとの『バイブコーディング』は、このサイクルの回転速度を極限まで高めてくれます。これこそが、変化の時代を勝ち抜くための、私たちの答えです。」
+
+<style>
+.download-button {
+  display: inline-block;
+  border: 1px solid #3eaf7c;
+  color: #3eaf7c;
+  background-color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 10px;
+}
+.download-button:hover {
+  background-color: #3eaf7c;
+  color: #fff;
+}
+</style>
