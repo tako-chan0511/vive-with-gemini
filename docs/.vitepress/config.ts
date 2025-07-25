@@ -56,11 +56,11 @@ export default defineConfig({
         ]
       },
       {
-        text: '共有会Q&A',
+        text: 'フィードバック（slido)',
         collapsible: true,
         items: [
           { text: '質問を送る', link: '/question-form' },
-          { text: 'Q&Aを見る', link: '/q-and-a-session' }
+          { text: '今までのQ&Aを見る', link: '/q-and-a-session' }
         ]
       }
     ]
