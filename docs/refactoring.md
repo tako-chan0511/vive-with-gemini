@@ -16,16 +16,16 @@
 すべては、プロダクトオーナーからのこんな一言から始まります。
 
 > **PBI: レポートの注目度を可視化したい**
-> AIが生成したレポートが、どれくらい重要なのか一目でわかるように、「注目度スコア」機能を追加してほしい。<br>
-><strong>やりたいこと:</strong>
->レポート本文からキーワードを検出し、注目度スコアを算出したい。仕様は以下の通り。
->キーワードと点数: '新製品'は10点、'DX'は10点、'提携'は10点、'課題'は5点。
->表示場所: レポート本文の上に、「注目度スコア: [計算結果]」のように表示する。
-><br>
->コンポーネント（注目スコアを算出する）はTDDでテスト（仕様）を先に書く
->①src/utils/attentionScore.test.ts<br>
->②src/utils/attentionScore.ts
-
+> AIが生成したレポートが、どれくらい重要なのか一目でわかるように、「注目度スコア」機能を追加してほしい。
+> 
+> ---
+> **やりたいこと:**
+> レポート本文からキーワードを検出し、注目度スコアを算出したい。仕様は以下の通り。
+> -   **キーワードと点数:** '新製品'は10点、'DX'は10点、'提携'は10点、'課題'は5点。
+> -   **表示場所:** レポート本文の上に、「注目度スコア: [計算結果]」のように表示する。
+> -   **開発アプローチ:** TDDでテスト（仕様）を先に書く。
+>     1.  `src/utils/attentionScore.test.ts` (テスト)
+>     2.  `src/utils/attentionScore.ts` (実装)
 
 ### Step 2: TDDを支える高速テストフレームワーク Vitest
 
@@ -38,22 +38,26 @@
 
 ### Step 3: RED - 失敗するテストを先に書く
 
-TDDの第一歩は、これから作る機能の「仕様」を、テストコードとして記述することです。まだ実装コードは存在しないので、このテストは<strong>必ず失敗します。</strong>
+**[私のトーク]**
+「ここからが、私たちの『バイブコーディング』です。私がこれから作る関数の仕様を、背景情報と共にGeminiに伝えます。このプロンプトは、どのチャットスレッドに貼り付けても理解できるように、必要な情報をすべて含んでいるのがポイントです。」
 
-**`src/utils/attentionScore.test.ts`**
-```typescript
-import { describe, it, expect } from 'vitest';
-// calculateAttentionScore はまだないので、当然エラーになる
-import { calculateAttentionScore } from './attentionScore';
+> **[デモ用プロンプト 1：テストの初回作成]**
+> こんにちは。Vue3+Vite+TypeScriptで「AIマーケットアナリスト」というアプリケーションを開発しています。
+>
+> これから、レポート本文からキーワードを検出し、注目度スコアを算出する`calculateAttentionScore`という関数をTDDで実装します。
+>
+> まずは、この関数の仕様を満たすための単体テストを、Vitestを使って作成してください。テストはC1網羅率100%になるようにお願いします。
+>
+> **関数の仕様:**
+> - 関数名: `calculateAttentionScore`
+> - 引数: `reportText` (string)
+> - 返り値: `score` (number)
+> - ロジック: `reportText`に特定のキーワードが含まれていたらスコアを加算する。キーワードと点数は以下の通り。
+>   - '新製品': 10点
+>   - 'DX': 10点
+>   - '提携': 10点
+>   - '課題': 5点
 
-describe('calculateAttentionScore', () => {
-  it('キーワードに基づきスコアを計算する', () => {
-    const reportText = '当社の新製品は、市場のDXを推進します。';
-    // 「新製品」(+10), 「DX」(+10) = 20点
-    expect(calculateAttentionScore(reportText)).toBe(20);
-  });
-});
-```
 <a href="/downloads/tdd-demo/phase1-attentionScore.test.ts" download="attentionScore.test.ts" class="download-button">📄 attentionScore.test.ts をダウンロード</a>
 
 ### Step 4: GREEN - テストをパスさせる
@@ -113,10 +117,6 @@ const attentionScore = computed(() => {
 
 ## フェーズ2：【アジャイル】急な仕様変更への対応
 
-機能リリース後、ユーザーからこんなフィードバックが届きました。
-
-> 「スコアの数字だけだと、高いのか低いのか分かりにくい！『高・中・低』で表示してほしい！」
-
 ### Step 1: 要求の再定義 (新しいPBI)
 
 > **PBI: 注目度を「レベル表示」に対応させる**
@@ -124,19 +124,52 @@ const attentionScore = computed(() => {
 
 ### Step 2: RED - 新しい仕様をテストで表現する
 
-既存のテストファイルに、この<strong>新しい仕様を表現するテストを追記</strong>します。
+**[私のトーク]**
+「次に、仕様変更の場面です。先ほどと同様に、変更後のコードと、変更前のテストコードをすべて渡して、テストの更新を依頼します。これにより、Geminiは差分を正確に理解し、適切なテストコードを生成できます。」
 
-**`src/utils/attentionScore.test.ts` (追記)**
-```typescript
-// ... 既存のテスト ...
+> **[デモ用プロンプト 2：仕様変更に伴うテストの更新]**
+> 先ほど作成したスコア計算の仕様が変更になりました。
+>
+> 新しく、スコアを元に「高」「中」「低」のレベルを判定する`getAttentionLevel`という関数を追加しました。
+>
+> 以下の**【変更後の実装コード全文】**に合わせて、**【変更前のテストコード】**を更新し、新しい`getAttentionLevel`関数のテストも追記した、**完成版のテストコード**を返してください。もちろん、網羅率100%は維持してください。
+>
+> **【変更後の実装コード全文 (`src/utils/attentionScore.ts`)】**
+> ```typescript
+> const KEYWORD_SCORES = { '新製品': 10, 'DX': 10, '提携': 10, '課題': 5 };
+>
+> export const calculateAttentionScore = (reportText: string): number => {
+>   let score = 0;
+>   for (const keyword in KEYWORD_SCORES) {
+>     if (reportText.includes(keyword)) {
+>       score += KEYWORD_SCORES[keyword as keyof typeof KEYWORD_SCORES];
+>     }
+>   }
+>   return score;
+> };
+>
+> export type AttentionLevel = '高' | '中' | '低';
+>
+> export const getAttentionLevel = (score: number): AttentionLevel => {
+>   if (score >= 30) return '高';
+>   if (score >= 10) return '中';
+>   return '低';
+> };
+> ```
+>
+> **【変更前のテストコード (`src/utils/attentionScore.test.ts`)】**
+> ```typescript
+> import { describe, it, expect } from 'vitest';
+> import { calculateAttentionScore } from './attentionScore';
+>
+> describe('calculateAttentionScore', () => {
+>   it('キーワードに基づきスコアを計算する', () => {
+>     const reportText = '当社の新製品は、市場のDXを推進します。';
+>     expect(calculateAttentionScore(reportText)).toBe(20);
+>   });
+> });
+> ```
 
-// --- 新しい仕様のテストを追加 ---
-describe('getAttentionLevel', () => {
-  it('スコアが30以上なら「高」を返す', () => {
-    expect(getAttentionLevel(30)).toBe('高');
-  });
-});
-```
 <a href="/downloads/tdd-demo/phase2-attentionScore.test.ts" download="attentionScore.test.ts" class="download-button">📄 attentionScore.test.ts をダウンロード</a>
 
 ### Step 3: GREEN - 新しい要求を実装する
@@ -145,6 +178,8 @@ describe('getAttentionLevel', () => {
 
 **`src/utils/attentionScore.ts` (追記)**
 ```typescript
+// ... (calculateAttentionScoreは変更なし) ...
+
 export type AttentionLevel = '高' | '中' | '低';
 
 export const getAttentionLevel = (score: number): AttentionLevel => {
@@ -194,7 +229,7 @@ TDDサイクルを回すことで、
 - 常に動くものが手元にあり
 - デグレードを恐れずにリファクタリングや仕様変更に挑める
 
-という、アジャイル開発の理想的な状態が生まれます。AIとの『バイブコーディング』は、このサイクルの回転速度を極限まで高めてくれます。これこそが、**ROIを最大化し、変化の時代を勝ち抜くための、私たちの答えです。**」
+という、アジャイル開発の理想的な状態が生まれます。AIとの『バイブコーディング』は、このサイクルの回転速度を極限まで高めてくれます。これこそが、変化の時代を勝ち抜くための、私たちの答えです。」
 
 <style>
 .download-button {
