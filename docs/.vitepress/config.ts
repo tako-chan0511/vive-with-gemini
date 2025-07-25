@@ -42,7 +42,17 @@ export default defineConfig({
           { text: 'Q&A', link: '/q-and-a' },
           { text: '付録：環境構築ガイド', link: '/appendix-environment' } 
         ]
+      },
+      // 👇 ここから追記
+      {
+        text: '共有会Q&A',
+        collapsible: true,
+        items: [
+          { text: '質問を送る', link: '/question-form' },
+          { text: 'Q&Aを見る', link: '/q-and-a-session' }
+        ]
       }
+      // 👆 ここまで追記
     ]
   }
 })
