@@ -11,59 +11,72 @@
 
 </details>
 
-## フェーズ1：【TDD】新機能「注目度スコア」の実装：【TDD】新機能「注目度スコア」の実装
+---
 
-### Step 1: 要求の定義 (PBI)
-
-すべては、プロダクトオーナーからのこんな一言から始まります。
-
-> **PBI: レポートの注目度を可視化したい**
-> AIが生成したレポートが、一目でどれだけ重要か分かるよう「注目度スコア」機能を追加。
->
-> **やりたいこと：**
->
-> * レポート本文からキーワードを検出しスコアを算出
-> * キーワードと点数：'新製品':10、'DX':10、'提携':10、'課題':5
-> * TDDでテストを先に書く
->
-> **対象ファイル：**
->
-> * `src/utils/attentionScore.test.ts`（テスト）
-> * `src/utils/attentionScore.ts`（実装）
-
-### Step 2: TDDを支える高速テストフレームワーク **Vitest**
-
-`Vite`ベースのテストフレームワーク**Vitest**を利用。
-保存と同時にテストを実行するウォッチモードで、RED→GREEN→REFACTORサイクルを高速化。
-
-> **実行方法：** `npm run test`
-
-詳しくは[付録：環境構築ガイド](/appendix-environment#_3-テスト環境-vitest-のセットアップ)を参照。
-
-### Step 3: RED - 失敗するテストを先に書く
+## フェーズ0：AIとの文脈共有（コンテキスト・アライメント）
 
 <details>
 <summary>私のトーク</summary>
-「ここからがペアプログラミングの見せ所です。関数仕様をAIに伝えるプロンプトを作り、どのスレッドでも文脈を理解できるよう必要情報を盛り込みます。」
+
+「AIとのペアプログラミングを成功させる秘訣は、最初に『何を』『どうしたいか』の全体像を共有することです。スレッドが変わったり、日をまたいで作業を再開した場合でも、AIが即戦力となるかは、この最初の情報共有の質にかかっています。ここではGeminiに渡す『引継ぎプロンプト』と、重要な添付資料を同時に渡す仕組みを示します。」
+
 </details>
 
 <details>
-<summary>使用したプロンプト例</summary>
+<summary>実際に使用した「引継ぎプロンプト」</summary>
 
 ```text
 Geminiさん、前のスレッドからの引継ぎ情報です。
 1. AIマーケットアナリストURL
-2. 企業名入力で分析レポート出力
-3. レポートに追加質問できるUI
-4. App.vueの現状ソース
-5. PBI: レポートの注目度を可視化
+   https://hara0511my-market-analyst.vercel.app/  
+2. 添付1: 企業分析レポート画面 (report.png)
+3. 添付2: 追加質問インターフェース (qa.png)
+4. 添付3: App.vue の現状ソース (App.vue)
+5. PBI: レポートの注目度を可視化したい
    - 本文からキーワード検出→スコア算出
    - 新製品(10), DX(10), 提携(10), 課題(5)
    - 「注目度スコア: [計算結果]」表示
-   - TDDでテスト先行
+   - 開発はTDDでテスト先行（Vitest）
 ```
 
+**添付資料ダウンロード**
+
+* [report.png](/report.png)
+* [qa.png](/qa.png)
+*  <a href="/App.vue" download="App.vue" type="text/plain; charset=UTF-8">App.vue</a>
+
+このプロンプトには、AIが作業を理解するために必要な\*\*「目的」「現状」「タスク」「手段」「添付資料」\*\*がすべて含まれています。
+
 </details>
+
+---
+
+## フェーズ1：【TDD】新機能「注目度スコア」の実装
+
+### Step 1: 要求の定義 (PBI)
+
+\::: tip PBI: レポートの注目度を可視化したい
+AIが生成したレポートが、一目でどれだけ重要か分かるよう「注目度スコア」機能を追加。
+
+**やりたいこと**
+
+* レポート本文からキーワードを検出しスコアを算出
+* キーワードと点数: '新製品':10、'DX':10、'提携':10、'課題':5
+* TDDでテストを先に書く
+
+**対象ファイル**
+
+* `src/utils/attentionScore.test.ts`（テスト）
+* `src/utils/attentionScore.ts`（実装）
+  \:::
+
+### Step 2: TDDを支える高速テストフレームワーク **Vitest**
+
+Viteベースのテストフレームワーク**Vitest**を利用。保存と同時にテストを実行するウォッチモードで、RED→GREEN→REFACTORサイクルを高速化します。
+
+> **実行方法**: `npm run test`
+
+### Step 3: RED - 失敗するテストを先に書く
 
 ```ts
 // src/utils/attentionScore.test.ts
@@ -100,14 +113,19 @@ export const calculateAttentionScore = (text: string): number => {
 
 ### Step 5: REFACTOR - 小さな失敗と対話での修正
 
-> **FAIL**
-> `src/utils/attentionScore.test.ts > calculateAttentionScore > case-insensitive test`
-> AssertionError: expected 15 to be 10
+\::: danger
+FAIL src/utils/attentionScore.test.ts > calculateAttentionScore > case-insensitive test
+AssertionError: expected 15 to be 10
+\:::
 
 <details>
 <summary>AIからのアドバイス</summary>
-> 「文字列『企業のdx化は重要な経営課題です。』には dx(10点) と 課題(5点) が含まれるため、合計15点が正解です。
-> テスト期待値を修正しましょう。」
+
+\::: info
+「文字列『企業のdx化は重要な経営課題です。』には dx(10点) と 課題(5点) が含まれるため、合計15点が正解です。
+テスト期待値を修正しましょう。」
+\:::
+
 </details>
 
 ### Step 6: UIへの反映
@@ -134,14 +152,17 @@ const score = computed(() => calculateAttentionScore(report.value));
 
 ### Step 1: 要求の再定義 (新PBI)
 
-> **PBI: 注目度を「レベル表示」に対応**
-> 数字だけでは分かりにくい！『高・中・低』で表示してほしい。
+\::: warning PBI: 注目度を「レベル表示」に対応させる
+数字だけでは分かりにくい！『高・中・低』で表示してほしい。
+\:::
 
 ### Step 2: RED - 新仕様をテストで表現
 
 <details>
 <summary>私のトーク</summary>
+
 「新しいPBIをAIに伝え、既存テストに差分を追加してもらいます。」
+
 </details>
 
 ```ts
@@ -156,6 +177,7 @@ describe('getAttentionLevel', () => {
 ### Step 3: GREEN - レベル判定ロジックを実装
 
 ```ts
+// src/utils/attentionScore.ts
 export type AttentionLevel = '高' | '中' | '低';
 export const getAttentionLevel = (score: number): AttentionLevel =>
   score >= 30 ? '高' : score >= 10 ? '中' : '低';
@@ -185,5 +207,7 @@ const level = computed(() => getAttentionLevel(score.value));
 
 <details>
 <summary>私のトーク（まとめ）</summary>
-「テストは『後から書く面倒な作業』ではなく、**未来の仕様変更を防ぐ投資**です。AIアシスタントが文脈を跨いでサポートすることで、情報コストがゼロに。失敗もすぐに解決。TDD×AIこそ、変化の時代を勝ち抜く開発スタイルです。」
+
+「テストは『後から書く面倒な作業』ではなく、未来の仕様変更を防ぐ投資です。AIアシスタントが文脈を跨いでサポートすることで、情報コストがゼロに。失敗もすぐに解決。TDD×AIこそ、変化の時代を勝ち抜く開発スタイルです。」
+
 </details>
