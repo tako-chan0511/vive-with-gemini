@@ -43,6 +43,7 @@ export default defineConfig({
         collapsible: true,
         items: [
           { text: 'AI時代のエンジニア進化論', link: '/column' },
+          { text: 'ViveコーディングとJSフレームワーク', link: '/why-vive-with-js-frameworks' },
         ]
       },
       // 👆 ここまで追記
