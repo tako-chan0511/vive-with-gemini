@@ -7,6 +7,7 @@ export default defineConfig({
   head: [
     ['script', { src: 'https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js' }],
     ['script', {}, `mermaid.initialize({ startOnLoad: true });`],
+    ['link', { rel: 'stylesheet', href: '/custom.css' }]
   ],
 
   themeConfig: {
@@ -14,9 +15,7 @@ export default defineConfig({
       { text: 'ホーム', link: '/' },
       { text: '開発ストーリー', link: '/development-story' },
       { text: 'Tips集', link: '/tips' },
-      // 👇 ここから追記
       { text: 'コラム', link: '/column' },
-      // 👆 ここまで追記
       {
         text: '関連リンク',
         items: [
@@ -37,7 +36,6 @@ export default defineConfig({
           { text: '4. 実践：AI駆動TDD', link: '/refactoring' },
         ]
       },
-      // 👇 ここから追記
       {
         text: 'コラム',
         collapsible: true,
@@ -46,16 +44,23 @@ export default defineConfig({
           { text: 'ViveコーディングとJSフレームワーク', link: '/why-vive-with-js-frameworks' },
         ]
       },
-      // 👆 ここまで追記
+      {
+        text: '共有会資料',
+        collapsible: true,
+        items: [
+          { text: 'アジェンダ（案）', link: '/agenda' },
+        ]
+      },
       {
         text: '各種資料',
         collapsible: true,
         items: [
           { text: 'Tips集', link: '/tips' },
           { text: 'Q&A', link: '/q-and-a' },
-          { text: '付録：環境構築ガイド', link: '/appendix-environment' }
+          { text: '付録：環境構築ガイド', link: '/appendix-environment' } 
         ]
       },
+      // --- ここから追加 ---
       {
         text: 'フィードバック（slido)',
         collapsible: true,
@@ -64,6 +69,7 @@ export default defineConfig({
           { text: '今までのQ&Aを見る', link: '/q-and-a-session' }
         ]
       }
+      // --- ここまで追加 ---
     ]
   }
 })
