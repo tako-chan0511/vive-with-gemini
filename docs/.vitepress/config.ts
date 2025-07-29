@@ -57,7 +57,8 @@ export default defineConfig({
         items: [
           { text: 'Tips集', link: '/tips' },
           { text: 'Q&A', link: '/q-and-a' },
-          { text: '付録：環境構築ガイド', link: '/appendix-environment' } 
+          { text: '付録：環境構築ガイド', link: '/appendix-environment' } ,
+          { text: '付録：VitePressガイド', link: '/appendix-vitePress' } 
         ]
       },
       // --- ここから追加 ---
