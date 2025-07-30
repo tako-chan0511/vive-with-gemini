@@ -1,7 +1,0 @@
-/* VitePressのルート要素に対して変数を定義します */
-:root {
-  /* サイドバーのグループタイトルのフォントサイズ */
-  --vp-sidebar-group-text-font-size: 36px; 
-  /* サイドバーのグループタイトルのフォントの太さ */
-  --vp-sidebar-group-text-font-weight: 600;
-}
