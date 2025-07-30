@@ -33,7 +33,7 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: '<span class="highlight-title">メインストーリ</span>',
+        text: '<span class="highlight-title">メインストーリー</span>',
         collapsible: true,
         items: [
           { text: "1. Vive with Gemini：AI時代の新しい開発様式", link: "/" },
