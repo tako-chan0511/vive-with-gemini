@@ -10,12 +10,12 @@
 
 ---
 
-### 🔹 自己紹介動画
+### 🔹 自己紹介動画(2025年2月)
 
 <iframe src="https://drive.google.com/file/d/1WlJDKwFmWBnWE-wreKnda6xzluhI8mvL/preview" width="640" height="360" allow="autoplay"></iframe>
 
 ---
 
-### 🔹 おじさんの挑戦動画
+### 🔹 おじさんの挑戦動画(2023年10月)　アクセスできない方は小生まで連絡ください
 
-<iframe src="https://drive.google.com/file/d/1jlYkGm6avzhk4nx03BXl1pu6rVKxipM3/preview" width="640" height="360" allow="autoplay"></iframe>
+<iframe src="https://drive.google.com/file/d/1ElKWM4oArd79zo7cAhGB4uGwFV3SK2Xt/view" width="640" height="360" allow="autoplay"></iframe>
