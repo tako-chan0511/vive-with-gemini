@@ -37,7 +37,7 @@ export default defineConfig({
         collapsible: true,
         items: [
           { text: "1. Vive with Gemini：AI時代の新しい開発様式", link: "/" },
-          { text: "2. 共通認識 (Inception Deck)", link: "/inception-deck" },
+          { text: "2. 共通認識：AIマーケットアナリスト", link: "/inception-deck" },
           {
             text: "3. 開発ストーリー：AIマーケットアナリスト",
             link: "/development-story",
