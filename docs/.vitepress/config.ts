@@ -81,12 +81,11 @@ export default defineConfig({
         ],
       },
       {
+        text: "作者情報",
         items: [{ text: "作者プロフィール詳細", link: "/profile" }],
       },
 
       // --- ここまで追加 ---
     ],
-  
   },
-
 });
