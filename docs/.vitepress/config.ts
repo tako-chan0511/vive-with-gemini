@@ -56,11 +56,7 @@ export default defineConfig({
           },
         ],
       },
-      {
-        text: '<span class="highlight-title">共有会資料</span>',
-        collapsible: true,
-        items: [{ text: "アジェンダ（案）", link: "/agenda" }],
-      },
+    
       {
         text: '<span class="highlight-title">各種資料</span>',
         collapsible: true,
@@ -70,6 +66,11 @@ export default defineConfig({
           { text: "付録：環境構築ガイド", link: "/appendix-environment" },
           { text: "付録：VitePressガイド", link: "/appendix-vitePress" },
         ],
+      },
+  {
+        text: '<span class="highlight-title">共有会資料</span>',
+        collapsible: true,
+        items: [{ text: "アジェンダ（案）", link: "/agenda" }],
       },
       // --- ここから追加 ---
       {
