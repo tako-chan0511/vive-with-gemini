@@ -8,8 +8,8 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "vue": "3.2.44",
-    "vitepress": "1.0.0-alpha.28"
+    "vitepress": "^1.6.3",
+    "vue": "^3.3.8"
   },
   "pnpm": {
     "peerDependencyRules": {
