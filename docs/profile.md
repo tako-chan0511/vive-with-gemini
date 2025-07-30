@@ -3,19 +3,29 @@
 ## ビートテック株式会社＜九州支店＞  
 **原 桂介（Keisuke Hara）**
 
-- 所属：ビートテック株式会社 九州支店
-- 担当：AI時代のエンジニア育成／業務改革
+- 所属：ビートテック株式会社 九州支店  
+- 担当：AI時代のエンジニア育成／業務改革  
 - スキル：アジャイル推進 / Vue 3 / TypeScript / AI活用推進  
 - 座右の銘：「価値はフィードバックの総量に比例する」
 
 ---
 
-### 🔹 自己紹介動画(2025年2月)
+## 🔹 Viveコーディング実践と成果
+
+2025年5月からViveコーディング実践で26個のアプリを作りました。思った以上にChatGPTやGeminiは優秀で、2～3日程度で1個の割合で追加できたのがきっかけで、プロセスや気づきは **[vive-with-gemini](https://tako-chan0511.github.io/vive-with-gemini/)** にまとめました。  
+
+成果物（アウトプット）は以下のURLからアクセスできます：
+
+🔗 [アプリゲームハブ（GameHub）](https://toppage-five.vercel.app/)
+
+---
+
+### 🔹 自己紹介動画（2025年2月）
 
 <iframe src="https://drive.google.com/file/d/1WlJDKwFmWBnWE-wreKnda6xzluhI8mvL/preview" width="640" height="360" allow="autoplay"></iframe>
 
 ---
 
-### 🔹 おじさんの挑戦動画(2023年10月)　アクセスできない方は小生まで連絡ください
+### 🔹 おじさんの挑戦動画（2023年10月）※アクセスできない場合は小生まで連絡ください
 
-<iframe src="https://drive.google.com/file/d/1ElKWM4oArd79zo7cAhGB4uGwFV3SK2Xt/view" width="640" height="360" allow="autoplay"></iframe>
+<iframe src="https://drive.google.com/file/d/1jlYkGm6avzhk4nx03BXl1pu6rVKxipM3/preview" width="640" height="360" allow="autoplay"></iframe>
