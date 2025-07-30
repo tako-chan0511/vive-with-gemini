@@ -12,11 +12,13 @@
 
 ## 🔹 Viveコーディング実践と成果
 
-2025年5月からViveコーディング実践で26個のアプリを作りました。思った以上にChatGPTやGeminiは優秀で、2～3日程度で1個の割合で追加できたのがきっかけで、プロセスや気づきは **[vive-with-gemini](https://tako-chan0511.github.io/vive-with-gemini/)** にまとめました。  
+2025年5月からViveコーディング実践で26個のアプリを作りました。思った以上にChatGPTやGeminiは優秀で、2～3日程度で1個の割合で追加できました。
 
-成果物（アウトプット）は以下のURLからアクセスできます：
-
-🔗 [アプリゲームハブ（GameHub）](https://toppage-five.vercel.app/)
+１．成果物（アウトプット）は以下のURLからアクセスできます：
+🔗 [アプリゲームハブ（GameHub）](https://toppage-five.vercel.app/)<br>
+２．技術的なことは以下のURLのまとめました。
+🔗 [作成アプリスキル一覧](https://hara0511skilltrail.vercel.app/)<br>
+３．プロセスや気づきについては、このHomePageにまとめています。
 
 ---
 
