@@ -54,6 +54,10 @@ export default defineConfig({
             text: "ViveコーディングとJSフレームワーク",
             link: "/why-vive-with-js-frameworks",
           },
+          {
+            text: "マルチエージェント・コラボレーション考察",
+            link: "/multi-agent-collaboration",
+          },
         ],
       },
     
