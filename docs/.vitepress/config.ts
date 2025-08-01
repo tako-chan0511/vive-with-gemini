@@ -33,6 +33,13 @@ export default defineConfig({
 
     sidebar: [
       {
+        text: '<span class="highlight-title">序文</span>',
+        collapsible: true,
+        items: [
+          { text: "はじめに", link: "/Introduction" },
+        ],
+      },
+      {
         text: '<span class="highlight-title">メインストーリー</span>',
         collapsible: true,
         items: [
