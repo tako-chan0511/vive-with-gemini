@@ -78,12 +78,21 @@ export default defineConfig({
           { text: "付録：VitePressガイド", link: "/appendix-vitePress" },
         ],
       },
-  {
+      // --- ここから追加 ---
+      {
+        text: '<span class="highlight-title">APIリファレンス</span>',
+        collapsible: true,
+        items: [
+          { text: "概要", link: "/api-reference/" },
+          { text: "名言ジェネレーター API", link: "/api-reference/quote" },
+        ],
+      },
+      // --- ここまで追加 ---
+      {
         text: '<span class="highlight-title">共有会資料</span>',
         collapsible: true,
         items: [{ text: "アジェンダ（案）", link: "/agenda" }],
       },
-      // --- ここから追加 ---
       {
         text: '<span class="highlight-title">フィードバック（slido)</span>',
         collapsible: true,
@@ -96,8 +105,6 @@ export default defineConfig({
         text: "作者情報",
         items: [{ text: "作者プロフィール詳細", link: "/profile" }],
       },
-
-      // --- ここまで追加 ---
     ],
   },
 });
