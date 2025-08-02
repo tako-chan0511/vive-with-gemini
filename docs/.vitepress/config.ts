@@ -35,16 +35,17 @@ export default defineConfig({
       {
         text: '<span class="highlight-title">序文</span>',
         collapsible: true,
-        items: [
-          { text: "はじめに", link: "/Introduction" },
-        ],
+        items: [{ text: "はじめに", link: "/Introduction" }],
       },
       {
         text: '<span class="highlight-title">メインストーリー</span>',
         collapsible: true,
         items: [
           { text: "1. Vive with Gemini：AI時代の新しい開発様式", link: "/" },
-          { text: "2. 共通認識：AIマーケットアナリスト", link: "/inception-deck" },
+          {
+            text: "2. 共通認識：AIマーケットアナリスト",
+            link: "/inception-deck",
+          },
           {
             text: "3. 開発ストーリー：AIマーケットアナリスト",
             link: "/development-story",
@@ -67,7 +68,7 @@ export default defineConfig({
           },
         ],
       },
-    
+
       {
         text: '<span class="highlight-title">各種資料</span>',
         collapsible: true,
@@ -84,7 +85,19 @@ export default defineConfig({
         collapsible: true,
         items: [
           { text: "概要", link: "/api-reference/" },
-          { text: "名言ジェネレーター API", link: "/api-reference/quote" },
+          { text: "名言ジェネレーター", link: "/api-reference/quote" },
+          { text: "統計表の分類取得", link: "/api-reference/get-categories" },
+          { text: "住所緯度経度変換", link: "/api-reference/geocode" },
+          { text: "アクセスカウント取得", link: "/api-reference/get-count" },
+          { text: "いいねカウント取得", link: "/api-reference/like" },
+          { text: "アクセス数（トラック）情報取得", link: "/api-reference/track" },
+          { text: "政策情報サマリー", link: "/api-reference/summarize" },
+          { text: "企業ニュース要約分析", link: "/api-reference/analyze-company" },
+          { text: "追加質問応答", link: "/api-reference/ask-follow-up" },
+          { text: "株価情報取得", link: "/api-reference/fetch-stock-quote" },
+          { text: "統計データ分析", link: "/api-reference/analyze-stats" },
+            { text: "統計メタ情報取得", link: "/api-reference/get-meta-info" },
+               { text: "統計検索", link: "/api-reference/search-stats" },
         ],
       },
       // --- ここまで追加 ---
