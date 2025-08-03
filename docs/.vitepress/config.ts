@@ -77,6 +77,7 @@ export default defineConfig({
           { text: "想定Q&A", link: "/q-and-a" },
           { text: "付録：環境構築ガイド", link: "/appendix-environment" },
           { text: "付録：VitePressガイド", link: "/appendix-vitePress" },
+          { text: "付録：Vue3-pythonガイド", link: "/appendix-vue3-python" },
         ],
       },
       // --- ここから追加 ---
