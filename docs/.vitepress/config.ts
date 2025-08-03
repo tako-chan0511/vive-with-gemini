@@ -78,6 +78,8 @@ export default defineConfig({
           { text: "付録：環境構築ガイド", link: "/appendix-environment" },
           { text: "付録：VitePressガイド", link: "/appendix-vitePress" },
           { text: "付録：Vue3-pythonガイド", link: "/appendix-vue3-python" },
+          { text: "付録：API-pytestガイド", link: "/appendix-pytest" },
+          
         ],
       },
       // --- ここから追加 ---
