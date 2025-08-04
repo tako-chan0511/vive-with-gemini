@@ -103,6 +103,10 @@ export default defineConfig({
             text: "付録：Python WebAPI with Aurora 連携アーキテクチャ設計ガイド",
             link: "/appendix-Python-WebAPI-with-Aurora",
           },
+          {
+            text: "付録：API設計ガイド",
+            link: "/appendix-api-design-guide",
+          },
         ],
       },
       // --- ここから追加 ---
