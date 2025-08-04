@@ -119,6 +119,10 @@ export default defineConfig({
             text: "付録：AWS比較（Django vs FastAPI）ガイド",
             link: "/appendix-django-fastapi-aws-api-comparison",
           },
+             {
+            text: "付録：FastAPI-Auroraガイド",
+            link: "/appendix-FastAPI-Aurora",
+          },
           
         ],
       },
