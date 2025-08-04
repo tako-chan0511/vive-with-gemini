@@ -81,6 +81,7 @@ export default defineConfig({
           { text: "付録：API-pytestガイド", link: "/appendix-pytest" },
           { text: "付録：API-Migrationガイド", link: "/appendix-api-migration-with-verce" },
           { text: "付録：API-Migration環境ガイド", link: "/appendix-migration-env-setting-guide" },
+          { text: "付録：VSCode-Backlog-TortoiseGit-etc環境ガイド", link: "/appendix-VSCode-Backlog-TortoiseGit-etc" },
         ],
       },
       // --- ここから追加 ---
