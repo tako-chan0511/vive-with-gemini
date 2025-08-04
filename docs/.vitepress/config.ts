@@ -99,6 +99,10 @@ export default defineConfig({
             text: "付録：SSH-GIT-Setup環境ガイド",
             link: "/appendix-ssh-git-setup",
           },
+          {
+            text: "付録：Python WebAPI with Aurora 連携アーキテクチャ設計ガイド",
+            link: "/appendix-Python-WebAPI-with-Aurora",
+          },
         ],
       },
       // --- ここから追加 ---
