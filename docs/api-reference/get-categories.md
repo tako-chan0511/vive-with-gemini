@@ -1,63 +1,78 @@
-# 統計表の分類取得API `/api/get-categories`
+# API仕様書：カテゴリ取得エンドポイント `/api/get-categories`
 
-e-Statの統計表に関連する「分類（カテゴリ）」を取得するエンドポイントです。
+## 概要
+楽天レシピAPIを用いて、料理の大カテゴリと中カテゴリの一覧を取得するAPI。
+
+## メソッド
+`GET`
 
 ## エンドポイント
+`/api/get-categories`
 
-- **Method:** `GET`
-- **Path:** `/api/get-categories`
+## 説明
+環境変数に設定された `RAKUTEN_APP_ID` を利用し、楽天レシピAPIのエンドポイントにアクセスしてカテゴリデータを取得。
 
-## クエリパラメータ
-
-| パラメータ名 | 必須 | 型   | 説明 |
-|--------------|------|------|------|
-| `statsDataId` | ✔   | `string` | 統計表ID（例: `0003212345`）。e-Statの統計データに付与されているユニークIDです。 |
-
-## レスポンス仕様（成功時）
-
-### ステータス: `200 OK`
-
+## レスポンス形式（JSON）
 ```json
 {
-  "categories": [
-    {
-      "id": "cat01",
-      "name": "人口分類",
-      "values": [
-        { "code": "001", "label": "男性" },
-        { "code": "002", "label": "女性" }
-      ]
-    },
-    {
-      "id": "cat02",
-      "name": "年齢階層",
-      "values": [
-        { "code": "101", "label": "0〜14歳" },
-        { "code": "102", "label": "15〜64歳" }
-      ]
-    }
-  ]
+  "result": {
+    "large": [
+      {
+        "categoryId": "10",
+        "categoryName": "主食"
+      },
+      ...
+    ],
+    "medium": [
+      {
+        "categoryId": "10-101",
+        "categoryName": "ごはんもの"
+      },
+      ...
+    ]
+  }
 }
 ```
 
-## エラーレスポンス
+## 環境変数
+| 変数名         | 説明                     |
+|----------------|--------------------------|
+| `RAKUTEN_APP_ID` | 楽天APIアクセス用アプリID |
 
-### `400 Bad Request`
-
-```json
-{
-  "error": "Missing statsDataId parameter"
-}
-```
-
-### `500 Internal Server Error`
+## エラー時のレスポンス
+- 楽天APIからのレスポンスに`result`が含まれない場合、または取得失敗時は以下のようなエラーメッセージが返却されます：
 
 ```json
 {
-  "error": "Failed to fetch data from e-Stat API"
+  "error": "楽天APIからカテゴリ情報を取得できませんでした。"
 }
 ```
 
----
+## 実装例
+FastAPI における `get_categories.py` の内容
+```python
+import os
+import requests
+from fastapi import APIRouter
+from fastapi.responses import JSONResponse
 
-このAPIは、e-Statの提供する統計情報からカテゴリ（分類）構造を動的に取得するためのエンドポイントです。統計分析・可視化アプリのカテゴリ選択UIの自動構築などに利用できます。
+router = APIRouter()
+
+@router.get("/get-categories")
+def get_categories():
+    app_id = os.getenv("RAKUTEN_APP_ID")
+    endpoint = "https://app.rakuten.co.jp/services/api/Recipe/CategoryList/20170426"
+    params = {"applicationId": app_id}
+    res = requests.get(endpoint, params=params)
+    data = res.json()
+
+    if "result" not in data:
+        return JSONResponse(status_code=500, content={"error": "楽天APIからカテゴリ情報を取得できませんでした。"})
+
+    return {"result": data["result"]}
+```
+
+## 備考
+- `.env` に `RAKUTEN_APP_ID` を設定していることを確認してください。
+- 本APIは `/api/get-categories` としてVercelにデプロイされます。
+
