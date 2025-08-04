@@ -73,12 +73,20 @@ export default defineConfig({
       },
 
       {
-        text: '<span class="highlight-title">各種資料</span>',
+        text: '<span class="highlight-title">AI活用Tips</span>',
         collapsible: true,
         collapsed: true,
         items: [
           { text: "Tips with gemini", link: "/tips" },
           { text: "想定Q&A", link: "/q-and-a" },
+               
+        ],
+      },
+        {
+        text: '<span class="highlight-title">環境他Tips</span>',
+        collapsible: true,
+        collapsed: true,
+        items: [
           { text: "付録：環境構築ガイド", link: "/appendix-environment" },
           { text: "付録：VitePressガイド", link: "/appendix-vitePress" },
           { text: "付録：Vue3-pythonガイド", link: "/appendix-vue3-python" },
@@ -107,6 +115,11 @@ export default defineConfig({
             text: "付録：API設計ガイド",
             link: "/appendix-api-design-guide",
           },
+           {
+            text: "付録：AWS比較（Django vs FastAPI）ガイド",
+            link: "/appendix-django-fastapi-aws-api-comparison",
+          },
+          
         ],
       },
       // --- ここから追加 ---
