@@ -109,7 +109,8 @@ export default defineConfig({
         items: [
           { text: "概要", link: "/api-reference/" },
           { text: "名言ジェネレーター", link: "/api-reference/quote" },
-          { text: "統計表の分類取得", link: "/api-reference/get-categories" },
+          { text: "楽天レシピカテゴリ取得", link: "/api-reference/get-categories" },
+          { text: "楽天レシピランキング取得", link: "/api-reference/recipe_ranking" },
           { text: "住所緯度経度変換", link: "/api-reference/geocode" },
           { text: "アクセスカウント取得", link: "/api-reference/get-count" },
           { text: "いいねカウント取得", link: "/api-reference/like" },
