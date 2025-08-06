@@ -127,6 +127,10 @@ export default defineConfig({
             text: "付録：ローカル環境（vue-python)ガイド",
             link: "/appendix-vue_fastapi_setup_guide",
           },
+               {
+            text: "付録：Docker開発環境移行（vue-python)ガイド",
+            link: "/appendix-local-docker-setup",
+          },
           
         ],
       },
