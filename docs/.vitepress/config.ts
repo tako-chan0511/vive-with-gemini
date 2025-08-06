@@ -123,6 +123,10 @@ export default defineConfig({
             text: "付録：FastAPI-Auroraガイド",
             link: "/appendix-FastAPI-Aurora",
           },
+              {
+            text: "付録：ローカル環境（vue-python)ガイド",
+            link: "/appendix-vue_fastapi_setup_guide",
+          },
           
         ],
       },
