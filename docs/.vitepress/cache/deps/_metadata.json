@@ -1,31 +1,37 @@
 {
-  "hash": "c4fa01f1",
-  "configHash": "360050ce",
-  "lockfileHash": "f5bf5370",
-  "browserHash": "872c3857",
+  "hash": "7d0f76e9",
+  "configHash": "71c81ed9",
+  "lockfileHash": "6c61d133",
+  "browserHash": "e6703739",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "efc8770e",
+      "fileHash": "ec5df10b",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "e68aade6",
+      "fileHash": "67f5811e",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "b714ab4b",
+      "fileHash": "044bbf4f",
+      "needsInterop": false
+    },
+    "vitepress-plugin-mermaid": {
+      "src": "../../../../node_modules/vitepress-plugin-mermaid/dist/vitepress-plugin-mermaid.es.mjs",
+      "file": "vitepress-plugin-mermaid.js",
+      "fileHash": "def071ca",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-HVR2FF6M": {
-      "file": "chunk-HVR2FF6M.js"
+    "chunk-V7AUFIRV": {
+      "file": "chunk-V7AUFIRV.js"
     }
   }
 }
