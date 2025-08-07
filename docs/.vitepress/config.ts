@@ -123,17 +123,22 @@ export default defineConfig({
             link: "/appendix/FastAPI-Aurora",
           },
           {
-            text: "付録：ローカル環境（vue-python)ガイド",
+            text: "my-recipes：ローカル環境（vue-python)ガイド",
             link: "/appendix/vue_fastapi_setup_guide",
           },
           {
-            text: "付録：Docker開発環境移行（vue-python)ガイド",
+            text: "my-recipes：Docker開発環境移行（vue-python)ガイド",
             link: "/appendix/docker-setup-local",
           },
           {
-            text: "付録：Docker完全版移行（vue-python)ガイド",
+            text: "my-recipes：Docker完全版移行（vue-python)ガイド",
             link: "/appendix/docker-setup-all",
           },
+           {
+            text: "my-recipes：Web/APIサーバ要素説明（vue-python)ガイド",
+            link: "/appendix/web-api-server-description",
+          },
+          
         ],
       },
       // --- ここから追加 ---
