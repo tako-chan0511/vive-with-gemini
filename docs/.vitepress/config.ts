@@ -79,59 +79,61 @@ export default defineConfig({
         items: [
           { text: "Tips with gemini", link: "/tips" },
           { text: "想定Q&A", link: "/q-and-a" },
-               
         ],
       },
-        {
+      {
         text: '<span class="highlight-title">環境他Tips</span>',
         collapsible: true,
         collapsed: true,
         items: [
-          { text: "付録：環境構築ガイド", link: "/appendix-environment" },
-          { text: "付録：VitePressガイド", link: "/appendix-vitePress" },
-          { text: "付録：Vue3-pythonガイド", link: "/appendix-vue3-python" },
-          { text: "付録：API-pytestガイド", link: "/appendix-pytest" },
+          { text: "付録：環境構築ガイド", link: "/appendix/environment" },
+          { text: "付録：VitePressガイド", link: "/appendix/vitePress" },
+          { text: "付録：Vue3-pythonガイド", link: "/appendix/vue3-python" },
+          { text: "付録：API-pytestガイド", link: "/appendix/pytest" },
           {
             text: "付録：API-Migrationガイド",
-            link: "/appendix-api-migration-with-verce",
+            link: "/appendix/api-migration-with-verce",
           },
           {
             text: "付録：API-Migration環境ガイド",
-            link: "/appendix-migration-env-setting-guide",
+            link: "/appendix/migration-env-setting-guide",
           },
           {
             text: "付録：VSCode-Backlog-TortoiseGit-etc環境ガイド",
-            link: "/appendix-VSCode-Backlog-TortoiseGit-etc",
+            link: "/appendix/VSCode-Backlog-TortoiseGit-etc",
           },
           {
             text: "付録：SSH-GIT-Setup環境ガイド",
-            link: "/appendix-ssh-git-setup",
+            link: "/appendix/ssh-git-setup",
           },
           {
             text: "付録：Python WebAPI with Aurora 連携アーキテクチャ設計ガイド",
-            link: "/appendix-Python-WebAPI-with-Aurora",
+            link: "/appendix/Python-WebAPI-with-Aurora",
           },
           {
             text: "付録：API設計ガイド",
-            link: "/appendix-api-design-guide",
+            link: "/appendix/api-design-guide",
           },
-           {
+          {
             text: "付録：AWS比較（Django vs FastAPI）ガイド",
-            link: "/appendix-django-fastapi-aws-api-comparison",
+            link: "/appendix/django-fastapi-aws-api-comparison",
           },
-             {
+          {
             text: "付録：FastAPI-Auroraガイド",
-            link: "/appendix-FastAPI-Aurora",
+            link: "/appendix/FastAPI-Aurora",
           },
-              {
+          {
             text: "付録：ローカル環境（vue-python)ガイド",
-            link: "/appendix-vue_fastapi_setup_guide",
+            link: "/appendix/vue_fastapi_setup_guide",
           },
-               {
+          {
             text: "付録：Docker開発環境移行（vue-python)ガイド",
-            link: "/appendix-local-docker-setup",
+            link: "/appendix/docker-setup-local",
           },
-          
+          {
+            text: "付録：Docker完全版移行（vue-python)ガイド",
+            link: "/appendix/docker-setup-all",
+          },
         ],
       },
       // --- ここから追加 ---
@@ -142,8 +144,14 @@ export default defineConfig({
         items: [
           { text: "概要", link: "/api-reference/" },
           { text: "名言ジェネレーター", link: "/api-reference/quote" },
-          { text: "楽天レシピカテゴリ取得", link: "/api-reference/get-categories" },
-          { text: "楽天レシピランキング取得", link: "/api-reference/recipe_ranking" },
+          {
+            text: "楽天レシピカテゴリ取得",
+            link: "/api-reference/get-categories",
+          },
+          {
+            text: "楽天レシピランキング取得",
+            link: "/api-reference/recipe_ranking",
+          },
           { text: "住所緯度経度変換", link: "/api-reference/geocode" },
           { text: "アクセスカウント取得", link: "/api-reference/get-count" },
           { text: "いいねカウント取得", link: "/api-reference/like" },
