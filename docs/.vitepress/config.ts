@@ -138,6 +138,10 @@ export default defineConfig({
             text: "my-recipes：Web/APIサーバ要素説明（vue-python)ガイド",
             link: "/appendix/web-api-server-description",
           },
+            {
+            text: "仕事：GithubとBacklog-git比較（VSCode編）",
+            link: "/appendix/github_vs_backlog_git",
+          },
           
         ],
       },
