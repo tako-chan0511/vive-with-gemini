@@ -150,6 +150,10 @@ export default defineConfig({
             text: "my-recipes：Render-vs-AWS-deploy（Docker/CICD編）",
             link: "/appendix/render-vs-aws-deploy",
           },
+             {
+            text: "my-recipes：Render CI/CDガイド（Docker/CICD編）",
+            link: "/appendix/render_ci_cd_guide",
+          },
           
         ],
       },
