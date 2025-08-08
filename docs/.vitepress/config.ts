@@ -142,6 +142,10 @@ export default defineConfig({
             text: "仕事：GithubとBacklog-git比較（VSCode編）",
             link: "/appendix/github_vs_backlog_git",
           },
+            {
+            text: "my-recipes：Render-BluePrint（Docker/CICD編）",
+            link: "/appendix/my-recipes-render-blueprint",
+          },
           
         ],
       },
