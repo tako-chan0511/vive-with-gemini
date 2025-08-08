@@ -146,6 +146,10 @@ export default defineConfig({
             text: "my-recipes：Render-BluePrint（Docker/CICD編）",
             link: "/appendix/my-recipes-render-blueprint",
           },
+            {
+            text: "my-recipes：Render-vs-AWS-deploy（Docker/CICD編）",
+            link: "/appendix/render-vs-aws-deploy",
+          },
           
         ],
       },
