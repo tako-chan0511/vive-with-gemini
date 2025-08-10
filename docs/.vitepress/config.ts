@@ -134,27 +134,34 @@ export default defineConfig({
             text: "my-recipes：Docker完全版移行（vue-python)ガイド",
             link: "/appendix/docker-setup-all",
           },
-           {
+          {
             text: "my-recipes：Web/APIサーバ要素説明（vue-python)ガイド",
             link: "/appendix/web-api-server-description",
           },
-            {
+          {
             text: "仕事：GithubとBacklog-git比較（VSCode編）",
             link: "/appendix/github_vs_backlog_git",
           },
-            {
+          {
             text: "my-recipes：Render-BluePrint（Docker/CICD編）",
             link: "/appendix/my-recipes-render-blueprint",
           },
-            {
+          {
             text: "my-recipes：Render-vs-AWS-deploy（Docker/CICD編）",
             link: "/appendix/render-vs-aws-deploy",
           },
-             {
+          {
             text: "my-recipes：Render CI/CDガイド（Docker/CICD編）",
             link: "/appendix/render_ci_cd_guide",
           },
-          
+          {
+            text: "WebAPI開発AIフロー",
+            link: "/appendix/webapi_ai_fullflow",
+          },
+          {
+            text: "Kitchen-Stackローカル環境",
+            link: "/appendix/kitchen-stack-localsetup",
+          },
         ],
       },
       // --- ここから追加 ---
