@@ -282,6 +282,10 @@ mql?.addEventListener('change', (e) => {
             text: "API－Gateway（Ngonx）アーキテクチャ図",
             link: "/appendix/api-gateway-nginx",
           },
+          {
+            text: "■Marmaid文法",
+            link: "/appendix/mermaid",
+          },
           
         ],
       },
