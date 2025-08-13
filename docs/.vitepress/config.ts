@@ -278,6 +278,11 @@ mql?.addEventListener('change', (e) => {
             text: "同機・非同期+APIGatewayアーキテクチャ図",
             link: "/appendix/Sync-async-APIGAteway-archtecture",
           },
+          {
+            text: "API－Gateway（Ngonx）アーキテクチャ図",
+            link: "/appendix/api-gateway-nginx",
+          },
+          
         ],
       },
       {
