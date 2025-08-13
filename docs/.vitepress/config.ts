@@ -147,6 +147,8 @@ mql?.addEventListener('change', (e) => {
         { text: "WebAPI開発AIフロー", link: "/appendix/webapi_ai_fullflow" },
         { text: "Kitchen-Stackローカル環境", link: "/appendix/kitchen-stack-localsetup" },
         { text: "同機・非同期アーキテクチャ図", link: "/appendix/Sync-async-archtecture" },
+        { text: "同機・非同期+APIGatewayアーキテクチャ図", link: "/appendix/Sync-async-APIGAteway-archtecture" },
+
       ]},
       {
         text: '<span class="highlight-title">APIリファレンス</span>',
