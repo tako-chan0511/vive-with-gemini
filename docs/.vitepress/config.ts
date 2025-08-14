@@ -202,6 +202,7 @@ mql?.addEventListener('change', (e) => {
   items: [
     {
       text: 'セットアップ / 開発環境',
+      collapsible: true,collapsed: true,
       items: [
         { text: '付録：環境構築ガイド', link: '/appendix/environment' },
         { text: '付録：SSH-GIT-Setup環境ガイド', link: '/appendix/ssh-git-setup' },
@@ -211,6 +212,7 @@ mql?.addEventListener('change', (e) => {
     },
     {
       text: 'フレームワーク / ツール',
+      collapsible: true,collapsed: true,
       items: [
         { text: '付録：VitePressガイド', link: '/appendix/vitePress' },
         { text: '付録：Vue3-pythonガイド', link: '/appendix/vue3-python' },
@@ -220,6 +222,7 @@ mql?.addEventListener('change', (e) => {
     },
     {
       text: 'API設計 / アーキテクチャ',
+      collapsible: true,collapsed: true,
       items: [
         { text: '付録：API設計ガイド', link: '/appendix/api-design-guide' },
         { text: '同機・非同期アーキテクチャ図', link: '/appendix/Sync-async-archtecture' },
@@ -231,7 +234,7 @@ mql?.addEventListener('change', (e) => {
       ],
     },
     {
-      text: 'my-recipes（実装手引き）',
+      text: 'my-recipes（実装手引き）',collapsible: true,collapsed: true,
       items: [
         { text: 'my-recipes：ローカル環境（vue-python)ガイド', link: '/appendix/vue_fastapi_setup_guide' },
         { text: 'my-recipes：Docker開発環境移行（vue-python)ガイド', link: '/appendix/docker-setup-local' },
@@ -240,7 +243,7 @@ mql?.addEventListener('change', (e) => {
       ],
     },
     {
-      text: 'デプロイ / CI・CD / マイグレーション',
+      text: 'デプロイ / CI・CD / マイグレーション',collapsible: true,collapsed: true,
       items: [
         { text: '付録：API-Migrationガイド', link: '/appendix/api-migration-with-verce' },
         { text: '付録：API-Migration環境ガイド', link: '/appendix/migration-env-setting-guide' },
@@ -250,7 +253,7 @@ mql?.addEventListener('change', (e) => {
       ],
     },
     {
-      text: 'プロセス / ナレッジ',
+      text: 'プロセス / ナレッジ',collapsible: true,collapsed: true,
       items: [
         { text: 'WebAPI開発AIフロー', link: '/appendix/webapi_ai_fullflow' },
         { text: '■シーケンス図受付版（async-worker）', link: '/appendix/sequence-async-worker' },
