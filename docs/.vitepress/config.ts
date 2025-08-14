@@ -195,108 +195,71 @@ mql?.addEventListener('change', (e) => {
           { text: "想定Q&A", link: "/q-and-a" },
         ],
       },
-      {
-        text: '<span class="highlight-title">環境他Tips</span>',
-        collapsible: true,
-        collapsed: true,
-        items: [
-          { text: "付録：環境構築ガイド", link: "/appendix/environment" },
-          { text: "付録：VitePressガイド", link: "/appendix/vitePress" },
-          { text: "付録：Vue3-pythonガイド", link: "/appendix/vue3-python" },
-          { text: "付録：API-pytestガイド", link: "/appendix/pytest" },
-          {
-            text: "付録：API-Migrationガイド",
-            link: "/appendix/api-migration-with-verce",
-          },
-          {
-            text: "付録：API-Migration環境ガイド",
-            link: "/appendix/migration-env-setting-guide",
-          },
-          {
-            text: "付録：VSCode-Backlog-TortoiseGit-etc環境ガイド",
-            link: "/appendix/VSCode-Backlog-TortoiseGit-etc",
-          },
-          {
-            text: "付録：SSH-GIT-Setup環境ガイド",
-            link: "/appendix/ssh-git-setup",
-          },
-          {
-            text: "付録：Python WebAPI with Aurora 連携アーキテクチャ設計ガイド",
-            link: "/appendix/Python-WebAPI-with-Aurora",
-          },
-          { text: "付録：API設計ガイド", link: "/appendix/api-design-guide" },
-          {
-            text: "付録：AWS比較（Django vs FastAPI）ガイド",
-            link: "/appendix/django-fastapi-aws-api-comparison",
-          },
-          {
-            text: "付録：FastAPI-Auroraガイド",
-            link: "/appendix/FastAPI-Aurora",
-          },
-          {
-            text: "my-recipes：ローカル環境（vue-python)ガイド",
-            link: "/appendix/vue_fastapi_setup_guide",
-          },
-          {
-            text: "my-recipes：Docker開発環境移行（vue-python)ガイド",
-            link: "/appendix/docker-setup-local",
-          },
-          {
-            text: "my-recipes：Docker完全版移行（vue-python)ガイド",
-            link: "/appendix/docker-setup-all",
-          },
-          {
-            text: "my-recipes：Web/APIサーバ要素説明（vue-python)ガイド",
-            link: "/appendix/web-api-server-description",
-          },
-          {
-            text: "仕事：GithubとBacklog-git比較（VSCode編）",
-            link: "/appendix/github_vs_backlog_git",
-          },
-          {
-            text: "my-recipes：Render-BluePrint（Docker/CICD編）",
-            link: "/appendix/my-recipes-render-blueprint",
-          },
-          {
-            text: "my-recipes：Render-vs-AWS-deploy（Docker/CICD編）",
-            link: "/appendix/render-vs-aws-deploy",
-          },
-          {
-            text: "my-recipes：Render CI/CDガイド（Docker/CICD編）",
-            link: "/appendix/render_ci_cd_guide",
-          },
-          { text: "WebAPI開発AIフロー", link: "/appendix/webapi_ai_fullflow" },
-          {
-            text: "Kitchen-Stackローカル環境",
-            link: "/appendix/kitchen-stack-localsetup",
-          },
-          {
-            text: "同機・非同期アーキテクチャ図",
-            link: "/appendix/Sync-async-archtecture",
-          },
-          {
-            text: "同機・非同期+APIGatewayアーキテクチャ図",
-            link: "/appendix/Sync-async-APIGAteway-archtecture",
-          },
-          {
-            text: "API－Gateway（Ngonx）アーキテクチャ図",
-            link: "/appendix/api-gateway-nginx",
-          },
-          {
-            text: "■Marmaid文法",
-            link: "/appendix/mermaid",
-          },
-            {
-            text: "■シーケンス図受付版（async-worker）",
-            link: "/appendix/sequence-async-worker",
-          },
-            {
-            text: "■シーケンス図完成版（async-worker）",
-            link: "/appendix/sequence-async-worker-with-completion",
-          },
-          
-        ],
-      },
+  {
+  text: '<span class="highlight-title">環境他Tips</span>',
+  collapsible: true,
+  collapsed: true,
+  items: [
+    {
+      text: 'セットアップ / 開発環境',
+      items: [
+        { text: '付録：環境構築ガイド', link: '/appendix/environment' },
+        { text: '付録：SSH-GIT-Setup環境ガイド', link: '/appendix/ssh-git-setup' },
+        { text: '付録：VSCode-Backlog-TortoiseGit-etc環境ガイド', link: '/appendix/VSCode-Backlog-TortoiseGit-etc' },
+        { text: 'Kitchen-Stackローカル環境', link: '/appendix/kitchen-stack-localsetup' },
+      ],
+    },
+    {
+      text: 'フレームワーク / ツール',
+      items: [
+        { text: '付録：VitePressガイド', link: '/appendix/vitePress' },
+        { text: '付録：Vue3-pythonガイド', link: '/appendix/vue3-python' },
+        { text: '付録：API-pytestガイド', link: '/appendix/pytest' },
+        { text: '■Marmaid文法', link: '/appendix/mermaid' },
+      ],
+    },
+    {
+      text: 'API設計 / アーキテクチャ',
+      items: [
+        { text: '付録：API設計ガイド', link: '/appendix/api-design-guide' },
+        { text: '同機・非同期アーキテクチャ図', link: '/appendix/Sync-async-archtecture' },
+        { text: '同機・非同期+APIGatewayアーキテクチャ図', link: '/appendix/Sync-async-APIGAteway-archtecture' },
+        { text: 'API－Gateway（Ngonx）アーキテクチャ図', link: '/appendix/api-gateway-nginx' },
+        { text: '付録：Python WebAPI with Aurora 連携アーキテクチャ設計ガイド', link: '/appendix/Python-WebAPI-with-Aurora' },
+        { text: '付録：FastAPI-Auroraガイド', link: '/appendix/FastAPI-Aurora' },
+        { text: '付録：AWS比較（Django vs FastAPI）ガイド', link: '/appendix/django-fastapi-aws-api-comparison' },
+      ],
+    },
+    {
+      text: 'my-recipes（実装手引き）',
+      items: [
+        { text: 'my-recipes：ローカル環境（vue-python)ガイド', link: '/appendix/vue_fastapi_setup_guide' },
+        { text: 'my-recipes：Docker開発環境移行（vue-python)ガイド', link: '/appendix/docker-setup-local' },
+        { text: 'my-recipes：Docker完全版移行（vue-python)ガイド', link: '/appendix/docker-setup-all' },
+        { text: 'my-recipes：Web/APIサーバ要素説明（vue-python)ガイド', link: '/appendix/web-api-server-description' },
+      ],
+    },
+    {
+      text: 'デプロイ / CI・CD / マイグレーション',
+      items: [
+        { text: '付録：API-Migrationガイド', link: '/appendix/api-migration-with-verce' },
+        { text: '付録：API-Migration環境ガイド', link: '/appendix/migration-env-setting-guide' },
+        { text: 'my-recipes：Render-BluePrint（Docker/CICD編）', link: '/appendix/my-recipes-render-blueprint' },
+        { text: 'my-recipes：Render-vs-AWS-deploy（Docker/CICD編）', link: '/appendix/render-vs-aws-deploy' },
+        { text: 'my-recipes：Render CI/CDガイド（Docker/CICD編）', link: '/appendix/render_ci_cd_guide' },
+      ],
+    },
+    {
+      text: 'プロセス / ナレッジ',
+      items: [
+        { text: 'WebAPI開発AIフロー', link: '/appendix/webapi_ai_fullflow' },
+        { text: '■シーケンス図受付版（async-worker）', link: '/appendix/sequence-async-worker' },
+        { text: '■シーケンス図完成版（async-worker）', link: '/appendix/sequence-async-worker-with-completion' },
+        { text: '仕事：GithubとBacklog-git比較（VSCode編）', link: '/appendix/github_vs_backlog_git' },
+      ],
+    },
+  ],
+},
       {
         text: '<span class="highlight-title">APIリファレンス</span>',
         collapsible: true,
