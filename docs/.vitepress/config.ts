@@ -286,6 +286,14 @@ mql?.addEventListener('change', (e) => {
             text: "■Marmaid文法",
             link: "/appendix/mermaid",
           },
+            {
+            text: "■シーケンス図受付版（async-worker）",
+            link: "/appendix/sequence-async-worker",
+          },
+            {
+            text: "■シーケンス図完成版（async-worker）",
+            link: "/appendix/sequence-async-worker-with-completion",
+          },
           
         ],
       },
