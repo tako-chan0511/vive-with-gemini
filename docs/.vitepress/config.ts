@@ -184,6 +184,10 @@ mql?.addEventListener('change', (e) => {
             text: "マルチエージェント・コラボレーション考察",
             link: "/multi-agent-collaboration",
           },
+          {
+            text: "AIと共に動くチーム：Vive-with-Geminiが導いた“自然発生アジャイル”",
+            link: "/ai-agile-vive-with-gemini"
+          },
         ],
       },
       {
