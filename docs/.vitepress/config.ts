@@ -133,7 +133,7 @@ mql?.addEventListener('change', (e) => {
     nav: [
       { text: "ホーム", link: "/" },
       { text: "開発ストーリー", link: "/development-story" },
-      { text: "Tips集", link: "/tips" },
+      { text: "Tips集!", link: "/tips" },
       { text: "コラム", link: "/column" },
       {
         text: "関連リンク",
@@ -175,7 +175,7 @@ mql?.addEventListener('change', (e) => {
         collapsible: true,
         collapsed: true,
         items: [
-          { text: "AI時代のエンジニア進化論", link: "/column" },
+          { text: "AI時代のエンジニア進化論!", link: "/column" },
           {
             text: "ViveコーディングとJSフレームワーク",
             link: "/why-vive-with-js-frameworks",
@@ -183,6 +183,10 @@ mql?.addEventListener('change', (e) => {
           {
             text: "マルチエージェント・コラボレーション考察",
             link: "/multi-agent-collaboration",
+          },
+          {
+            text: "AIと共に動くチーム：Vive-with-Geminiが導いた“自然発生アジャイル”",
+            link: "/ai-agile-vive-with-gemini"
           },
         ],
       },
