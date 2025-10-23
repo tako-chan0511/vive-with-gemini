@@ -33,7 +33,7 @@ AIとの協働は、単にツールを使いこなすということではなく
 ## 2. “自然発生アジャイル”のはじまり
 
 私が参加して1か月ほど経った頃、  
-リーダーが「プロセスをアジャイルで進めてみたい」と提案しました。  
+リーダーから「プロセスをアジャイルで進めてみたい」と提案がありました。  
 それを合図に、チームの動きが一気に軽くなりました。  
 
 形式的なスクラムフレームワークを持ち込んだわけではありません。  
@@ -46,6 +46,23 @@ AIとの協働は、単にツールを使いこなすということではなく
 
 > 💬 *「AIが入ると、チームが自然とアジャイルになっていく」*  
 この現象は、私自身にとって大きな発見でした。
+
+---
+
+### 🔗 関連リソース：アジャイルをもっと知るための3つの“地図”
+アジャイルの思想や実践を、より直感的に理解したい方におすすめの3選です👇
+
+1. 🎥 **Agile Product Ownership in a Nutshell**（16分動画）  
+   [https://www.youtube.com/watch?v=502ILHjX9EE](https://www.youtube.com/watch?v=502ILHjX9EE)  
+   → プロダクトオーナー視点で「なぜアジャイルが価値を生むのか」を軽快に解説。  
+
+2. 📘 **スクラム公式ガイド（日本語版PDF）**  
+   [https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-Japanese.pdf](https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-Japanese.pdf)  
+   → アジャイルの中核であるスクラムの原典。薄くて本質的、辞書代わりに最適。  
+
+3. 🗺️ **富士通：アジャイル特集ページ**  
+   [https://www.fujitsu.com/jp/services/agile/featurestories/](https://www.fujitsu.com/jp/services/agile/featurestories/)  
+   → 日本企業の現場事例を交え、アジャイルがどのように組織文化へ浸透するかを紹介。  
 
 ---
 
