@@ -1,25 +1,39 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue'
-import mermaid from 'mermaid'
 
 interface Props {
   code: string
 }
 
 const props = defineProps<Props>()
+
 const svg = ref('')
 
+// 動的 import 用
+let mermaid: any = null
+
 onMounted(async () => {
+  // SSR 対策：ブラウザ環境でだけ動かす
+  if (typeof window === 'undefined') return
+
+  if (!mermaid) {
+    // クライアント側でだけ Mermaid を読み込む
+    const m = await import('mermaid')
+    mermaid = m.default ?? m
+  }
+
   mermaid.initialize({
     startOnLoad: false,
-    theme: 'default', // ダークモードなどに合わせて変更可
+    theme: 'default',
   })
+
   renderDiagram(props.code)
 })
 
 watch(
   () => props.code,
-  (newCode) => {
+  async (newCode) => {
+    if (!mermaid) return
     renderDiagram(newCode)
   }
 )
@@ -32,7 +46,9 @@ async function renderDiagram(code: string) {
     )
     svg.value = renderedSvg
   } catch (e) {
-    svg.value = `<pre style="color:red;">Mermaid render error: ${String(e)}</pre>`
+    svg.value = `<pre style="color:red;">Mermaid render error: ${String(
+      e
+    )}</pre>`
   }
 }
 </script>
