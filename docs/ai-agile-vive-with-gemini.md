@@ -14,6 +14,7 @@ AI活用開発の現場に参画して、最初にチームリーダーと語り
 AIを設計やレビューのパートナーとして扱うことで、  
 チームの議論が自然と**会話中心のプロセス**へと変わっていきました。  
 
+<Mermaid :code="`
 flowchart LR
     Dev[開発メンバー] <--> AI[AIとの対話]
     AI <--> Artifacts[設計・コード・テスト]
@@ -21,6 +22,7 @@ flowchart LR
     Review --> Dev
 
     class Dev,AI,Artifacts,Review node;
+`" />
 
 
 ここで強調したいのは、決して**ドキュメント類を否定しているわけではない**ということです。  
