@@ -107,4 +107,4 @@ Googleは、次世代モデル（Gemini 3など）の学習において、NVIDIA
 
 -----
 
-👉 [前の記事：「現場で磨かれるAI活用術：Vive-with-Gemini実践編」に戻る](https://www.google.com/search?q=./ai-agile-vive-with-gemini-extended)
+👉 [前の記事：「現場で磨かれるAI活用術：Vive-with-Gemini実践編」に戻る](https://hara0511vive-with-gemini.vercel.app/ai-agile-vive-with-gemini-extended.html)
