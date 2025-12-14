@@ -175,18 +175,26 @@ mql?.addEventListener('change', (e) => {
         collapsible: true,
         collapsed: true,
         items: [
-          { text: "AI時代のエンジニア進化論!", link: "/column" },
+          { text: "1.AI時代のエンジニア進化論!", link: "/column" },
           {
-            text: "ViveコーディングとJSフレームワーク",
+            text: "2.ViveコーディングとJSフレームワーク",
             link: "/why-vive-with-js-frameworks",
           },
           {
-            text: "マルチエージェント・コラボレーション考察",
+            text: "3.マルチエージェント・コラボレーション考察",
             link: "/multi-agent-collaboration",
           },
           {
-            text: "AIと共に動くチーム：Vive-with-Geminiが導いた“自然発生アジャイル”",
+            text: "4.AIと共に動くチーム：Vive-with-Geminiが導いた“自然発生アジャイル”",
             link: "/ai-agile-vive-with-gemini"
+          },
+          {
+            text: "4.1 現場で磨かれるAI活用術",
+            link: "/ai-agile-vive-with-gemini-extended"
+          },
+        {
+            text: "4.2 【コラム】2015年ころのAIと、今のAIは何が違うのか？",
+            link: "/ai-agile-vive-with-gemini-column-2015-vs-2025"
           },
         ],
       },
