@@ -193,7 +193,7 @@ mql?.addEventListener('change', (e) => {
             link: "/ai-agile-vive-with-gemini-extended"
           },
         {
-            text: "4.2 【コラム】2015年ころのAIと、今のAIは何が違うのか？",
+            text: "4.2 2015年ころのAIと、今のAIは何が違うのか？",
             link: "/ai-agile-vive-with-gemini-column-2015-vs-2025"
           },
         ],
