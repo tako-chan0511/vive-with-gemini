@@ -35,3 +35,6 @@ description: vive-with-geminiへようこそ。このサイトは、AIとの協�
 そんな未来を目指すという意志が、`vive-with-gemini` という名前に込められています。
 
 このサイトを通じて、そんな新しい開発の「鼓動」を、皆さんと共に創り上げていければ幸いです。
+
+![vive-with-geminiへようこそ](./public/images/vive/vive-with-geminiへようこそ.jpg)
+
