@@ -123,10 +123,14 @@ mql?.addEventListener('change', (e) => {
     ["link", { rel: "stylesheet", href: "/custom.css" }],
   ],
 
-  vite: { optimizeDeps: { exclude: ["mermaid"] } },
-
-  markdown: {
-    mermaid: true,
+  vite: {
+    optimizeDeps: { exclude: ["mermaid"] },
+    server: {
+      watch: {
+        // WSL や Windows のマウント上でファイル変更を確実に検知させる
+        usePolling: true,
+      },
+    },
   },
 
   themeConfig: {
@@ -149,13 +153,11 @@ mql?.addEventListener('change', (e) => {
     sidebar: [
       {
         text: '<span class="highlight-title">序文</span>',
-        collapsible: true,
         collapsed: true,
         items: [{ text: "はじめに", link: "/Introduction" }],
       },
       {
         text: '<span class="highlight-title">メインストーリー</span>',
-        collapsible: true,
         collapsed: true,
         items: [
           { text: "1. Vive with Gemini：AI時代の新しい開発様式", link: "/" },
@@ -172,7 +174,6 @@ mql?.addEventListener('change', (e) => {
       },
       {
         text: '<span class="highlight-title">コラム</span>',
-        collapsible: true,
         collapsed: true,
         items: [
           { text: "1.AI時代のエンジニア進化論!", link: "/column" },
@@ -200,7 +201,6 @@ mql?.addEventListener('change', (e) => {
       },
       {
         text: '<span class="highlight-title">AI活用Tips</span>',
-        collapsible: true,
         collapsed: true,
         items: [
           { text: "Tips with gemini", link: "/tips" },
@@ -209,12 +209,18 @@ mql?.addEventListener('change', (e) => {
       },
   {
   text: '<span class="highlight-title">環境他Tips</span>',
-  collapsible: true,
   collapsed: true,
   items: [
     {
+      text: 'マイグレーション',
+      collapsed: true,
+      items: [
+        { text: 'Vue3 → Nuxt3 マイグレーション', link: '/appendix/migration-vue3-to-nuxt3' },
+      ],
+    },
+    {
       text: 'セットアップ / 開発環境',
-      collapsible: true,collapsed: true,
+      collapsed: true,
       items: [
         { text: '付録：環境構築ガイド', link: '/appendix/environment' },
         { text: '付録：SSH-GIT-Setup環境ガイド', link: '/appendix/ssh-git-setup' },
@@ -224,7 +230,7 @@ mql?.addEventListener('change', (e) => {
     },
     {
       text: 'フレームワーク / ツール',
-      collapsible: true,collapsed: true,
+      collapsed: true,
       items: [
         { text: '付録：VitePressガイド', link: '/appendix/vitePress' },
         { text: '付録：Vue3-pythonガイド', link: '/appendix/vue3-python' },
@@ -234,7 +240,7 @@ mql?.addEventListener('change', (e) => {
     },
     {
       text: 'API設計 / アーキテクチャ',
-      collapsible: true,collapsed: true,
+      collapsed: true,
       items: [
         { text: '付録：API設計ガイド', link: '/appendix/api-design-guide' },
         { text: '同機・非同期アーキテクチャ図', link: '/appendix/Sync-async-archtecture' },
@@ -246,7 +252,8 @@ mql?.addEventListener('change', (e) => {
       ],
     },
     {
-      text: 'my-recipes（実装手引き）',collapsible: true,collapsed: true,
+      text: 'my-recipes（実装手引き）',
+      collapsed: true,
       items: [
         { text: 'my-recipes：ローカル環境（vue-python)ガイド', link: '/appendix/vue_fastapi_setup_guide' },
         { text: 'my-recipes：Docker開発環境移行（vue-python)ガイド', link: '/appendix/docker-setup-local' },
@@ -255,7 +262,8 @@ mql?.addEventListener('change', (e) => {
       ],
     },
     {
-      text: 'デプロイ / CI・CD / マイグレーション',collapsible: true,collapsed: true,
+      text: 'デプロイ / CI・CD / マイグレーション',
+      collapsed: true,
       items: [
         { text: '付録：API-Migrationガイド', link: '/appendix/api-migration-with-verce' },
         { text: '付録：API-Migration環境ガイド', link: '/appendix/migration-env-setting-guide' },
@@ -265,7 +273,8 @@ mql?.addEventListener('change', (e) => {
       ],
     },
     {
-      text: 'プロセス / ナレッジ',collapsible: true,collapsed: true,
+      text: 'プロセス / ナレッジ',
+      collapsed: true,
       items: [
         { text: 'WebAPI開発AIフロー', link: '/appendix/webapi_ai_fullflow' },
         { text: '■シーケンス図受付版（async-worker）', link: '/appendix/sequence-async-worker' },
@@ -277,7 +286,6 @@ mql?.addEventListener('change', (e) => {
 },
       {
         text: '<span class="highlight-title">APIリファレンス</span>',
-        collapsible: true,
         collapsed: true,
         items: [
           { text: "概要", link: "/api-reference/" },
@@ -318,13 +326,11 @@ mql?.addEventListener('change', (e) => {
       },
       {
         text: '<span class="highlight-title">共有会資料</span>',
-        collapsible: true,
         collapsed: true,
         items: [{ text: "アジェンダ（案）", link: "/agenda" }],
       },
       {
         text: '<span class="highlight-title">フィードバック（slido)</span>',
-        collapsible: true,
         collapsed: true,
         items: [
           { text: "質問を送る", link: "/question-form" },
