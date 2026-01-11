@@ -131,20 +131,27 @@ mql?.addEventListener('change', (e) => {
         usePolling: true,
       },
     },
-    plugins: [
-      {
-        name: 'vitepress-image-resolver',
-        apply: 'serve',
-        resolveId(id) {
-          // /images/ で始まるパスはViteが解析しないようにマーク
-          if (id.startsWith('/images/')) {
-            // 実際のファイルパスに解決（publicフォルダ内）
-            const filePath = '/home/user/projects/vive-with-gemini/docs/public' + id;
-            return { id: filePath, external: true };
-          }
-        },
+    build: {
+      rollupOptions: {
+        external: (id) => id.startsWith('/images/'),
       },
-    ],
+    },
+  },
+
+  markdown: {
+    image: {
+      lazyLoading: true,
+    },
+    config: (md) => {
+      // マークダウン画像をカスタム処理（Viteの解析を避ける）
+      const defaultImage = md.renderer.rules.image;
+      md.renderer.rules.image = (tokens, idx, options, env, self) => {
+        const token = tokens[idx];
+        const src = token.attrGet('src');
+        const alt = token.content;
+        return `<img src="${src}" alt="${alt}" loading="lazy" />`;
+      };
+    },
   },
 
   themeConfig: {
