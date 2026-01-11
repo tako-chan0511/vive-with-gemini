@@ -1,0 +1,12 @@
+/* サイドバー項目のフォントサイズと強調 */
+.VPSidebarItem .text {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* カスタムクラス用 */
+.highlight-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0a82ea;
+}
