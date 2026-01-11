@@ -1,1 +1,0 @@
-import{_ as l,c as i,o as t,ae as r}from"./chunks/framework.CDjunVez.js";const _=JSON.parse('{"title":"共有会アジェンダ（案）","description":"","frontmatter":{},"headers":[],"relativePath":"agenda.md","filePath":"agenda.md"}'),e={name:"agenda.md"};function o(n,a,s,h,u,g){return t(),i("div",null,[...a[0]||(a[0]=[r("",14)])])}const c=l(e,[["render",o]]);export{_ as __pageData,c as default};

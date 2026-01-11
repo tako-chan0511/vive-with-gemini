@@ -1,0 +1,1 @@
+import{_ as a,c as l,o as t,ae as e}from"./chunks/framework.Ai_99reE.js";const _=JSON.parse('{"title":"共有会アジェンダ（案）","description":"","frontmatter":{},"headers":[],"relativePath":"agenda.md","filePath":"agenda.md"}'),r={name:"agenda.md"};function o(n,i,s,h,u,g){return t(),l("div",null,[...i[0]||(i[0]=[e("",14)])])}const c=a(r,[["render",o]]);export{_ as __pageData,c as default};

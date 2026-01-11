@@ -1,0 +1,1 @@
+import{_ as r,c as t,o,ae as n}from"./chunks/framework.Ai_99reE.js";const A=JSON.parse('{"title":"想定問答集 (Q&A)","description":"","frontmatter":{},"headers":[],"relativePath":"q-and-a.md","filePath":"q-and-a.md"}'),e={name:"q-and-a.md"};function l(i,a,s,g,d,h){return o(),t("div",null,[...a[0]||(a[0]=[n("",21)])])}const q=r(e,[["render",l]]);export{A as __pageData,q as default};
