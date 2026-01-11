@@ -131,6 +131,20 @@ mql?.addEventListener('change', (e) => {
         usePolling: true,
       },
     },
+    plugins: [
+      {
+        name: 'vitepress-image-resolver',
+        apply: 'serve',
+        resolveId(id) {
+          // /images/ で始まるパスはViteが解析しないようにマーク
+          if (id.startsWith('/images/')) {
+            // 実際のファイルパスに解決（publicフォルダ内）
+            const filePath = '/home/user/projects/vive-with-gemini/docs/public' + id;
+            return { id: filePath, external: true };
+          }
+        },
+      },
+    ],
   },
 
   themeConfig: {

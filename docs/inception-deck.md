@@ -95,4 +95,4 @@
 - **費用**: 各種サービスの無料枠を活用。
 - **共有コスト**: チームへ開発プロセスを共有するための準備とセッション実施にかかる時間。
 
-![InceptionDeck](/images/vive/InceptionDeck.jpg)
+<img src="/images/vive/InceptionDeck.jpg" alt="InceptionDeck" />
