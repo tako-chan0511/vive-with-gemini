@@ -213,11 +213,11 @@ mql?.addEventListener('change', (e) => {
   collapsed: true,
   items: [
     {
-      text: 'マイグレーション',
+      text: 'Game Hub関連',
       collapsed: true,
       items: [
         { text: 'Vue3 → Nuxt3 マイグレーション', link: '/appendix/migration-vue3-to-nuxt3' },
-      ],
+        { text: '完全無料枠GameHubガイド', link: '/appendix/prepetual-zero-cost-automation' },],
     },
     {
       text: 'セットアップ / 開発環境',
