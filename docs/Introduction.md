@@ -36,5 +36,5 @@ description: vive-with-geminiへようこそ。このサイトは、AIとの協�
 
 このサイトを通じて、そんな新しい開発の「鼓動」を、皆さんと共に創り上げていければ幸いです。
 
-![vive-with-geminiへようこそ](./public/images/vive/vive-with-geminiへようこそ.jpg)
+<img src="/images/vive/vive-with-geminiへようこそ.jpg" alt="vive-with-geminiへようこそ" />
 
