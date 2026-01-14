@@ -1,248 +1,245 @@
-# Perpetual Zero Cost Automation
-
-## 無料枠サービスをGitHub Actionsで永続化する技術
+# 完全無料枠で構築する「自律型エコシステム：Game Hub」
 
 ---
 
-### 1. 課題：無料ティアの「非アクティブ」問題
+## 第1章（スライド1）タイトル：完全無料枠で構築する 自律型エコシステム：Game Hub
 
-多くのクラウドサービス（特にBaaS/DBaaS）の無料プランでは、リソースを節約するため、一定期間利用がないプロジェクトが自動的に一時停止（Pause）される仕様があります。
+![１.完全無料枠で構築する自立型エコシステム：GameHub](./../public/images/gamehub/１.完全無料枠で構築する自立型エコシステム：GameHub.jpg)
 
-#### **Supabaseの事例**
+### ねらい（このスライドで伝えること）
 
-* **条件**: 1週間、APIコールまたはダッシュボードへのアクセスがない場合。
-* **発生事象**: プロジェクトが「非アクティブ（Inactive）」状態になり、データベースが一時停止される。
-* **通知**: 事前に警告メール、停止時に通知メールが届く。
-* **復旧**: Supabaseのダッシュボードから手動でプロジェクトを再開（Restore/Unpause）できる（データは失われない）。
-* **影響**: 手動での再開作業が必要になり、アプリケーションからの初回アクセス時にコールドスタートが発生してレスポンスが遅延する可能性がある。
+* 「完全無料枠」で、サービスを“止めずに”運用するための設計思想を提示する。
+* 対象は **Game Hub** を例にした、サーバレス＋自動化による運用最小化。
 
-> **出典より:**
-> * "I read through the free tier but noticed that stuff gets inactive after a week... I am programming an app where you need to use it every 2 weeks or so, that would be i would probably always run into an inactive state is that correct?" - *Reddit r/Supabase*
-> * "You’ll get an email saying they’re going to shut your instance down due to inactivity- just need to restart it from the dashboard. No data is lost" - *Reddit r/Supabase*
-> 
-> 
+### ポイント
+
+* 無料枠で作ると「動かす」までは簡単だが、「継続稼働」が課題になる。
+* 本資料は、**自動化（Keep-Alive/監視/デプロイ）で“自律稼働”を実現する設計**を紹介する。
 
 ---
 
-### 2. 解決策：GitHub Actionsによる自動キープアライブ
+## 第2章（スライド2）技術スタック：分散型モダンアーキテクチャ
 
-GitHub Actionsのスケジュール実行機能（cron）を利用し、定期的に対象のサービスへAPIリクエストを送信（Ping）することで、プロジェクトを人為的に「アクティブ」な状態に保ち、自動停止を回避します。
+![２.技術スタック：分散型モダンアーキテクチャ](./../public/images/gamehub/２.技術スタック：分散型モダンアーキテクチャ.jpg)
 
-#### **仕組みの概要**
+### ねらい
 
-1. **GitHub Actionsの起動**: 設定したスケジュール（例：毎日、3日に1回など）に従い、ワークフローが自動的に実行。
-2. **APIリクエストの送信**: ワークフロー内のスクリプトが、SupabaseなどのデータベースAPIを呼び出す。
-3. **非アクティブカウンターのリセット**: サービス側がアクセスを検知し、「最終アクティブ日時」が更新され、7日間の停止カウンターがリセットされる。
+* “どの部品を、どの無料枠に載せるか”の全体像を示す。
 
-#### **このアプローチの利点**
+### 構成要素（要約）
 
-* **自動化**: 一度設定すれば、手動での操作は不要。
-* **コスト効率**: GitHub Actionsの無料枠内で運用できるため、追加コストなし。
-* **一貫した可用性**: データベースが常にアクティブな状態に保たれ、一貫したパフォーマンスを維持できる。
+* **Frontend**：Vue/Nuxt または React/Next.js
+* **Backend**：API Gateway + AWS Lambda（Python/TypeScript想定）
+* **Data Layer**：Supabase（PostgreSQL）、Upstash Redis（KVS）
+* **DevOps**：Ubuntu/VSCode + GitHub Actions（自動化の中核）
 
----
+### ポイント
 
-### 3. 前提知識：GitHub Actionsの無料枠
-
-この自動化は、GitHub Actionsの無料利用枠の範囲内で行うことが前提となります。
-
-| アカウント種別 | 無料利用枠（月間） |
-| --- | --- |
-| **Free** | 2,000分 |
-| **Pro** | 3,000分 |
-
-#### **OSによる消費時間の倍率**
-
-* **Linux**: 1倍（基準）
-* **Windows**: 2倍
-* **macOS**: 10倍
-
-#### **無料枠を超過した場合**
-
-* **動作**: プライベートリポジトリのワークフローは実行されなくなります。
-* **通知**: メールおよびGitHubのBillingページで通知されます。
-* **追加利用**: Billingページから上限金額を設定することで従量課金（Linux $0.008/分）に移行可能。自動で課金されることはありません。
-
-> **Note:** キープアライブのワークフローは通常1分未満で完了するため、毎日実行しても月間の消費時間は約30分程度となり、無料枠を圧迫することはほとんどありません。
+* 重要なのは個別技術というより、**無料枠の特性を理解して部品配置する設計**である。
+* 運用の“手作業”を発生させないために、GitHub Actions をシステムの一部として組み込む。
 
 ---
 
-### 4. 実装例①：cURLを使った基本的なSupabaseキープアライブ
+## 第3章（スライド3）無料枠の制約：7日間の静寂＝サービス停止
 
-最もシンプルで一般的な実装方法です。cURLコマンドを使い、Supabaseのテーブルに直接GETリクエストを送信します。
+![３.無料枠の制約：７日間の静寂＝サービス停止](./../public/images/gamehub/３.無料枠の制約：７日間の静寂＝サービス停止.jpg)
 
-#### **ワークフローファイル (`.github/workflows/keep-alive.yml`)**
+### ねらい
 
-```yaml
-name: Supabase Keep Alive
+* 無料枠が止まる理由を、仕様として明確化する。
 
-on:
-  schedule:
-    # 毎日 日本時間 朝9時（UTC 0:00）に実行
-    - cron: '0 0 * * *'
-  workflow_dispatch: # 手動実行用のボタンも有効にする
+### 記載内容の要点
 
-jobs:
-  ping_supabase:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Ping Supabase Database
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-        run: |
-          curl -X GET "${SUPABASE_URL}/rest/v1/page_views?select=*&limit=1" \
-          -H "apikey: ${SUPABASE_KEY}" \
-          -H "Authorization: Bearer ${SUPABASE_KEY}"
+* Supabase：<strong>一定期間（例：7日）APIアクセスがないと一時停止（Pause）</strong>になり得る。
+* 再開に手動操作が必要な場合があり、**コールドスタート遅延**も起こり得る。
+* Upstash：一定期間の非アクティブで接続が切れる可能性。
 
-```
+### 結論（この章のキーメッセージ）
 
-#### **設定手順**
-
-1. **ワークフローファイルの配置**: リポジトリの `.github/workflows/` ディレクトリにYAMLファイルを作成。
-2. **GitHub Secretsの設定**: リポジトリの `Settings` → `Secrets and variables` → `Actions` に以下を登録。
-* `SUPABASE_URL`: SupabaseプロジェクトのURL
-* `SUPABASE_KEY`: Supabaseのanon keyまたはservice_role key
-
-
+* 無料枠を維持するには、**常時稼働の“Heartbeat（定期アクセス）”が必要**。
 
 ---
 
-### 5. 実装例②：Node.jsを使ったSupabaseキープアライブ
+## 第4章（スライド4）解決策：GitHub Actions による「生命維持装置」
 
-公式クライアントライブラリ（`@supabase/supabase-js`）を利用して、より確実にデータベース操作を行う方法です。
+![４.解決策：GitHubActionsによる「生命維持装置」](./../public/images/gamehub/４.解決策：GitHubActionsによる「生命維持装置」.jpg)
 
-#### **ワークフローファイル (`.github/workflows/supabase-ping.yml`)**
+### ねらい
 
-```yaml
-name: Ping Supabase to Prevent Pausing
+* CI/CD を「デプロイ」だけでなく「稼働維持」に拡張する。
 
-on:
-  schedule:
-    # 毎週月曜日と木曜日の午前9時(UTC)に実行
-    - cron: '0 9 * * 1,4'
-  workflow_dispatch:
+### 何を自動化するか
 
-jobs:
-  ping:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+* **Keep-Alive（定期Ping）**：止まる前に軽量アクセスを打つ
+* **Status Check（疎通確認）**：死活・異常の早期検知
+* （必要なら）通知・復旧導線も組み込める
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+### ポイント
 
-      - name: Install Supabase Client
-        run: npm install @supabase/supabase-js --force
-
-      - name: Ping Supabase
-        env:
-          SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.NEXT_SERVICE_ROLE_KEY }}
-        run: |
-          node -e "
-            (async () => {
-              try {
-                const { createClient } = require('@supabase/supabase-js');
-                const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
-                
-                // 'your_table' を実際のテーブル名に変更
-                const { data, error } = await supabase.from('your_table').select('*').limit(10);
-                
-                if (error) throw error;
-                console.log('Ping successful:', data);
-              } catch (err) {
-                console.error('Error pinging Supabase:', err.message);
-                process.exit(1);
-              }
-            })();
-          "
-
-```
+* GitHub Actions を“運用担当”にすることで、**人の介入をゼロに近づける**。
 
 ---
 
-### 6. 実装例③：Upstash KVのキープアライブ
+## 第5章（スライド5）戦略A：Supabase Keep-Alive Workflow（設計）
 
-Upstash Redis (KV)に対する堅牢なキープアライブ実装例です。
+![５.戦略A：SuperbaseKeepAliveWorkflow（設計）](./../public/images/gamehub/５.戦略A：SuperbaseKeepAliveWorkflow（設計）.jpg)
 
-#### **ワークフローファイル (`.github/workflows/upstash-keep-alive.yml`)**
 
-```yaml
-name: KV Keep Alive (Upstash)
+### ねらい
 
-on:
-  schedule:
-    # 3日に1回 / 日本時間 09:05（UTC 00:05）
-    - cron: '5 0 */3 * *'
-  workflow_dispatch:
+* Supabase の「停止条件」に対し、最小コストで“動いている実績”を作る。
 
-jobs:
-  keep_alive:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Ping Upstash REST /info
-        env:
-          KV_REST_API_URL: ${{ secrets.MARKETKV_KV_REST_API_URL }}
-          KV_REST_API_TOKEN: ${{ secrets.MARKETKV_KV_REST_API_TOKEN }}
-        run: |
-          set -euo pipefail
-          # Secretsの存在チェック
-          if [ -z "${KV_REST_API_URL:-}" ] || [ -z "${KV_REST_API_TOKEN:-}" ]; then
-            echo "Secrets MARKETKV_KV_REST_API_URL / MARKETKV_KV_REST_API_TOKEN are not set."
-            exit 1
-          fi
+### 設計の骨子
 
-          URL="${KV_REST_API_URL%/}/info"
-          echo "POST ${URL}"
-          BODY="$(curl -sS -X POST "${URL}" \
-            -H "Authorization: Bearer ${KV_REST_API_TOKEN}" \
-            --max-time 20 --retry 3 --retry-delay 2)"
-          echo "Response: ${BODY}"
+* 対象：`.github/workflows/keep-alive.yml`
+* スケジュール：**毎日 JST 09:00**（cron）
+* アクション：REST 経由で **軽量テーブル（例：tags）に最小参照**
+* 認証：`SUPABASE_ANON_KEY` を用い、正当なアクセスとして実行
 
-          # レスポンスボディの判定
-          if echo "${BODY}" | grep -q '"error"'; then
-            if echo "${BODY}" | grep -qi 'temporarily rate-limited'; then
-              echo "WARN: temporarily rate-limited (treated as success for keep-alive)."
-              exit 0
-            fi
-            echo "ERROR: Upstash returned error."
-            exit 1
-          fi
+### ポイント
 
-```
+* “重い処理”を回すのではなく、**1レコードだけ取る**など最小負荷に徹する。
 
 ---
 
-### 7. 注意事項とトラブルシューティング
+## 第6章（スライド6）Code Spotlight：Supabase Workflow（実装の意図）
 
-1. **cronの実行タイミングの不確実性**
-* GitHub Actionsのスケジュールイベントは正確な実行を保証しません。通常3〜10分、負荷状況により1時間以上の遅延が発生することもあります。
-* **対策**: 7日間の猶予に対し、毎日または3日に1回など余裕を持ったスケジュールを設定してください。
+![６.CodeSpotlight：SupabaseWorkflow（実装の意図）](./../public/images/gamehub/６.CodeSpotlight：SupabaseWorkflow（実装の意図）.jpg)
 
 
-2. **ワークフローファイルの配置場所**
-* スケジュール実行が有効になるのは、**デフォルトブランチ（通常はmain）**にファイルが存在する場合のみです。
+### ねらい
 
+* `curl` 1本の意味（なぜそれで十分か）を説明する。
 
-3. **この手法の有効性に関する最近の動向**
-* 単純なAPIアクセスだけでは停止を防げなくなったという報告もあります。
-* **対策**: `select` だけでなく、`insert` や `update` などの書き込み処理を試す、または実際のアプリ経由のアクセスを模倣する工夫が必要になる可能性があります。
+### 実装意図（要点）
 
+* `select=id&limit=1` のように **最小取得**にして、リソース消費を抑える。
+* APIアクセスの事実を作り、プロジェクトが「非アクティブ」と判定されないようにする。
+* ヘッダ（apikey/Authorization）で **Secrets を参照**し、リポジトリに鍵を残さない。
 
-4. **運用上のマナー**
-* **過剰な頻度を避ける**: 1時間に1回などは避け、1日1回程度に留めましょう。
-* **放置プロジェクト**: 長期間使わないことが明らかな場合は、素直にPauseさせておくのもマナーです。
+### 注意点（運用）
 
-
+* 参照するテーブルは、**必ず存在するもの**（後述の落とし穴参照）。
 
 ---
 
-### 8. まとめ
+## 第7章（スライド7）戦略B：Upstash Redis の接続維持（設計）
 
-* Supabase等の無料ティア自動停止は、GitHub Actionsの **cron** を利用して回避可能です。
-* 実装はシンプルで、運用コストもGitHub Actionsの無料枠内で収まります。
-* **重要な点**: cronの遅延を考慮すること、デフォルトブランチに配置すること、そしてサービスの仕様変更の可能性に注意を払うことが重要です。
+![７.戦略B：UpstashRedisの接続維持（設計）](./../public/images/gamehub/７.戦略B：UpstashRedisの接続維持（設計）.jpg)
+
+
+### ねらい
+
+* Redis 側の“非アクティブ切断”に対する、現実的な維持策を示す。
+
+### 設計の骨子
+
+* ファイル：`keep-alive.yml`（または同等）
+* スケジュール：**3日に1回 JST 09:05**（cron）
+* 動作：`/info` 等の軽量エンドポイントへリクエストし、応答で判定
+
+### 判定ロジック（意図）
+
+* **200 OK**：成功として終了
+* **Rate Limited**：無料枠では起こり得るため、**成功扱い**で終了（落とさない）
+* **その他エラー**：失敗終了（可観測性を上げる）
+
+---
+
+## 第8章（スライド8）戦略C：VitePress デプロイの完全自動化
+
+![８.戦略C：VitePressデプロイの完全自動化](./../public/images/gamehub/８.戦略C：VitePressデプロイの完全自動化.jpg)
+
+### ねらい
+
+* ドキュメント/サイトの公開を “Pushだけ” にする。
+
+### ワークフロー概要
+
+* Trigger：`main` への push
+* Build：`npm install` → `npm run docs:build`
+* Artifact：生成物をアップロード
+* Deploy：GitHub Pages へデプロイ
+
+### キーメッセージ
+
+* **開発者はコードを書く**、**運用作業はゼロ**（自動化に寄せる）。
+
+---
+
+## 第9章（スライド9）落とし穴1：GitHub Actions Cron の「遅延」
+
+![９.落とし穴１：GitHubActionsCronの遅延](./../public/images/gamehub/９.落とし穴１：GitHubActionsCronの遅延.jpg)
+
+### ねらい
+
+* 「毎日9時に必ず実行される」前提が危険である点を伝える。
+
+### 実態
+
+* cron の時刻は“実行予約”であり、**開始時刻は保証されない**。
+* 負荷等で **数分〜30分程度の遅延**が起き得る。
+
+### 対策（設計指針）
+
+* 分単位の厳密さを求めない（許容幅を前提に設計する）。
+* “止まる前”に余裕のある頻度で打つ（保険をかける）。
+
+---
+
+## 第10章（スライド10）落とし穴2：ブランチ仕様とテーブル参照
+
+![１０.落とし穴２：ブランチ仕様とテーブル参照](./../public/images/gamehub/１０.落とし穴２：ブランチ仕様とテーブル参照.jpg)
+
+### ねらい
+
+* 「設定は正しいのに動かない」典型原因を潰す。
+
+### 典型ポイント
+
+1. **Default Branch のルール**
+
+   * スケジュール実行は、基本的に **デフォルトブランチ上の workflow を参照**する前提になる。
+2. **テーブル名の整合性**
+
+   * 存在しないテーブルを参照すると **404** などで失敗する。
+   * 修正例：`games` → `page_views` や `tags` など、確実に存在するものへ。
+3. **環境変数/Secrets**
+
+   * `SUPABASE_URL` 等が正しく入っているかを確認（キーの取り違い・末尾スラッシュ等も注意）。
+
+---
+
+## 第11章（スライド11）結論：ゼロコストを実現する自動化アーキテクチャ
+
+![１１.結論：ゼロコストを実現する自働化アーキテクチャ](./../public/images/gamehub/１１.結論：ゼロコストを実現する自働化アーキテクチャ.jpg)
+
+### ねらい
+
+* これまでの戦略A/B/Cを「一枚絵」に統合して締める。
+
+### 要点（まとめ）
+
+* Frontend：静的ホスティング＋自動デプロイ
+* Backend/Data：定期 Keep-Alive ＋状態維持
+* Ops：GitHub Actions による完全自律運用
+
+### メッセージ
+
+* 必要なのは「予算」ではなく、**工夫と自動化技術**。
+
+---
+
+## 第12章（スライド12）コードを探索する（QR/リンク案内）
+
+![１２.コードを探索する（ＱＲリンク案内）](./../public/images/gamehub/１２.コードを探索する（ＱＲリンク案内）.jpg)
+
+### ねらい
+
+* 実物（Game Hub）とリポジトリへ誘導し、再現可能性を担保する。
+
+### ポイント
+
+* QR でデモへ誘導（閲覧者がすぐ確認できる導線）。
+* リポジトリは公開前提（または社内向けにリンク差し替え）。
+* 「あなたのプロジェクトでも heartbeat を実装して継続稼働させよう」という行動喚起で締める。
