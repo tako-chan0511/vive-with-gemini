@@ -218,7 +218,9 @@ mql?.addEventListener('change', (e) => {
       items: [
         { text: 'Vue3 → Nuxt3 マイグレーション', link: '/appendix/migration-vue3-to-nuxt3' },
         { text: '完全無料枠GameHubガイド', link: '/appendix/prepetual-zero-cost-automation' },
-        { text: 'Toppage_Digital_playgroud', link: '/appendix/topgage-digital-playground' },
+        { text: 'Toppage_Digital_playgroud', link: '/appendix/topgage-digital-playground' },       
+        { text: 'PlantUMLガイド', link: '/appendix/PlantUML_Code-First_Architecture' },
+
       ],
     },
     {
