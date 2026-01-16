@@ -5,7 +5,7 @@
 ## １. コードで描く、設計の未来：PlantUML入門
 
 
-![U1.コードで描く設計の未来：PlantUML入門](./../public/images/gamehub/U1.コードで描く設計の未来：PlantUML入門.jpg)
+![U1.コードで描く設計の未来：PlantUML入門](/images/gamehub/U1.コードで描く設計の未来：PlantUML入門.jpg)
 
 **このページの要点**
 
@@ -21,7 +21,7 @@
 
 ## ２. “手描き設計”をやめる理由（課題→解決方針）
 
-![U2.なぜ私たちは「お絵描き」をやめるべきなのか？](./../public/images/gamehub/U2.なぜ私たちは「お絵描き」をやめるべきなのか？.jpg)
+![U2.なぜ私たちは「お絵描き」をやめるべきなのか？](/images/gamehub/U2.なぜ私たちは「お絵描き」をやめるべきなのか？.jpg)
 
 **このページの要点（課題）**
 
@@ -44,7 +44,7 @@
 
 ## ３．PlantUMLとは（テキスト→図への変換パイプライン）
 
-![U3.PlantUMLとは何か：テキストから図への変換エンジン](./../public/images/gamehub/U3.PlantUMLとは何か：テキストから図への変換エンジン.jpg)
+![U3.PlantUMLとは何か：テキストから図への変換エンジン](/images/gamehub/U3.PlantUMLとは何か：テキストから図への変換エンジン.jpg)
 
 **このページの要点**
 
@@ -60,7 +60,7 @@
 
 ## ４. クイックスタート（環境と最短動線）
 
-![U4.３分で完了する環境構築（QuickStart）](./../public/images/gamehub/U4.３分で完了する環境構築（QuickStart）.jpg)
+![U4.３分で完了する環境構築（QuickStart）](/images/gamehub/U4.３分で完了する環境構築（QuickStart）.jpg)
 
 **このページの要点**
 
@@ -76,7 +76,7 @@
 
 ## ５. 基本構文（会話のように書く）
 
-![U5.基本構文：会話するように記述する](./../public/images/gamehub/U5.基本構文：会話するように記述する.jpg)
+![U5.基本構文：会話するように記述する](/images/gamehub/U5.基本構文：会話するように記述する.jpg)
 
 
 **このページの要点**
@@ -93,7 +93,7 @@
 
 ## ６. ケーススタディ：大規模ゲームプラットフォーム “GameHub”（全体像とゴール）
 
-![U6.大規模ゲームプラットフォーム「GameHub」](./../public/images/gamehub/U6.大規模ゲームプラットフォーム「GameHub」.jpg)
+![U6.大規模ゲームプラットフォーム「GameHub」](/images/gamehub/U6.大規模ゲームプラットフォーム「GameHub」.jpg)
 
 
 **このページの要点**
@@ -111,7 +111,7 @@
 
 ## ７. Case 1：ユーザーログイン（Basic）
 
-![U7.Case１：ユーザーログインフロー（Basic）](./../public/images/gamehub/U7.Case１：ユーザーログインフロー（Basic）.jpg)
+![U7.Case１：ユーザーログインフロー（Basic）](/images/gamehub/U7.Case１：ユーザーログインフロー（Basic）.jpg)
 
 
 **このページの要点**
@@ -129,7 +129,7 @@
 
 ## ８. Case 2：対戦マッチング（Intermediate）
 
-![U8.Case２：対戦マッチングシステム（Intermediate）](./../public/images/gamehub/U8.Case２：対戦マッチングシステム（Intermediate）.jpg)
+![U8.Case２：対戦マッチングシステム（Intermediate）](/images/gamehub/U8.Case２：対戦マッチングシステム（Intermediate）.jpg)
 
 **このページの要点**
 
@@ -146,7 +146,7 @@
 
 ## ９. Case 3：テーマ比較・分析フロー（Advanced）
 
-![U9.Case３：テーマ別比較分析フロー（Advanced）要件定義](./../public/images/gamehub/U9.Case３：テーマ別比較分析フロー（Advanced）要件定義.jpg)
+![U9.Case３：テーマ別比較分析フロー（Advanced）要件定義](/images/gamehub/U9.Case３：テーマ別比較分析フロー（Advanced）要件定義.jpg)
 
 
 **このページの要点**
@@ -163,7 +163,7 @@
 
 ## １０. 実装テクニック（表現力を上げる部品）
 
-![U10.Case３：複雑な構造の実装テクニック](./../public/images/gamehub/U10.Case３：複雑な構造の実装テクニック.jpg)
+![U10.Case３：複雑な構造の実装テクニック](/images/gamehub/U10.Case３：複雑な構造の実装テクニック.jpg)
 
 
 **このページの要点**
@@ -181,7 +181,7 @@
 
 ## １１. 見た目の標準化（skinparam / テーマ）
 
-![U11.デザインと可動性の向上（Styling）](./../public/images/gamehub/U11.デザインと可動性の向上（Styling）.jpg)
+![U11.デザインと可動性の向上（Styling）](/images/gamehub/U11.デザインと可動性の向上（Styling）.jpg)
 
 
 **このページの要点**
@@ -198,7 +198,7 @@
 
 ## １２. 大規模運用（ファイル分割と共通化）
 
-![U12.大規模プロジェクトでの運用戦略](./../public/images/gamehub/U12.大規模プロジェクトでの運用戦略.jpg)
+![U12.大規模プロジェクトでの運用戦略](/images/gamehub/U12.大規模プロジェクトでの運用戦略.jpg)
 
 
 **このページの要点**
@@ -215,7 +215,7 @@
 
 ## １３. 自動生成と CI/CD（常に最新の図を保つ）
 
-![U13.自働化とＣＩＣＤパイプライン（DocumentAsCode）](./../public/images/gamehub/U13.自働化とＣＩＣＤパイプライン（DocumentAsCode）.jpg)
+![U13.自働化とＣＩＣＤパイプライン（DocumentAsCode）](/images/gamehub/U13.自働化とＣＩＣＤパイプライン（DocumentAsCode）.jpg)
 
 
 
@@ -233,7 +233,7 @@
 
 ## １４. トラブルシューティング（導入で詰まりやすい点）
 
-![U14.トラブルシューティング：よくあるエラー](./../public/images/gamehub/U14.トラブルシューティング：よくあるエラー.jpg)
+![U14.トラブルシューティング：よくあるエラー](/images/gamehub/U14.トラブルシューティング：よくあるエラー.jpg)
 
 
 **このページの要点**
@@ -251,7 +251,7 @@
 
 ## １５. まとめ（コードファースト設計の価値）
 
-![U15.次のステップ：設計をコードで語ろう](./../public/images/gamehub/U15.次のステップ：設計をコードで語ろう.jpg)
+![U15.次のステップ：設計をコードで語ろう](/images/gamehub/U15.次のステップ：設計をコードで語ろう.jpg)
 
 
 **このページの要点**

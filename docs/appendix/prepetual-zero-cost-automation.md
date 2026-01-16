@@ -4,7 +4,7 @@
 
 ## 第1章（スライド1）タイトル：完全無料枠で構築する 自律型エコシステム：Game Hub
 
-![１.完全無料枠で構築する自立型エコシステム：GameHub](./../public/images/gamehub/１.完全無料枠で構築する自立型エコシステム：GameHub.jpg)
+![１.完全無料枠で構築する自立型エコシステム：GameHub](/images/gamehub/１.完全無料枠で構築する自立型エコシステム：GameHub.jpg)
 
 ### ねらい（このスライドで伝えること）
 
@@ -20,7 +20,7 @@
 
 ## 第2章（スライド2）技術スタック：分散型モダンアーキテクチャ
 
-![２.技術スタック：分散型モダンアーキテクチャ](./../public/images/gamehub/２.技術スタック：分散型モダンアーキテクチャ.jpg)
+![２.技術スタック：分散型モダンアーキテクチャ](/images/gamehub/２.技術スタック：分散型モダンアーキテクチャ.jpg)
 
 ### ねらい
 
@@ -42,7 +42,7 @@
 
 ## 第3章（スライド3）無料枠の制約：7日間の静寂＝サービス停止
 
-![３.無料枠の制約：７日間の静寂＝サービス停止](./../public/images/gamehub/３.無料枠の制約：７日間の静寂＝サービス停止.jpg)
+![３.無料枠の制約：７日間の静寂＝サービス停止](/images/gamehub/３.無料枠の制約：７日間の静寂＝サービス停止.jpg)
 
 ### ねらい
 
@@ -62,7 +62,7 @@
 
 ## 第4章（スライド4）解決策：GitHub Actions による「生命維持装置」
 
-![４.解決策：GitHubActionsによる「生命維持装置」](./../public/images/gamehub/４.解決策：GitHubActionsによる「生命維持装置」.jpg)
+![４.解決策：GitHubActionsによる「生命維持装置」](/images/gamehub/４.解決策：GitHubActionsによる「生命維持装置」.jpg)
 
 ### ねらい
 
@@ -82,7 +82,7 @@
 
 ## 第5章（スライド5）戦略A：Supabase Keep-Alive Workflow（設計）
 
-![５.戦略A：SuperbaseKeepAliveWorkflow（設計）](./../public/images/gamehub/５.戦略A：SuperbaseKeepAliveWorkflow（設計）.jpg)
+![５.戦略A：SuperbaseKeepAliveWorkflow（設計）](/images/gamehub/５.戦略A：SuperbaseKeepAliveWorkflow（設計）.jpg)
 
 
 ### ねらい
@@ -104,7 +104,7 @@
 
 ## 第6章（スライド6）Code Spotlight：Supabase Workflow（実装の意図）
 
-![６.CodeSpotlight：SupabaseWorkflow（実装の意図）](./../public/images/gamehub/６.CodeSpotlight：SupabaseWorkflow（実装の意図）.jpg)
+![６.CodeSpotlight：SupabaseWorkflow（実装の意図）](/images/gamehub/６.CodeSpotlight：SupabaseWorkflow（実装の意図）.jpg)
 
 
 ### ねらい
@@ -125,7 +125,7 @@
 
 ## 第7章（スライド7）戦略B：Upstash Redis の接続維持（設計）
 
-![７.戦略B：UpstashRedisの接続維持（設計）](./../public/images/gamehub/７.戦略B：UpstashRedisの接続維持（設計）.jpg)
+![７.戦略B：UpstashRedisの接続維持（設計）](/images/gamehub/７.戦略B：UpstashRedisの接続維持（設計）.jpg)
 
 
 ### ねらい
@@ -148,7 +148,7 @@
 
 ## 第8章（スライド8）戦略C：VitePress デプロイの完全自動化
 
-![８.戦略C：VitePressデプロイの完全自動化](./../public/images/gamehub/８.戦略C：VitePressデプロイの完全自動化.jpg)
+![８.戦略C：VitePressデプロイの完全自動化](/images/gamehub/８.戦略C：VitePressデプロイの完全自動化.jpg)
 
 ### ねらい
 
@@ -169,7 +169,7 @@
 
 ## 第9章（スライド9）落とし穴1：GitHub Actions Cron の「遅延」
 
-![９.落とし穴１：GitHubActionsCronの遅延](./../public/images/gamehub/９.落とし穴１：GitHubActionsCronの遅延.jpg)
+![９.落とし穴１：GitHubActionsCronの遅延](/images/gamehub/９.落とし穴１：GitHubActionsCronの遅延.jpg)
 
 ### ねらい
 
@@ -189,7 +189,7 @@
 
 ## 第10章（スライド10）落とし穴2：ブランチ仕様とテーブル参照
 
-![１０.落とし穴２：ブランチ仕様とテーブル参照](./../public/images/gamehub/１０.落とし穴２：ブランチ仕様とテーブル参照.jpg)
+![１０.落とし穴２：ブランチ仕様とテーブル参照](/images/gamehub/１０.落とし穴２：ブランチ仕様とテーブル参照.jpg)
 
 ### ねらい
 
@@ -212,7 +212,7 @@
 
 ## 第11章（スライド11）結論：ゼロコストを実現する自動化アーキテクチャ
 
-![１１.結論：ゼロコストを実現する自働化アーキテクチャ](./../public/images/gamehub/１１.結論：ゼロコストを実現する自働化アーキテクチャ.jpg)
+![１１.結論：ゼロコストを実現する自働化アーキテクチャ](/images/gamehub/１１.結論：ゼロコストを実現する自働化アーキテクチャ.jpg)
 
 ### ねらい
 
@@ -232,7 +232,7 @@
 
 ## 第12章（スライド12）コードを探索する（QR/リンク案内）
 
-![１２.コードを探索する（ＱＲリンク案内）](./../public/images/gamehub/１２.コードを探索する（ＱＲリンク案内）.jpg)
+![１２.コードを探索する（ＱＲリンク案内）](/images/gamehub/１２.コードを探索する（ＱＲリンク案内）.jpg)
 
 ### ねらい
 
