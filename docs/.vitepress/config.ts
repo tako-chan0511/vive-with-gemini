@@ -220,6 +220,7 @@ mql?.addEventListener('change', (e) => {
         { text: '完全無料枠GameHubガイド', link: '/appendix/prepetual-zero-cost-automation' },
         { text: 'Toppage_Digital_playgroud', link: '/appendix/topgage-digital-playground' },       
         { text: 'PlantUMLガイド', link: '/appendix/PlantUML_Code-First_Architecture' },
+        { text: 'DB活用ガイド', link: '/appendix/Vercel_Supabase_Upstash_Integration_Guide' },
 
       ],
     },
