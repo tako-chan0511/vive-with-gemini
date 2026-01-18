@@ -221,6 +221,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'Toppage_Digital_playgroud', link: '/appendix/topgage-digital-playground' },       
         { text: 'PlantUMLガイド', link: '/appendix/PlantUML_Code-First_Architecture' },
         { text: 'DB活用ガイド', link: '/appendix/Vercel_Supabase_Upstash_Integration_Guide' },
+        { text: 'LINUX活用ガイド', link: '/appendix/Linux_Full-Cycle_Engineering_Stack' },
 
       ],
     },
