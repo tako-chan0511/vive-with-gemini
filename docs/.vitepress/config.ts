@@ -224,6 +224,9 @@ mql?.addEventListener('change', (e) => {
         { text: 'LINUX活用ガイド', link: '/appendix/Linux_Full-Cycle_Engineering_Stack' },
         { text: 'LINUX活用詳細ガイド', link: '/appendix/Dev_Ops_CLI_Handbook' },
         { text: 'API整合性のためのSagaパターン活用ガイド', link: '/appendix/Serverless_Distributed_Consistency' },
+        { text: '①分散トランザクション整合性:実務的な設計ガイド', link: '/appendix/TX-A01' },
+        { text: '②Sagaパターン設計チェックリスト：分散システムの整合性を守るガイド', link: '/appendix/TX-A02' },
+        { text: '③AWSサーバーレスでの分散整合性：3つの実装パターン比較ガイド', link: '/appendix/TX-A03' },
 
         
       ],
