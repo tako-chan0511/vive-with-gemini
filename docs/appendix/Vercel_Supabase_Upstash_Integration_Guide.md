@@ -43,8 +43,8 @@
 
 ### 何が問題で、何を推奨しているか
 
-* Serverless（Vercel）ではリクエストごとに接続が増えやすく、**DB接続枯渇（Connection Exhaustion）**が典型障害。
-* そのため、`POSTGRES_URL` などの **Direct Connection** ではなく、**PgBouncer/Pooling（例：POSTGRES_PRISMA_URL）**を推奨、という構図です。
+* Serverless（Vercel）ではリクエストごとに接続が増えやすく、**DB接続枯渇（Connection Exhaustion）** が典型障害。
+* そのため、`POSTGRES_URL` などの **Direct Connection** ではなく、**PgBouncer/Pooling（例：POSTGRES_PRISMA_URL）** を推奨、という構図です。
 
 ### 実装チェック
 
@@ -135,7 +135,7 @@
 
 ### 図の要点
 
-* Supabase（Users）を正本にしつつ、Upstashに `user:{id}:profile` のような形で **キャッシュ／投影（projection）**を持つ。
+* Supabase（Users）を正本にしつつ、Upstashに `user:{id}:profile` のような形で **キャッシュ／投影（projection）** を持つ。
 * 「SQLの主キーをRedisのキーセグメントに使う」ことで、対応関係が明確になる。
 
 ### 実装パターン
