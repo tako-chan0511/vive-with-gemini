@@ -228,8 +228,9 @@ mql?.addEventListener('change', (e) => {
         { text: '②Sagaパターン設計チェックリスト：分散システムの整合性を守るガイド', link: '/appendix/TX-A02' },
         { text: '③AWSサーバーレスでの分散整合性：3つの実装パターン比較ガイド', link: '/appendix/TX-A03' },
         { text: 'サーバーレス連携基盤：最新アーキテクチャとDB設計手法ガイド', link: '/appendix/Serverless_Data_Access_Optimization' },
-        { text: '開発者必携！rg（ripgrep）活用ユースケース Top10', link: '/appendix/The_Ultimate_rg_Developer_Guide' },
-        { text: '開発効率を劇的に変えるfzf活用術', link: '/appendix/fzf_Command_Line_Mastery' },
+        { text: 'rg（ripgrep）活用ユースケース Top10', link: '/appendix/The_Ultimate_rg_Developer_Guide' },
+        { text: 'fzf活用術開（発効率を劇的に変える）', link: '/appendix/fzf_Command_Line_Mastery' },
+        { text: 'AWKによるデータ処理ガイド', link: '/appendix/AWK_Developer_Cookbook' },
 
         
       ],
