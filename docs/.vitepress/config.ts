@@ -234,6 +234,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'sed コマンド活用術', link: '/appendix/Sed_For_Developers' },
         { text: 'tree コマンド開発者向けガイド', link: '/appendix/Tree_Command_Developer_Mastery' },
         { text: 'vi（Vim）tree コマンド開発者向けガイド', link: '/appendix/Vi_10_Developer_Use_Cases' },
+        { text: 'git-fzfコマンド開発者向けガイド', link: '/appendix/Git_Fzf_Workflow_Accelerator' },
         
         
       ],
