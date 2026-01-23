@@ -233,6 +233,8 @@ mql?.addEventListener('change', (e) => {
         { text: 'AWKによるデータ処理ガイド', link: '/appendix/AWK_Developer_Cookbook' },
         { text: 'sed コマンド活用術', link: '/appendix/Sed_For_Developers' },
         { text: 'tree コマンド開発者向けガイド', link: '/appendix/Tree_Command_Developer_Mastery' },
+        { text: 'vi（Vim）tree コマンド開発者向けガイド', link: '/appendix/Vi_10_Developer_Use_Cases' },
+        
         
       ],
     },
