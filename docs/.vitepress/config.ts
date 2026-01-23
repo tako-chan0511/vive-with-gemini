@@ -232,7 +232,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'fzf活用術開（発効率を劇的に変える）', link: '/appendix/fzf_Command_Line_Mastery' },
         { text: 'AWKによるデータ処理ガイド', link: '/appendix/AWK_Developer_Cookbook' },
         { text: 'sed コマンド活用術', link: '/appendix/Sed_For_Developers' },
-
+        { text: 'tree コマンド開発者向けガイド', link: '/appendix/Tree_Command_Developer_Mastery' },
         
       ],
     },
