@@ -235,6 +235,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'tree コマンド開発者向けガイド', link: '/appendix/Tree_Command_Developer_Mastery' },
         { text: 'vi（Vim）tree コマンド開発者向けガイド', link: '/appendix/Vi_10_Developer_Use_Cases' },
         { text: 'git-fzfコマンド開発者向けガイド', link: '/appendix/Git_Fzf_Workflow_Accelerator' },
+        { text: 'Regex（正規表現）活用ガイド', link: '/appendix/Regex_Recipes_for_Developers' },
         
         
       ],
