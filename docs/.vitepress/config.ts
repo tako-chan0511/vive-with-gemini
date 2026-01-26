@@ -250,6 +250,17 @@ mql?.addEventListener('change', (e) => {
       ],
     },
     {
+      text: 'ネットワーク関連',
+      collapsed: true,
+      items: [
+        { text: 'WSL2：NATネットワーク解説', link: '/appendix/WSL2_Networking_Five_Layer_Mastery' },
+        { text: 'WSL2：MirroredModeネットワーク解説', link: '/appendix/WSL2_Networking_Modernization_Guide' },
+  
+   
+      
+      ],
+    },
+    {
       text: 'セットアップ / 開発環境',
       collapsed: true,
       items: [
