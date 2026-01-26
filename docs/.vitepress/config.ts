@@ -245,8 +245,8 @@ mql?.addEventListener('change', (e) => {
       collapsed: true,
       items: [
         { text: 'Gitメンタルモデル解説', link: '/appendix/Git_Mental_Model' },
-    
-        
+        { text: 'Gitコマンド早見表', link: '/appendix/Git_Map_Command_Guide' },
+      
       ],
     },
     {
