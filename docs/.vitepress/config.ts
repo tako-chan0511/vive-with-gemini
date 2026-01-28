@@ -261,6 +261,15 @@ mql?.addEventListener('change', (e) => {
       ],
     },
     {
+      text: 'Dify（ディファイ）関連',
+      collapsed: true,
+      items: [
+        { text: 'Dify環境設定からRAG開発まで', link: '/appendix/Dify_AI_App_Development_Bootcamp' },
+    
+         
+      ],
+    },
+    {
       text: 'セットアップ / 開発環境',
       collapsed: true,
       items: [
