@@ -234,9 +234,12 @@
 
 <iframe
   src="https://drive.google.com/file/d/1dqlatyxplvP-wOcmn6KVleEo5v5ZmvUD/preview"
-  width="640"
-  height="360"
-  allow="autoplay"
+  width="100%" 
+  height="400"
+  allow="autoplay; encrypted-media"
+  loading="lazy"
+  title="Difyチューニング実践ガイド動画"
+  style="border-radius: 8px; border: 1px solid #eee; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
 ></iframe>
 
 ---
