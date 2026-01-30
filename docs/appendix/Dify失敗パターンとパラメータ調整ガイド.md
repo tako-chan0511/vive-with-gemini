@@ -232,6 +232,13 @@
 - 精度が出ない時に重要なのは、**①検索で当たりチャンクを取れているか** と **②その当たりを LLM に正しく渡せているか** をまず分離することです。  
 - 調整は **1つだけ** 動かすのが鉄則です（複数同時に触ると原因が見えなくなります）。
 
+<iframe
+  src="https://drive.google.com/file/d/1dqlatyxplvP-wOcmn6KVleEo5v5ZmvUD/preview"
+  width="640"
+  height="360"
+  allow="autoplay"
+></iframe>
+
 ---
 
 ## １）＜左側＞ 検索フェーズ：ナレッジから最適チャンクを取る
