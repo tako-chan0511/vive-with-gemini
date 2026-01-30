@@ -123,11 +123,21 @@
       ></iframe>
     </div>
   </div>
-    <div class="video-item">
+  <div class="video-item">
     <h3>あなたのターミナルのスーパーパワー：fzf入門</h3>
     <div class="video-container">
       <iframe
         src="https://drive.google.com/file/d/1rK1u2NuIIDKcyP3Z72YZs_lT1YzEwSb_/preview"
+        allow="autoplay; encrypted-media"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+  <div class="video-item">
+    <h3>開発者のための正規表現レシピ</h3>
+    <div class="video-container">
+      <iframe
+        src="https://drive.google.com/file/d/1DRJPC3oo05AGIogETGoeFxTTclCcdQeo/preview"
         allow="autoplay; encrypted-media"
         loading="lazy"
       ></iframe>
