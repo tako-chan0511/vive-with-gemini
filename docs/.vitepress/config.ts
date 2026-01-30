@@ -208,6 +208,13 @@ mql?.addEventListener('change', (e) => {
           { text: "想定Q&A", link: "/q-and-a" },
         ],
       },
+      {
+        text: '<span class="highlight-title">📺動画📺</span>',
+        collapsed: true,
+        items: [
+          { text: "動画一覧", link: "/videos" },
+        ],
+      },
   {
   text: '<span class="highlight-title">環境他Tips</span>',
   collapsed: true,

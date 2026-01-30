@@ -10,3 +10,56 @@
   font-weight: bold;
   color: #0a82ea;
 }
+
+/* 動画埋め込み（レスポンシブ） */
+.video-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 1rem auto;
+}
+
+.video-container iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 8px;
+  display: block;
+}
+
+/* 動画一覧グリッド */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.video-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.video-item h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.video-grid .video-container {
+  max-width: 100%;
+  margin: 0;
+}
+
+/* 画像グリッド（3列目安） */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
