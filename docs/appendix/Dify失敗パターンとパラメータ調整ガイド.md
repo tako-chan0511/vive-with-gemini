@@ -232,15 +232,14 @@
 - 精度が出ない時に重要なのは、**①検索で当たりチャンクを取れているか** と **②その当たりを LLM に正しく渡せているか** をまず分離することです。  
 - 調整は **1つだけ** 動かすのが鉄則です（複数同時に触ると原因が見えなくなります）。
 
-<iframe
-  src="https://drive.google.com/file/d/1dqlatyxplvP-wOcmn6KVleEo5v5ZmvUD/preview"
-  width="100%" 
-  height="400"
-  allow="autoplay; encrypted-media"
-  loading="lazy"
-  title="Difyチューニング実践ガイド動画"
-  style="border-radius: 8px; border: 1px solid #eee; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
-></iframe>
+<div class="video-container">
+  <iframe
+    src="https://drive.google.com/file/d/1dqlatyxplvP-wOcmn6KVleEo5v5ZmvUD/preview"
+    allow="autoplay; encrypted-media"
+    loading="lazy"
+    style="width: 100%; aspect-ratio: 16 / 9; border: none; border-radius: 8px;"
+  ></iframe>
+</div>
 
 ---
 
