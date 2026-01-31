@@ -243,6 +243,20 @@
     </div>
   </div>
 
+  <div class="video-item">
+    <h3>AI革命：「道具」から「相棒」へ</h3>
+      <p>
+      関連ドキュメント：
+      <a :href="withBase('/ai-agile-vive-with-gemini-column-2015-vs-2025')">【コラム】2015年ころのAIと、今のAIは何が違うのか？</a>
+    　</p>
+    <div class="video-container">
+      <iframe
+        src="https://drive.google.com/file/d/1TvVYK-SYBnnSc_aBUawExw69IuaHKfcA/preview"
+        allow="autoplay; encrypted-media"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
 
 </div>
 
