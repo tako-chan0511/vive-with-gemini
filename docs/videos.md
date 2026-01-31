@@ -214,6 +214,21 @@
   </div>
 
   <div class="video-item">
+    <h3>Difyで「LLMアプリを作って公開する」全体像</h3>
+      <p>
+      関連ドキュメント：
+      <a :href="withBase('/appendix/Dify失敗パターンとパラメータ調整ガイド')">Dify_AI__AIアプリ開発ブートキャンプ</a>
+    　</p>
+    <div class="video-container">
+      <iframe
+        src="https://drive.google.com/file/d/186520MLmJv9X0hAUnWU5Iv-25zm53zN6/preview"
+        allow="autoplay; encrypted-media"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
+  <div class="video-item">
     <h3>Difyチューニング実践ガイド</h3>
       <p>
       関連ドキュメント：
@@ -227,6 +242,8 @@
       ></iframe>
     </div>
   </div>
+
+
 </div>
 
 <script setup>
