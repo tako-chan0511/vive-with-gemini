@@ -127,7 +127,7 @@
     <h3>AWSのSagaパターンを解き明かす</h3>
     <p>
       関連ドキュメント：
-      <a :href="withBase('/appendix/TX-A02')">Sagaパターン設計チェックリスト：分散システムの整合性を守るガイド</a>
+      <a :href="withBase('/appendix/Serverless_Distributed_Consistency')">API整合性のためのSagaパターン活用ガイド</a>
     　</p>
     <div class="video-container">
       <iframe
@@ -157,7 +157,7 @@
     <h3>Gitを解き明かす：メンタルモデル</h3>
       <p>
       関連ドキュメント：
-      <a :href="withBase('/appendix/Git_Mental_Model')">Gitメンタルモデル解説ーク解説</a>
+      <a :href="withBase('/appendix/Git_Mental_Model')">Gitメンタルモデル解説</a>
     　</p>
     <div class="video-container">
       <iframe

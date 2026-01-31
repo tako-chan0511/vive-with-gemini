@@ -223,10 +223,10 @@ mql?.addEventListener('change', (e) => {
       text: 'Game Hub関連',
       collapsed: true,
       items: [
-        { text: 'Vue3 → Nuxt3 マイグレーション', link: '/appendix/migration-vue3-to-nuxt3' },
+        { text: 'AI時代のフルスタック戦略：Nuxt3への道', link: '/appendix/migration-vue3-to-nuxt3' },
         { text: '完全無料枠GameHubガイド', link: '/appendix/prepetual-zero-cost-automation' },
         { text: 'Toppage_Digital_playgroud', link: '/appendix/topgage-digital-playground' },       
-        { text: 'PlantUMLガイド', link: '/appendix/PlantUML_Code-First_Architecture' },
+        { text: 'PlantUML:テキストを真実に変える', link: '/appendix/PlantUML_Code-First_Architecture' },
         { text: 'DB活用ガイド', link: '/appendix/Vercel_Supabase_Upstash_Integration_Guide' },
         { text: 'LINUX活用ガイド', link: '/appendix/Linux_Full-Cycle_Engineering_Stack' },
         { text: 'LINUX活用詳細ガイド', link: '/appendix/Dev_Ops_CLI_Handbook' },
@@ -260,7 +260,7 @@ mql?.addEventListener('change', (e) => {
       text: 'ネットワーク関連',
       collapsed: true,
       items: [
-        { text: 'WSL2：NATネットワーク解説', link: '/appendix/WSL2_Networking_Five_Layer_Mastery' },
+        { text: 'WSL2ネットワークの謎を解く', link: '/appendix/WSL2_Networking_Five_Layer_Mastery' },
         { text: 'WSL2：MirroredModeネットワーク解説', link: '/appendix/WSL2_Networking_Modernization_Guide' },
   
    
@@ -271,7 +271,7 @@ mql?.addEventListener('change', (e) => {
       text: 'Dify（ディファイ）関連',
       collapsed: true,
       items: [
-        { text: 'Dify環境設定からRAG開発まで', link: '/appendix/Dify_AI_App_Development_Bootcamp' },
+        { text: 'Dify_AI__AIアプリ開発ブートキャンプ', link: '/appendix/Dify_AI_App_Development_Bootcamp' },
         { text: 'Dify失敗パターンとパラメータ調整ガイド', link: '/appendix/Dify失敗パターンとパラメータ調整ガイド' },
     
          
