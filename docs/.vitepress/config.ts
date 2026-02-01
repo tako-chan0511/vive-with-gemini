@@ -278,6 +278,15 @@ mql?.addEventListener('change', (e) => {
       ],
     },
     {
+      text: 'IaC関連',
+      collapsed: true,
+      items: [
+        { text: 'IaC_Evolution_Configuration_to_Immutability', link: '/appendix/IaC_Evolution_Configuration_to_Immutability' },
+    
+         
+      ],
+    },
+    {
       text: 'セットアップ / 開発環境',
       collapsed: true,
       items: [
