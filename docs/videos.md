@@ -258,6 +258,21 @@
     </div>
   </div>
 
+  <div class="video-item">
+    <h3>IaCの進化：ミュータブル_vs_イミュータブル</h3>
+      <p>
+      関連ドキュメント：
+      <a :href="withBase('/appendix/IaC_Evolution_Configuration_to_Immutability')">IaCの進化：ミュータブル_vs_イミュータブル</a>
+    　</p>
+    <div class="video-container">
+      <iframe
+        src="https://drive.google.com/file/d/1qVP7WNCKBrdnk8MaeBzZdvFmtOROBdzO/preview"
+        allow="autoplay; encrypted-media"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
 </div>
 
 <script setup>
