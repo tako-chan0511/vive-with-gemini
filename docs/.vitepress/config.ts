@@ -282,7 +282,8 @@ mql?.addEventListener('change', (e) => {
       collapsed: true,
       items: [
         { text: 'IaC_Evolution_Configuration_to_Immutability', link: '/appendix/IaC_Evolution_Configuration_to_Immutability' },
-    
+        { text: 'Guardrails_Red_Teaming_and_Kubernetes_vitepress', link: '/appendix/Guardrails_Red_Teaming_and_Kubernetes_vitepress' },
+  
          
       ],
     },
