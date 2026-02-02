@@ -273,6 +273,21 @@
     </div>
   </div>
 
+  <div class="video-item">
+    <h2>ガードレール、レッドチーミング、Kubernetes</h2>
+      <p>
+      関連ドキュメント：
+      <a :href="withBase('/appendix/IaC_Evolution_Configuration_to_Immutability')">ガードレール、レッドチーミング、Kubernetes</a>
+    　</p>
+    <div class="video-container">
+      <iframe
+        src="https://drive.google.com/file/d/18AS_60vuZd9FRaN9ZpJLgrvAjyEAJ6gU/preview"
+        allow="autoplay; encrypted-media"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
 </div>
 
 <script setup>
