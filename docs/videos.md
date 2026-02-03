@@ -288,6 +288,22 @@
     </div>
   </div>
 
+  <div class="video-item">
+    <h2>OWASP_LLM_Top_10_2025_vitepress</h2>
+      <p>
+      関連ドキュメント：
+      <a :href="withBase('/appendix/OWASP_LLM_Top_10_2025_vitepress')">OWASP_LLM_Top_10_2025_vitepress</a>
+    　</p>
+    <div class="video-container">
+      <iframe
+        src="https://drive.google.com/file/d/18GPJM16KT4FQFLiQlWlUURZ7x8EyVMSA/preview"
+        allow="autoplay; encrypted-media"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
+
 </div>
 
 <script setup>
