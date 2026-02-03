@@ -318,6 +318,36 @@
     </div>
   </div>
 
+  <div class="video-item">
+    <h2>LLMテストのスケーリング：DockerからKubernetesへ</h2>
+      <p>
+      関連ドキュメント：
+      <a :href="withBase('/appendix/AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress')">AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress</a>
+    　</p>
+    <div class="video-container">
+      <iframe
+        src="https://drive.google.com/file/d/1airg3s0Vg6rHwKsM83fE9ySBdb7hcjnY/preview"
+        allow="autoplay; encrypted-media"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
+  <div class="video-item">
+    <h2>KubernetesでのAI_GPUスケーリングと共有</h2>
+      <p>
+      関連ドキュメント：
+      <a :href="withBase('/appendix/AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress')">AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress</a>
+    　</p>
+    <div class="video-container">
+      <iframe
+        src="https://drive.google.com/file/d/1qPvahmalGFIKAf4DtFTeoZndv8WAAfJc/preview"
+        allow="autoplay; encrypted-media"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
 </div>
 
 <script setup>
