@@ -348,6 +348,22 @@
     </div>
   </div>
 
+  <div class="video-item">
+    <h2>AI評価ファクトリーの構築</h2>
+      <p>
+      関連ドキュメント：
+      <a :href="withBase('/appendix/WSL2_AI_Eval_Platform_vitepress')">WSL2_AI_Eval_Platform_vitepress</a>
+    　</p>
+    <div class="video-container">
+      <iframe
+        src="https://drive.google.com/file/d/1zUPdGYgMs_waCTgYtzRupKhYFel2vXh0/preview"
+        allow="autoplay; encrypted-media"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
+
 </div>
 
 <script setup>

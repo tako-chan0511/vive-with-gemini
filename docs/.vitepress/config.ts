@@ -285,6 +285,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'Guardrails_Red_Teaming_and_Kubernetes_vitepress', link: '/appendix/Guardrails_Red_Teaming_and_Kubernetes_vitepress' },
         { text: 'OWASP_LLM_Top_10_2025_vitepress', link: '/appendix/OWASP_LLM_Top_10_2025_vitepress' },
         { text: 'AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress', link: '/appendix/AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress' },
+        { text: 'WSL2_AI_Eval_Platform_vitepress', link: '/appendix/WSL2_AI_Eval_Platform_vitepress' },
  
          
       ],
