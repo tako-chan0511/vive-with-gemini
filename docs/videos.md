@@ -363,6 +363,36 @@
     </div>
   </div>
 
+  <div class="video-item">
+    <h2>K8sによるLLMテスト工場の構築</h2>
+      <p>
+      関連ドキュメント：
+      <a :href="withBase('/appendix/Kubernetes_Parallel_LLM_Evaluation_vitepress')">Kubernetes_Parallel_LLM_Evaluation_vitepress</a>
+    　</p>
+    <div class="video-container">
+      <iframe
+        src="https://drive.google.com/file/d/1Bxj-gzTq807nDVBY0TzwnlfikOdl9qVG/preview"
+        allow="autoplay; encrypted-media"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
+  <div class="video-item">
+    <h2>スクリプトからスケールへ：Kubernetesによる並列LLM評価</h2>
+      <p>
+      関連ドキュメント：
+      <a :href="withBase('/appendix/Parallel_LLM_Evaluation_on_Kubernetes_vitepress')">Parallel_LLM_Evaluation_on_Kubernetes_vitepress</a>
+    　</p>
+    <div class="video-container">
+      <iframe
+        src="https://drive.google.com/file/d/1nB3g-qK5sXvsGzWVmZIio_q9BH1Y8tic/preview"
+        allow="autoplay; encrypted-media"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
 
 </div>
 
