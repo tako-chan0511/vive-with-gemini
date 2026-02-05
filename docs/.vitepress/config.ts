@@ -278,7 +278,7 @@ mql?.addEventListener('change', (e) => {
       ],
     },
     {
-      text: 'IaC関連',
+      text: 'AI＆IaC関連',
       collapsed: true,
       items: [
         { text: 'IaC_Evolution_Configuration_to_Immutability', link: '/appendix/IaC_Evolution_Configuration_to_Immutability' },
@@ -287,7 +287,8 @@ mql?.addEventListener('change', (e) => {
         { text: 'AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress', link: '/appendix/AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress' },
         { text: 'WSL2_AI_Eval_Platform_vitepress', link: '/appendix/WSL2_AI_Eval_Platform_vitepress' },
         { text: 'Kubernetes_Parallel_LLM_Evaluation_vitepress', link: '/appendix/Kubernetes_Parallel_LLM_Evaluation_vitepress' },
-        { text: 'Parallel_LLM_Evaluation_on_Kubernetes_vitepress', link: '/appendix/Parallel_LLM_Evaluation_on_Kubernetes_vitepress' },
+        { text: 'スクリプトからスケールへ：Kubernetesによる並列LLM評価', link: '/appendix/Parallel_LLM_Evaluation_on_Kubernetes_vitepress' },
+        { text: 'DeepEval_Metrics_And_Customization_Guide', link: '/appendix/DeepEval_Metrics_And_Customization_Guide' },
 
         
       ],
