@@ -64,3 +64,45 @@
   border-radius: 8px;
   display: block;
 }
+
+/* 動画一覧のコントロール */
+.video-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin: 12px 0 20px;
+}
+
+.video-toggle,
+.video-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.video-search input {
+  padding: 6px 10px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg-alt);
+  color: var(--vp-c-text-1);
+}
+
+.video-help {
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+  border-bottom: 1px dotted var(--vp-c-text-2);
+  cursor: help;
+}
+
+.video-count {
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+}
+
+.video-empty {
+  margin: 12px 0 0;
+  color: var(--vp-c-text-2);
+}
