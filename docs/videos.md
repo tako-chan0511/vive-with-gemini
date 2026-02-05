@@ -393,6 +393,20 @@
     </div>
   </div>
 
+  <div class="video-item">
+    <h2>LLM品質を測定可能にする：DeepEvalガイド</h2>
+      <p>
+      関連ドキュメント：
+      <a :href="withBase('/appendix/DeepEval_Metrics_And_Customization_Guide')">DeepEval_Metrics_And_Customization_Guide</a>
+    　</p>
+    <div class="video-container">
+      <iframe
+        src="https://drive.google.com/file/d/1wnF8eg9HV7dkZMww8HVr7JNBI70h5cSK/preview"
+        allow="autoplay; encrypted-media"
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
 
 </div>
 
