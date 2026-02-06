@@ -283,14 +283,14 @@ mql?.addEventListener('change', (e) => {
       items: [
         { text: 'IaC_Evolution_Configuration_to_Immutability', link: '/appendix/IaC_Evolution_Configuration_to_Immutability' },
         { text: 'Guardrails_Red_Teaming_and_Kubernetes_vitepress', link: '/appendix/Guardrails_Red_Teaming_and_Kubernetes_vitepress' },
-        { text: 'OWASP_LLM_Top_10_2025_vitepress', link: '/appendix/OWASP_LLM_Top_10_2025_vitepress' },
-        { text: 'AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress', link: '/appendix/AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress' },
-        { text: 'WSL2_AI_Eval_Platform_vitepress', link: '/appendix/WSL2_AI_Eval_Platform_vitepress' },
-        { text: 'Kubernetes_Parallel_LLM_Evaluation_vitepress', link: '/appendix/Kubernetes_Parallel_LLM_Evaluation_vitepress' },
+        { text: 'OWASP Top 10 for LLM Applications 2025（全体像）', link: '/appendix/OWASP_LLM_Top_10_2025_vitepress' },
+        { text: 'KubernetesによるAI/ML基盤の最適化戦略：2段階スケーリングとGPU共有（MIG・タイムスライシング）', link: '/appendix/AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress' },
+        { text: 'WSL2で構築するスケーラブルなAI評価基盤：Docker→Kubernetes→並列評価→自動化（ローカル実装ガイド）', link: '/appendix/WSL2_AI_Eval_Platform_vitepress' },
+        { text: 'DeepEval on Kubernetes：スケーラブルなLLM評価アーキテクチャ', link: '/appendix/Kubernetes_Parallel_LLM_Evaluation_vitepress' },
         { text: 'スクリプトからスケールへ：Kubernetesによる並列LLM評価', link: '/appendix/Parallel_LLM_Evaluation_on_Kubernetes_vitepress' },
         { text: 'DeepEval_Metrics_And_Customization_Guide', link: '/appendix/DeepEval_Metrics_And_Customization_Guide' },
         { text: 'Kubernetes_Indexed_Jobs_Scaling_AI_ML_vitepress', link: '/appendix/Kubernetes_Indexed_Jobs_Scaling_AI_ML_vitepress' },
-        { text: 'GPU_Slicing_Kubernetes_AI_Efficiency_vitepress', link: '/appendix/GPU_Slicing_Kubernetes_AI_Efficiency_vitepress' },
+        { text: 'GPUのスライス：KubernetesでAIを賢く実行する方法（MIG / Time-Slicing）', link: '/appendix/GPU_Slicing_Kubernetes_AI_Efficiency_vitepress' },
 
         
       ],
