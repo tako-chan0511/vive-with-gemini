@@ -217,6 +217,12 @@ const videos = [
     docText: "DeepEval_Metrics_And_Customization_Guide",
     iframe: "https://drive.google.com/file/d/1wnF8eg9HV7dkZMww8HVr7JNBI70h5cSK/preview",
   },
+  {
+    title: "Kubernetes_Indexed_Jobs__大規模並列タスクをマスターする",
+    doc: "/appendix/Kubernetes_Indexed_Jobs_Scaling_AI_ML_vitepress",
+    docText: "Kubernetes_Indexed_Jobs_Scaling_AI_ML_vitepress",
+    iframe: "https://drive.google.com/file/d/1LYs4g4_uzDGeMnaWiHWdGYxsPc5DSZrM/preview",
+  },
 ]
 
 const displayVideos = computed(() => {

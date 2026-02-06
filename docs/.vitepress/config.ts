@@ -289,6 +289,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'Kubernetes_Parallel_LLM_Evaluation_vitepress', link: '/appendix/Kubernetes_Parallel_LLM_Evaluation_vitepress' },
         { text: 'スクリプトからスケールへ：Kubernetesによる並列LLM評価', link: '/appendix/Parallel_LLM_Evaluation_on_Kubernetes_vitepress' },
         { text: 'DeepEval_Metrics_And_Customization_Guide', link: '/appendix/DeepEval_Metrics_And_Customization_Guide' },
+        { text: 'Kubernetes_Indexed_Jobs_Scaling_AI_ML_vitepress', link: '/appendix/Kubernetes_Indexed_Jobs_Scaling_AI_ML_vitepress' },
 
         
       ],
