@@ -273,7 +273,7 @@ mql?.addEventListener('change', (e) => {
       items: [
         { text: 'Dify_AI__AIアプリ開発ブートキャンプ', link: '/appendix/Dify_AI_App_Development_Bootcamp' },
         { text: 'Dify失敗パターンとパラメータ調整ガイド', link: '/appendix/Dify失敗パターンとパラメータ調整ガイド' },
-    
+        { text: 'RAGの精度を最大化する：高品質ナレッジベース構築ガイド', link: '/appendix/RAG_Accuracy_Engineering_vitepress' },
          
       ],
     },
@@ -291,6 +291,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'DeepEval_Metrics_And_Customization_Guide', link: '/appendix/DeepEval_Metrics_And_Customization_Guide' },
         { text: 'Kubernetes_Indexed_Jobs_Scaling_AI_ML_vitepress', link: '/appendix/Kubernetes_Indexed_Jobs_Scaling_AI_ML_vitepress' },
         { text: 'GPUのスライス：KubernetesでAIを賢く実行する方法（MIG / Time-Slicing）', link: '/appendix/GPU_Slicing_Kubernetes_AI_Efficiency_vitepress' },
+        
 
         
       ],
