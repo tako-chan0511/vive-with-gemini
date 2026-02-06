@@ -229,6 +229,12 @@ const videos = [
     docText: "GUP MIG タイムスライシング Kubernetes K8s docker",
     iframe: "https://drive.google.com/file/d/1D5MwZ5N5y4EvgqNr-4r6wfjoNIX7RS_k/preview",
   },
+  {
+    title: "RAGの精度を最大化する：高品質ナレッジベース構築ガイド",
+    doc: "/appendix/RAG_Accuracy_Engineering_vitepress",
+    docText: "RAG ナレッジベース　チャンク　前処理　Dify",
+    iframe: "https://drive.google.com/file/d/1UIwPEDVMLfWpIdsu0E2uUeRWH05yFK9f/preview",
+  },
 ]
 
 const displayVideos = computed(() => {
