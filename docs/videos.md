@@ -223,6 +223,12 @@ const videos = [
     docText: "Kubernetes_Indexed_Jobs_Scaling_AI_ML_vitepress",
     iframe: "https://drive.google.com/file/d/1LYs4g4_uzDGeMnaWiHWdGYxsPc5DSZrM/preview",
   },
+  {
+    title: "GPUのスライス：KubernetesでAIを賢く実行する方法",
+    doc: "/appendix/GPU_Slicing_Kubernetes_AI_Efficiency_vitepress",
+    docText: "GUP MIG タイムスライシング Kubernetes K8s docker",
+    iframe: "https://drive.google.com/file/d/1D5MwZ5N5y4EvgqNr-4r6wfjoNIX7RS_k/preview",
+  },
 ]
 
 const displayVideos = computed(() => {
