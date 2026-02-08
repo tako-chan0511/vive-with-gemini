@@ -29,8 +29,7 @@
 /* 動画一覧グリッド */
 .video-grid {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
-  grid-template-columns: repeat(3, minmax(280px, 1fr)); /* 3列 */ 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px;
 }
 
@@ -40,9 +39,43 @@
   gap: 8px;
 }
 
-.video-item h3 {
+.video-item h2 {
   margin: 0;
   font-size: 16px;
+  line-height: 1.5;
+}
+
+.video-meta {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.video-pill {
+  font-size: 12px;
+  line-height: 1.3;
+  padding: 3px 9px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  background: var(--vp-c-bg-soft);
+}
+
+.video-tags {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.video-tag {
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg-alt);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 999px;
+  padding: 2px 8px;
 }
 
 .video-grid .video-container {
@@ -75,7 +108,8 @@
 }
 
 .video-toggle,
-.video-search {
+.video-search,
+.video-filter {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -88,6 +122,29 @@
   border-radius: 6px;
   background: var(--vp-c-bg-alt);
   color: var(--vp-c-text-1);
+}
+
+.video-filter select {
+  padding: 6px 10px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg-alt);
+  color: var(--vp-c-text-1);
+}
+
+.video-reset {
+  padding: 6px 10px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg-alt);
+  color: var(--vp-c-text-1);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.video-reset:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
 }
 
 .video-help {
