@@ -426,7 +426,18 @@ const videos = [
     tags: ["RESTAPI", "冪等性", "ステートレス", "リソース"],
     iframe: "https://drive.google.com/file/d/1EMWez7m17ODqba15PDNUwPfO5u-MzaaR/preview",
   },
+    {
+    title: "REST_APIを良いAPIから素晴らしいAPIへ",
+    doc: "/appendix/Level_Up_Your_REST_APIs",
+    docText: "RESTAPI GET POST PUT DELETE PATCH 冪等性　リソース　JSON　HTTPS",
+    category: "RESTAPI",
+    subCategory: "RESTAPI（中級）",
+    level: "中級",
+    tags: ["RESTAPI", "冪等性", "ステートレス", "リソース"],
+    iframe: "https://drive.google.com/file/d/1ioEwUYGxvQpZ_xuCMnA8d7r__hKWRDsX/preview",
+  },
 ]
+
 
 const categories = computed(() => [...new Set(videos.map((video) => video.category))])
 const levels = ["初級", "中級", "上級"]
