@@ -61,29 +61,32 @@
   <span class="video-count">{{ displayVideos.length }} 件</span>
 </div>
 
+<div class="video-sections" v-if="displayVideos.length > 0">
+<section class="video-category-section" v-for="categorySection in groupedVideoSections" :key="categorySection.key">
+<h2 class="video-category-title">
+大分類：{{ categorySection.name }}
+<span class="video-section-count">{{ categorySection.count }}件</span>
+</h2>
 <div class="video-grid">
-  <div class="video-item" v-for="video in displayVideos" :key="video.iframe">
-    <h2>{{ video.title }}</h2>
-    <p class="video-meta">
-      <span class="video-pill">{{ video.category }}</span>
-      <span class="video-pill">{{ video.subCategory }}</span>
-      <span class="video-pill">{{ video.level }}</span>
-    </p>
-    <p class="video-tags">
-      <span class="video-tag" v-for="tag in video.tags" :key="`${video.iframe}-${tag}`">#{{ tag }}</span>
-    </p>
-    <p>
-      関連ドキュメント：
-      <a :href="withBase(video.doc)">{{ video.docText }}</a>
-    </p>
-    <div class="video-container">
-      <iframe
-        :src="video.iframe"
-        allow="autoplay; encrypted-media"
-        loading="lazy"
-      ></iframe>
-    </div>
-  </div>
+<div class="video-item" v-for="video in categorySection.videos" :key="video.iframe">
+<p class="video-classline"><span class="video-label">中分類：</span>{{ video.subCategory }}</p>
+<p class="video-classline"><span class="video-label">タグ：</span>{{ video.tags.join(' / ') }}</p>
+<p class="video-classline"><span class="video-label">難易度：</span>{{ video.level }}</p>
+<h4>{{ video.title }}</h4>
+<p>
+関連ドキュメント：
+<a :href="withBase(video.doc)">{{ video.docText }}</a>
+</p>
+<div class="video-container">
+<iframe
+:src="video.iframe"
+allow="autoplay; encrypted-media"
+loading="lazy"
+></iframe>
+</div>
+</div>
+</div>
+</section>
 </div>
 
 <p class="video-empty" v-if="displayVideos.length === 0">
@@ -497,5 +500,30 @@ const displayVideos = computed(() => {
   })
 
   return reverseOrder.value ? [...filtered].reverse() : filtered
+})
+
+const groupedVideoSections = computed(() => {
+  const categoryMap = new Map()
+
+  for (const video of displayVideos.value) {
+    if (!video) continue
+
+    const categoryName = video.category || '未分類'
+
+    if (!categoryMap.has(categoryName)) {
+      categoryMap.set(categoryName, {
+        key: `category-${categoryName}`,
+        name: categoryName,
+        count: 0,
+        videos: [],
+      })
+    }
+
+    const categorySection = categoryMap.get(categoryName)
+    categorySection.count += 1
+    categorySection.videos.push(video)
+  }
+
+  return [...categoryMap.values()]
 })
 </script>
