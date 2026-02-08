@@ -253,6 +253,7 @@ mql?.addEventListener('change', (e) => {
       collapsed: true,
       items: [
         { text: 'The_Digital_Handshake（初級）', link: '/appendix/The_Digital_Handshake' },
+        { text: 'The_Digital_Handshake（中級）', link: '/appendix/Level_Up_Your_REST_APIs' },
 
       
       ],
