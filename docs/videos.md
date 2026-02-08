@@ -416,6 +416,16 @@ const videos = [
     tags: ["AIエージェント", "プロンプトインジェクション", "防御", "Dify"],
     iframe: "https://drive.google.com/file/d/16lTuOa4nt0dE46pUAb67l6TWWibFq0n2/preview",
   },
+  {
+    title: "REST_API__デジタル世界の握手",
+    doc: "/appendix/The_Digital_Handshake",
+    docText: "RESTAPI GET POST PUT DELETE PATCH 冪等性　リソース　JSON　HTTPS",
+    category: "RESTAPI",
+    subCategory: "RESTAPI（初級）",
+    level: "初級",
+    tags: ["RESTAPI", "冪等性", "ステートレス", "リソース"],
+    iframe: "https://drive.google.com/file/d/1EMWez7m17ODqba15PDNUwPfO5u-MzaaR/preview",
+  },
 ]
 
 const categories = computed(() => [...new Set(videos.map((video) => video.category))])

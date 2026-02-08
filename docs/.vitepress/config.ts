@@ -174,6 +174,13 @@ mql?.addEventListener('change', (e) => {
         ],
       },
       {
+        text: '<span class="highlight-title">📺動画📺</span>',
+        collapsed: true,
+        items: [
+          { text: "動画一覧", link: "/videos" },
+        ],
+      },
+      {
         text: '<span class="highlight-title">コラム</span>',
         collapsed: true,
         items: [
@@ -208,13 +215,7 @@ mql?.addEventListener('change', (e) => {
           { text: "想定Q&A", link: "/q-and-a" },
         ],
       },
-      {
-        text: '<span class="highlight-title">📺動画📺</span>',
-        collapsed: true,
-        items: [
-          { text: "動画一覧", link: "/videos" },
-        ],
-      },
+
   {
   text: '<span class="highlight-title">環境他Tips</span>',
   collapsed: true,
@@ -245,6 +246,15 @@ mql?.addEventListener('change', (e) => {
         { text: 'Regex（正規表現）活用ガイド', link: '/appendix/Regex_Recipes_for_Developers' },
         
         
+      ],
+    },
+    {
+      text: 'REST API関連',
+      collapsed: true,
+      items: [
+        { text: 'The_Digital_Handshake（初級）', link: '/appendix/The_Digital_Handshake' },
+
+      
       ],
     },
     {
