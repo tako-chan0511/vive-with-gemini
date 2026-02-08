@@ -235,7 +235,15 @@ const videos = [
     docText: "RAG ナレッジベース　チャンク　前処理　Dify",
     iframe: "https://drive.google.com/file/d/1UIwPEDVMLfWpIdsu0E2uUeRWH05yFK9f/preview",
   },
+  {
+    title: "AIエージェント防御",
+    doc: "/appendix/AI_Agent_Fortress_Defense",
+    docText: "AI エージェント　防御　プロンプトインジェクション　IPI Dify",
+    iframe: "https://drive.google.com/file/d/16lTuOa4nt0dE46pUAb67l6TWWibFq0n2/preview",
+  },
 ]
+
+
 
 const displayVideos = computed(() => {
   const query = searchQuery.value.trim().toLowerCase()
