@@ -248,7 +248,7 @@ const videos = [
   },
   {
     title: "Difyで「LLMアプリを作って公開する」全体像",
-    doc: "/appendix/Dify失敗パターンとパラメータ調整ガイド",
+    doc: "/appendix/Dify_AI_App_Development_Bootcamp",
     docText: "Dify_AI__AIアプリ開発ブートキャンプ",
     category: "LLMアプリ構築",
     subCategory: "Dify入門",
@@ -426,7 +426,7 @@ const videos = [
     tags: ["RESTAPI", "冪等性", "ステートレス", "リソース"],
     iframe: "https://drive.google.com/file/d/1EMWez7m17ODqba15PDNUwPfO5u-MzaaR/preview",
   },
-    {
+  {
     title: "REST_APIを良いAPIから素晴らしいAPIへ",
     doc: "/appendix/Level_Up_Your_REST_APIs",
     docText: "RESTAPI GET POST PUT DELETE PATCH 冪等性　リソース　JSON　HTTPS",
