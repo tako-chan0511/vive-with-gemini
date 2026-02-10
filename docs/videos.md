@@ -436,6 +436,26 @@ const videos = [
     tags: ["RESTAPI", "冪等性", "ステートレス", "リソース"],
     iframe: "https://drive.google.com/file/d/1ioEwUYGxvQpZ_xuCMnA8d7r__hKWRDsX/preview",
   },
+  {
+    title: "エンタープライズAIプレイブック",
+    doc: "/appendix/AI_Offense_Defense_Hybrid_Playbook",
+    docText: "エンタープライズAIプレイブック",
+    category: "開発基盤・生産性",
+    subCategory: "ネットワーク/閉域網",
+    level: "初級",
+    tags: ["閉域網", "ネットワーク", "ファイアーウォール","Proxy"],
+    iframe: "https://drive.google.com/file/d/1Z4E4oE5sItz5aaIHuueCB37GAMySYcJX/preview",
+  },
+  {
+    title: "プロキシの魔術師のコーディングガイド",
+    doc: "/appendix/Proxy_Wizard_AI_Handbook",
+    docText: "プロキシの魔術師のコーディングガイド",
+    category: "開発基盤・生産性",
+    subCategory: "ネットワーク/閉域網",
+    level: "中級",
+    tags: ["閉域網", "セキュリティ","ネットワーク", "ファイアーウォール", "Proxy","ツール"],
+    iframe: "https://drive.google.com/file/d/1uV07Xk8pR6AiyX7bh0B8o1EN6cF8sa4Q/preview",
+  },
 ]
 
 
