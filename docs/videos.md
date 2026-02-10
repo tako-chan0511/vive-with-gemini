@@ -456,6 +456,16 @@ const videos = [
     tags: ["閉域網", "セキュリティ","ネットワーク", "ファイアーウォール", "Proxy","ツール"],
     iframe: "https://drive.google.com/file/d/1uV07Xk8pR6AiyX7bh0B8o1EN6cF8sa4Q/preview",
   },
+  {
+    title: "プロキシの魔術師ハンドブック：企業ネットワーク攻略",
+    doc: "/appendix/Closed_Network_Proxy_Mastery",
+    docText: "プロキシの魔術師ハンドブック：企業ネットワーク攻略",
+    category: "開発基盤・生産性",
+    subCategory: "ネットワーク/閉域網/コマンド",
+    level: "中級",
+    tags: ["閉域網", "詳細コマンド","セキュリティ","ネットワーク", "ファイアーウォール", "Proxy","ツール"],
+    iframe: "https://drive.google.com/file/d/1o6iuKPzAMqATAX4qRRpfllPjOatavt6l/preview",
+  },
 ]
 
 
