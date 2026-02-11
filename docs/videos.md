@@ -476,6 +476,16 @@ const videos = [
     tags: ["Windowsコマンド","閉域網", "詳細コマンド","セキュリティ","ネットワーク", "ファイアーウォール", "Proxy","ツール"],
     iframe: "https://drive.google.com/file/d/1PwSEUKO4wD5M-lEviiKpzx9_44s_CfUh/preview",
   },
+  {
+    title: "自宅VPNと閉域網接続の注意点",
+    doc: "/appendix/Securing_the_Remote_Perimeter",
+    docText: "自宅VPNと閉域網接続の注意点",
+    category: "開発基盤・生産性",
+    subCategory: "ネットワーク/閉域網/VPN",
+    level: "中級",
+    tags: ["VPN","閉域網", "自宅","セキュリティ","ネットワーク", "ファイアーウォール", "Proxy"],
+    iframe: "https://drive.google.com/file/d/1p09RWX7QLBiKlaOegwb1La_cSTkn-hWA/preview",
+  },
   
 ]
 
