@@ -466,6 +466,17 @@ const videos = [
     tags: ["閉域網", "詳細コマンド","セキュリティ","ネットワーク", "ファイアーウォール", "Proxy","ツール"],
     iframe: "https://drive.google.com/file/d/1o6iuKPzAMqATAX4qRRpfllPjOatavt6l/preview",
   },
+  {
+    title: "閉域網をマスターする：必須Windowsコマンド",
+    doc: "/appendix/Intranet_Command_Survival",
+    docText: "閉域網をマスターする：必須Windowsコマンド",
+    category: "開発基盤・生産性",
+    subCategory: "ネットワーク/閉域網/Windowsコマンド",
+    level: "中級",
+    tags: ["Windowsコマンド","閉域網", "詳細コマンド","セキュリティ","ネットワーク", "ファイアーウォール", "Proxy","ツール"],
+    iframe: "https://drive.google.com/file/d/1PwSEUKO4wD5M-lEviiKpzx9_44s_CfUh/preview",
+  },
+  
 ]
 
 
