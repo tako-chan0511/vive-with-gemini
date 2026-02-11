@@ -276,6 +276,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'AI_Offense_Defense_Hybrid_Playbook', link: '/appendix/AI_Offense_Defense_Hybrid_Playbook' },
         { text: 'Proxy_Wizard_AI_Handbook', link: '/appendix/Proxy_Wizard_AI_Handbook' },
         { text: 'Closed_Network_Proxy_Mastery', link: '/appendix/Closed_Network_Proxy_Mastery' },
+        { text: 'Intranet_Command_Survival', link: '/appendix/Intranet_Command_Survival' },
 
    
       
