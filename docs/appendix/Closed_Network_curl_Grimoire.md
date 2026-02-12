@@ -312,7 +312,7 @@ curl -v https://example.com
 ### コマンド（代表形）
 
 ```bash
- curl.exe -w "DNS: %{time_namelookup}\nConnect: %{time_connect}\nTotal: %{time_total}\n" -o NUL -s https://google.com
+ curl.exe -w "DNS: %{time_namelookup} Connect: %{time_connect} Total: %{time_total}" -o NUL -s https://google.com
 ```
 
 ### 各値の意味
