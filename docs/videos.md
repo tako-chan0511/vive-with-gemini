@@ -486,6 +486,16 @@ const videos = [
     tags: ["VPN","閉域網", "自宅","セキュリティ","ネットワーク", "ファイアーウォール", "Proxy"],
     iframe: "https://drive.google.com/file/d/1p09RWX7QLBiKlaOegwb1La_cSTkn-hWA/preview",
   },
+  {
+    title: "閉域網でのcurlコマンド使用方法",
+    doc: "/appendix/Closed_Network_curl_Grimoire",
+    docText: "閉域網でのcurlコマンド使用方法",
+    category: "開発基盤・生産性",
+    subCategory: "ネットワーク/閉域網/curl",
+    level: "中級",
+    tags: ["curl","聴診器","閉域網", "セキュリティ","ネットワーク", "ファイアーウォール", "Proxy"],
+    iframe: "https://drive.google.com/file/d/1rY5Z6E3K7YfdpCSUnqJeXC-DF-iSSeFD/preview",
+  },
   
 ]
 
