@@ -279,6 +279,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'Intranet_Command_Survival', link: '/appendix/Intranet_Command_Survival' },
         { text: 'Securing_the_Remote_Perimeter', link: '/appendix/Securing_the_Remote_Perimeter' },
         { text: 'Closed_Network_curl_Grimoire', link: '/appendix/Closed_Network_curl_Grimoire' },
+        { text: 'プロのnetshテクニック', link: '/appendix/プロのnetshテクニック' },
 
    
       
