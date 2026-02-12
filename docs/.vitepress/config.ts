@@ -280,6 +280,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'Securing_the_Remote_Perimeter', link: '/appendix/Securing_the_Remote_Perimeter' },
         { text: 'Closed_Network_curl_Grimoire', link: '/appendix/Closed_Network_curl_Grimoire' },
         { text: 'プロのnetshテクニック', link: '/appendix/プロのnetshテクニック' },
+        { text: 'Closed_Network_CLI_Survival', link: '/appendix/Closed_Network_CLI_Survival' },
 
    
       
