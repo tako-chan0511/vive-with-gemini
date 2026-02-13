@@ -281,6 +281,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'Closed_Network_curl_Grimoire', link: '/appendix/Closed_Network_curl_Grimoire' },
         { text: 'プロのnetshテクニック', link: '/appendix/プロのnetshテクニック' },
         { text: 'Closed_Network_CLI_Survival', link: '/appendix/Closed_Network_CLI_Survival' },
+        { text: 'Engineered LLM Reliability', link: '/appendix/Engineered LLM Reliability' },
 
    
       

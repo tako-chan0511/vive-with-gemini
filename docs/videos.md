@@ -516,6 +516,16 @@ const videos = [
     tags: ["CLI","聴診器","閉域網", "セキュリティ","ネットワーク", "ファイアーウォール", "Proxy"],
     iframe: "https://drive.google.com/file/d/1unYpfXju-21-oUWVqdlU84l7D56Z9DUi/preview",
   },    
+  {
+    title: "「十分」の先へ：LLM評価実践ガイド",
+    doc: "/appendix/Engineered LLM Reliability",
+    docText: "「十分」の先へ：LLM評価実践ガイド",
+    category: "LLM評価・運用スケーリング",
+    subCategory: "LLM評価実践ガイド",
+    level: "中級",
+    tags: ["生成AI","LLM","AIテスト", "LLM-as-a-Judge","Kubernetes", "Docker", "レッドチーミング"],
+    iframe: "https://drive.google.com/file/d/1ProM6JrupGwT_sereqq9cuvAp2Jroyvo/preview",
+  },      
   
 ]
 
