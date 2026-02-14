@@ -526,6 +526,16 @@ const videos = [
     tags: ["生成AI","LLM","AIテスト", "LLM-as-a-Judge","Kubernetes", "Docker", "レッドチーミング"],
     iframe: "https://drive.google.com/file/d/1ProM6JrupGwT_sereqq9cuvAp2Jroyvo/preview",
   },      
+  {
+    title: "VモデルからAIバリデーションへ：生成AIテストガイド",
+    doc: "/appendix/Engineering_Generative_AI_Quality",
+    docText: "「VモデルからAIバリデーションへ：生成AIテストガイド",
+    category: "LLM評価・運用スケーリング",
+    subCategory: "LLM評価実践ガイド",
+    level: "中級",
+    tags: ["Vモデル","テストピラミッド","生成AI","LLM","AIテスト", "LLM-as-a-Judge","Kubernetes", "Docker", "レッドチーミング"],
+    iframe: "https://drive.google.com/file/d/18Ak2qLQ2V9ePUX5J9yOzj9gGJ-9b4Lff/preview",
+  },        
   
 ]
 

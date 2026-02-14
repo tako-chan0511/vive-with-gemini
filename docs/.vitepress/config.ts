@@ -282,6 +282,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'プロのnetshテクニック', link: '/appendix/プロのnetshテクニック' },
         { text: 'Closed_Network_CLI_Survival', link: '/appendix/Closed_Network_CLI_Survival' },
         { text: 'Engineered LLM Reliability', link: '/appendix/Engineered LLM Reliability' },
+        { text: 'Vモデルとの比較_AI_Quality', link: '/appendix/Engineering_Generative_AI_Quality' },
 
    
       
