@@ -281,8 +281,9 @@ mql?.addEventListener('change', (e) => {
         { text: 'Closed_Network_curl_Grimoire', link: '/appendix/Closed_Network_curl_Grimoire' },
         { text: 'プロのnetshテクニック', link: '/appendix/プロのnetshテクニック' },
         { text: 'Closed_Network_CLI_Survival', link: '/appendix/Closed_Network_CLI_Survival' },
-        { text: 'Engineered LLM Reliability', link: '/appendix/Engineered LLM Reliability' },
+        { text: '「十分」の先へ：LLM評価実践ガイド', link: '/appendix/Engineered LLM Reliability' },
         { text: 'Vモデルとの比較_AI_Quality', link: '/appendix/Engineering_Generative_AI_Quality' },
+        { text: 'LLMの評価：「感覚」から検証可能な品質へ', link: '/appendix/Engineering_LLM_Reliability' },
 
    
       
