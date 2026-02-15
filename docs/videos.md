@@ -535,7 +535,17 @@ const videos = [
     level: "中級",
     tags: ["Vモデル","テストピラミッド","生成AI","LLM","AIテスト", "LLM-as-a-Judge","Kubernetes", "Docker", "レッドチーミング"],
     iframe: "https://drive.google.com/file/d/18Ak2qLQ2V9ePUX5J9yOzj9gGJ-9b4Lff/preview",
-  },        
+  },   
+  {
+    title: "LLMの評価：「感覚」から検証可能な品質へ",
+    doc: "/appendix/Engineering_LLM_Reliability",
+    docText: "LLMの評価：「感覚」から検証可能な品質へ",
+    category: "LLM評価・運用スケーリング",
+    subCategory: "LLM評価実践ガイド",
+    level: "中級",
+    tags: ["VibeCheck","VerifableQuality","LLM","AIテスト", "LLM-as-a-Judge","Kubernetes", "Docker", "レッドチーミング"],
+    iframe: "https://drive.google.com/file/d/1cOoBjBfCzz7E5ThGEq638dcIhdxRlWed/preview",
+  },             
   
 ]
 
