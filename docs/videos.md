@@ -546,6 +546,16 @@ const videos = [
     tags: ["VibeCheck","VerifableQuality","LLM","AIテスト", "LLM-as-a-Judge","Kubernetes", "Docker", "レッドチーミング"],
     iframe: "https://drive.google.com/file/d/1cOoBjBfCzz7E5ThGEq638dcIhdxRlWed/preview",
   },             
+  {
+    title: "AIチューニングを解き明かす",
+    doc: "/appendix/AI_Tuning_Specialist_Blueprint",
+    docText: "AIチューニングを解き明かす",
+    category: "LLM評価・運用スケーリング",
+    subCategory: "LLM評価実践ガイド",
+    level: "中級",
+    tags: ["LLM","AIテスト", "LLM-as-a-Judge","Kubernetes", "Docker", "OpenShiftAI"],
+    iframe: "https://drive.google.com/file/d/1gK0AOgXx4KQOg0ZAfyd8RLQ0jEoX-lBT/preview",
+  },               
   
 ]
 
