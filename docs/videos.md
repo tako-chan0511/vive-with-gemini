@@ -557,6 +557,16 @@ const videos = [
     iframe: "https://drive.google.com/file/d/1gK0AOgXx4KQOg0ZAfyd8RLQ0jEoX-lBT/preview",
   },               
   {
+    title: "プライベートAIキッチン：オフラインLLMデプロイ",
+    doc: "/appendix/Private_AI_Kitchen_Sovereignty",
+    docText: "プライベートAIキッチン：オフラインLLMデプロイ",
+    category: "LLM評価・運用スケーリング",
+    subCategory: "LLM評価実践ガイド",
+    level: "中級",
+    tags: ["LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI"],
+    iframe: "https://drive.google.com/file/d/1f4jM3lK6VHPclp3Sn0asz2rlneeBky7I/preview",
+  },                 
+  {
     title: "OpenShift_AIでのLoRAデプロイ：解説マニュアル",
     doc: "/appendix/Tsuzumi_LoRA_OpenShift_Disconnected_Deployment",
     docText: "OpenShift_AIでのLoRAデプロイ：解説マニュアル",

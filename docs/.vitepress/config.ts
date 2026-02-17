@@ -285,6 +285,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'Vモデルとの比較_AI_Quality', link: '/appendix/Engineering_Generative_AI_Quality' },
         { text: 'LLMの評価：「感覚」から検証可能な品質へ', link: '/appendix/Engineering_LLM_Reliability' },
         { text: 'AI_Tuning_Specialist_Blueprint', link: '/appendix/AI_Tuning_Specialist_Blueprint' },
+        { text: 'Private_AI_Kitchen_Sovereignty', link: '/appendix/Private_AI_Kitchen_Sovereignty' },
         { text: 'Tsuzumi_LoRA_OpenShift_Disconnected_Deployment', link: '/appendix/Tsuzumi_LoRA_OpenShift_Disconnected_Deployment' },
 
    
