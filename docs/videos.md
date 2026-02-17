@@ -556,6 +556,16 @@ const videos = [
     tags: ["LLM","AIテスト", "LLM-as-a-Judge","Kubernetes", "Docker", "OpenShiftAI"],
     iframe: "https://drive.google.com/file/d/1gK0AOgXx4KQOg0ZAfyd8RLQ0jEoX-lBT/preview",
   },               
+  {
+    title: "OpenShift_AIでのLoRAデプロイ：解説マニュアル",
+    doc: "/appendix/Tsuzumi_LoRA_OpenShift_Disconnected_Deployment",
+    docText: "OpenShift_AIでのLoRAデプロイ：解説マニュアル",
+    category: "LLM評価・運用スケーリング",
+    subCategory: "LLM評価実践ガイド",
+    level: "中級",
+    tags: ["LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI"],
+    iframe: "https://drive.google.com/file/d/1WY3BlziQ9OQbpLoxBvHTK3P1UGXy_PS7/preview",
+  },                 
   
 ]
 
