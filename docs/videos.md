@@ -586,6 +586,16 @@ const videos = [
     tags: ["踏み台サーバ","プロキシ","APIGateway","閉域網", "ネットワーク", "ファイアーウォール","Proxy"],
     iframe: "https://drive.google.com/file/d/1rkrPFrMNuBNlbEsTa-fNHwV7zYqKEdg8/preview",
   },
+  {
+    title: "カスタムAI「フレーバー」のデプロイ",
+    doc: "/appendix/Dynamic_Multi-Flavor_AI_Serving",
+    docText: "カスタムAI「フレーバー」のデプロイ",
+    category: "LLM評価・運用スケーリング",
+    subCategory: "LLM評価実践ガイド",
+    level: "中級",
+    tags: ["InferenceService","LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI"],
+    iframe: "https://drive.google.com/file/d/1Ue9Uf1NG0Gmfgrgr3Bsi5qTwOd7A8BqD/preview",
+  },
   
 ]
 
