@@ -576,6 +576,16 @@ const videos = [
     tags: ["LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI"],
     iframe: "https://drive.google.com/file/d/1WY3BlziQ9OQbpLoxBvHTK3P1UGXy_PS7/preview",
   },                 
+  {
+    title: "ゲートを守る：プロキシ、ゲートウェイ、そしてバスティオン",
+    doc: "/appendix/Modern_Network_Boundary_Control",
+    docText: "ゲートを守る：プロキシ、ゲートウェイ、そしてバスティオン",
+    category: "開発基盤・生産性",
+    subCategory: "ネットワーク/閉域網",
+    level: "初級",
+    tags: ["踏み台サーバ","プロキシ","APIGateway","閉域網", "ネットワーク", "ファイアーウォール","Proxy"],
+    iframe: "https://drive.google.com/file/d/1rkrPFrMNuBNlbEsTa-fNHwV7zYqKEdg8/preview",
+  },
   
 ]
 
