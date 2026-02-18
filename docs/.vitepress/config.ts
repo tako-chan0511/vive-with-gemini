@@ -288,6 +288,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'Private_AI_Kitchen_Sovereignty', link: '/appendix/Private_AI_Kitchen_Sovereignty' },
         { text: 'Tsuzumi_LoRA_OpenShift_Disconnected_Deployment', link: '/appendix/Tsuzumi_LoRA_OpenShift_Disconnected_Deployment' },
         { text: 'Modern_Network_Boundary_Control', link: '/appendix/Modern_Network_Boundary_Control' },
+        { text: 'Dynamic_Multi-Flavor_AI_Serving', link: '/appendix/Dynamic_Multi-Flavor_AI_Serving' },
 
    
       
