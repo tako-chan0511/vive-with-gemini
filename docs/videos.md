@@ -596,6 +596,16 @@ const videos = [
     tags: ["InferenceService","LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI"],
     iframe: "https://drive.google.com/file/d/1Ue9Uf1NG0Gmfgrgr3Bsi5qTwOd7A8BqD/preview",
   },
+  {
+    title: "カスタムAIモデルの賢い実行方法",
+    doc: "/appendix/Enterprise_Sovereign_AI_Strategy",
+    docText: "カスタムAIモデルの賢い実行方法",
+    category: "LLM評価・運用スケーリング",
+    subCategory: "LLM評価実践ガイド",
+    level: "中級",
+    tags: ["vLLM","KServe","InferenceService","LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI"],
+    iframe: "https://drive.google.com/file/d/1TXDgHW1OxAbur0ztb8h6eoQWMVnV05wC/preview",
+  },
   
 ]
 
