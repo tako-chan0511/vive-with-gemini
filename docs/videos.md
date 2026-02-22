@@ -616,6 +616,16 @@ const videos = [
     tags: ["インセプションデッキ","LLMaaS","ソブリンAI","LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI"],
     iframe: "https://drive.google.com/file/d/1HslPb9dBBbn9L1PrDw1SAE8C5iMhhpXU/preview",
   },
+    {
+    title: "InferenceServiceを理解する",
+    doc: "/appendix/Efficient_Multi-LoRA_on_RHOAI",
+    docText: "InferenceServiceを理解する",
+    category: "LLMaaS・カスタムデプロイ",
+    subCategory: "LLM評価実践ガイド",
+    level: "中級",
+    tags: ["InferenceService","LLMaaS","ソブリンAI","LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI"],
+    iframe: "https://drive.google.com/file/d/1lbPcWGcvlGEmXQPx3Rqv-m-di37LdT86/preview",
+  },
   
 ]
 

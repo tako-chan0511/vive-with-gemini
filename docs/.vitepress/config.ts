@@ -291,6 +291,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'Dynamic_Multi-Flavor_AI_Serving', link: '/appendix/Dynamic_Multi-Flavor_AI_Serving' },
         { text: 'Enterprise_Sovereign_AI_Strategy', link: '/appendix/Enterprise_Sovereign_AI_Strategy' },
         { text: 'インセプションデッキ：Sovereign_AI_Kitchen', link: '/appendix/Sovereign_AI_Kitchen' },
+        { text: 'InferenceServiceを理解する', link: '/appendix/Efficient_Multi-LoRA_on_RHOAI' },
 
    
       
