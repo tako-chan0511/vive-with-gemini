@@ -290,6 +290,7 @@ mql?.addEventListener('change', (e) => {
         { text: 'Modern_Network_Boundary_Control', link: '/appendix/Modern_Network_Boundary_Control' },
         { text: 'Dynamic_Multi-Flavor_AI_Serving', link: '/appendix/Dynamic_Multi-Flavor_AI_Serving' },
         { text: 'Enterprise_Sovereign_AI_Strategy', link: '/appendix/Enterprise_Sovereign_AI_Strategy' },
+        { text: 'インセプションデッキ：Sovereign_AI_Kitchen', link: '/appendix/Sovereign_AI_Kitchen' },
 
    
       
