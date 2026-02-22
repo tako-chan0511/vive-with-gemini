@@ -606,6 +606,16 @@ const videos = [
     tags: ["vLLM","KServe","InferenceService","LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI"],
     iframe: "https://drive.google.com/file/d/1TXDgHW1OxAbur0ztb8h6eoQWMVnV05wC/preview",
   },
+    {
+    title: "NTT_DATAのソブリンAI：インセプションデッキ",
+    doc: "/appendix/Sovereign_AI_Kitchen",
+    docText: "NTT_DATAのソブリンAI：インセプションデッキ",
+    category: "LLMaaS・カスタムデプロイ",
+    subCategory: "LLM評価実践ガイド",
+    level: "中級",
+    tags: ["インセプションデッキ","LLMaaS","ソブリンAI","LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI"],
+    iframe: "https://drive.google.com/file/d/1HslPb9dBBbn9L1PrDw1SAE8C5iMhhpXU/preview",
+  },
   
 ]
 
