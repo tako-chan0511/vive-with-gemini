@@ -298,6 +298,14 @@ mql?.addEventListener('change', (e) => {
       ],
     },
     {
+      text: 'OpenShift AI デプロイ関連',
+      collapsed: true,
+      items: [
+        { text: 'プライベートAIキッチンの構築', link: '/appendix/The_Private_AI_Kitchen_Blueprint' },
+
+      ],
+    },
+    {
       text: 'Dify（ディファイ）関連',
       collapsed: true,
       items: [
