@@ -218,7 +218,7 @@ ssh -J user@bastion.example.com user@10.0.1.10
 
 #### ~/.ssh/config に寄せる（実務推奨）
 
-```sshconfig
+```ssh-config
 Host bastion
   HostName bastion.example.com
   User user
@@ -269,7 +269,7 @@ ssh -A user@bastion.example.com
 
 #### ~/.ssh/config で固定（推奨）
 
-```sshconfig
+```ssh-config
 Host bastion
   HostName bastion.example.com
   User user
