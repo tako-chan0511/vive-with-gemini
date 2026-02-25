@@ -636,7 +636,16 @@ const videos = [
     tags: ["Multi-LoRA","InferenceService","LLMaaS","ソブリンAI","LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI","証明書","APIリクエスト","PVC","MinIO","閉域網"],
     iframe: "https://drive.google.com/file/d/15kGwc_d7VSUa1w18lSLbGQT9kdTtqZKA/preview",
   },  
-  
+  {
+    title: "動的AIサービング：効率的なカスタムモデルデプロイ",
+    doc: "/appendix/Dynamic_Multi-LoRA_Strategy",
+    docText: "動的AIサービング：効率的なカスタムモデルデプロイ",
+    category: "LLMaaS・カスタムデプロイ",
+    subCategory: "LLM評価実践ガイド",
+    level: "中級",
+    tags: ["Multi-LoRA","InferenceService","LLMaaS","ソブリンAI","LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI","証明書","APIリクエスト","PVC","MinIO","閉域網"],
+    iframe: "https://drive.google.com/file/d/1khVmrWK_bpcFO_zPffBG9AHE1jLh7TEx/preview",
+  },  
   
 ]
 
