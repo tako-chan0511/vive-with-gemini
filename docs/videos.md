@@ -646,6 +646,16 @@ const videos = [
     tags: ["Multi-LoRA","InferenceService","LLMaaS","ソブリンAI","LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI","証明書","APIリクエスト","PVC","MinIO","閉域網"],
     iframe: "https://drive.google.com/file/d/1khVmrWK_bpcFO_zPffBG9AHE1jLh7TEx/preview",
   },  
+  {
+    title: "（音声）完全閉域網で絶対に落ちない動的LoRA基盤の限界突破テスト",
+    doc: "/appendix/Invincible_Air-Gapped_AI_Infrastructure",
+    docText: "完全閉域網で絶対に落ちない動的LoRA基盤の限界突破テスト",
+    category: "LLMaaS・カスタムデプロイ",
+    subCategory: "LLM評価実践ガイド",
+    level: "中級",
+    tags: ["音声","Multi-LoRA","InferenceService","LLMaaS","ソブリンAI","LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI","証明書","APIリクエスト","PVC","MinIO","閉域網"],
+    iframe: "https://drive.google.com/file/d/1M53rLQ7GyxM7GCzNSZ2dGd3IMhz8Nkjj/view?usp=drive_link",
+  },  
   
 ]
 
