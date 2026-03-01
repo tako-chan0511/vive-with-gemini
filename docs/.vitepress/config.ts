@@ -314,8 +314,9 @@ mql?.addEventListener('change', (e) => {
         { text: 'Private_AI_Kitchen_Sovereignty', link: '/appendix/Private_AI_Kitchen_Sovereignty' },
         { text: 'Tsuzumi_LoRA_OpenShift_Disconnected_Deployment', link: '/appendix/Tsuzumi_LoRA_OpenShift_Disconnected_Deployment' },
         { text: '動的AIサービング：効率的なカスタムモデルデプロイ', link: '/appendix/Dynamic_Multi-LoRA_Strategy' },
-        { text: '完全閉域網で絶対に落ちない動的LoRA基盤の限界突破テスト', link: '/appendix/Invincible_Air-Gapped_AI_Infrastructure' },
-        { text: '動的LoRAで構築する完全閉域網の生成AI基盤', link: '/appendix/Sovereign_AI_Dynamic_LoRA_Blueprint' },
+        { text: '【音声】完全閉域網で絶対に落ちない動的LoRA基盤の限界突破テスト', link: '/appendix/Invincible_Air-Gapped_AI_Infrastructure' },
+        { text: '【音声】動的LoRAで構築する完全閉域網の生成AI基盤', link: '/appendix/Sovereign_AI_Dynamic_LoRA_Blueprint' },
+        { text: '【音声】完全閉域網での巨大LLM運用と動的LoRA設計', link: '/appendix/Sovereign_AI_via_Dynamic_LoRA' },
 
 
       ],
