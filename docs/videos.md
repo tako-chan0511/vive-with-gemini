@@ -674,7 +674,7 @@ const videos = [
     subCategory: "LLM評価実践ガイド",
     level: "中級",
     tags: ["音声","Multi-LoRA","InferenceService","LLMaaS","ソブリンAI","LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI","証明書","APIリクエスト","PVC","MinIO","閉域網"],
-    iframe: "https://drive.google.com/file/d/1Jbc-lBnk5WIMFbUrpu8ko0_GH9E7ZtG4/preview",
+    iframe: "https://drive.google.com/file/d/1M53rLQ7GyxM7GCzNSZ2dGd3IMhz8Nkjj/preview",
   },    
   
 ]
