@@ -9,7 +9,7 @@
 ★今回は「完全閉域網での巨大LLM運用と動的LoRA設計.m4a」でこの資料を解説しています。
 
 * 音声URL（Google Drive）
-  [https://drive.google.com/file/d/1M53rLQ7GyxM7GCzNSZ2dGd3IMhz8Nkjj/view?usp=drive_link](https://drive.google.com/file/d/1M53rLQ7GyxM7GCzNSZ2dGd3IMhz8Nkjj/view?usp=drive_link)
+  [https://drive.google.com/file/d/1nKD0H1gThRMgYRauE8yBPNRxkOc8LUH8/view?usp=drive_link]
 
 > VitePress上でプレイヤー表示したい場合（環境によっては表示不可のことがあります）
 
