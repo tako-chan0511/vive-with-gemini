@@ -27,14 +27,7 @@ https://drive.google.com/file/d/1Jbc-lBnk5WIMFbUrpu8ko0_GH9E7ZtG4/view?usp=drive
 7. **ガバナンス**（マルウェアスキャン、Guardrails、IAM、Trusted CA）
 8. **無停止運用**（カナリア、即時ロールバック、OOM対策、ロードマップ）
 
----
 
-## 画像差し込みルール（jpg）
-
-このMarkdownは **画像を同梱しません**。差し込み位置だけ指定します（調整はあなた側）。
-例：`/images/sovereign-ai-dynamic-lora/p01.jpg` 〜 `p15.jpg`
-
----
 
 # 1. 表紙：動的LoRAで構築する完全閉域網の生成AI基盤
 
