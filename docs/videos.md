@@ -647,7 +647,7 @@ const videos = [
     iframe: "https://drive.google.com/file/d/1khVmrWK_bpcFO_zPffBG9AHE1jLh7TEx/preview",
   },  
   {
-    title: "（音声）完全閉域網で絶対に落ちない動的LoRA基盤の限界突破テスト",
+    title: "（音声）＜テスト計画・PoC仕様書（推論）＞完全閉域網で絶対に落ちない動的LoRA基盤の限界突破テスト",
     doc: "/appendix/Invincible_Air-Gapped_AI_Infrastructure",
     docText: "完全閉域網で絶対に落ちない動的LoRA基盤の限界突破テスト",
     category: "LLMaaS・カスタムデプロイ",
@@ -657,7 +657,7 @@ const videos = [
     iframe: "https://drive.google.com/file/d/1M53rLQ7GyxM7GCzNSZ2dGd3IMhz8Nkjj/preview",
   },  
   {
-    title: "（音声）動的LoRAで構築する完全閉域網の生成AI基盤",
+    title: "（音声）＜詳細設計・詳細マニュフェスト（推論）＞動的LoRAで構築する完全閉域網の生成AI基盤",
     doc: "/appendix/Sovereign_AI_Dynamic_LoRA_Blueprint",
     docText: "動的LoRAで構築する完全閉域網の生成AI基盤",
     category: "LLMaaS・カスタムデプロイ",
@@ -667,7 +667,7 @@ const videos = [
     iframe: "https://drive.google.com/file/d/1Jbc-lBnk5WIMFbUrpu8ko0_GH9E7ZtG4/preview",
   },  
   {
-    title: "（音声）完全閉域網での巨大LLM運用と動的LoRA設計",
+    title: "（音声）＜基本・運用設計書（推論）＞完全閉域網での巨大LLM運用と動的LoRA設計",
     doc: "/appendix/Sovereign_AI_via_Dynamic_LoRA",
     docText: "完全閉域網での巨大LLM運用と動的LoRA設計",
     category: "LLMaaS・カスタムデプロイ",
