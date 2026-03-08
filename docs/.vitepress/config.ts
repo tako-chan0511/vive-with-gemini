@@ -317,7 +317,8 @@ mql?.addEventListener('change', (e) => {
         { text: '【音声】＜基本・運用設計（推論）＞完全閉域網での巨大LLM運用と動的LoRA設計', link: '/appendix/Sovereign_AI_via_Dynamic_LoRA' },
         { text: '【音声】＜詳細設計・構築マニュフェスト（推論）＞動的LoRAで構築する完全閉域網の生成AI基盤', link: '/appendix/Sovereign_AI_Dynamic_LoRA_Blueprint' },
         { text: '【音声】＜テスト計画・PoC仕様書（推論）＞完全閉域網で絶対に落ちない動的LoRA基盤の限界突破テスト', link: '/appendix/Invincible_Air-Gapped_AI_Infrastructure' },
-
+        { text: '【音声】＜動的LoRA：OpenShift AI設定と対応InferenceServiceの関係＞', link: '/appendix/Dynamic_LoRA_Deployment_Guide' },
+ 
 
       ],
     },
