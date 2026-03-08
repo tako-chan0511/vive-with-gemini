@@ -68,7 +68,7 @@
 <span class="video-section-count">{{ categorySection.count }}件</span>
 </h2>
 <div class="video-grid">
-<div class="video-item" v-for="video in categorySection.videos" :key="video.iframe">
+<div class="video-item" v-for="video in categorySection.videos" :key="video.doc">
 <p class="video-classline"><span class="video-label">中分類：</span>{{ video.subCategory }}</p>
 <p class="video-classline"><span class="video-label">タグ：</span>{{ video.tags.join(' / ') }}</p>
 <p class="video-classline"><span class="video-label">難易度：</span>{{ video.level }}</p>
@@ -79,7 +79,9 @@
 </p>
 <div class="video-container">
 <iframe
-:src="video.iframe"
+v-for="iframeSrc in videoFrameList(video)"
+:key="iframeSrc"
+:src="iframeSrc"
 allow="autoplay; encrypted-media"
 loading="lazy"
 ></iframe>
@@ -676,6 +678,19 @@ const videos = [
     tags: ["音声","Multi-LoRA","InferenceService","LLMaaS","ソブリンAI","LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI","証明書","APIリクエスト","PVC","MinIO","閉域網"],
     iframe: "https://drive.google.com/file/d/1nKD0H1gThRMgYRauE8yBPNRxkOc8LUH8/preview",
   },    
+  {
+    title: "【音声】＜動的LoRA：OpenShift AI設定と対応InferenceServiceの関係＞",
+    doc: "/appendix/Dynamic_LoRA_Deployment_Guide",
+    docText: "完全閉域網での巨大LLM運用と動的LoRA設計",
+    category: "LLMaaS・カスタムデプロイ",
+    subCategory: "LLM評価実践ガイド",
+    level: "中級",
+    tags: ["音声","GUI","Multi-LoRA","InferenceService","LLMaaS","ソブリンAI","LoRA","tsuzumi2", "ファインチューニング","Kubernetes", "Docker", "OpenShiftAI","証明書","APIリクエスト","PVC","MinIO","閉域網"],
+    iframes: [
+      "https://drive.google.com/file/d/16swnbfq2NhaHGy-r6NjYwsMLE3CmjSou/preview",
+      "https://drive.google.com/file/d/1ssQnqprW7bslSzwq9ywWRkLQltewgNat/preview",
+    ],
+  },    
   
 ]
 
@@ -728,6 +743,16 @@ const clearFilters = () => {
   selectedSubCategory.value = ''
   selectedLevel.value = ''
   selectedTag.value = ''
+}
+
+const videoFrameList = (video) => {
+  if (Array.isArray(video.iframes) && video.iframes.length > 0) {
+    return video.iframes
+  }
+  if (typeof video.iframe === 'string' && video.iframe) {
+    return [video.iframe]
+  }
+  return []
 }
 
 const matchesSearch = (video, query) => {

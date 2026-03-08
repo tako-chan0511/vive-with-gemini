@@ -1,0 +1,735 @@
+import { useSSRContext, ref, computed, watch, unref } from "vue";
+import { ssrRenderAttrs, ssrRenderAttr, ssrIncludeBooleanAttr, ssrLooseContain, ssrLooseEqual, ssrRenderList, ssrInterpolate } from "vue/server-renderer";
+import { w as withBase } from "./Content.T7HvMshI.js";
+import "@vueuse/core";
+const __pageData = JSON.parse('{"title":"動画一覧","description":"","frontmatter":{},"headers":[],"relativePath":"videos.md","filePath":"videos.md"}');
+const __default__ = { name: "videos.md" };
+const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
+  __ssrInlineRender: true,
+  setup(__props) {
+    const reverseOrder = ref(true);
+    const searchQuery = ref("");
+    const selectedCategory = ref("");
+    const selectedSubCategory = ref("");
+    const selectedLevel = ref("");
+    const selectedTag = ref("");
+    const videos = [
+      {
+        title: "AI時代のフルスタック戦略：Nuxt_3への道",
+        doc: "/appendix/migration-vue3-to-nuxt3",
+        docText: "Vue3→Nuxt3 マイグレーション",
+        category: "開発基盤・生産性",
+        subCategory: "フロントエンド基盤",
+        level: "中級",
+        tags: ["Nuxt3", "Vue3", "フルスタック", "マイグレーション"],
+        iframe: "https://drive.google.com/file/d/180HOAT6XoaKNBNXUY51BBlplPFMulFZb/preview"
+      },
+      {
+        title: "PlantUML__テキストを真実に変える",
+        doc: "/appendix/PlantUML_Code-First_Architecture",
+        docText: "PlantUMLガイド",
+        category: "開発基盤・生産性",
+        subCategory: "設計ドキュメント",
+        level: "初級",
+        tags: ["PlantUML", "設計", "アーキテクチャ", "図解"],
+        iframe: "https://drive.google.com/file/d/1Nzz73gCWjV2OhnqEEDeyYNjLeJqZJYiT/preview"
+      },
+      {
+        title: "Topgage_デジタル・プレイグラウンド",
+        doc: "/appendix/topgage-digital-playground",
+        docText: "Toppage_Digital_Playgroud",
+        category: "開発基盤・生産性",
+        subCategory: "プロジェクト構築",
+        level: "初級",
+        tags: ["GameHub", "Toppage", "プロダクト", "フロントエンド"],
+        iframe: "https://drive.google.com/file/d/1T55AWlj1A3A1VY5VSbhQW6QHrZIsbmAn/preview"
+      },
+      {
+        title: "永久無料の開発スタック",
+        doc: "/appendix/prepetual-zero-cost-automation",
+        docText: "完全無料枠GameHubガイド",
+        category: "開発基盤・生産性",
+        subCategory: "開発環境設計",
+        level: "初級",
+        tags: ["無料枠", "開発環境", "GameHub", "コスト最適化"],
+        iframe: "https://drive.google.com/file/d/1wTbVq-KK5I08YI_mUvor2rTnbq5pCxs4/preview"
+      },
+      {
+        title: "DevOps__フルサイクルエンジニアへの道",
+        doc: "/appendix/Dev_Ops_CLI_Handbook",
+        docText: "LINUX活用詳細ガイド",
+        category: "開発基盤・生産性",
+        subCategory: "DevOps/CLI",
+        level: "中級",
+        tags: ["DevOps", "CLI", "Linux", "運用"],
+        iframe: "https://drive.google.com/file/d/12dpT-QT-LqXVW1uD1Bw40DswyxEmMCMK/preview"
+      },
+      {
+        title: "フルサイクル・エンジニアリングスタック",
+        doc: "/appendix/Linux_Full-Cycle_Engineering_Stack",
+        docText: "LINUX活用ガイド",
+        category: "開発基盤・生産性",
+        subCategory: "Linux実践",
+        level: "中級",
+        tags: ["Linux", "フルサイクル", "開発基盤", "実践"],
+        iframe: "https://drive.google.com/file/d/1mKyN8z5L0KXsQBQXUFiDMrMw49Ktx-qs/preview"
+      },
+      {
+        title: "サーバーレスデータアクセス：エンタープライズ設計図",
+        doc: "/appendix/Serverless_Data_Access_Optimization",
+        docText: "サーバレス連携基盤：最新アーキテクチャとDB設計手法ガイド",
+        category: "クラウド設計・アーキテクチャ",
+        subCategory: "データアクセス設計",
+        level: "上級",
+        tags: ["Serverless", "データアクセス", "DB設計", "エンタープライズ"],
+        iframe: "https://drive.google.com/file/d/14yISXJYaU77kixQjsbioGH8Tnh3DAB5A/preview"
+      },
+      {
+        title: "企業クラウド開発ガイド",
+        doc: "/appendix/Sync-async-APIGAteway-archtecture",
+        docText: "同期・非同期アーキテクチャ図（APIGateway付き）",
+        category: "クラウド設計・アーキテクチャ",
+        subCategory: "API連携設計（同期/非同期）",
+        level: "中級",
+        tags: ["クラウド", "API Gateway", "同期", "非同期"],
+        iframe: "https://drive.google.com/file/d/1k1y5pgbv0GUUmVpMlJvXesXa09J_N4Et/preview"
+      },
+      {
+        title: "AWSのSagaパターンを解き明かす",
+        doc: "/appendix/Serverless_Distributed_Consistency",
+        docText: "API整合性のためのSagaパターン活用ガイド",
+        category: "クラウド設計・アーキテクチャ",
+        subCategory: "分散整合性（Saga）",
+        level: "上級",
+        tags: ["AWS", "Saga", "分散トランザクション", "整合性"],
+        iframe: "https://drive.google.com/file/d/1YIr2BX1MlYmTObGyDPocT71ZDLOu9QTH/preview"
+      },
+      {
+        title: "WSL2ネットワークの謎を解く",
+        doc: "/appendix/WSL2_Networking_Five_Layer_Mastery",
+        docText: "WSL２:NATネットワーク解説",
+        category: "開発基盤・生産性",
+        subCategory: "ネットワーク/WSL2",
+        level: "中級",
+        tags: ["WSL2", "ネットワーク", "NAT", "開発環境"],
+        iframe: "https://drive.google.com/file/d/1KlwA-_ZfMYrxyJzwjya-A03OipcgqQ2z/preview"
+      },
+      {
+        title: "Gitを解き明かす：メンタルモデル",
+        doc: "/appendix/Git_Mental_Model",
+        docText: "Gitメンタルモデル解説",
+        category: "開発基盤・生産性",
+        subCategory: "Git基礎",
+        level: "初級",
+        tags: ["Git", "メンタルモデル", "バージョン管理", "基礎"],
+        iframe: "https://drive.google.com/file/d/1Jt0JfSg5cf5felWtX1wA56nKjISkttnF/preview"
+      },
+      {
+        title: "コマンドラインをレベルアップ",
+        doc: "/appendix/Git_Fzf_Workflow_Accelerator",
+        docText: "Git-fzfコマンド開発者向けガイド",
+        category: "開発基盤・生産性",
+        subCategory: "CLI効率化（git-fzf）",
+        level: "中級",
+        tags: ["Git", "fzf", "CLI", "開発効率"],
+        iframe: "https://drive.google.com/file/d/1BvQ88nKUFlVMYa-k2gBSKaQ413mqxqcq/preview"
+      },
+      {
+        title: "あなたのターミナルのスーパーパワー：fzf入門",
+        doc: "/appendix/fzf_Command_Line_Mastery",
+        docText: "fzf活用術（開発効率を劇的に変える）",
+        category: "開発基盤・生産性",
+        subCategory: "CLI効率化（fzf）",
+        level: "初級",
+        tags: ["fzf", "ターミナル", "CLI", "入門"],
+        iframe: "https://drive.google.com/file/d/1rK1u2NuIIDKcyP3Z72YZs_lT1YzEwSb_/preview"
+      },
+      {
+        title: "開発者のための正規表現レシピ",
+        doc: "/appendix/Regex_Recipes_for_Developers",
+        docText: "Regex（正規表現）活用ガイド",
+        category: "開発基盤・生産性",
+        subCategory: "テキスト処理/Regex",
+        level: "初級",
+        tags: ["Regex", "正規表現", "テキスト処理", "開発効率"],
+        iframe: "https://drive.google.com/file/d/1DRJPC3oo05AGIogETGoeFxTTclCcdQeo/preview"
+      },
+      {
+        title: "Difyで「LLMアプリを作って公開する」全体像",
+        doc: "/appendix/Dify_AI_App_Development_Bootcamp",
+        docText: "Dify_AI__AIアプリ開発ブートキャンプ",
+        category: "LLMアプリ構築",
+        subCategory: "Dify入門",
+        level: "初級",
+        tags: ["Dify", "LLMアプリ", "公開", "入門"],
+        iframe: "https://drive.google.com/file/d/186520MLmJv9X0hAUnWU5Iv-25zm53zN6/preview"
+      },
+      {
+        title: "Difyチューニング実践ガイド",
+        doc: "/appendix/Dify失敗パターンとパラメータ調整ガイド",
+        docText: "Dify失敗パターンとパラメータ調整ガイド",
+        category: "LLMアプリ構築",
+        subCategory: "Dify最適化",
+        level: "中級",
+        tags: ["Dify", "パラメータ調整", "評価", "チューニング"],
+        iframe: "https://drive.google.com/file/d/1dqlatyxplvP-wOcmn6KVleEo5v5ZmvUD/preview"
+      },
+      {
+        title: "AI革命：「道具」から「相棒」へ",
+        doc: "/ai-agile-vive-with-gemini-column-2015-vs-2025",
+        docText: "【コラム】2015年ころのAIと今のAIは何が違うのか？",
+        category: "コラム・概念",
+        subCategory: "AI活用論",
+        level: "初級",
+        tags: ["AI", "コラム", "開発スタイル", "概念"],
+        iframe: "https://drive.google.com/file/d/1TvVYK-SYBnnSc_aBUawExw69IuaHKfcA/preview"
+      },
+      {
+        title: "IaCの進化：ミュータブル_vs_イミュータブル",
+        doc: "/appendix/IaC_Evolution_Configuration_to_Immutability",
+        docText: "IaCの進化：ミュータブル_vs_イミュータブル",
+        category: "クラウド設計・アーキテクチャ",
+        subCategory: "IaC設計思想",
+        level: "中級",
+        tags: ["IaC", "イミュータブル", "構成管理", "クラウド"],
+        iframe: "https://drive.google.com/file/d/1qVP7WNCKBrdnk8MaeBzZdvFmtOROBdzO/preview"
+      },
+      {
+        title: "ガードレール、レッドチーミング、Kubernetes",
+        doc: "/appendix/IaC_Evolution_Configuration_to_Immutability",
+        docText: "ガードレール、レッドチーミング、Kubernetes",
+        category: "AIセキュリティ・ガバナンス",
+        subCategory: "ガードレール/攻撃検証",
+        level: "上級",
+        tags: ["ガードレール", "レッドチーミング", "Kubernetes", "セキュリティ"],
+        iframe: "https://drive.google.com/file/d/18AS_60vuZd9FRaN9ZpJLgrvAjyEAJ6gU/preview"
+      },
+      {
+        title: "OWASP_LLM_Top_10_2025_vitepress",
+        doc: "/appendix/OWASP_LLM_Top_10_2025_vitepress",
+        docText: "OWASP_LLM_Top_10_2025_vitepress",
+        category: "AIセキュリティ・ガバナンス",
+        subCategory: "LLM脅威モデル（OWASP）",
+        level: "中級",
+        tags: ["OWASP", "LLM Top 10", "脅威モデル", "セキュリティ"],
+        iframe: "https://drive.google.com/file/d/18GPJM16KT4FQFLiQlWlUURZ7x8EyVMSA/preview"
+      },
+      {
+        title: "LLMアプリ安全開発ロードマップ",
+        doc: "/appendix/OWASP_LLM_Top_10_2025_vitepress",
+        docText: "OWASP_LLM_Top_10_2025_vitepress",
+        category: "AIセキュリティ・ガバナンス",
+        subCategory: "セキュア開発プロセス",
+        level: "中級",
+        tags: ["LLM", "セキュア開発", "ロードマップ", "実践"],
+        iframe: "https://drive.google.com/file/d/17mFlstTqynZOjIACb8UUYasnF22XxjuY/preview"
+      },
+      {
+        title: "LLMテストのスケーリング：DockerからKubernetesへ",
+        doc: "/appendix/AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress",
+        docText: "AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "評価基盤移行（Docker→K8s）",
+        level: "中級",
+        tags: ["LLM評価", "Docker", "Kubernetes", "スケーリング"],
+        iframe: "https://drive.google.com/file/d/1airg3s0Vg6rHwKsM83fE9ySBdb7hcjnY/preview"
+      },
+      {
+        title: "KubernetesでのAI_GPUスケーリングと共有",
+        doc: "/appendix/AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress",
+        docText: "AI_GPU_Scaling_and_Sharing_on_Kubernetes_vitepress",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "GPU運用（共有/配分）",
+        level: "上級",
+        tags: ["GPU", "Kubernetes", "共有", "スケーリング"],
+        iframe: "https://drive.google.com/file/d/1qPvahmalGFIKAf4DtFTeoZndv8WAAfJc/preview"
+      },
+      {
+        title: "AI評価ファクトリーの構築",
+        doc: "/appendix/WSL2_AI_Eval_Platform_vitepress",
+        docText: "WSL2_AI_Eval_Platform_vitepress",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "評価パイプライン設計",
+        level: "上級",
+        tags: ["LLM評価", "評価基盤", "パイプライン", "運用"],
+        iframe: "https://drive.google.com/file/d/1zUPdGYgMs_waCTgYtzRupKhYFel2vXh0/preview"
+      },
+      {
+        title: "K8sによるLLMテスト工場の構築",
+        doc: "/appendix/Kubernetes_Parallel_LLM_Evaluation_vitepress",
+        docText: "Kubernetes_Parallel_LLM_Evaluation_vitepress",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "Kubernetes並列評価",
+        level: "上級",
+        tags: ["Kubernetes", "LLM評価", "並列処理", "テスト工場"],
+        iframe: "https://drive.google.com/file/d/1Bxj-gzTq807nDVBY0TzwnlfikOdl9qVG/preview"
+      },
+      {
+        title: "スクリプトからスケールへ：Kubernetesによる並列LLM評価",
+        doc: "/appendix/Parallel_LLM_Evaluation_on_Kubernetes_vitepress",
+        docText: "Parallel_LLM_Evaluation_on_Kubernetes_vitepress",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "Kubernetes並列評価",
+        level: "上級",
+        tags: ["Kubernetes", "LLM評価", "並列処理", "スケール"],
+        iframe: "https://drive.google.com/file/d/1nB3g-qK5sXvsGzWVmZIio_q9BH1Y8tic/preview"
+      },
+      {
+        title: "LLM品質を測定可能にする：DeepEvalガイド",
+        doc: "/appendix/DeepEval_Metrics_And_Customization_Guide",
+        docText: "DeepEval_Metrics_And_Customization_Guide",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "評価指標/DeepEval",
+        level: "中級",
+        tags: ["DeepEval", "LLM評価", "メトリクス", "品質管理"],
+        iframe: "https://drive.google.com/file/d/1wnF8eg9HV7dkZMww8HVr7JNBI70h5cSK/preview"
+      },
+      {
+        title: "Kubernetes_Indexed_Jobs__大規模並列タスクをマスターする",
+        doc: "/appendix/Kubernetes_Indexed_Jobs_Scaling_AI_ML_vitepress",
+        docText: "Kubernetes_Indexed_Jobs_Scaling_AI_ML_vitepress",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "Kubernetesバッチ/Indexed Jobs",
+        level: "上級",
+        tags: ["Kubernetes", "Indexed Jobs", "バッチ", "大規模処理"],
+        iframe: "https://drive.google.com/file/d/1LYs4g4_uzDGeMnaWiHWdGYxsPc5DSZrM/preview"
+      },
+      {
+        title: "GPUのスライス：KubernetesでAIを賢く実行する方法",
+        doc: "/appendix/GPU_Slicing_Kubernetes_AI_Efficiency_vitepress",
+        docText: "GUP MIG タイムスライシング Kubernetes K8s docker",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "GPU最適化（MIG/Time-slicing）",
+        level: "上級",
+        tags: ["GPU", "MIG", "Time-slicing", "Kubernetes"],
+        iframe: "https://drive.google.com/file/d/1D5MwZ5N5y4EvgqNr-4r6wfjoNIX7RS_k/preview"
+      },
+      {
+        title: "RAGの精度を最大化する：高品質ナレッジベース構築ガイド",
+        doc: "/appendix/RAG_Accuracy_Engineering_vitepress",
+        docText: "RAG ナレッジベース　チャンク　前処理　Dify",
+        category: "LLMアプリ構築",
+        subCategory: "RAG品質改善",
+        level: "中級",
+        tags: ["RAG", "ナレッジベース", "チャンク設計", "精度改善"],
+        iframe: "https://drive.google.com/file/d/1UIwPEDVMLfWpIdsu0E2uUeRWH05yFK9f/preview"
+      },
+      {
+        title: "AIエージェント防御",
+        doc: "/appendix/AI_Agent_Fortress_Defense",
+        docText: "AI エージェント　防御　プロンプトインジェクション　IPI Dify",
+        category: "AIセキュリティ・ガバナンス",
+        subCategory: "エージェント防御",
+        level: "上級",
+        tags: ["AIエージェント", "プロンプトインジェクション", "防御", "Dify"],
+        iframe: "https://drive.google.com/file/d/16lTuOa4nt0dE46pUAb67l6TWWibFq0n2/preview"
+      },
+      {
+        title: "REST_API__デジタル世界の握手",
+        doc: "/appendix/The_Digital_Handshake",
+        docText: "RESTAPI GET POST PUT DELETE PATCH 冪等性　リソース　JSON　HTTPS",
+        category: "RESTAPI",
+        subCategory: "RESTAPI（初級）",
+        level: "初級",
+        tags: ["RESTAPI", "冪等性", "ステートレス", "リソース"],
+        iframe: "https://drive.google.com/file/d/1EMWez7m17ODqba15PDNUwPfO5u-MzaaR/preview"
+      },
+      {
+        title: "REST_APIを良いAPIから素晴らしいAPIへ",
+        doc: "/appendix/Level_Up_Your_REST_APIs",
+        docText: "RESTAPI GET POST PUT DELETE PATCH 冪等性　リソース　JSON　HTTPS",
+        category: "RESTAPI",
+        subCategory: "RESTAPI（中級）",
+        level: "中級",
+        tags: ["RESTAPI", "冪等性", "ステートレス", "リソース"],
+        iframe: "https://drive.google.com/file/d/1ioEwUYGxvQpZ_xuCMnA8d7r__hKWRDsX/preview"
+      },
+      {
+        title: "エンタープライズAIプレイブック",
+        doc: "/appendix/AI_Offense_Defense_Hybrid_Playbook",
+        docText: "エンタープライズAIプレイブック",
+        category: "開発基盤・生産性",
+        subCategory: "ネットワーク/閉域網",
+        level: "初級",
+        tags: ["閉域網", "ネットワーク", "ファイアーウォール", "Proxy"],
+        iframe: "https://drive.google.com/file/d/1Z4E4oE5sItz5aaIHuueCB37GAMySYcJX/preview"
+      },
+      {
+        title: "プロキシの魔術師のコーディングガイド",
+        doc: "/appendix/Proxy_Wizard_AI_Handbook",
+        docText: "プロキシの魔術師のコーディングガイド",
+        category: "開発基盤・生産性",
+        subCategory: "ネットワーク/閉域網",
+        level: "中級",
+        tags: ["閉域網", "セキュリティ", "ネットワーク", "ファイアーウォール", "Proxy", "ツール"],
+        iframe: "https://drive.google.com/file/d/1uV07Xk8pR6AiyX7bh0B8o1EN6cF8sa4Q/preview"
+      },
+      {
+        title: "プロキシの魔術師ハンドブック：企業ネットワーク攻略",
+        doc: "/appendix/Closed_Network_Proxy_Mastery",
+        docText: "プロキシの魔術師ハンドブック：企業ネットワーク攻略",
+        category: "開発基盤・生産性",
+        subCategory: "ネットワーク/閉域網/コマンド",
+        level: "中級",
+        tags: ["閉域網", "詳細コマンド", "セキュリティ", "ネットワーク", "ファイアーウォール", "Proxy", "ツール"],
+        iframe: "https://drive.google.com/file/d/1o6iuKPzAMqATAX4qRRpfllPjOatavt6l/preview"
+      },
+      {
+        title: "閉域網をマスターする：必須Windowsコマンド",
+        doc: "/appendix/Intranet_Command_Survival",
+        docText: "閉域網をマスターする：必須Windowsコマンド",
+        category: "開発基盤・生産性",
+        subCategory: "ネットワーク/閉域網/Windowsコマンド",
+        level: "中級",
+        tags: ["Windowsコマンド", "閉域網", "詳細コマンド", "セキュリティ", "ネットワーク", "ファイアーウォール", "Proxy", "ツール"],
+        iframe: "https://drive.google.com/file/d/1PwSEUKO4wD5M-lEviiKpzx9_44s_CfUh/preview"
+      },
+      {
+        title: "自宅VPNと閉域網接続の注意点",
+        doc: "/appendix/Securing_the_Remote_Perimeter",
+        docText: "自宅VPNと閉域網接続の注意点",
+        category: "開発基盤・生産性",
+        subCategory: "ネットワーク/閉域網/VPN",
+        level: "中級",
+        tags: ["VPN", "閉域網", "自宅", "セキュリティ", "ネットワーク", "ファイアーウォール", "Proxy"],
+        iframe: "https://drive.google.com/file/d/1p09RWX7QLBiKlaOegwb1La_cSTkn-hWA/preview"
+      },
+      {
+        title: "閉域網でのcurlコマンド使用方法",
+        doc: "/appendix/Closed_Network_curl_Grimoire",
+        docText: "閉域網でのcurlコマンド使用方法",
+        category: "開発基盤・生産性",
+        subCategory: "ネットワーク/閉域網/curl",
+        level: "中級",
+        tags: ["curl", "聴診器", "閉域網", "セキュリティ", "ネットワーク", "ファイアーウォール", "Proxy"],
+        iframe: "https://drive.google.com/file/d/1rY5Z6E3K7YfdpCSUnqJeXC-DF-iSSeFD/preview"
+      },
+      {
+        title: "プロのnetshテクニック：閉域網を制覇する",
+        doc: "/appendix/プロのnetshテクニック",
+        docText: "プロのnetshテクニック：閉域網を制覇する",
+        category: "開発基盤・生産性",
+        subCategory: "ネットワーク/閉域網/netsh",
+        level: "中級",
+        tags: ["netsh", "聴診器", "閉域網", "セキュリティ", "ネットワーク", "ファイアーウォール", "Proxy"],
+        iframe: "https://drive.google.com/file/d/1G1JcInIoy0vtK9ttUP5tc56FqNtXDoCm/preview"
+      },
+      {
+        title: "閉域網の達人になる：コマンドライン・サバイバルキット",
+        doc: "/appendix/Closed_Network_CLI_Survival",
+        docText: "閉域網の達人になる：コマンドライン・サバイバルキット",
+        category: "開発基盤・生産性",
+        subCategory: "ネットワーク/閉域網/CLI",
+        level: "中級",
+        tags: ["CLI", "聴診器", "閉域網", "セキュリティ", "ネットワーク", "ファイアーウォール", "Proxy"],
+        iframe: "https://drive.google.com/file/d/1unYpfXju-21-oUWVqdlU84l7D56Z9DUi/preview"
+      },
+      {
+        title: "「十分」の先へ：LLM評価実践ガイド",
+        doc: "/appendix/Engineered LLM Reliability",
+        docText: "「十分」の先へ：LLM評価実践ガイド",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["生成AI", "LLM", "AIテスト", "LLM-as-a-Judge", "Kubernetes", "Docker", "レッドチーミング"],
+        iframe: "https://drive.google.com/file/d/1ProM6JrupGwT_sereqq9cuvAp2Jroyvo/preview"
+      },
+      {
+        title: "VモデルからAIバリデーションへ：生成AIテストガイド",
+        doc: "/appendix/Engineering_Generative_AI_Quality",
+        docText: "「VモデルからAIバリデーションへ：生成AIテストガイド",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["Vモデル", "テストピラミッド", "生成AI", "LLM", "AIテスト", "LLM-as-a-Judge", "Kubernetes", "Docker", "レッドチーミング"],
+        iframe: "https://drive.google.com/file/d/18Ak2qLQ2V9ePUX5J9yOzj9gGJ-9b4Lff/preview"
+      },
+      {
+        title: "LLMの評価：「感覚」から検証可能な品質へ",
+        doc: "/appendix/Engineering_LLM_Reliability",
+        docText: "LLMの評価：「感覚」から検証可能な品質へ",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["VibeCheck", "VerifableQuality", "LLM", "AIテスト", "LLM-as-a-Judge", "Kubernetes", "Docker", "レッドチーミング"],
+        iframe: "https://drive.google.com/file/d/1cOoBjBfCzz7E5ThGEq638dcIhdxRlWed/preview"
+      },
+      {
+        title: "AIチューニングを解き明かす",
+        doc: "/appendix/AI_Tuning_Specialist_Blueprint",
+        docText: "AIチューニングを解き明かす",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["LLM", "AIテスト", "LLM-as-a-Judge", "Kubernetes", "Docker", "OpenShiftAI"],
+        iframe: "https://drive.google.com/file/d/1gK0AOgXx4KQOg0ZAfyd8RLQ0jEoX-lBT/preview"
+      },
+      {
+        title: "プライベートAIキッチン：オフラインLLMデプロイ",
+        doc: "/appendix/Private_AI_Kitchen_Sovereignty",
+        docText: "プライベートAIキッチン：オフラインLLMデプロイ",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["LoRA", "tsuzumi2", "ファインチューニング", "Kubernetes", "Docker", "OpenShiftAI"],
+        iframe: "https://drive.google.com/file/d/1f4jM3lK6VHPclp3Sn0asz2rlneeBky7I/preview"
+      },
+      {
+        title: "OpenShift_AIでのLoRAデプロイ：解説マニュアル",
+        doc: "/appendix/Tsuzumi_LoRA_OpenShift_Disconnected_Deployment",
+        docText: "OpenShift_AIでのLoRAデプロイ：解説マニュアル",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["LoRA", "tsuzumi2", "ファインチューニング", "Kubernetes", "Docker", "OpenShiftAI"],
+        iframe: "https://drive.google.com/file/d/1WY3BlziQ9OQbpLoxBvHTK3P1UGXy_PS7/preview"
+      },
+      {
+        title: "ゲートを守る：プロキシ、ゲートウェイ、そしてバスティオン",
+        doc: "/appendix/Modern_Network_Boundary_Control",
+        docText: "ゲートを守る：プロキシ、ゲートウェイ、そしてバスティオン",
+        category: "開発基盤・生産性",
+        subCategory: "ネットワーク/閉域網",
+        level: "初級",
+        tags: ["踏み台サーバ", "プロキシ", "APIGateway", "閉域網", "ネットワーク", "ファイアーウォール", "Proxy"],
+        iframe: "https://drive.google.com/file/d/1rkrPFrMNuBNlbEsTa-fNHwV7zYqKEdg8/preview"
+      },
+      {
+        title: "カスタムAI「フレーバー」のデプロイ",
+        doc: "/appendix/Dynamic_Multi-Flavor_AI_Serving",
+        docText: "カスタムAI「フレーバー」のデプロイ",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["InferenceService", "LoRA", "tsuzumi2", "ファインチューニング", "Kubernetes", "Docker", "OpenShiftAI"],
+        iframe: "https://drive.google.com/file/d/1Ue9Uf1NG0Gmfgrgr3Bsi5qTwOd7A8BqD/preview"
+      },
+      {
+        title: "カスタムAIモデルの賢い実行方法",
+        doc: "/appendix/Enterprise_Sovereign_AI_Strategy",
+        docText: "カスタムAIモデルの賢い実行方法",
+        category: "LLM評価・運用スケーリング",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["vLLM", "KServe", "InferenceService", "LoRA", "tsuzumi2", "ファインチューニング", "Kubernetes", "Docker", "OpenShiftAI"],
+        iframe: "https://drive.google.com/file/d/1TXDgHW1OxAbur0ztb8h6eoQWMVnV05wC/preview"
+      },
+      {
+        title: "NTT_DATAのソブリンAI：インセプションデッキ",
+        doc: "/appendix/Sovereign_AI_Kitchen",
+        docText: "NTT_DATAのソブリンAI：インセプションデッキ",
+        category: "LLMaaS・カスタムデプロイ",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["インセプションデッキ", "LLMaaS", "ソブリンAI", "LoRA", "tsuzumi2", "ファインチューニング", "Kubernetes", "Docker", "OpenShiftAI"],
+        iframe: "https://drive.google.com/file/d/1HslPb9dBBbn9L1PrDw1SAE8C5iMhhpXU/preview"
+      },
+      {
+        title: "InferenceServiceを理解する",
+        doc: "/appendix/Efficient_Multi-LoRA_on_RHOAI",
+        docText: "InferenceServiceを理解する",
+        category: "LLMaaS・カスタムデプロイ",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["InferenceService", "LLMaaS", "ソブリンAI", "LoRA", "tsuzumi2", "ファインチューニング", "Kubernetes", "Docker", "OpenShiftAI"],
+        iframe: "https://drive.google.com/file/d/1lbPcWGcvlGEmXQPx3Rqv-m-di37LdT86/preview"
+      },
+      {
+        title: "プライベートAIキッチンの構築",
+        doc: "/appendix/The_Private_AI_Kitchen_Blueprint",
+        docText: "プライベートAIキッチンの構築",
+        category: "LLMaaS・カスタムデプロイ",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["Multi-LoRA", "InferenceService", "LLMaaS", "ソブリンAI", "LoRA", "tsuzumi2", "ファインチューニング", "Kubernetes", "Docker", "OpenShiftAI", "証明書", "APIリクエスト", "PVC", "MinIO", "閉域網"],
+        iframe: "https://drive.google.com/file/d/15kGwc_d7VSUa1w18lSLbGQT9kdTtqZKA/preview"
+      },
+      {
+        title: "動的AIサービング：効率的なカスタムモデルデプロイ",
+        doc: "/appendix/Dynamic_Multi-LoRA_Strategy",
+        docText: "動的AIサービング：効率的なカスタムモデルデプロイ",
+        category: "LLMaaS・カスタムデプロイ",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["Multi-LoRA", "InferenceService", "LLMaaS", "ソブリンAI", "LoRA", "tsuzumi2", "ファインチューニング", "Kubernetes", "Docker", "OpenShiftAI", "証明書", "APIリクエスト", "PVC", "MinIO", "閉域網"],
+        iframe: "https://drive.google.com/file/d/1khVmrWK_bpcFO_zPffBG9AHE1jLh7TEx/preview"
+      },
+      {
+        title: "（音声）＜テスト計画・PoC仕様書（推論）＞完全閉域網で絶対に落ちない動的LoRA基盤の限界突破テスト",
+        doc: "/appendix/Invincible_Air-Gapped_AI_Infrastructure",
+        docText: "完全閉域網で絶対に落ちない動的LoRA基盤の限界突破テスト",
+        category: "LLMaaS・カスタムデプロイ",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["音声", "Multi-LoRA", "InferenceService", "LLMaaS", "ソブリンAI", "LoRA", "tsuzumi2", "ファインチューニング", "Kubernetes", "Docker", "OpenShiftAI", "証明書", "APIリクエスト", "PVC", "MinIO", "閉域網"],
+        iframe: "https://drive.google.com/file/d/1M53rLQ7GyxM7GCzNSZ2dGd3IMhz8Nkjj/preview"
+      },
+      {
+        title: "（音声）＜詳細設計・詳細マニュフェスト（推論）＞動的LoRAで構築する完全閉域網の生成AI基盤",
+        doc: "/appendix/Sovereign_AI_Dynamic_LoRA_Blueprint",
+        docText: "動的LoRAで構築する完全閉域網の生成AI基盤",
+        category: "LLMaaS・カスタムデプロイ",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["音声", "Multi-LoRA", "InferenceService", "LLMaaS", "ソブリンAI", "LoRA", "tsuzumi2", "ファインチューニング", "Kubernetes", "Docker", "OpenShiftAI", "証明書", "APIリクエスト", "PVC", "MinIO", "閉域網"],
+        iframe: "https://drive.google.com/file/d/1Jbc-lBnk5WIMFbUrpu8ko0_GH9E7ZtG4/preview"
+      },
+      {
+        title: "（音声）＜基本・運用設計書（推論）＞完全閉域網での巨大LLM運用と動的LoRA設計",
+        doc: "/appendix/Sovereign_AI_via_Dynamic_LoRA",
+        docText: "完全閉域網での巨大LLM運用と動的LoRA設計",
+        category: "LLMaaS・カスタムデプロイ",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["音声", "Multi-LoRA", "InferenceService", "LLMaaS", "ソブリンAI", "LoRA", "tsuzumi2", "ファインチューニング", "Kubernetes", "Docker", "OpenShiftAI", "証明書", "APIリクエスト", "PVC", "MinIO", "閉域網"],
+        iframe: "https://drive.google.com/file/d/1nKD0H1gThRMgYRauE8yBPNRxkOc8LUH8/preview"
+      },
+      {
+        title: "【音声】＜動的LoRA：OpenShift AI設定と対応InferenceServiceの関係＞",
+        doc: "/appendix/Dynamic_LoRA_Deployment_Guide",
+        docText: "完全閉域網での巨大LLM運用と動的LoRA設計",
+        category: "LLMaaS・カスタムデプロイ",
+        subCategory: "LLM評価実践ガイド",
+        level: "中級",
+        tags: ["音声", "GUI", "Multi-LoRA", "InferenceService", "LLMaaS", "ソブリンAI", "LoRA", "tsuzumi2", "ファインチューニング", "Kubernetes", "Docker", "OpenShiftAI", "証明書", "APIリクエスト", "PVC", "MinIO", "閉域網"],
+        iframes: [
+          "https://drive.google.com/file/d/16swnbfq2NhaHGy-r6NjYwsMLE3CmjSou/preview",
+          "https://drive.google.com/file/d/1ssQnqprW7bslSzwq9ywWRkLQltewgNat/preview"
+        ]
+      }
+    ];
+    const categories = computed(() => [...new Set(videos.map((video) => video.category))]);
+    const levels = ["初級", "中級", "上級"];
+    const subCategories = computed(() => {
+      const base = selectedCategory.value ? videos.filter((video) => video.category === selectedCategory.value) : videos;
+      return [...new Set(base.map((video) => video.subCategory))];
+    });
+    const tags = computed(() => {
+      const base = videos.filter((video) => {
+        if (selectedCategory.value && video.category !== selectedCategory.value) return false;
+        if (selectedSubCategory.value && video.subCategory !== selectedSubCategory.value) return false;
+        if (selectedLevel.value && video.level !== selectedLevel.value) return false;
+        return true;
+      });
+      return [...new Set(base.flatMap((video) => video.tags))];
+    });
+    watch(subCategories, (list) => {
+      if (selectedSubCategory.value && !list.includes(selectedSubCategory.value)) {
+        selectedSubCategory.value = "";
+      }
+    });
+    watch(tags, (list) => {
+      if (selectedTag.value && !list.includes(selectedTag.value)) {
+        selectedTag.value = "";
+      }
+    });
+    const hasActiveFilters = computed(() => {
+      return Boolean(
+        searchQuery.value.trim() || selectedCategory.value || selectedSubCategory.value || selectedLevel.value || selectedTag.value
+      );
+    });
+    const videoFrameList = (video) => {
+      if (Array.isArray(video.iframes) && video.iframes.length > 0) {
+        return video.iframes;
+      }
+      if (typeof video.iframe === "string" && video.iframe) {
+        return [video.iframe];
+      }
+      return [];
+    };
+    const matchesSearch = (video, query) => {
+      if (!query) return true;
+      const haystack = `${video.title} ${video.docText} ${video.category} ${video.subCategory} ${video.level} ${video.tags.join(" ")}`.toLowerCase();
+      if (query.includes(" or ") || query.includes("|")) {
+        const terms2 = query.split(/\s+or\s+|\|/i).map((term) => term.trim()).filter(Boolean);
+        return terms2.some((term) => haystack.includes(term));
+      }
+      const terms = query.split(/\s+/).map((term) => term.trim()).filter(Boolean);
+      return terms.every((term) => haystack.includes(term));
+    };
+    const displayVideos = computed(() => {
+      const query = searchQuery.value.trim().toLowerCase();
+      const filtered = videos.filter((video) => {
+        if (!matchesSearch(video, query)) return false;
+        if (selectedCategory.value && video.category !== selectedCategory.value) return false;
+        if (selectedSubCategory.value && video.subCategory !== selectedSubCategory.value) return false;
+        if (selectedLevel.value && video.level !== selectedLevel.value) return false;
+        if (selectedTag.value && !video.tags.includes(selectedTag.value)) return false;
+        return true;
+      });
+      return reverseOrder.value ? [...filtered].reverse() : filtered;
+    });
+    const groupedVideoSections = computed(() => {
+      const categoryMap = /* @__PURE__ */ new Map();
+      for (const video of displayVideos.value) {
+        if (!video) continue;
+        const categoryName = video.category || "未分類";
+        if (!categoryMap.has(categoryName)) {
+          categoryMap.set(categoryName, {
+            key: `category-${categoryName}`,
+            name: categoryName,
+            count: 0,
+            videos: []
+          });
+        }
+        const categorySection = categoryMap.get(categoryName);
+        categorySection.count += 1;
+        categorySection.videos.push(video);
+      }
+      return [...categoryMap.values()];
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${ssrRenderAttrs(_attrs)}><h1 id="動画一覧" tabindex="-1">動画一覧 <a class="header-anchor" href="#動画一覧" aria-label="Permalink to &quot;動画一覧&quot;">​</a></h1><h2 id="このページはvive-with-gemini内の動画-notebooklmやvideopadなど活用-をまとめています。" tabindex="-1">このページはvive-with-gemini内の動画（NoteBookLMやVideoPadなど活用）をまとめています。 <a class="header-anchor" href="#このページはvive-with-gemini内の動画-notebooklmやvideopadなど活用-をまとめています。" aria-label="Permalink to &quot;このページはvive-with-gemini内の動画（NoteBookLMやVideoPadなど活用）をまとめています。&quot;">​</a></h2><div class="video-controls"><label class="video-toggle"><input type="checkbox"${ssrIncludeBooleanAttr(Array.isArray(reverseOrder.value) ? ssrLooseContain(reverseOrder.value, null) : reverseOrder.value) ? " checked" : ""}> 逆順表示 </label><label class="video-search"><span>タイトル検索</span><span class="video-help" title="AND検索: Kubernetes LLM（スペース区切りでAND）
+OR検索: Kubernetes OR LLM または Kubernetes|LLM"> 使い方 </span><input type="search"${ssrRenderAttr("value", searchQuery.value)} placeholder="タイトル/関連ドキュメント/タグ（スペース=AND、OR=OR）"></label><label class="video-filter"><span>大分類</span><select><option value=""${ssrIncludeBooleanAttr(Array.isArray(selectedCategory.value) ? ssrLooseContain(selectedCategory.value, "") : ssrLooseEqual(selectedCategory.value, "")) ? " selected" : ""}>すべて</option><!--[-->`);
+      ssrRenderList(categories.value, (category) => {
+        _push(`<option${ssrRenderAttr("value", category)}${ssrIncludeBooleanAttr(Array.isArray(selectedCategory.value) ? ssrLooseContain(selectedCategory.value, category) : ssrLooseEqual(selectedCategory.value, category)) ? " selected" : ""}>${ssrInterpolate(category)}</option>`);
+      });
+      _push(`<!--]--></select></label><label class="video-filter"><span>小分類</span><select><option value=""${ssrIncludeBooleanAttr(Array.isArray(selectedSubCategory.value) ? ssrLooseContain(selectedSubCategory.value, "") : ssrLooseEqual(selectedSubCategory.value, "")) ? " selected" : ""}>すべて</option><!--[-->`);
+      ssrRenderList(subCategories.value, (subCategory) => {
+        _push(`<option${ssrRenderAttr("value", subCategory)}${ssrIncludeBooleanAttr(Array.isArray(selectedSubCategory.value) ? ssrLooseContain(selectedSubCategory.value, subCategory) : ssrLooseEqual(selectedSubCategory.value, subCategory)) ? " selected" : ""}>${ssrInterpolate(subCategory)}</option>`);
+      });
+      _push(`<!--]--></select></label><label class="video-filter"><span>難易度</span><select><option value=""${ssrIncludeBooleanAttr(Array.isArray(selectedLevel.value) ? ssrLooseContain(selectedLevel.value, "") : ssrLooseEqual(selectedLevel.value, "")) ? " selected" : ""}>すべて</option><!--[-->`);
+      ssrRenderList(levels, (level) => {
+        _push(`<option${ssrRenderAttr("value", level)}${ssrIncludeBooleanAttr(Array.isArray(selectedLevel.value) ? ssrLooseContain(selectedLevel.value, level) : ssrLooseEqual(selectedLevel.value, level)) ? " selected" : ""}>${ssrInterpolate(level)}</option>`);
+      });
+      _push(`<!--]--></select></label><label class="video-filter"><span>タグ</span><select><option value=""${ssrIncludeBooleanAttr(Array.isArray(selectedTag.value) ? ssrLooseContain(selectedTag.value, "") : ssrLooseEqual(selectedTag.value, "")) ? " selected" : ""}>すべて</option><!--[-->`);
+      ssrRenderList(tags.value, (tag) => {
+        _push(`<option${ssrRenderAttr("value", tag)}${ssrIncludeBooleanAttr(Array.isArray(selectedTag.value) ? ssrLooseContain(selectedTag.value, tag) : ssrLooseEqual(selectedTag.value, tag)) ? " selected" : ""}>${ssrInterpolate(tag)}</option>`);
+      });
+      _push(`<!--]--></select></label><button class="video-reset" type="button"${ssrIncludeBooleanAttr(!hasActiveFilters.value) ? " disabled" : ""}> 絞り込み解除 </button><span class="video-count">${ssrInterpolate(displayVideos.value.length)} 件</span></div>`);
+      if (displayVideos.value.length > 0) {
+        _push(`<div class="video-sections"><!--[-->`);
+        ssrRenderList(groupedVideoSections.value, (categorySection) => {
+          _push(`<section class="video-category-section"><h2 class="video-category-title"> 大分類：${ssrInterpolate(categorySection.name)} <span class="video-section-count">${ssrInterpolate(categorySection.count)}件</span></h2><div class="video-grid"><!--[-->`);
+          ssrRenderList(categorySection.videos, (video) => {
+            _push(`<div class="video-item"><p class="video-classline"><span class="video-label">中分類：</span>${ssrInterpolate(video.subCategory)}</p><p class="video-classline"><span class="video-label">タグ：</span>${ssrInterpolate(video.tags.join(" / "))}</p><p class="video-classline"><span class="video-label">難易度：</span>${ssrInterpolate(video.level)}</p><h4>${ssrInterpolate(video.title)}</h4><p> 関連ドキュメント： <a${ssrRenderAttr("href", unref(withBase)(video.doc))}>${ssrInterpolate(video.docText)}</a></p><div class="video-container"><!--[-->`);
+            ssrRenderList(videoFrameList(video), (iframeSrc) => {
+              _push(`<iframe${ssrRenderAttr("src", iframeSrc)} allow="autoplay; encrypted-media" loading="lazy"></iframe>`);
+            });
+            _push(`<!--]--></div></div>`);
+          });
+          _push(`<!--]--></div></section>`);
+        });
+        _push(`<!--]--></div>`);
+      } else {
+        _push(`<!---->`);
+      }
+      if (displayVideos.value.length === 0) {
+        _push(`<p class="video-empty"> 該当する動画が見つかりませんでした。 </p>`);
+      } else {
+        _push(`<!---->`);
+      }
+      _push(`</div>`);
+    };
+  }
+});
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("videos.md");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+export {
+  __pageData,
+  _sfc_main as default
+};
