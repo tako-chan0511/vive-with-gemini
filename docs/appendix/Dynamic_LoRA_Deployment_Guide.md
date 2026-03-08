@@ -460,6 +460,8 @@ curl -X POST https://ai-endpoint/v1/chat/completions \
     ]
   }'
 ````
+動的LoRAでオンデマンドロードをする場合は、＜ベースモデル名＞：＜使いたいアダプタフォルダ名＞で指定する。
+- ベースモデル名：tsuzumi-baseの場合は、"model":"tsuzumi-base:hr-lora-v1",となる
 
 ## コマンド詳細解説
 
