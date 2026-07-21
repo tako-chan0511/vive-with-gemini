@@ -215,6 +215,13 @@ mql?.addEventListener('change', (e) => {
           { text: "想定Q&A", link: "/q-and-a" },
         ],
       },
+      {
+        text: '<span class="highlight-title">公開手順</span>',
+        collapsed: true,
+        items: [
+          { text: "発表用資料の公開手順", link: "/publish-guide" },
+        ],
+      },
 
   {
   text: '<span class="highlight-title">環境他Tips</span>',

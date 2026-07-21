@@ -17,6 +17,7 @@
     "vue": "^3.3.8"
   },
   "dependencies": {
+    "@openai/codex": "^0.118.0",
     "mermaid": "^11.12.1"
   }
 }
