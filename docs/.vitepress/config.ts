@@ -201,9 +201,13 @@ mql?.addEventListener('change', (e) => {
             text: "4.1 現場で磨かれるAI活用術",
             link: "/ai-agile-vive-with-gemini-extended"
           },
-        {
+          {
             text: "4.2 2015年ころのAIと、今のAIは何が違うのか？",
             link: "/ai-agile-vive-with-gemini-column-2015-vs-2025"
+          },
+          {
+            text: "4.3 発表用まとめ",
+            link: "/ai-agile-vive-with-gemini-4-3"
           },
         ],
       },
