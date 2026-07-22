@@ -28,6 +28,6 @@ dist-ssr
 # VitePress build/cache
 docs/.vitepress/cache/
 docs/.vitepress/dist/
+docs/.vitepress/.temp/
 .vitepress/cache/
 .vitepress/dist/
-

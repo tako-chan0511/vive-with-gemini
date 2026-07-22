@@ -209,6 +209,10 @@ mql?.addEventListener('change', (e) => {
             text: "4.3 発表用まとめ",
             link: "/ai-agile-vive-with-gemini-4-3"
           },
+          {
+            text: "4.4 エアギャップ環境で挑む社内向けMaaS開発",
+            link: "/ai-agile-vive-with-gemini-4-4"
+          },
         ],
       },
       {
