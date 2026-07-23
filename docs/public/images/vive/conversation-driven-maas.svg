@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200"
+     height="675"
+     viewBox="0 0 1200 675"
+     role="img"
+     aria-labelledby="conversation-title conversation-desc">
+  <title id="conversation-title">会話から運用データまでを、次のIssueへつなぐ</title>
+  <desc id="conversation-desc">ユーザーとの対話をGitHub Issueへ整理し、人とAIで開発し、OpenShiftとKubernetesで提供した結果を計測して次のIssueへ戻す、会話駆動型MaaS開発の循環図。</desc>
+
+  <defs>
+    <linearGradient id="conversation-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F3F6F9"/>
+    </linearGradient>
+    <filter id="conversation-shadow" x="-20%" y="-25%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#173B5E" flood-opacity="0.13"/>
+    </filter>
+    <marker id="conversation-arrow-blue"
+            markerWidth="13"
+            markerHeight="13"
+            refX="10"
+            refY="6.5"
+            orient="auto"
+            markerUnits="userSpaceOnUse">
+      <path d="M0,0 L13,6.5 L0,13 Z" fill="#2F80ED"/>
+    </marker>
+    <marker id="conversation-arrow-purple"
+            markerWidth="13"
+            markerHeight="13"
+            refX="10"
+            refY="6.5"
+            orient="auto"
+            markerUnits="userSpaceOnUse">
+      <path d="M0,0 L13,6.5 L0,13 Z" fill="#7B61A8"/>
+    </marker>
+    <marker id="conversation-arrow-green"
+            markerWidth="13"
+            markerHeight="13"
+            refX="10"
+            refY="6.5"
+            orient="auto"
+            markerUnits="userSpaceOnUse">
+      <path d="M0,0 L13,6.5 L0,13 Z" fill="#2E8B57"/>
+    </marker>
+    <marker id="conversation-arrow-orange"
+            markerWidth="15"
+            markerHeight="15"
+            refX="12"
+            refY="7.5"
+            orient="auto"
+            markerUnits="userSpaceOnUse">
+      <path d="M0,0 L15,7.5 L0,15 Z" fill="#F2994A"/>
+    </marker>
+    <marker id="conversation-arrow-navy"
+            markerWidth="14"
+            markerHeight="14"
+            refX="11"
+            refY="7"
+            orient="auto"
+            markerUnits="userSpaceOnUse">
+      <path d="M0,0 L14,7 L0,14 Z" fill="#173B5E"/>
+    </marker>
+  </defs>
+
+  <g font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" fill="#1F2937">
+    <rect width="1200" height="675" fill="url(#conversation-bg)"/>
+    <rect width="1200" height="72" fill="#173B5E"/>
+    <rect x="0" y="68" width="1200" height="4" fill="#2F80ED"/>
+    <text x="600"
+          y="45"
+          text-anchor="middle"
+          font-size="30"
+          font-weight="700"
+          fill="#FFFFFF">会話から運用データまでを、次のIssueへつなぐ</text>
+
+    <!-- 3つの横レーン -->
+    <rect x="36" y="90" width="1128" height="136" rx="22" fill="#EAF4FF" stroke="#2F80ED" stroke-width="2"/>
+    <rect x="36" y="242" width="1128" height="136" rx="22" fill="#F2ECFA" stroke="#7B61A8" stroke-width="2"/>
+    <rect x="36" y="394" width="1128" height="148" rx="22" fill="#EAF7EF" stroke="#2E8B57" stroke-width="2"/>
+
+    <!-- レーン間の接続 -->
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M855 209 C855 244 455 229 455 272"
+            stroke="#173B5E"
+            stroke-width="8"
+            marker-end="url(#conversation-arrow-navy)"/>
+      <path d="M880 350 C880 390 330 380 330 428"
+            stroke="#173B5E"
+            stroke-width="8"
+            marker-end="url(#conversation-arrow-navy)"/>
+    </g>
+
+    <!-- 最後のフィードバックをIssueへ戻す大きな循環 -->
+    <path d="M1040 469 C1092 469 1128 447 1128 390 L1128 176 C1128 145 1093 159 965 159"
+          fill="none"
+          stroke="#F2994A"
+          stroke-width="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          marker-end="url(#conversation-arrow-orange)"/>
+
+    <!-- 対話レーン -->
+    <g filter="url(#conversation-shadow)">
+      <rect x="54" y="119" width="122" height="78" rx="17" fill="#2F80ED"/>
+      <text x="115" y="166" text-anchor="middle" font-size="23" font-weight="700" fill="#FFFFFF">対話</text>
+      <rect x="203" y="97" width="134" height="26" rx="13" fill="#FFFFFF" stroke="#2F80ED" stroke-width="1.5"/>
+      <text x="270" y="116" text-anchor="middle" font-size="14" font-weight="700" fill="#1E63B5">手戻り抑制</text>
+
+      <rect x="205" y="126" width="220" height="82" rx="17" fill="#FFFFFF" stroke="#2F80ED" stroke-width="2.5"/>
+      <text x="315" y="174" text-anchor="middle" font-size="19" font-weight="700">ユーザーとの対話</text>
+
+      <rect x="475" y="126" width="220" height="82" rx="17" fill="#FFFFFF" stroke="#2F80ED" stroke-width="2.5"/>
+      <text x="585" y="174" text-anchor="middle" font-size="19" font-weight="700">Copilotで整理</text>
+
+      <rect x="745" y="126" width="220" height="82" rx="17" fill="#FFFFFF" stroke="#2F80ED" stroke-width="3"/>
+      <text x="855" y="174" text-anchor="middle" font-size="20" font-weight="700" fill="#173B5E">GitHub Issue</text>
+    </g>
+    <g fill="none"
+       stroke="#2F80ED"
+       stroke-width="8"
+       stroke-linecap="round"
+       marker-end="url(#conversation-arrow-blue)">
+      <path d="M425 167 L475 167"/>
+      <path d="M695 167 L745 167"/>
+    </g>
+
+    <!-- 開発レーン -->
+    <g filter="url(#conversation-shadow)">
+      <rect x="54" y="271" width="122" height="78" rx="17" fill="#7B61A8"/>
+      <text x="115" y="318" text-anchor="middle" font-size="23" font-weight="700" fill="#FFFFFF">開発</text>
+      <rect x="248" y="249" width="112" height="26" rx="13" fill="#FFFFFF" stroke="#7B61A8" stroke-width="1.5"/>
+      <text x="304" y="268" text-anchor="middle" font-size="14" font-weight="700" fill="#5C4681">価値適合</text>
+
+      <rect x="250" y="272" width="410" height="78" rx="17" fill="#FFFFFF" stroke="#7B61A8" stroke-width="2.5"/>
+      <text x="455" y="305" text-anchor="middle" font-size="20" font-weight="700">Codex＋人で設計・実装・テスト</text>
+      <text x="455" y="330" text-anchor="middle" font-size="14" font-weight="500" fill="#667085">Issueの意図を実装と検証へ</text>
+
+      <rect x="750" y="272" width="260" height="78" rx="17" fill="#FFFFFF" stroke="#7B61A8" stroke-width="2.5"/>
+      <text x="880" y="318" text-anchor="middle" font-size="19" font-weight="700">Pull Request／承認</text>
+    </g>
+    <path d="M660 311 L750 311"
+          fill="none"
+          stroke="#7B61A8"
+          stroke-width="8"
+          stroke-linecap="round"
+          marker-end="url(#conversation-arrow-purple)"/>
+
+    <!-- 実行・計測レーン -->
+    <g filter="url(#conversation-shadow)">
+      <rect x="54" y="429" width="122" height="80" rx="17" fill="#2E8B57"/>
+      <text x="115" y="460" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">実行</text>
+      <line x1="82" y1="469" x2="148" y2="469" stroke="#FFFFFF" stroke-width="2" opacity="0.75"/>
+      <text x="115" y="495" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">計測</text>
+      <rect x="203" y="401" width="140" height="26" rx="13" fill="#FFFFFF" stroke="#2E8B57" stroke-width="1.5"/>
+      <text x="273" y="420" text-anchor="middle" font-size="14" font-weight="700" fill="#236B44">GPU効率向上</text>
+
+      <rect x="205" y="428" width="250" height="82" rx="17" fill="#FFFFFF" stroke="#2E8B57" stroke-width="2.5"/>
+      <text x="330" y="461" text-anchor="middle" font-size="18" font-weight="700">OpenShift／Kubernetes</text>
+      <text x="330" y="487" text-anchor="middle" font-size="18" font-weight="700">で提供</text>
+
+      <rect x="510" y="428" width="230" height="82" rx="17" fill="#FFFFFF" stroke="#2E8B57" stroke-width="2.5"/>
+      <text x="625" y="476" text-anchor="middle" font-size="18" font-weight="700">利用・運用メトリクス</text>
+
+      <rect x="795" y="428" width="245" height="82" rx="17" fill="#FFFFFF" stroke="#2E8B57" stroke-width="2.5"/>
+      <text x="917.5" y="476" text-anchor="middle" font-size="18" font-weight="700">ユーザーフィードバック</text>
+    </g>
+    <g fill="none"
+       stroke="#2E8B57"
+       stroke-width="8"
+       stroke-linecap="round"
+       marker-end="url(#conversation-arrow-green)">
+      <path d="M455 469 L510 469"/>
+      <path d="M740 469 L795 469"/>
+    </g>
+
+    <!-- ループの意味 -->
+    <g filter="url(#conversation-shadow)">
+      <rect x="455" y="551" width="290" height="35" rx="17.5" fill="#FFF2E2" stroke="#F2994A" stroke-width="2"/>
+      <circle cx="480" cy="568.5" r="7" fill="#F2994A"/>
+      <text x="611"
+            y="575"
+            text-anchor="middle"
+            font-size="17"
+            font-weight="700"
+            fill="#A85412">短いフィードバックループ</text>
+    </g>
+
+    <!-- 章の結論 -->
+    <g>
+      <rect x="36" y="603" width="1128" height="54" rx="18" fill="#173B5E"/>
+      <rect x="36" y="603" width="1128" height="5" rx="2.5" fill="#F2994A"/>
+      <rect x="55" y="615" width="102" height="31" rx="15.5" fill="#F2994A"/>
+      <text x="106"
+            y="636"
+            text-anchor="middle"
+            font-size="15"
+            font-weight="700"
+            fill="#FFFFFF">章の結論</text>
+      <text x="181"
+            y="638"
+            font-size="21"
+            font-weight="700"
+            fill="#FFFFFF">要望・判断・変更・計測・学びを、1本の会話として循環させる</text>
+    </g>
+  </g>
+</svg>
