@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200"
+     height="675"
+     viewBox="0 0 1200 675"
+     role="img"
+     aria-labelledby="roi-title roi-desc">
+  <title id="roi-title">ROI最大化は、価値を上げながらコストを下げる</title>
+  <desc id="roi-desc">ROIを提供できた価値を投入したコストで割った式として示し、短く高品質なフィードバックが価値向上とコスト低減の両方に働くことを表す図。</desc>
+
+  <defs>
+    <marker id="roi-arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2F80ED"/>
+    </marker>
+    <marker id="roi-arrow-orange" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#F2994A"/>
+    </marker>
+    <style>
+      text {
+        font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
+      }
+      .header {
+        font-size: 30px;
+        font-weight: 700;
+        fill: #FFFFFF;
+        letter-spacing: 0.01em;
+      }
+      .formula {
+        font-size: 35px;
+        font-weight: 700;
+        fill: #173B5E;
+      }
+      .panel-title {
+        font-size: 22px;
+        font-weight: 700;
+      }
+      .item {
+        font-size: 16px;
+        font-weight: 600;
+        fill: #1F2937;
+      }
+      .feedback-title {
+        font-size: 23px;
+        font-weight: 700;
+        fill: #173B5E;
+      }
+      .feedback-note {
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .conclusion {
+        font-size: 18px;
+        font-weight: 700;
+        fill: #FFFFFF;
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" fill="#F6F8FB"/>
+  <rect x="0" y="0" width="1200" height="72" fill="#173B5E"/>
+  <text class="header" x="52" y="46">ROI最大化は、価値を上げながらコストを下げる</text>
+
+  <!-- ROI formula -->
+  <rect x="145" y="95" width="910" height="104" rx="24" fill="#FFFFFF" stroke="#C7D3E0" stroke-width="2"/>
+  <rect x="145" y="95" width="12" height="104" rx="6" fill="#2F80ED"/>
+  <rect x="1043" y="95" width="12" height="104" rx="6" fill="#F2994A"/>
+  <text class="formula" x="600" y="159" text-anchor="middle">
+    <tspan fill="#173B5E">ROI = </tspan>
+    <tspan fill="#2E8B57">提供できた価値</tspan>
+    <tspan fill="#173B5E"> ÷ </tspan>
+    <tspan fill="#F2994A">投入したコスト</tspan>
+  </text>
+
+  <!-- Value panel, placed left and slightly higher -->
+  <rect x="48" y="232" width="355" height="300" rx="22" fill="#EAF4FF" stroke="#2F80ED" stroke-width="2"/>
+  <rect x="48" y="232" width="355" height="62" rx="22" fill="#2F80ED"/>
+  <rect x="48" y="272" width="355" height="22" fill="#2F80ED"/>
+  <circle cx="87" cy="263" r="19" fill="#FFFFFF"/>
+  <path d="M76 268 L86 258 L93 264 L101 250" fill="none" stroke="#2F80ED" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M95 250 H101 V256" fill="none" stroke="#2F80ED" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="panel-title" x="119" y="270" fill="#FFFFFF">提供できた価値を上げる</text>
+
+  <rect x="70" y="314" width="311" height="42" rx="12" fill="#FFFFFF"/>
+  <circle cx="94" cy="335" r="10" fill="#2F80ED"/>
+  <path d="M89 335 L93 339 L100 331" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="item" x="116" y="341">要望への短周期対応</text>
+
+  <rect x="70" y="365" width="311" height="42" rx="12" fill="#FFFFFF"/>
+  <circle cx="94" cy="386" r="10" fill="#2F80ED"/>
+  <path d="M89 386 L93 390 L100 382" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="item" x="116" y="392">使いやすいモデル</text>
+
+  <rect x="70" y="416" width="311" height="42" rx="12" fill="#FFFFFF"/>
+  <circle cx="94" cy="437" r="10" fill="#2F80ED"/>
+  <path d="M89 437 L93 441 L100 433" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="item" x="116" y="443">安定した推論</text>
+
+  <rect x="70" y="467" width="311" height="42" rx="12" fill="#FFFFFF"/>
+  <circle cx="94" cy="488" r="10" fill="#2F80ED"/>
+  <path d="M89 488 L93 492 L100 484" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="item" x="116" y="494">横展開できる標準基盤</text>
+
+  <!-- Cost panel, placed right and slightly lower -->
+  <rect x="797" y="262" width="355" height="300" rx="22" fill="#FFF2E2" stroke="#F2994A" stroke-width="2"/>
+  <rect x="797" y="262" width="355" height="62" rx="22" fill="#F2994A"/>
+  <rect x="797" y="302" width="355" height="22" fill="#F2994A"/>
+  <circle cx="836" cy="293" r="19" fill="#FFFFFF"/>
+  <path d="M824 283 L836 295 L846 286 L849 304" fill="none" stroke="#F2994A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M843 304 H849 V298" fill="none" stroke="#F2994A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="panel-title" x="868" y="300" fill="#FFFFFF">投入したコストを下げる</text>
+
+  <rect x="819" y="344" width="311" height="42" rx="12" fill="#FFFFFF"/>
+  <circle cx="843" cy="365" r="10" fill="#F2994A"/>
+  <path d="M838 365 L842 369 L849 361" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="item" x="865" y="371">AIによる開発支援</text>
+
+  <rect x="819" y="395" width="311" height="42" rx="12" fill="#FFFFFF"/>
+  <circle cx="843" cy="416" r="10" fill="#F2994A"/>
+  <path d="M838 416 L842 420 L849 412" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="item" x="865" y="422">手戻り削減</text>
+
+  <rect x="819" y="446" width="311" height="42" rx="12" fill="#FFFFFF"/>
+  <circle cx="843" cy="467" r="10" fill="#F2994A"/>
+  <path d="M838 467 L842 471 L849 463" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="item" x="865" y="473">GPU遊休削減</text>
+
+  <rect x="819" y="497" width="311" height="42" rx="12" fill="#FFFFFF"/>
+  <circle cx="843" cy="518" r="10" fill="#F2994A"/>
+  <path d="M838 518 L842 522 L849 514" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="item" x="865" y="524">標準化・自動テスト</text>
+
+  <!-- Feedback engine and arrows to both sides -->
+  <rect x="447" y="303" width="306" height="165" rx="28" fill="#FFFFFF" stroke="#7B61A8" stroke-width="3"/>
+  <circle cx="600" cy="341" r="20" fill="#7B61A8"/>
+  <path d="M590 342 C590 332, 603 328, 608 336 C614 345, 601 352, 594 348"
+        fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <path d="M590 334 L590 342 L598 342" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="feedback-title" x="600" y="389" text-anchor="middle">短く高品質な</text>
+  <text class="feedback-title" x="600" y="421" text-anchor="middle">フィードバック</text>
+  <text class="feedback-note" x="600" y="448" text-anchor="middle" fill="#7B61A8">学びを次の改善へつなぐ</text>
+
+  <path d="M447 369 C428 356, 420 345, 405 345"
+        fill="none" stroke="#2F80ED" stroke-width="8" stroke-linecap="round" marker-end="url(#roi-arrow-blue)"/>
+
+  <path d="M753 403 C772 416, 780 427, 795 427"
+        fill="none" stroke="#F2994A" stroke-width="8" stroke-linecap="round" marker-end="url(#roi-arrow-orange)"/>
+
+  <!-- Conclusion -->
+  <rect x="48" y="590" width="1104" height="61" rx="20" fill="#173B5E"/>
+  <rect x="70" y="604" width="78" height="33" rx="16.5" fill="#2F80ED"/>
+  <text x="109" y="626" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">評価軸</text>
+  <text class="conclusion" x="168" y="627">費用だけでなく、リードタイム・GPU効率・運用負荷・ユーザー価値を含めて評価</text>
+</svg>

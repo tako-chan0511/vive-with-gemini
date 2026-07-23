@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="gpu-title gpu-desc">
+  <title id="gpu-title">Kongでリクエストを振り分け、基盤がGPU配置を最適化</title>
+  <desc id="gpu-desc">利用者の推論要求をAPI GatewayのKongがAPIやモデル別に前さばきして振り分ける。その後、Kubernetesが業務優先度、モデル特性、必要資源、現在の利用状況からPodとGPUの配置先を決定する。GPU使用率、待ち時間、推論時間を監視し、配置ルールを継続的に改善する。</desc>
+  <defs>
+    <marker id="gpu-arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2F80ED"/>
+    </marker>
+    <marker id="gpu-arrow-purple" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#7B61A8"/>
+    </marker>
+    <marker id="gpu-arrow-orange" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#F2994A"/>
+    </marker>
+    <marker id="gpu-arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2E8B57"/>
+    </marker>
+    <style>
+      svg { fill: #1F2937; }
+      text { font-family: "Noto Sans JP", "Yu Gothic", sans-serif; }
+      .heading { font-size: 22px; font-weight: 700; }
+      .body { font-size: 17px; font-weight: 600; }
+      .small { font-size: 14px; font-weight: 600; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" fill="#F7F9FC"/>
+  <rect x="24" y="18" width="1152" height="72" rx="18" fill="#173B5E"/>
+  <text x="600" y="64" text-anchor="middle" font-size="31" font-weight="700" fill="#FFFFFF">Kongでリクエストを振り分け、基盤がGPU配置を最適化</text>
+
+  <!-- 利用者 -->
+  <rect x="42" y="157" width="160" height="145" rx="20" fill="#EAF4FF" stroke="#2F80ED" stroke-width="3"/>
+  <circle cx="122" cy="203" r="21" fill="#FFFFFF" stroke="#2F80ED" stroke-width="3"/>
+  <circle cx="122" cy="197" r="7" fill="#2F80ED"/>
+  <path d="M107 216 C110 205 134 205 137 216" fill="#2F80ED"/>
+  <text x="122" y="250" text-anchor="middle" class="heading" fill="#173B5E">利用者</text>
+  <rect x="60" y="266" width="124" height="25" rx="12.5" fill="#2F80ED"/>
+  <text x="122" y="284" text-anchor="middle" class="small" fill="#FFFFFF">モデルを選択</text>
+
+  <!-- 推論要求 -->
+  <path d="M210 229 H242" fill="none" stroke="#2F80ED" stroke-width="8" stroke-linecap="round" marker-end="url(#gpu-arrow-blue)"/>
+  <rect x="192" y="188" width="68" height="27" rx="13.5" fill="#FFFFFF" stroke="#A8CFF8" stroke-width="1.5"/>
+  <text x="226" y="207" text-anchor="middle" class="small" fill="#2F80ED">推論要求</text>
+
+  <!-- API Gateway（Kong） -->
+  <rect x="250" y="111" width="170" height="250" rx="22" fill="#FFF2E2" stroke="#F2994A" stroke-width="3"/>
+  <rect x="266" y="129" width="138" height="48" rx="13" fill="#F2994A"/>
+  <text x="335" y="160" text-anchor="middle" font-size="18" font-weight="700" fill="#FFFFFF">API Gateway</text>
+  <text x="335" y="211" text-anchor="middle" font-size="27" font-weight="700" fill="#9A4E12">Kong</text>
+  <rect x="270" y="229" width="130" height="43" rx="13" fill="#FFFFFF" stroke="#F7C58F" stroke-width="2"/>
+  <text x="335" y="256" text-anchor="middle" class="small" fill="#7A4219">API／モデル別</text>
+  <path d="M335 276 V284" fill="none" stroke="#F2994A" stroke-width="4" stroke-linecap="round" marker-end="url(#gpu-arrow-orange)"/>
+  <rect x="270" y="289" width="130" height="45" rx="13" fill="#FFFFFF" stroke="#F7C58F" stroke-width="2"/>
+  <text x="335" y="318" text-anchor="middle" class="small" fill="#7A4219">振り分け制御</text>
+
+  <!-- KongからKubernetesへの振り分け -->
+  <path d="M428 236 H467" fill="none" stroke="#F2994A" stroke-width="8" stroke-linecap="round" marker-end="url(#gpu-arrow-orange)"/>
+  <rect x="418" y="176" width="66" height="51" rx="13" fill="#FFFFFF" stroke="#F7C58F" stroke-width="1.5"/>
+  <text x="451" y="193" text-anchor="middle" font-size="11" font-weight="700" fill="#9A4E12">入口で</text>
+  <text x="451" y="208" text-anchor="middle" font-size="11" font-weight="700" fill="#9A4E12">前さばき／</text>
+  <text x="451" y="223" text-anchor="middle" font-size="11" font-weight="700" fill="#9A4E12">振り分け</text>
+
+  <!-- Kubernetes配置判断 -->
+  <rect x="475" y="111" width="295" height="250" rx="22" fill="#F2ECFA" stroke="#7B61A8" stroke-width="3"/>
+  <rect x="491" y="129" width="263" height="48" rx="13" fill="#7B61A8"/>
+  <text x="622.5" y="159" text-anchor="middle" font-size="18" font-weight="700" fill="#FFFFFF">Kubernetes配置判断</text>
+  <text x="622.5" y="199" text-anchor="middle" class="small" fill="#5B437E">Pod／GPUの配置先を決定</text>
+
+  <rect x="491" y="216" width="122" height="52" rx="13" fill="#FFFFFF" stroke="#C9B8E1" stroke-width="2"/>
+  <circle cx="509" cy="242" r="8" fill="#F2994A"/>
+  <text x="524" y="248" font-size="15" font-weight="600">業務優先度</text>
+  <rect x="629" y="216" width="125" height="52" rx="13" fill="#FFFFFF" stroke="#C9B8E1" stroke-width="2"/>
+  <circle cx="647" cy="242" r="8" fill="#2F80ED"/>
+  <text x="662" y="248" font-size="15" font-weight="600">モデル特性</text>
+  <rect x="491" y="282" width="122" height="52" rx="13" fill="#FFFFFF" stroke="#C9B8E1" stroke-width="2"/>
+  <circle cx="509" cy="308" r="8" fill="#2E8B57"/>
+  <text x="524" y="314" font-size="15" font-weight="600">必要資源</text>
+  <rect x="629" y="282" width="125" height="52" rx="13" fill="#FFFFFF" stroke="#C9B8E1" stroke-width="2"/>
+  <circle cx="647" cy="308" r="8" fill="#7B61A8"/>
+  <text x="662" y="303" class="small">現在の</text>
+  <text x="662" y="321" class="small">利用状況</text>
+
+  <!-- 配置先への分岐 -->
+  <path d="M778 236 H785 V169 H792" fill="none" stroke="#7B61A8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gpu-arrow-purple)"/>
+  <path d="M785 236 V301 H792" fill="none" stroke="#7B61A8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#gpu-arrow-purple)"/>
+  <circle cx="785" cy="236" r="7" fill="#7B61A8"/>
+
+  <!-- GPUノードA -->
+  <rect x="800" y="111" width="358" height="116" rx="20" fill="#EAF4FF" stroke="#2F80ED" stroke-width="3"/>
+  <rect x="818" y="128" width="128" height="82" rx="13" fill="#2F80ED"/>
+  <text x="882" y="160" text-anchor="middle" font-size="18" font-weight="700" fill="#FFFFFF">GPUノードA</text>
+  <rect x="837" y="175" width="18" height="18" rx="3" fill="#FFFFFF"/>
+  <rect x="862" y="175" width="18" height="18" rx="3" fill="#FFFFFF"/>
+  <rect x="887" y="175" width="18" height="18" rx="3" fill="#FFFFFF"/>
+  <rect x="912" y="175" width="18" height="18" rx="3" fill="#FFFFFF"/>
+  <text x="969" y="152" class="body">高性能モデル</text>
+  <rect x="963" y="168" width="168" height="35" rx="10" fill="#FFFFFF" stroke="#A8CFF8" stroke-width="2"/>
+  <circle cx="983" cy="185.5" r="8" fill="#F2994A"/>
+  <text x="999" y="191" class="body">高優先度Pod</text>
+
+  <!-- GPUノードB -->
+  <rect x="800" y="243" width="358" height="116" rx="20" fill="#EAF7EF" stroke="#2E8B57" stroke-width="3"/>
+  <rect x="818" y="260" width="128" height="82" rx="13" fill="#2E8B57"/>
+  <text x="882" y="292" text-anchor="middle" font-size="18" font-weight="700" fill="#FFFFFF">GPUノードB</text>
+  <rect x="837" y="307" width="25" height="18" rx="3" fill="#FFFFFF"/>
+  <rect x="871" y="307" width="25" height="18" rx="3" fill="#FFFFFF"/>
+  <rect x="905" y="307" width="25" height="18" rx="3" fill="#FFFFFF"/>
+  <text x="969" y="284" class="body">標準モデル</text>
+  <rect x="963" y="300" width="168" height="35" rx="10" fill="#FFFFFF" stroke="#A9D8BD" stroke-width="2"/>
+  <circle cx="983" cy="317.5" r="8" fill="#2E8B57"/>
+  <text x="999" y="323" class="body">検証Pod</text>
+
+  <!-- 制御カード -->
+  <text x="42" y="398" class="small" fill="#173B5E">基盤の制御ルール</text>
+
+  <rect x="42" y="411" width="260" height="108" rx="18" fill="#EAF4FF" stroke="#2F80ED" stroke-width="2.5"/>
+  <rect x="60" y="428" width="64" height="30" rx="15" fill="#2F80ED"/>
+  <text x="92" y="449" text-anchor="middle" class="small" fill="#FFFFFF">配置</text>
+  <text x="172" y="480" text-anchor="middle" class="body">Node Selector</text>
+  <text x="172" y="502" text-anchor="middle" class="body">/ Affinity</text>
+
+  <rect x="322" y="411" width="260" height="108" rx="18" fill="#FFF2E2" stroke="#F2994A" stroke-width="2.5"/>
+  <rect x="340" y="428" width="64" height="30" rx="15" fill="#F2994A"/>
+  <text x="372" y="449" text-anchor="middle" class="small" fill="#FFFFFF">容量</text>
+  <text x="452" y="480" text-anchor="middle" class="body">Request / Limit</text>
+  <text x="452" y="502" text-anchor="middle" class="body">/ Quota</text>
+
+  <rect x="602" y="411" width="260" height="108" rx="18" fill="#F2ECFA" stroke="#7B61A8" stroke-width="2.5"/>
+  <rect x="620" y="428" width="124" height="30" rx="15" fill="#7B61A8"/>
+  <text x="682" y="449" text-anchor="middle" class="small" fill="#FFFFFF">優先度・公平性</text>
+  <text x="732" y="491" text-anchor="middle" class="body">Priority Class</text>
+
+  <!-- 監視と改善フィードバック -->
+  <path d="M1018 367 V400" fill="none" stroke="#2E8B57" stroke-width="5" stroke-linecap="round" marker-end="url(#gpu-arrow-green)"/>
+  <text x="1049" y="388" class="small" fill="#2E8B57">計測</text>
+  <rect x="882" y="411" width="276" height="108" rx="18" fill="#EAF7EF" stroke="#2E8B57" stroke-width="2.5"/>
+  <rect x="900" y="428" width="64" height="30" rx="15" fill="#2E8B57"/>
+  <text x="932" y="449" text-anchor="middle" class="small" fill="#FFFFFF">監視</text>
+  <text x="1020" y="481" text-anchor="middle" class="body">GPU使用率・待ち時間</text>
+  <text x="1020" y="503" text-anchor="middle" class="body">・推論時間</text>
+
+  <path d="M882 470 C830 470 820 385 774 347" fill="none" stroke="#2E8B57" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 7" marker-end="url(#gpu-arrow-green)"/>
+  <rect x="741" y="370" width="114" height="26" rx="13" fill="#FFFFFF" stroke="#A9D8BD" stroke-width="1.5"/>
+  <text x="798" y="388" text-anchor="middle" class="small" fill="#2E8B57">改善フィードバック</text>
+
+  <!-- 説明 -->
+  <rect x="42" y="538" width="1116" height="31" rx="15.5" fill="#FFFFFF" stroke="#D5DEE8" stroke-width="1.5"/>
+  <text x="600" y="559" text-anchor="middle" font-size="15" font-weight="600" fill="#536273">利用者に複雑な資源制御を見せず、基盤が配置・容量・優先度を継続的に調整</text>
+
+  <!-- 結論 -->
+  <rect x="42" y="585" width="1116" height="68" rx="18" fill="#173B5E"/>
+  <rect x="62" y="600" width="86" height="38" rx="19" fill="#FFFFFF"/>
+  <text x="105" y="626" text-anchor="middle" font-size="18" font-weight="700" fill="#173B5E">結論</text>
+  <text x="635" y="628" text-anchor="middle" font-size="24" font-weight="700" fill="#FFFFFF">Kongの入口制御とGPU配置最適化で、安定提供と資源効率を両立</text>
+</svg>

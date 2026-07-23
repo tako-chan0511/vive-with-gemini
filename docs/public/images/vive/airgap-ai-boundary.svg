@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="airgap-title airgap-desc">
+  <title id="airgap-title">AIを使える領域と、守る領域を明確に分ける</title>
+  <desc id="airgap-desc">AI利用可能領域で作成した成果物を、情報分類、人のレビューと承認を経て、確認済み成果物だけエアギャップ領域へ渡す流れ。機密情報、認証情報、実データを外部AIへ入力する経路は禁止する。</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2F80ED"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2E8B57"/>
+    </marker>
+    <style>
+      svg { fill: #1F2937; }
+      text { font-family: "Noto Sans JP", "Yu Gothic", sans-serif; }
+      .section-title { font-size: 23px; font-weight: 700; }
+      .card-text { font-size: 19px; font-weight: 600; }
+      .small { font-size: 15px; font-weight: 600; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" fill="#F7F9FC"/>
+  <rect x="24" y="18" width="1152" height="72" rx="18" fill="#173B5E"/>
+  <text x="600" y="64" text-anchor="middle" font-size="31" font-weight="700" fill="#FFFFFF">AIを使える領域と、守る領域を明確に分ける</text>
+
+  <!-- AI利用可能領域 -->
+  <rect x="42" y="116" width="300" height="356" rx="22" fill="#EAF4FF" stroke="#2F80ED" stroke-width="3"/>
+  <rect x="62" y="135" width="260" height="49" rx="13" fill="#2F80ED"/>
+  <text x="192" y="167" text-anchor="middle" class="section-title" fill="#FFFFFF">AI利用可能領域</text>
+  <text x="192" y="207" text-anchor="middle" class="small" fill="#173B5E">許可された情報だけを利用</text>
+
+  <rect x="67" y="226" width="250" height="57" rx="14" fill="#FFFFFF" stroke="#A8CFF8" stroke-width="2"/>
+  <circle cx="94" cy="254.5" r="12" fill="#2F80ED"/>
+  <path d="M88 254.5 L92.5 259 L101 249.5" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="116" y="261" class="card-text">会話・要件整理</text>
+
+  <rect x="67" y="298" width="250" height="57" rx="14" fill="#FFFFFF" stroke="#A8CFF8" stroke-width="2"/>
+  <circle cx="94" cy="326.5" r="12" fill="#2F80ED"/>
+  <path d="M88 326.5 L92.5 331 L101 321.5" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="116" y="333" class="card-text">設計・実装支援</text>
+
+  <rect x="67" y="370" width="250" height="57" rx="14" fill="#FFFFFF" stroke="#A8CFF8" stroke-width="2"/>
+  <circle cx="94" cy="398.5" r="12" fill="#2F80ED"/>
+  <path d="M88 398.5 L92.5 403 L101 393.5" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="116" y="405" class="card-text">文書のたたき台</text>
+
+  <!-- 左から中央への片方向矢印 -->
+  <path d="M350 294 H403" fill="none" stroke="#2F80ED" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+  <text x="376" y="278" text-anchor="middle" class="small" fill="#2F80ED">候補</text>
+
+  <!-- 統制された受け渡し -->
+  <rect x="416" y="116" width="348" height="356" rx="22" fill="#FFF2E2" stroke="#F2994A" stroke-width="3"/>
+  <rect x="436" y="135" width="308" height="49" rx="13" fill="#F2994A"/>
+  <text x="590" y="167" text-anchor="middle" class="section-title" fill="#FFFFFF">統制された受け渡し</text>
+  <text x="590" y="207" text-anchor="middle" class="small" fill="#9A4D13">自動ではなく、人とルールで確認</text>
+
+  <rect x="461" y="224" width="258" height="54" rx="14" fill="#FFFFFF" stroke="#F6C48F" stroke-width="2"/>
+  <rect x="473" y="236" width="31" height="30" rx="8" fill="#FFF2E2" stroke="#F2994A" stroke-width="2"/>
+  <path d="M482 244 H495 M482 251 H495 M482 258 H491" stroke="#F2994A" stroke-width="2.5" stroke-linecap="round"/>
+  <text x="522" y="258" class="card-text">情報分類</text>
+
+  <path d="M590 279 V298" fill="none" stroke="#F2994A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M582 292 L590 301 L598 292" fill="none" stroke="#F2994A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="461" y="301" width="258" height="54" rx="14" fill="#FFFFFF" stroke="#F6C48F" stroke-width="2"/>
+  <circle cx="489" cy="328" r="15" fill="#FFF2E2" stroke="#F2994A" stroke-width="2"/>
+  <path d="M481 328 L487 334 L498 321" fill="none" stroke="#F2994A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="516" y="335" class="card-text">人のレビュー・承認</text>
+
+  <path d="M590 356 V375" fill="none" stroke="#F2994A" stroke-width="5" stroke-linecap="round"/>
+  <path d="M582 369 L590 378 L598 369" fill="none" stroke="#F2994A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="461" y="378" width="258" height="54" rx="14" fill="#EAF7EF" stroke="#2E8B57" stroke-width="2.5"/>
+  <path d="M476 395 H494 L502 403 V420 H476 Z" fill="#FFFFFF" stroke="#2E8B57" stroke-width="2"/>
+  <path d="M494 395 V403 H502" fill="none" stroke="#2E8B57" stroke-width="2"/>
+  <path d="M482 410 L487 415 L496 405" fill="none" stroke="#2E8B57" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="516" y="412" class="card-text">確認済み成果物</text>
+
+  <!-- 中央からエアギャップ領域への片方向矢印 -->
+  <path d="M772 294 H825" fill="none" stroke="#2E8B57" stroke-width="8" stroke-linecap="round" marker-end="url(#arrow-green)"/>
+  <text x="799" y="259" text-anchor="middle" class="small" fill="#2E8B57">確認済み</text>
+  <text x="799" y="278" text-anchor="middle" class="small" fill="#2E8B57">のみ</text>
+
+  <!-- エアギャップ領域 -->
+  <rect x="838" y="116" width="320" height="356" rx="22" fill="#EAF7EF" stroke="#2E8B57" stroke-width="3"/>
+  <rect x="858" y="135" width="280" height="49" rx="13" fill="#2E8B57"/>
+  <text x="998" y="167" text-anchor="middle" class="section-title" fill="#FFFFFF">エアギャップ領域</text>
+
+  <path d="M998 199 L1022 208 V228 C1022 244 1012 256 998 262 C984 256 974 244 974 228 V208 Z" fill="#FFFFFF" stroke="#2E8B57" stroke-width="2.5"/>
+  <rect x="989" y="220" width="18" height="18" rx="4" fill="#EAF7EF" stroke="#2E8B57" stroke-width="2"/>
+  <path d="M993 220 V215 A5 5 0 0 1 1003 215 V220" fill="none" stroke="#2E8B57" stroke-width="2"/>
+
+  <rect x="863" y="277" width="270" height="48" rx="13" fill="#FFFFFF" stroke="#A9D8BD" stroke-width="2"/>
+  <text x="998" y="308" text-anchor="middle" class="card-text">OpenShift</text>
+  <rect x="863" y="337" width="270" height="48" rx="13" fill="#FFFFFF" stroke="#A9D8BD" stroke-width="2"/>
+  <text x="998" y="368" text-anchor="middle" class="card-text">ソースコード／モデル</text>
+  <rect x="863" y="397" width="270" height="48" rx="13" fill="#FFFFFF" stroke="#A9D8BD" stroke-width="2"/>
+  <text x="998" y="428" text-anchor="middle" class="card-text">認証情報／実データ</text>
+
+  <!-- 禁止経路 -->
+  <rect x="42" y="489" width="1116" height="70" rx="17" fill="#FFF5F5" stroke="#D64545" stroke-width="2.5"/>
+  <rect x="62" y="505" width="315" height="39" rx="10" fill="#FFFFFF" stroke="#E9A6A6" stroke-width="2"/>
+  <text x="219.5" y="531" text-anchor="middle" font-size="17" font-weight="700" fill="#D64545">機密情報・認証情報・実データ</text>
+  <path d="M389 524 H548" fill="none" stroke="#D64545" stroke-width="5" stroke-dasharray="10 8" stroke-linecap="round"/>
+  <circle cx="582" cy="524" r="21" fill="#FFFFFF" stroke="#D64545" stroke-width="4"/>
+  <path d="M572 514 L592 534 M592 514 L572 534" stroke="#D64545" stroke-width="5" stroke-linecap="round"/>
+  <path d="M616 524 H747" fill="none" stroke="#D64545" stroke-width="5" stroke-dasharray="10 8" stroke-linecap="round"/>
+  <rect x="759" y="505" width="379" height="39" rx="10" fill="#D64545"/>
+  <text x="948.5" y="531" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">外部AIへ入力しない</text>
+  <text x="582" y="503" text-anchor="middle" class="small" fill="#D64545">禁止経路</text>
+
+  <!-- 結論 -->
+  <rect x="42" y="578" width="1116" height="70" rx="18" fill="#173B5E"/>
+  <rect x="62" y="594" width="86" height="38" rx="19" fill="#FFFFFF"/>
+  <text x="105" y="620" text-anchor="middle" font-size="18" font-weight="700" fill="#173B5E">結論</text>
+  <text x="625" y="622" text-anchor="middle" font-size="25" font-weight="700" fill="#FFFFFF">AIを利用できる工程は加速し、境界は人とルールで守る</text>
+</svg>
