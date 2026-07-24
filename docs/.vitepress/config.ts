@@ -206,7 +206,7 @@ mql?.addEventListener('change', (e) => {
             link: "/ai-agile-vive-with-gemini-column-2015-vs-2025"
           },
           {
-            text: "4.3 発表用まとめ",
+            text: "4.3 AI開発事例発表会",
             link: "/ai-agile-vive-with-gemini-4-3"
           },
           {
