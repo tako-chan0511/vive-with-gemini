@@ -206,12 +206,20 @@ mql?.addEventListener('change', (e) => {
             link: "/ai-agile-vive-with-gemini-column-2015-vs-2025"
           },
           {
-            text: "4.3 AI開発事例発表会",
-            link: "/ai-agile-vive-with-gemini-4-3"
+            text: "5. AI開発事例発表会・自己紹介",
+            link: "/ai-agile-vive-with-gemini-5"
           },
           {
-            text: "4.4 エアギャップ環境で挑む社内向けMaaS開発",
-            link: "/ai-agile-vive-with-gemini-4-4"
+            text: "5.1 AIは「道具」でなく「相棒」",
+            link: "/ai-agile-vive-with-gemini-5-1"
+          },
+          {
+            text: "5.2 現場で磨かれるAI活用術（簡略版）",
+            link: "/ai-agile-vive-with-gemini-5-2"
+          },
+          {
+            text: "5.3 現在のAI活動（時間があれば）",
+            link: "/ai-agile-vive-with-gemini-5-3"
           },
         ],
       },
