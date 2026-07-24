@@ -88,7 +88,7 @@
   <circle cx="91" cy="421" r="19" fill="#7B61A8"/>
   <text x="91" y="428" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">3</text>
   <text class="card-title" x="122" y="427">1週間スプリント</text>
-  <text class="card-body" x="78" y="463">GitHub Issue／Pull Request</text>
+  <text class="card-body" x="78" y="463">GitLab Issue／Merge Request</text>
   <text class="card-body" x="78" y="489">毎週のフィードバック</text>
 
   <!-- Converging arrows -->

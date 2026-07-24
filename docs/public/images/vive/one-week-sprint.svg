@@ -6,7 +6,7 @@
      role="img"
      aria-labelledby="one-week-title one-week-desc">
   <title id="one-week-title">1週間ごとに、動く成果物と学びを返す</title>
-  <desc id="one-week-desc">GitHub IssueとPull Requestを中心に、リファインメントからレトロスペクティブまでの6工程を1週間で循環させ、ユーザーの声と次週の改善へつなぐ図。</desc>
+  <desc id="one-week-desc">GitLab IssueとMerge Requestを中心に、リファインメントからレトロスペクティブまでの6工程を1週間で循環させ、ユーザーの声と次週の改善へつなぐ図。</desc>
 
   <defs>
     <linearGradient id="one-week-bg" x1="0" y1="0" x2="0" y2="1">
@@ -81,7 +81,7 @@
             text-anchor="middle"
             font-size="25"
             font-weight="700"
-            fill="#173B5E">GitHub Issue／Pull Request</text>
+            fill="#173B5E">GitLab Issue／Merge Request</text>
       <text x="600"
             y="302"
             text-anchor="middle"

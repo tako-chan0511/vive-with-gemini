@@ -6,7 +6,7 @@
      role="img"
      aria-labelledby="conversation-title conversation-desc">
   <title id="conversation-title">会話から運用データまでを、次のIssueへつなぐ</title>
-  <desc id="conversation-desc">ユーザーとの対話をGitHub Issueへ整理し、人とAIで開発し、OpenShiftとKubernetesで提供した結果を計測して次のIssueへ戻す、会話駆動型MaaS開発の循環図。</desc>
+  <desc id="conversation-desc">ユーザーとの対話をGitLab Issueへ整理し、人とAIで開発し、OpenShiftとKubernetesで提供した結果を計測して次のIssueへ戻す、会話駆動型MaaS開発の循環図。</desc>
 
   <defs>
     <linearGradient id="conversation-bg" x1="0" y1="0" x2="0" y2="1">
@@ -114,7 +114,7 @@
       <text x="585" y="174" text-anchor="middle" font-size="19" font-weight="700">Copilotで整理</text>
 
       <rect x="745" y="126" width="220" height="82" rx="17" fill="#FFFFFF" stroke="#2F80ED" stroke-width="3"/>
-      <text x="855" y="174" text-anchor="middle" font-size="20" font-weight="700" fill="#173B5E">GitHub Issue</text>
+      <text x="855" y="174" text-anchor="middle" font-size="20" font-weight="700" fill="#173B5E">GitLab Issue</text>
     </g>
     <g fill="none"
        stroke="#2F80ED"
@@ -137,7 +137,7 @@
       <text x="455" y="330" text-anchor="middle" font-size="14" font-weight="500" fill="#667085">Issueの意図を実装と検証へ</text>
 
       <rect x="750" y="272" width="260" height="78" rx="17" fill="#FFFFFF" stroke="#7B61A8" stroke-width="2.5"/>
-      <text x="880" y="318" text-anchor="middle" font-size="19" font-weight="700">Pull Request／承認</text>
+      <text x="880" y="318" text-anchor="middle" font-size="19" font-weight="700">Merge Request／承認</text>
     </g>
     <path d="M660 311 L750 311"
           fill="none"
