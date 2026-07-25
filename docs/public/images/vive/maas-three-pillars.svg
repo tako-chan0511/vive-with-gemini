@@ -6,7 +6,7 @@
      role="img"
      aria-labelledby="three-pillars-title three-pillars-desc">
   <title id="three-pillars-title">4つの柱を、1つの価値提供ループへ</title>
-  <desc id="three-pillars-desc">セキュリティ境界を守ったAI協働開発、MaaS実行基盤、モデル評価自動化、適応型開発の4つを会話駆動型MaaS開発へつなぎ、提供価値と総コストの変化を評価する図。</desc>
+  <desc id="three-pillars-desc">セキュリティ境界を守ったAI協働開発、MaaS実行基盤、モデル性能評価自動化、適応型開発の4つを会話駆動型MaaS開発へつなぎ、提供価値と総コストの変化を評価する図。</desc>
 
   <defs>
     <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
@@ -85,7 +85,7 @@
   <rect x="48" y="312" width="10" height="96" rx="5" fill="#2E8B57"/>
   <circle cx="91" cy="340" r="19" fill="#2E8B57"/>
   <text x="91" y="347" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">3</text>
-  <text class="card-title" x="122" y="347">モデル評価自動化</text>
+  <text class="card-title" x="122" y="347">モデル性能評価自動化</text>
   <text class="card-body" x="78" y="383">GuideLLMとExcel</text>
 
   <rect x="48" y="422" width="340" height="96" rx="18" fill="#F2ECFA" stroke="#7B61A8" stroke-width="2"/>

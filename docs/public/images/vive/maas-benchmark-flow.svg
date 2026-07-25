@@ -5,8 +5,8 @@
      viewBox="0 0 1200 675"
      role="img"
      aria-labelledby="benchmark-flow-title benchmark-flow-desc">
-  <title id="benchmark-flow-title">MaaSベンチマーク評価・分析の自動化フロー</title>
-  <desc id="benchmark-flow-desc">権限を持つ社内利用者または定期バッチが共通テンプレートからGuideLLMを実行し、閉域MaaSの複数モデルを評価する。結果を保存し、入力が許可された評価データだけをExcelテンプレートから承認済み領域のMicrosoft 365 Copilotへ渡す。Copilotは分析を支援し、人が確認して最終判断し、次の評価条件へ戻す。実線は自動または同一領域内の処理、点線は人とルールを介した受け渡しを示し、Copilotから閉域MaaSへは直接接続しない。</desc>
+  <title id="benchmark-flow-title">MaaS性能ベンチマーク・分析の自動化フロー</title>
+  <desc id="benchmark-flow-desc">権限を持つ社内利用者または定期バッチが共通テンプレートからGuideLLMを実行し、閉域MaaSの複数モデルの性能を評価する。回答品質評価は別に扱う。性能評価結果を保存し、入力が許可された評価データだけをExcelテンプレートから承認済み領域のMicrosoft 365 Copilotへ渡す。Copilotは分析を支援し、人が確認して最終判断し、次の評価条件へ戻す。実線は自動または同一領域内の処理、点線は人とルールを介した受け渡しを示し、Copilotから閉域MaaSへは直接接続しない。</desc>
 
   <defs>
     <marker id="benchmark-arrow-solid"
@@ -81,7 +81,7 @@
         text-anchor="middle"
         font-size="30"
         font-weight="700"
-        fill="#FFFFFF">MaaSベンチマーク評価・分析の自動化フロー</text>
+        fill="#FFFFFF">MaaS性能ベンチマーク・分析の自動化フロー</text>
 
   <!-- MaaS evaluation execution area -->
   <rect x="36" y="94" width="1128" height="205" rx="22" fill="#EAF7EF" stroke="#2E8B57" stroke-width="3"/>
@@ -133,7 +133,7 @@
   <text class="card-title" x="760" y="204" text-anchor="middle">閉域MaaS</text>
   <text class="card-text" x="760" y="229" text-anchor="middle">エンドポイント／モデル</text>
 
-  <text class="card-title" x="1017.5" y="204" text-anchor="middle">評価結果</text>
+  <text class="card-title" x="1017.5" y="204" text-anchor="middle">性能評価結果</text>
   <text class="card-text" x="1017.5" y="229" text-anchor="middle">性能指標／実行条件</text>
 
   <!-- Result transfer label -->
@@ -157,7 +157,7 @@
   <circle cx="594" cy="508" r="15" fill="#FFF2E2" stroke="#F2994A" stroke-width="2"/>
   <path d="M586 508 L592 514 L603 501" fill="none" stroke="#F2994A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="610" y="503" font-size="18" font-weight="700" fill="#1F2937">人が確認・最終判断</text>
-  <text x="610" y="526" font-size="15" font-weight="600" fill="#536476">モデル選定／GPU設計</text>
+  <text x="610" y="526" font-size="15" font-weight="600" fill="#536476">性能比較／GPU設計</text>
 
   <!-- Copilot card -->
   <g filter="url(#benchmark-shadow)">
