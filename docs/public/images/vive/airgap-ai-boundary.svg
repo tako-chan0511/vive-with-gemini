@@ -112,5 +112,5 @@
   <rect x="42" y="578" width="1116" height="70" rx="18" fill="#173B5E"/>
   <rect x="62" y="594" width="86" height="38" rx="19" fill="#FFFFFF"/>
   <text x="105" y="620" text-anchor="middle" font-size="18" font-weight="700" fill="#173B5E">結論</text>
-  <text x="625" y="622" text-anchor="middle" font-size="25" font-weight="700" fill="#FFFFFF">AIを利用できる工程は加速し、境界は人とルールで守る</text>
+  <text x="625" y="622" text-anchor="middle" font-size="25" font-weight="700" fill="#FFFFFF">AI利用領域と閉域領域を分け、人とルールで境界を守る</text>
 </svg>

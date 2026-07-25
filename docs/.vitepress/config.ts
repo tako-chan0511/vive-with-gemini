@@ -2,7 +2,7 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
-  title: "",
+  title: "Vive with Gemini",
   base: '/vive-with-gemini/',
   description: "A VitePress Site",
 
