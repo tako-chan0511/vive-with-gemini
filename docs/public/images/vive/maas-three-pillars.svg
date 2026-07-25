@@ -5,8 +5,8 @@
      viewBox="0 0 1200 675"
      role="img"
      aria-labelledby="three-pillars-title three-pillars-desc">
-  <title id="three-pillars-title">3つの柱を、1つの価値提供ループへ</title>
-  <desc id="three-pillars-desc">安全なAI協働、MaaS実行基盤、1週間スプリントの3つを会話駆動型MaaS開発へ合流させ、価値提供速度、手戻り、遊休コストの変化を確認する図。</desc>
+  <title id="three-pillars-title">4つの柱を、1つの価値提供ループへ</title>
+  <desc id="three-pillars-desc">セキュリティ境界を守ったAI協働開発、MaaS実行基盤、モデル評価自動化、適応型開発の4つを会話駆動型MaaS開発へつなぎ、提供価値と総コストの変化を評価する図。</desc>
 
   <defs>
     <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
@@ -63,46 +63,52 @@
 
   <rect width="1200" height="675" fill="#F6F8FB"/>
   <rect x="0" y="0" width="1200" height="72" fill="#173B5E"/>
-  <text class="header" x="52" y="46">3つの柱を、1つの価値提供ループへ</text>
+  <text class="header" x="52" y="46">4つの柱を、1つの価値提供ループへ</text>
   <text x="1148" y="44" text-anchor="end" font-size="14" font-weight="600" fill="#D9E8F5">会話駆動型MaaS開発</text>
 
-  <!-- Three pillars -->
-  <rect x="48" y="101" width="340" height="124" rx="18" fill="#EAF4FF" stroke="#2F80ED" stroke-width="2"/>
-  <rect x="48" y="101" width="10" height="124" rx="5" fill="#2F80ED"/>
-  <circle cx="91" cy="139" r="19" fill="#2F80ED"/>
-  <text x="91" y="146" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">1</text>
-  <text class="card-title" x="122" y="145">安全なAI協働</text>
-  <text class="card-body" x="78" y="181">Copilot・Codex</text>
-  <text class="card-body" x="78" y="207">人の確認と承認</text>
+  <!-- Four pillars -->
+  <rect x="48" y="92" width="340" height="96" rx="18" fill="#EAF4FF" stroke="#2F80ED" stroke-width="2"/>
+  <rect x="48" y="92" width="10" height="96" rx="5" fill="#2F80ED"/>
+  <circle cx="91" cy="120" r="19" fill="#2F80ED"/>
+  <text x="91" y="127" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">1</text>
+  <text class="card-title" x="122" y="127">AI協働開発</text>
+  <text class="card-body" x="78" y="163">セキュリティ境界を守る</text>
 
-  <rect x="48" y="242" width="340" height="124" rx="18" fill="#FFF2E2" stroke="#F2994A" stroke-width="2"/>
-  <rect x="48" y="242" width="10" height="124" rx="5" fill="#F2994A"/>
-  <circle cx="91" cy="280" r="19" fill="#F2994A"/>
-  <text x="91" y="287" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">2</text>
-  <text class="card-title" x="122" y="286">MaaS実行基盤</text>
-  <text class="card-body" x="78" y="322">Kong／OpenShift／Kubernetes</text>
-  <text class="card-body" x="78" y="348">入口制御＋GPU資源管理</text>
+  <rect x="48" y="202" width="340" height="96" rx="18" fill="#FFF2E2" stroke="#F2994A" stroke-width="2"/>
+  <rect x="48" y="202" width="10" height="96" rx="5" fill="#F2994A"/>
+  <circle cx="91" cy="230" r="19" fill="#F2994A"/>
+  <text x="91" y="237" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">2</text>
+  <text class="card-title" x="122" y="237">MaaS実行基盤</text>
+  <text class="card-body" x="78" y="273">OpenShift／Kubernetes</text>
 
-  <rect x="48" y="383" width="340" height="124" rx="18" fill="#F2ECFA" stroke="#7B61A8" stroke-width="2"/>
-  <rect x="48" y="383" width="10" height="124" rx="5" fill="#7B61A8"/>
-  <circle cx="91" cy="421" r="19" fill="#7B61A8"/>
-  <text x="91" y="428" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">3</text>
-  <text class="card-title" x="122" y="427">1週間スプリント</text>
-  <text class="card-body" x="78" y="463">GitHub Issue／Pull Request</text>
-  <text class="card-body" x="78" y="489">毎週のフィードバック</text>
+  <rect x="48" y="312" width="340" height="96" rx="18" fill="#EAF7EF" stroke="#2E8B57" stroke-width="2"/>
+  <rect x="48" y="312" width="10" height="96" rx="5" fill="#2E8B57"/>
+  <circle cx="91" cy="340" r="19" fill="#2E8B57"/>
+  <text x="91" y="347" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">3</text>
+  <text class="card-title" x="122" y="347">モデル評価自動化</text>
+  <text class="card-body" x="78" y="383">GuideLLMとExcel</text>
+
+  <rect x="48" y="422" width="340" height="96" rx="18" fill="#F2ECFA" stroke="#7B61A8" stroke-width="2"/>
+  <rect x="48" y="422" width="10" height="96" rx="5" fill="#7B61A8"/>
+  <circle cx="91" cy="450" r="19" fill="#7B61A8"/>
+  <text x="91" y="457" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">4</text>
+  <text class="card-title" x="122" y="457">適応型開発</text>
+  <text class="card-body" x="78" y="493">GitLab Issueと1週間スプリント</text>
 
   <!-- Converging arrows -->
-  <path d="M388 163 C438 163, 449 232, 496 253"
+  <path d="M388 140 C438 140, 449 216, 496 246"
         fill="none" stroke="#2F80ED" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-  <path d="M388 304 L496 304"
+  <path d="M388 250 C435 250, 455 269, 496 284"
         fill="none" stroke="#2F80ED" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
-  <path d="M388 445 C438 445, 449 376, 496 355"
+  <path d="M388 360 C435 360, 455 339, 496 324"
+        fill="none" stroke="#2F80ED" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
+  <path d="M388 470 C438 470, 449 394, 496 362"
         fill="none" stroke="#2F80ED" stroke-width="7" stroke-linecap="round" marker-end="url(#arrow-blue)"/>
 
   <!-- Integrated development loop -->
   <rect x="510" y="185" width="300" height="238" rx="24" fill="#FFFFFF" stroke="#173B5E" stroke-width="3"/>
   <rect x="539" y="205" width="242" height="37" rx="18.5" fill="#EAF4FF"/>
-  <text x="660" y="229" text-anchor="middle" font-size="15" font-weight="700" fill="#2F80ED">3つを同じ周期で回す</text>
+  <text x="660" y="229" text-anchor="middle" font-size="15" font-weight="700" fill="#2F80ED">4つを価値提供へつなぐ</text>
   <text class="center-title" x="660" y="278" text-anchor="middle">会話駆動型</text>
   <text class="center-title" x="660" y="311" text-anchor="middle">MaaS開発</text>
 
@@ -126,15 +132,15 @@
   <circle cx="921" cy="237" r="24" fill="#2E8B57"/>
   <path d="M910 245 L923 232 L932 241 L941 222" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M934 222 H941 V229" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text class="result-title" x="956" y="233" fill="#1F6B45">価値提供速度</text>
-  <text class="result-note" x="956" y="260">継続的な変化を確認</text>
+  <text class="result-title" x="956" y="233" fill="#1F6B45">提供価値</text>
+  <text class="result-note" x="956" y="260">変化を継続評価</text>
 
   <rect x="882" y="318" width="270" height="105" rx="20" fill="#FFF2E2" stroke="#F2994A" stroke-width="2"/>
   <circle cx="921" cy="370" r="24" fill="#F2994A"/>
   <path d="M909 359 L922 372 L933 362 L942 382" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M935 382 H942 V375" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text class="result-title" x="956" y="366" fill="#A55212">手戻り・遊休</text>
-  <text class="result-title" x="956" y="393" fill="#A55212">コスト</text>
+  <text class="result-title" x="956" y="366" fill="#A55212">総コスト</text>
+  <text class="result-note" x="956" y="393">変化を継続評価</text>
 
   <rect x="882" y="447" width="270" height="60" rx="18" fill="#FFFFFF" stroke="#D7DEE8" stroke-width="2"/>
   <text x="1017" y="472" text-anchor="middle" font-size="14" font-weight="700" fill="#173B5E">価値とコストを</text>
@@ -144,5 +150,5 @@
   <rect x="48" y="581" width="1104" height="70" rx="20" fill="#173B5E"/>
   <rect x="72" y="599" width="78" height="34" rx="17" fill="#2F80ED"/>
   <text x="111" y="622" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">結論</text>
-  <text class="conclusion" x="174" y="623">AI・基盤・プロセスを同じループで回し、ROIを継続評価する</text>
+  <text class="conclusion" x="174" y="623">4つの柱を同じループでつなぎ、提供価値と総コストの変化を評価する</text>
 </svg>

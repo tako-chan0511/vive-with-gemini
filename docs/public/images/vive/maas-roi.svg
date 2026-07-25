@@ -5,8 +5,8 @@
      viewBox="0 0 1200 675"
      role="img"
      aria-labelledby="roi-title roi-desc">
-  <title id="roi-title">ROI最大化に向け、価値とコストを確認する</title>
-  <desc id="roi-desc">ROIを提供できた価値を投入したコストで割った式として示し、短いフィードバックループと価値、コストの変化を継続的に評価する図。</desc>
+  <title id="roi-title">「ROI最大化」で価値と総コストの変化を評価する</title>
+  <desc id="roi-desc">「ROI最大化」はVive with Geminiの方言であり、短いフィードバックループを通じて提供価値と総コストの変化を評価する考え方であることを示す図。</desc>
 
   <defs>
     <marker id="roi-arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
@@ -25,10 +25,15 @@
         fill: #FFFFFF;
         letter-spacing: 0.01em;
       }
-      .formula {
-        font-size: 35px;
+      .concept-title {
+        font-size: 26px;
         font-weight: 700;
         fill: #173B5E;
+      }
+      .concept-note {
+        font-size: 18px;
+        font-weight: 600;
+        fill: #1F2937;
       }
       .panel-title {
         font-size: 22px;
@@ -58,18 +63,14 @@
 
   <rect width="1200" height="675" fill="#F6F8FB"/>
   <rect x="0" y="0" width="1200" height="72" fill="#173B5E"/>
-  <text class="header" x="52" y="46">ROI最大化に向け、価値とコストを確認する</text>
+  <text class="header" x="52" y="46">「ROI最大化」で価値と総コストの変化を評価する</text>
 
-  <!-- ROI formula -->
+  <!-- Vive with Gemini concept -->
   <rect x="145" y="95" width="910" height="104" rx="24" fill="#FFFFFF" stroke="#C7D3E0" stroke-width="2"/>
   <rect x="145" y="95" width="12" height="104" rx="6" fill="#2F80ED"/>
   <rect x="1043" y="95" width="12" height="104" rx="6" fill="#F2994A"/>
-  <text class="formula" x="600" y="159" text-anchor="middle">
-    <tspan fill="#173B5E">ROI = </tspan>
-    <tspan fill="#2E8B57">提供できた価値</tspan>
-    <tspan fill="#173B5E"> ÷ </tspan>
-    <tspan fill="#F2994A">投入したコスト</tspan>
-  </text>
+  <text class="concept-title" x="600" y="139" text-anchor="middle">「ROI最大化」は Vive with Gemini の方言</text>
+  <text class="concept-note" x="600" y="174" text-anchor="middle">提供価値と総コストの変化を、短いループで評価する考え方</text>
 
   <!-- Value panel, placed left and slightly higher -->
   <rect x="48" y="232" width="355" height="300" rx="22" fill="#EAF4FF" stroke="#2F80ED" stroke-width="2"/>
@@ -78,7 +79,7 @@
   <circle cx="87" cy="263" r="19" fill="#FFFFFF"/>
   <path d="M76 268 L86 258 L93 264 L101 250" fill="none" stroke="#2F80ED" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M95 250 H101 V256" fill="none" stroke="#2F80ED" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text class="panel-title" x="119" y="270" fill="#FFFFFF">提供価値を高める観点</text>
+  <text class="panel-title" x="119" y="270" fill="#FFFFFF">提供価値を捉える観点</text>
 
   <rect x="70" y="314" width="311" height="42" rx="12" fill="#FFFFFF"/>
   <circle cx="94" cy="335" r="10" fill="#2F80ED"/>
@@ -107,7 +108,7 @@
   <circle cx="836" cy="293" r="19" fill="#FFFFFF"/>
   <path d="M824 283 L836 295 L846 286 L849 304" fill="none" stroke="#F2994A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M843 304 H849 V298" fill="none" stroke="#F2994A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text class="panel-title" x="868" y="300" fill="#FFFFFF">投入コストを抑える観点</text>
+  <text class="panel-title" x="868" y="300" fill="#FFFFFF">総コストを捉える観点</text>
 
   <rect x="819" y="344" width="311" height="42" rx="12" fill="#FFFFFF"/>
   <circle cx="843" cy="365" r="10" fill="#F2994A"/>
@@ -149,5 +150,5 @@
   <rect x="48" y="590" width="1104" height="61" rx="20" fill="#173B5E"/>
   <rect x="70" y="604" width="78" height="33" rx="16.5" fill="#2F80ED"/>
   <text x="109" y="626" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">評価軸</text>
-  <text class="conclusion" x="168" y="627">費用だけでなく、リードタイム・GPU効率・運用負荷・ユーザー価値を含めて評価</text>
+  <text class="conclusion" x="168" y="627">提供価値と、開発・GPU・運用を含む総コストの変化を継続評価する</text>
 </svg>
