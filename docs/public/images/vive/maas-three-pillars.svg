@@ -6,7 +6,7 @@
      role="img"
      aria-labelledby="three-pillars-title three-pillars-desc">
   <title id="three-pillars-title">3つの柱を、1つの価値提供ループへ</title>
-  <desc id="three-pillars-desc">安全なAI協働、MaaS実行基盤、1週間スプリントの3つを会話駆動型MaaS開発へ合流させ、価値提供速度を上げながら手戻りと遊休コストを下げる図。</desc>
+  <desc id="three-pillars-desc">安全なAI協働、MaaS実行基盤、1週間スプリントの3つを会話駆動型MaaS開発へ合流させ、価値提供速度、手戻り、遊休コストの変化を確認する図。</desc>
 
   <defs>
     <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
@@ -81,14 +81,14 @@
   <text x="91" y="287" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">2</text>
   <text class="card-title" x="122" y="286">MaaS実行基盤</text>
   <text class="card-body" x="78" y="322">Kong／OpenShift／Kubernetes</text>
-  <text class="card-body" x="78" y="348">入口制御＋GPU最適化</text>
+  <text class="card-body" x="78" y="348">入口制御＋GPU資源管理</text>
 
   <rect x="48" y="383" width="340" height="124" rx="18" fill="#F2ECFA" stroke="#7B61A8" stroke-width="2"/>
   <rect x="48" y="383" width="10" height="124" rx="5" fill="#7B61A8"/>
   <circle cx="91" cy="421" r="19" fill="#7B61A8"/>
   <text x="91" y="428" text-anchor="middle" font-size="20" font-weight="700" fill="#FFFFFF">3</text>
   <text class="card-title" x="122" y="427">1週間スプリント</text>
-  <text class="card-body" x="78" y="463">GitLab Issue／Merge Request</text>
+  <text class="card-body" x="78" y="463">GitHub Issue／Pull Request</text>
   <text class="card-body" x="78" y="489">毎週のフィードバック</text>
 
   <!-- Converging arrows -->
@@ -126,23 +126,23 @@
   <circle cx="921" cy="237" r="24" fill="#2E8B57"/>
   <path d="M910 245 L923 232 L932 241 L941 222" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M934 222 H941 V229" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <text class="result-title" x="956" y="233" fill="#1F6B45">価値提供速度 ↑</text>
-  <text class="result-note" x="956" y="260">短い周期で要望を反映</text>
+  <text class="result-title" x="956" y="233" fill="#1F6B45">価値提供速度</text>
+  <text class="result-note" x="956" y="260">継続的な変化を確認</text>
 
   <rect x="882" y="318" width="270" height="105" rx="20" fill="#FFF2E2" stroke="#F2994A" stroke-width="2"/>
   <circle cx="921" cy="370" r="24" fill="#F2994A"/>
   <path d="M909 359 L922 372 L933 362 L942 382" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M935 382 H942 V375" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
   <text class="result-title" x="956" y="366" fill="#A55212">手戻り・遊休</text>
-  <text class="result-title" x="956" y="393" fill="#A55212">コスト ↓</text>
+  <text class="result-title" x="956" y="393" fill="#A55212">コスト</text>
 
   <rect x="882" y="447" width="270" height="60" rx="18" fill="#FFFFFF" stroke="#D7DEE8" stroke-width="2"/>
   <text x="1017" y="472" text-anchor="middle" font-size="14" font-weight="700" fill="#173B5E">価値とコストを</text>
-  <text x="1017" y="493" text-anchor="middle" font-size="16" font-weight="700" fill="#2F80ED">同じループで最適化</text>
+  <text x="1017" y="493" text-anchor="middle" font-size="16" font-weight="700" fill="#2F80ED">同じループで評価</text>
 
   <!-- Conclusion -->
   <rect x="48" y="581" width="1104" height="70" rx="20" fill="#173B5E"/>
   <rect x="72" y="599" width="78" height="34" rx="17" fill="#2F80ED"/>
   <text x="111" y="622" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF">結論</text>
-  <text class="conclusion" x="174" y="623">AI・基盤・プロセスを分けずに回し、ROIを全体最適する</text>
+  <text class="conclusion" x="174" y="623">AI・基盤・プロセスを同じループで回し、ROIを継続評価する</text>
 </svg>
