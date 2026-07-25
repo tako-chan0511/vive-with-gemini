@@ -218,7 +218,7 @@ mql?.addEventListener('change', (e) => {
             link: "/ai-agile-vive-with-gemini-5-2"
           },
           {
-            text: "5.3 現在のAI活動（時間があれば）",
+            text: "5.3 現在のAI活動",
             link: "/ai-agile-vive-with-gemini-5-3"
           },
         ],
