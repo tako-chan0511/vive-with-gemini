@@ -6,7 +6,7 @@
      role="img"
      aria-labelledby="benchmark-flow-title benchmark-flow-desc">
   <title id="benchmark-flow-title">MaaS性能ベンチマーク・分析の自動化フロー</title>
-  <desc id="benchmark-flow-desc">権限を持つ社内利用者または定期バッチが共通テンプレートからGuideLLMを実行し、閉域MaaSの複数モデルの性能を評価する。回答品質評価は別に扱う。性能評価結果を保存し、入力が許可された評価データだけをExcelテンプレートから承認済み領域のMicrosoft 365 Copilotへ渡す。Copilotは分析を支援し、人が確認して最終判断し、次の評価条件へ戻す。実線は自動または同一領域内の処理、点線は人とルールを介した受け渡しを示し、Copilotから閉域MaaSへは直接接続しない。</desc>
+  <desc id="benchmark-flow-desc">権限を持つ社内利用者または定期バッチが共通テンプレートからGuideLLMを実行し、閉域MaaSの複数モデルの性能を評価する。回答品質評価は別に扱う。入力が許可されたExcelテンプレート、GuideLLM評価結果のtarファイル、Pod起動ログを、承認済み領域のMicrosoft 365 Copilot Agent「ベンチ評価ブック作成」へ渡す。Agentは評価ブックを作成し、時間同期したvLLMメトリクスは別の依頼で追加評価する。人が結果を確認して最終判断し、次の評価条件へ戻す。実線は自動または同一領域内の処理、点線は人とルールを介した受け渡しを示し、Copilotから閉域MaaSへは直接接続しない。</desc>
 
   <defs>
     <marker id="benchmark-arrow-solid"
@@ -150,9 +150,9 @@
   <text class="card-title" x="170" y="437" text-anchor="middle">評価データ保存</text>
   <text class="card-text" x="170" y="463" text-anchor="middle">履歴・追跡</text>
 
-  <text class="card-title" x="452.5" y="434" text-anchor="middle">Excel評価テンプレート</text>
-  <text class="card-text" x="452.5" y="458" text-anchor="middle">入力が許可された</text>
-  <text class="card-text" x="452.5" y="478" text-anchor="middle">評価データのみ</text>
+  <text class="card-title" x="452.5" y="430" text-anchor="middle">Agentへの入力</text>
+  <text x="452.5" y="453" text-anchor="middle" font-size="15" font-weight="600" fill="#1F2937">初回：Excel／tar／Podログ</text>
+  <text x="452.5" y="476" text-anchor="middle" font-size="15" font-weight="600" fill="#1F2937">別依頼：同期済みvLLMメトリクス</text>
 
   <circle cx="594" cy="508" r="15" fill="#FFF2E2" stroke="#F2994A" stroke-width="2"/>
   <path d="M586 508 L592 514 L603 501" fill="none" stroke="#F2994A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -163,9 +163,9 @@
   <g filter="url(#benchmark-shadow)">
     <rect x="860" y="400" width="274" height="110" rx="18" fill="#FFFFFF" stroke="#BFAFD8" stroke-width="2"/>
   </g>
-  <text class="card-title" x="997" y="433" text-anchor="middle">Microsoft 365 Copilot</text>
-  <text class="card-text" x="997" y="460" text-anchor="middle">集計・分析・グラフ化</text>
-  <text x="997" y="487" text-anchor="middle" font-size="16" font-weight="700" fill="#7B61A8">判断を支援</text>
+  <text x="997" y="428" text-anchor="middle" font-size="18" font-weight="700" fill="#1F2937">ベンチ評価ブック作成</text>
+  <text class="card-text" x="997" y="455" text-anchor="middle">Microsoft 365 Copilot Agent</text>
+  <text x="997" y="482" text-anchor="middle" font-size="16" font-weight="700" fill="#7B61A8">ブック作成・追加評価</text>
 
   <!-- Transfer annotations -->
   <rect x="662" y="425" width="132" height="27" rx="13.5" fill="#FFFFFF" stroke="#F6C48F" stroke-width="1.5"/>
