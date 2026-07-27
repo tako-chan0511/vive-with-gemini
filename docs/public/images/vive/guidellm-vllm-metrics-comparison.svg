@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200"
+     height="675"
+     viewBox="0 0 1200 675"
+     role="img"
+     aria-labelledby="metrics-compare-title metrics-compare-desc">
+  <title id="metrics-compare-title">GuideLLM結果とvLLM・基盤メトリクスの突き合わせ</title>
+  <desc id="metrics-compare-desc">利用者視点のGuideLLM性能結果と、内部視点のvLLM、OpenShift、CPU、GPUメトリクスを同じ時間軸で比較する。性能結果と内部状態を対比して原因の仮説を立て、次の検証条件へ反映する。時間が一致しただけで因果関係は断定しない。</desc>
+
+  <defs>
+    <marker id="metrics-arrow-external"
+            markerWidth="12"
+            markerHeight="12"
+            refX="10"
+            refY="6"
+            orient="auto"
+            markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2F80ED"/>
+    </marker>
+    <marker id="metrics-arrow-internal"
+            markerWidth="12"
+            markerHeight="12"
+            refX="10"
+            refY="6"
+            orient="auto"
+            markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2E8B57"/>
+    </marker>
+    <marker id="metrics-arrow-next"
+            markerWidth="12"
+            markerHeight="12"
+            refX="10"
+            refY="6"
+            orient="auto"
+            markerUnits="userSpaceOnUse">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#F2994A"/>
+    </marker>
+    <filter id="metrics-shadow" x="-15%" y="-20%" width="130%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#173B5E" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      text {
+        font-family: "Noto Sans JP", "Yu Gothic", sans-serif;
+      }
+      .section-label {
+        font-size: 18px;
+        font-weight: 700;
+        fill: #FFFFFF;
+      }
+      .card-title {
+        font-size: 20px;
+        font-weight: 700;
+        fill: #1F2937;
+      }
+      .card-text {
+        font-size: 17px;
+        font-weight: 600;
+        fill: #314254;
+      }
+      .small-note {
+        font-size: 15px;
+        font-weight: 600;
+        fill: #536476;
+      }
+      .external-flow {
+        fill: none;
+        stroke: #2F80ED;
+        stroke-width: 5;
+        stroke-linecap: round;
+        marker-end: url(#metrics-arrow-external);
+      }
+      .internal-flow {
+        fill: none;
+        stroke: #2E8B57;
+        stroke-width: 5;
+        stroke-linecap: round;
+        marker-end: url(#metrics-arrow-internal);
+      }
+      .next-flow {
+        fill: none;
+        stroke: #F2994A;
+        stroke-width: 5;
+        stroke-linecap: round;
+        marker-end: url(#metrics-arrow-next);
+      }
+      .human-flow {
+        fill: none;
+        stroke: #F2994A;
+        stroke-width: 5;
+        stroke-dasharray: 10 8;
+        stroke-linecap: round;
+        marker-end: url(#metrics-arrow-next);
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="675" fill="#F6F8FB"/>
+  <rect width="1200" height="72" fill="#173B5E"/>
+  <rect y="68" width="1200" height="4" fill="#2F80ED"/>
+  <text x="600"
+        y="46"
+        text-anchor="middle"
+        font-size="30"
+        font-weight="700"
+        fill="#FFFFFF">GuideLLM結果とvLLM・基盤メトリクスの突き合わせ</text>
+
+  <!-- Stage labels -->
+  <rect x="36" y="92" width="464" height="38" rx="12" fill="#2F80ED"/>
+  <text class="section-label" x="268" y="118" text-anchor="middle">OBSERVE：外側の性能と内側の状態</text>
+
+  <rect x="548" y="92" width="286" height="38" rx="12" fill="#7B61A8"/>
+  <text class="section-label" x="691" y="118" text-anchor="middle">COMPARE：同じ時間軸</text>
+
+  <rect x="874" y="92" width="290" height="38" rx="12" fill="#F2994A"/>
+  <text class="section-label" x="1019" y="118" text-anchor="middle">NEXT：仮説から次の検証へ</text>
+
+  <!-- External view -->
+  <g filter="url(#metrics-shadow)">
+    <rect x="36" y="150" width="464" height="135" rx="20" fill="#EAF4FF" stroke="#2F80ED" stroke-width="3"/>
+  </g>
+  <circle cx="66" cy="181" r="18" fill="#2F80ED"/>
+  <text x="66" y="188" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">1</text>
+  <text class="card-title" x="94" y="188">利用者視点：GuideLLM</text>
+  <rect x="58" y="207" width="420" height="58" rx="14" fill="#FFFFFF" stroke="#A8CFF8" stroke-width="2"/>
+  <text class="card-text" x="268" y="233" text-anchor="middle">TTFT ／ レイテンシー ／ スループット</text>
+  <text x="268" y="256" text-anchor="middle" font-size="16" font-weight="700" fill="#2F80ED">「何が起きたか」を見る</text>
+
+  <!-- Internal view -->
+  <g filter="url(#metrics-shadow)">
+    <rect x="36" y="310" width="464" height="210" rx="20" fill="#EAF7EF" stroke="#2E8B57" stroke-width="3"/>
+  </g>
+  <circle cx="66" cy="341" r="18" fill="#2E8B57"/>
+  <text x="66" y="348" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">2</text>
+  <text class="card-title" x="94" y="348">内部視点：vLLM／基盤メトリクス</text>
+
+  <g filter="url(#metrics-shadow)">
+    <rect x="58" y="370" width="200" height="122" rx="15" fill="#FFFFFF" stroke="#A9D8BD" stroke-width="2"/>
+    <rect x="278" y="370" width="200" height="122" rx="15" fill="#FFFFFF" stroke="#A9D8BD" stroke-width="2"/>
+  </g>
+  <text x="158" y="399" text-anchor="middle" font-size="18" font-weight="700" fill="#1F2937">vLLM</text>
+  <text x="158" y="427" text-anchor="middle" font-size="16" font-weight="600" fill="#314254">Prefill ／ Decode</text>
+  <text x="158" y="452" text-anchor="middle" font-size="16" font-weight="600" fill="#314254">Queue ／ KV Cache</text>
+  <text x="158" y="478" text-anchor="middle" font-size="15" font-weight="700" fill="#2E8B57">推論処理の内部状態</text>
+
+  <text x="378" y="399" text-anchor="middle" font-size="18" font-weight="700" fill="#1F2937">OpenShift／基盤</text>
+  <text x="378" y="427" text-anchor="middle" font-size="16" font-weight="600" fill="#314254">CPU ／ GPU</text>
+  <text x="378" y="452" text-anchor="middle" font-size="16" font-weight="600" fill="#314254">Tensor Core使用率</text>
+  <text x="378" y="478" text-anchor="middle" font-size="15" font-weight="700" fill="#2E8B57">資源利用の状態</text>
+
+  <!-- Time-aligned comparison -->
+  <g filter="url(#metrics-shadow)">
+    <rect x="548" y="150" width="286" height="370" rx="20" fill="#F2ECFA" stroke="#7B61A8" stroke-width="3"/>
+    <rect x="574" y="220" width="234" height="70" rx="15" fill="#FFFFFF" stroke="#BFAFD8" stroke-width="2"/>
+    <rect x="574" y="374" width="234" height="92" rx="15" fill="#FFFFFF" stroke="#BFAFD8" stroke-width="2"/>
+  </g>
+  <circle cx="578" cy="181" r="18" fill="#7B61A8"/>
+  <text x="578" y="188" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">3</text>
+  <text class="card-title" x="606" y="188">時間をそろえる</text>
+
+  <text x="691" y="249" text-anchor="middle" font-size="18" font-weight="700" fill="#1F2937">GuideLLM結果</text>
+  <text x="691" y="275" text-anchor="middle" font-size="16" font-weight="600" fill="#536476">＋ vLLM／基盤メトリクス</text>
+
+  <circle cx="691" cy="331" r="26" fill="#FFFFFF" stroke="#7B61A8" stroke-width="3"/>
+  <path d="M691 314 V331 L704 339" fill="none" stroke="#7B61A8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="691" cy="331" r="3.5" fill="#7B61A8"/>
+
+  <text x="691" y="405" text-anchor="middle" font-size="18" font-weight="700" fill="#1F2937">性能結果と内部状態を対比</text>
+  <text x="691" y="431" text-anchor="middle" font-size="16" font-weight="600" fill="#536476">同じ時間帯で比較する</text>
+  <text x="691" y="455" text-anchor="middle" font-size="15" font-weight="700" fill="#A85412">因果関係は断定しない</text>
+
+  <!-- Hypothesis and next test -->
+  <g filter="url(#metrics-shadow)">
+    <rect x="874" y="150" width="290" height="370" rx="20" fill="#FFF5E8" stroke="#F2994A" stroke-width="3"/>
+    <rect x="900" y="226" width="238" height="94" rx="16" fill="#FFFFFF" stroke="#F6C48F" stroke-width="2"/>
+    <rect x="900" y="378" width="238" height="94" rx="16" fill="#FFFFFF" stroke="#F6C48F" stroke-width="2"/>
+  </g>
+  <circle cx="904" cy="181" r="18" fill="#F2994A"/>
+  <text x="904" y="188" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF">4</text>
+  <text class="card-title" x="932" y="188">人が確認・判断</text>
+
+  <text x="1019" y="264" text-anchor="middle" font-size="21" font-weight="700" fill="#1F2937">仮説立案</text>
+  <text x="1019" y="292" text-anchor="middle" font-size="16" font-weight="600" fill="#536476">原因の可能性を整理</text>
+
+  <path class="next-flow" d="M1019 330 V362"/>
+
+  <text x="1019" y="416" text-anchor="middle" font-size="19" font-weight="700" fill="#1F2937">次の検証条件へ</text>
+  <text x="1019" y="444" text-anchor="middle" font-size="19" font-weight="700" fill="#1F2937">反映</text>
+  <text x="1019" y="497" text-anchor="middle" font-size="15" font-weight="700" fill="#A85412">仮説として検証を続ける</text>
+
+  <!-- Cross-stage flows -->
+  <path class="external-flow" d="M502 220 L534 252"/>
+  <path class="internal-flow" d="M502 415 L534 383"/>
+  <path class="human-flow" d="M838 335 H860"/>
+
+  <!-- Key distinction -->
+  <rect x="36" y="545" width="1128" height="96" rx="20" fill="#173B5E"/>
+  <circle cx="67" cy="575" r="8" fill="#2F80ED"/>
+  <text x="88" y="581" font-size="18" font-weight="700" fill="#FFFFFF">GuideLLM：「何が起きたか」</text>
+  <circle cx="425" cy="575" r="8" fill="#2E8B57"/>
+  <text x="446" y="581" font-size="18" font-weight="700" fill="#FFFFFF">vLLM／基盤：「なぜ起きた可能性があるか」の材料</text>
+  <circle cx="67" cy="612" r="8" fill="#F2994A"/>
+  <text x="88" y="618" font-size="17" font-weight="700" fill="#F6C48F">同じ時刻に変化しても、因果関係は断定しない</text>
+  <text x="1152" y="618" text-anchor="end" font-size="16" font-weight="600" fill="#DDEBFA">比較 → 仮説 → 次の検証条件</text>
+  <text x="1158" y="662" text-anchor="end" font-size="15" font-weight="700" fill="#536476">同じ時間軸で突き合わせ、仮説材料として使う</text>
+</svg>
