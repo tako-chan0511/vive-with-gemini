@@ -1,9 +1,9 @@
 # 5.3 現在のAI活動
 
-## NOW：閉域環境向け社内MaaS（モデル提供サービス）基盤
+## NOW：閉域環境向けお客様社内MaaS（モデル提供サービス）基盤
 
 ここまで紹介した顧客管理システム刷新とは別に、
-現在は社内向けMaaS（Model as a Service：モデル提供サービス）基盤の構築に取り組んでいます。
+現在はお客様社内向けMaaS（Model as a Service：モデル提供サービス）基盤の構築に取り組んでいます。
 
 MaaSの配置先は、エアギャップ／閉域環境です。
 外部接続が許可された承認済み領域でMicrosoft 365 CopilotとVS Code上のCodexを利用し、
@@ -119,10 +119,10 @@ MaaSの入口と実行基盤は、次のように責任を分けます。
   - Podの配置、実行、スケーリング、資源管理
 - **GPU**
   - OpenShift／KubernetesがPodを適切なGPU搭載ノードへ配置する
-  - `nvidia.com/gpu`など、必要なGPU拡張リソースをPodへ割り当てる
+  - NVIDIA H100 80GB HBM3など、必要なGPUをPodへ割り当てる
 
 CPU／メモリにはRequests（要求量）とLimits（上限）を設定します。
-GPUは`nvidia.com/gpu`などの拡張リソースとして必要数を指定し、
+GPUはNVIDIA H100 80GB HBM3など、必要なGPUを指定し、
 GPUのRequestsとLimitsを別々の値には調整しません。
 
 ![Kong GatewayとGPU配置の責任を分ける](./public/images/vive/gpu-scheduling-loop.svg)
@@ -253,7 +253,7 @@ Agentはこれらのファイルを読み取り、
 7. 人が元データ、集計結果、表、グラフを確認し、回答品質などの別評価も踏まえて、モデル採用とGPU資源設計を最終判断する
 
 この一連の流れをAIエージェント化したことは、
-評価業務の絶大な効率化につながりました。
+評価業務の大幅な効率化につながりました。
 削減時間や削減率による定量評価は、引き続き実施します。
 
 Microsoft 365 Copilotへ渡すのは、
@@ -407,7 +407,7 @@ AI協働、MaaS実行基盤、モデル性能評価自動化、適応型開発�
 - **CPU／メモリのRequests／Limits**
   - スケジューリングに使う要求量と、コンテナが利用できる上限を指定する
 - **GPU拡張リソース**
-  - NVIDIA Device Pluginを利用する場合は、`nvidia.com/gpu`などで必要数を指定する
+  - NVIDIA Device Pluginを利用する場合は、NVIDIA H100 80GB HBM3など、必要なGPUを指定する
   - GPUのRequestsとLimitsは別々の値に調整しない
 - **PriorityClass**
   - 緊急性や業務上の重要度に応じて、ワークロードの優先順位を設定する
