@@ -61,6 +61,12 @@ Vive with Gemini固有の“方言”です。
 
 ![4つの柱を、1つの価値提供ループへ](./public/images/vive/maas-three-pillars.svg)
 
+<PresenterStop
+  label="4本柱と現在地はここまで"
+  next="セキュリティ境界へ移動"
+  time="5:05"
+/>
+
 ---
 
 ## 1️⃣ AI利用領域と閉域領域を分離する
@@ -80,6 +86,12 @@ Vive with Gemini固有の“方言”です。
 AIは確認を支援しますが、**最終判断と責任は人が持ちます。**
 
 ![AIを使える領域と、守る領域を明確に分ける](./public/images/vive/airgap-ai-boundary.svg)
+
+<PresenterStop
+  label="セキュリティ境界はここまで"
+  next="Kong・OpenShift・GPUの図へ移動"
+  time="5:35"
+/>
 
 ---
 
@@ -130,6 +142,12 @@ GPUのRequestsとLimitsを別々の値には調整しません。
 目指すのは、利用者にはKong Gatewayを通じた共通の入口を提供し、
 裏側ではOpenShift／KubernetesがPodとGPUを管理する状態です。
 
+<PresenterStop
+  label="MaaS基盤の責任分離はここまで"
+  next="性能ベンチマーク自動化へ移動"
+  time="6:00"
+/>
+
 ---
 
 ## 4️⃣ 多様なモデルを短時間で比較する性能ベンチマーク自動化
@@ -148,6 +166,12 @@ Excelへの転記やグラフ作成を個別に行うと、評価作業そのも
 回答の正確性、妥当性、安全性、業務適合性などを確認する
 **回答品質評価とは分けて扱います。**
 性能が高いことは、回答品質が高いことを意味しません。
+
+<PresenterStop
+  label="課題設定はここまで"
+  next="ベンチマークの入力と出力の図へ移動"
+  time="6:30"
+/>
 
 ### 入力1：GuideLLM側の負荷条件を変える
 
@@ -196,6 +220,12 @@ GuideLLMの性能結果とPromQLの基盤メトリクスを同じ時間帯で比
 図は自動チューニングを示すものではありません。
 人が結果を確認し、次の負荷条件とvLLM設定を判断します。
 
+<PresenterStop
+  label="GuideLLMとvLLMの2つの入力軸はここまで"
+  next="共通実行方法へ移動"
+  time="7:10"
+/>
+
 ### 出力1：GuideLLMの性能結果を見る
 
 評価結果では、リクエストスループット、出力トークンスループット、
@@ -219,6 +249,12 @@ Time to First Token（TTFT：最初のトークンが返るまでの時間）、
 
 これにより、担当者が変わっても同じ手順・同じ形式で評価し、
 モデル間比較と時系列比較へつなげます。
+
+<PresenterStop
+  label="共通実行方法はここまで"
+  next="Copilot Agentの入力と出力へ移動"
+  time="7:30"
+/>
 
 ### 評価データを保存し、Copilot Agentで評価ブックを作成する
 
@@ -247,6 +283,13 @@ Agentは3種類の入力から測定結果を読み取り、
 モデル選定とGPU構成の最終判断は人が行います。
 
 ![入力、Copilot Agent、評価ブック、共有、人による判断をつなぐ流れ](./public/images/vive/copilot-agent-evaluation-book.svg)
+
+<PresenterStop
+  class="presenter-stop--key"
+  label="最大の見せ場：Agent図はここまで"
+  next="MaaS性能ベンチマーク・分析の全体フローへ移動"
+  time="8:35"
+/>
 
 一連の流れは、次のとおりです。
 
@@ -281,6 +324,12 @@ Microsoft 365 Copilotが評価の正しさを保証するものではありま�
 **実行 → 保存 → 分析支援 → 人による判断 → 次の評価条件**をつなぎます。
 Microsoft 365 Copilotから閉域MaaSへ直接接続する構成ではありません。
 
+<PresenterStop
+  label="全体の業務フローはここまで"
+  next="vLLM・基盤メトリクスへ移動"
+  time="9:15"
+/>
+
 ### 出力2：OpenShift上のメトリクスと時間をそろえて見る
 
 GuideLLMの結果に加え、OpenShift Webコンソールで
@@ -311,6 +360,13 @@ KVキャッシュ使用率とキャッシュヒット率は、別の指標とし
 初回とは別の依頼として渡し、GuideLLMの結果と合わせて追加評価します。
 データの準備からAgentへの依頼までを一気通貫にすることは、今後の自動化・改善候補です。
 
+<PresenterStop
+  class="presenter-stop--key"
+  label="外形性能と内部状態の突き合わせはここまで"
+  next="評価コストへ移動"
+  time="10:20"
+/>
+
 ### 評価コストの低減を計測する
 
 自動化では、次の手作業の削減を進めています。
@@ -327,6 +383,12 @@ KVキャッシュ使用率とキャッシュヒット率は、別の指標とし
 
 削減時間や削減率はまだ確定していません。
 評価作業の自動化による効果を計測中です。
+
+<PresenterStop
+  label="評価コストの説明はここまで"
+  next="GitLabと1週間スプリントへ移動"
+  time="10:45"
+/>
 
 ---
 
@@ -350,6 +412,12 @@ GitLab IssueやMerge Requestの内容、成果物の最終判断は人が担い�
 
 ![1週間ごとに、動く成果物と学びを返す](./public/images/vive/one-week-sprint.svg)
 
+<PresenterStop
+  label="1週間スプリントはここまで"
+  next="4本柱のフィードバックループへ移動"
+  time="11:15"
+/>
+
 ---
 
 ## 6️⃣ 4本柱を1つのフィードバックループへ
@@ -366,6 +434,12 @@ GitLab IssueやMerge Requestの内容、成果物の最終判断は人が担い�
 
 AI協働、MaaS実行基盤、モデル性能評価自動化、適応型開発を分断せず、
 一つのループとして回します。
+
+<PresenterStop
+  label="全体のフィードバックループはここまで"
+  next="ROI最大化へ移動"
+  time="12:00"
+/>
 
 ---
 
@@ -387,6 +461,12 @@ AI協働、MaaS実行基盤、モデル性能評価自動化、適応型開発�
 財務上のROI算定式は使わず、各指標の変化を継続的に確認します。
 ベンチマーク自動化は、その具体例の一つです。
 
+<PresenterStop
+  label="ROI最大化の説明はここまで"
+  next="代表KPIへ移動"
+  time="12:45"
+/>
+
 ---
 
 ## 8️⃣ 代表KPI
@@ -403,6 +483,12 @@ AI協働、MaaS実行基盤、モデル性能評価自動化、適応型開発�
 
 測定条件をそろえ、AIだけの効果とは断定せず、
 スクラム運営、作業分割、基盤改善を含むチーム全体の変化として評価します。
+
+<PresenterStop
+  label="KPIはここまで"
+  next="結びへ移動"
+  time="13:05"
+/>
 
 ---
 
@@ -581,6 +667,12 @@ MaaS基盤：
 :::
 
 ---
+
+<PresenterStop
+  label="画面を結びに合わせ、ここで一呼吸"
+  next="最終まとめを開始"
+  time="13:35"
+/>
 
 ## 💬 結び
 

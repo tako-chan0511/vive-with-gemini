@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>説明資料.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="vive-with-gemini-53-発表用説明資料">Vive with Gemini 5.3 発表用説明資料</h1>
+<h2 id="1-発表の構成">1. 発表の構成</h2>
+<p>2つの図が追加されたことで、5.3の説明はより分かりやすくなりました。</p>
+<p>発表では、5.3を次の4段階で見せるとメリハリが出ます。</p>
+<blockquote>
+<p><strong>1. 測る → 2. まとめる・共有する → 3. 理由を探る → 4. 次の改善へ戻す</strong></p>
+</blockquote>
+<ul>
+<li>新しいAgent図：「まとめる・共有する」を担当</li>
+<li>vLLM図：「理由を探る」を担当</li>
+</ul>
+<p>Agent図には、3種類の入力、評価ブック、共有、人による判断がまとまっています。vLLM図には、GuideLLMの外形性能と、vLLM・基盤メトリクスを同じ時間軸で比較する関係が示されています（<a href="https://tako-chan0511.github.io/vive-with-gemini/ai-agile-vive-with-gemini-5-3.html" title="5.3 現在のAI活動 | Vive with Gemini">5.3 現在のAI活動</a>）。</p>
+<p>5章冒頭には、Vive with Geminiを「AIを相棒として対話しながら、開発・学習・改善を進める実践と、その取り組み全体の総称」とする説明が追加されています。初見の聴衆にも十分伝わるため、これ以上の本文追加は不要です（<a href="https://tako-chan0511.github.io/vive-with-gemini/ai-agile-vive-with-gemini-5.html" title="5. AI開発事例発表会 | Vive with Gemini">5. AI開発事例発表会</a>）。</p>
+<h2 id="2-タイムスケジュール">2. タイムスケジュール</h2>
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0:00–1:00</td>
+<td>導入・自己紹介・Vive with Gemini・ROIの方言</td>
+</tr>
+<tr>
+<td>1:00–2:40</td>
+<td>5.1 WHY</td>
+</tr>
+<tr>
+<td>2:40–4:40</td>
+<td>5.2 HOW</td>
+</tr>
+<tr>
+<td>4:40–13:40</td>
+<td>5.3 NOW</td>
+</tr>
+<tr>
+<td>13:40–14:30</td>
+<td>結び</td>
+</tr>
+<tr>
+<td>14:30–15:00</td>
+<td>予備</td>
+</tr>
+<tr>
+<td>15:00–20:00</td>
+<td>質疑</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-53の画面進行台本">3. 5.3の画面進行台本</h2>
+<h3 id="440520--4本柱と現在地">4:40–5:20 — 4本柱と現在地</h3>
+<h4 id="画面">画面</h4>
+<p>5.3の最上部で、以下が同時に見える位置にします。</p>
+<ul>
+<li>4本柱</li>
+<li>現在地</li>
+<li>構築済み／実施中／今後実施</li>
+</ul>
+<h4 id="話す内容">話す内容</h4>
+<blockquote>
+<p>現在の活動は、セキュリティ境界、MaaS実行基盤、モデル性能評価自動化、1週間スプリントの四本柱で進めています。</p>
+<p>GuideLLMの共通テンプレート、定期実行、Excelへの取り込み、Copilot Agentの作成と関係者への公開までは構築済みです。vLLMメトリクスとの突き合わせや、効果の定量測定は現在進行中です。</p>
+</blockquote>
+<p>構築済みと実施中が資料上で明確に分けられているので、ここを指しながら話すと、成果を誇張していないことが伝わります（<a href="https://tako-chan0511.github.io/vive-with-gemini/ai-agile-vive-with-gemini-5-3.html" title="5.3 現在のAI活動 | Vive with Gemini">5.3 現在のAI活動</a>）。</p>
+<h3 id="520550--セキュリティ境界">5:20–5:50 — セキュリティ境界</h3>
+<h4 id="画面-1">画面</h4>
+<p>右側の目次から、次の項目へ移動し、領域分離の図を中央にします。</p>
+<blockquote>
+<p>1️⃣ AI利用領域と閉域領域を分離する</p>
+</blockquote>
+<h4 id="話す内容-1">話す内容</h4>
+<blockquote>
+<p>閉域環境からMicrosoft 365 CopilotやCodexへ直接接続する構成ではありません。承認済み領域でAIを使い、人がレビューした成果物だけを所定の手順で閉域環境へ反映します。</p>
+</blockquote>
+<p>図の全要素は説明せず、「AI利用領域」「人による承認」「閉域環境」の3点だけを指します。</p>
+<h3 id="550615--maas基盤">5:50–6:15 — MaaS基盤</h3>
+<h4 id="画面-2">画面</h4>
+<p>次の項目へ移動し、構成図を中央にします。</p>
+<blockquote>
+<p>3️⃣ Kong、OpenShift／Kubernetes、GPUの責任を分ける</p>
+</blockquote>
+<h4 id="話す内容-2">話す内容</h4>
+<blockquote>
+<p>利用者の入口はKong Gatewayです。認証とルーティングはKong、Podの配置とCPU・メモリ・GPUの資源管理はOpenShift／Kubernetesが担当します。</p>
+<p>利用者には共通の入口を提供し、複雑なGPU配置は基盤側へ隠します。</p>
+</blockquote>
+<p>Node SelectorやTaintなどは質疑用に残します。</p>
+<h3 id="ベンチマーク部分のストーリー">ベンチマーク部分のストーリー</h3>
+<p>ここからは、次の順序で話します。</p>
+<pre class="hljs"><code><div>測る
+→ Agentでまとめる・共有する
+→ vLLMメトリクスで理由を探る
+→ 人が判断する
+→ 次の評価条件やGitLab Issueへ戻す
+</div></code></pre>
+<h3 id="615650--課題設定">6:15–6:50 — 課題設定</h3>
+<h4 id="画面-3">画面</h4>
+<p>次の項目の冒頭を表示します。</p>
+<blockquote>
+<p>4️⃣ 多様なモデルを短時間で比較する性能ベンチマーク自動化</p>
+</blockquote>
+<h4 id="話す内容-3">話す内容</h4>
+<blockquote>
+<p>MaaSでは、モデルの追加や更新が続きます。</p>
+<p>条件設定、試験、ファイル収集、Excel転記、集計、グラフ作成を毎回人が行うと、モデルが増えるほど評価作業も増えてしまいます。</p>
+</blockquote>
+<p>一拍置いて、次の言葉を伝えます。</p>
+<blockquote>
+<p><strong>モデルを増やしても、評価作業を同じ割合で増やさない。</strong></p>
+</blockquote>
+<h3 id="650730--測るベンチマークの入力と出力">6:50–7:30 — ①測る：ベンチマークの入力と出力</h3>
+<h4 id="画面-4">画面</h4>
+<p>「ベンチマークの入力と出力」の図を中央にします。</p>
+<h4 id="話す内容-4">話す内容</h4>
+<blockquote>
+<p>性能に影響する入力は二つあります。一つは、GuideLLMから与えるトークン数、レート、同時実行数などの負荷条件です。</p>
+<p>もう一つは、最大シーケンス数やGPUメモリ割合などのvLLM側の設定です。</p>
+</blockquote>
+<p>図の右側へ移ります。</p>
+<blockquote>
+<p>この二つを組み合わせ、GuideLLMの性能結果と、OpenShift上の基盤メトリクスを取得します。</p>
+</blockquote>
+<p>ここではvLLMオプションを読み上げません。次の一言でまとめます。</p>
+<blockquote>
+<p><strong>前から与える負荷と、裏側の推論設定を、二つの評価軸として扱います。</strong></p>
+</blockquote>
+<h3 id="730750--共通実行方法">7:30–7:50 — 共通実行方法</h3>
+<h4 id="画面-5">画面</h4>
+<p>次の項目を表示します。</p>
+<blockquote>
+<p>権限を持つ社内利用者が同じ手順で実行する</p>
+</blockquote>
+<h4 id="話す内容-5">話す内容</h4>
+<blockquote>
+<p>評価コマンドを担当者が毎回組み立てるのではなく、共通テンプレートを使います。必要なときに人が実行する方法と、定期バッチで実行する方法を用意しています。</p>
+</blockquote>
+<p>ここは20秒で通過します。</p>
+<h3 id="750840--まとめる共有するagent図">7:50–8:40 — ②まとめる・共有する：Agent図</h3>
+<h4 id="画面-6">画面</h4>
+<p>最初に、「評価データを保存し、Copilot Agentで評価ブックを作成する」の見出しと、3つの入力項目を表示します。</p>
+<p>その後、一文を話してから少しスクロールし、「Copilot Agentによる評価ブック作成の流れ」の図を画面中央にします。</p>
+<h4 id="スクロール前に話す内容">スクロール前に話す内容</h4>
+<blockquote>
+<p>ベンチマークを自動実行しても、結果整理が手作業のままでは、十分な自動化とは言えません。</p>
+</blockquote>
+<h4 id="図を中央にした後に話す内容">図を中央にした後に話す内容</h4>
+<p>図の左側から順に指します。</p>
+<blockquote>
+<p>Agentへ入力するのは三つです。評価内容を定義したExcelテンプレート、GuideLLM結果のtarファイル、Pod起動ログです。</p>
+</blockquote>
+<p>中央を指します。</p>
+<blockquote>
+<p>Microsoft 365 Copilotの独自Agent「ベンチ評価ブック作成」が、これらを読み取ります。</p>
+</blockquote>
+<p>右側を指します。</p>
+<blockquote>
+<p>そして、比較表やグラフを含む評価ブックへ変換し、関係者が共通形式で利用できる成果物にします。</p>
+</blockquote>
+<p>最後に、人の判断を指します。</p>
+<blockquote>
+<p>Agentがモデルを選ぶわけではありません。元データと生成結果を人が確認し、モデル採用とGPU構成を最終判断します。</p>
+</blockquote>
+<h4 id="決め台詞">決め台詞</h4>
+<blockquote>
+<p><strong>測定結果を、人が判断でき、関係者が共有できる情報へ変換するところまでAgent化しました。</strong></p>
+</blockquote>
+<p>この図は、Agentの3入力から評価ブック、共有、人による判断までを一枚で説明する構成になっています（<a href="https://tako-chan0511.github.io/vive-with-gemini/ai-agile-vive-with-gemini-5-3.html" title="5.3 現在のAI活動 | Vive with Gemini">5.3 現在のAI活動</a>）。</p>
+<h4 id="ここでは話さない内容">ここでは話さない内容</h4>
+<p>図の下にある7段階の手順は、図と内容が重複するため読み上げません。必要な場合は、次の一言だけで十分です。</p>
+<blockquote>
+<p>詳細な手順はこの下に残していますが、発表では図の流れだけ押さえます。</p>
+</blockquote>
+<p>実際には言わず、そのまま次の図へ移っても構いません。</p>
+<h3 id="840940--全体フロー図">8:40–9:40 — 全体フロー図</h3>
+<h4 id="画面-7">画面</h4>
+<p>「MaaS性能ベンチマーク・分析の自動化フロー」の図を中央にします。</p>
+<h4 id="agent図との違い">Agent図との違い</h4>
+<p>最初に、次のように説明します。</p>
+<blockquote>
+<p>今の図は、Agent単体の入力と出力でした。こちらは、ベンチマーク実行から次の評価条件までを含む、全体の業務フローです。</p>
+</blockquote>
+<p>図を順に追います。</p>
+<blockquote>
+<p>GuideLLMで実行する。結果を保存する。Agentで評価ブックへまとめる。人が確認する。次の評価条件へ戻す。</p>
+</blockquote>
+<p>セキュリティ上の誤解を防ぐため、次の説明を加えます。</p>
+<blockquote>
+<p>この図はネットワーク構成図ではありません。Microsoft 365 Copilotから閉域MaaSへ直接接続するものではなく、人とルールを介した業務フローです。</p>
+</blockquote>
+<p>資料でも、この図を物理構成ではなく業務フローと明示し、性能評価と回答品質評価を分離しています（<a href="https://tako-chan0511.github.io/vive-with-gemini/ai-agile-vive-with-gemini-5-3.html" title="5.3 現在のAI活動 | Vive with Gemini">5.3 現在のAI活動</a>）。</p>
+<h3 id="9401035--理由を探るvllmメトリクス図">9:40–10:35 — ③理由を探る：vLLMメトリクス図</h3>
+<h4 id="画面-8">画面</h4>
+<p>最初に、「出力2：OpenShift上のメトリクスと時間をそろえて見る」のvLLM・CPU・GPUの分類を5秒ほど表示します。</p>
+<p>すぐに少し下へ移動し、「GuideLLM結果とvLLM・基盤メトリクスの突き合わせ」の図を中央にします。</p>
+<h4 id="図を表示する前に話す内容">図を表示する前に話す内容</h4>
+<blockquote>
+<p>GuideLLMからは、利用者が体感する結果は分かります。ただし、なぜ遅くなったのかまでは、それだけでは分かりません。</p>
+</blockquote>
+<h4 id="図を中央にした後に話す内容-1">図を中央にした後に話す内容</h4>
+<p>GuideLLM側を指します。</p>
+<blockquote>
+<p>GuideLLMでは、TTFT、レイテンシー、スループットなど、外から見た性能を確認します。</p>
+</blockquote>
+<p>vLLM・基盤側を指します。</p>
+<blockquote>
+<p>vLLM側ではPrefill、Decode、キュー、KVキャッシュを確認します。基盤側ではCPU、GPU、Tensor Coreの使用状況を確認します。</p>
+</blockquote>
+<p>中央の比較部分を指します。</p>
+<blockquote>
+<p>これらを同じ時間軸で突き合わせ、性能変化の背景について仮説を立てます。</p>
+</blockquote>
+<h4 id="決め台詞-1">決め台詞</h4>
+<blockquote>
+<p><strong>GuideLLMは、何が起きたか。vLLMと基盤メトリクスは、なぜ起きた可能性があるか。</strong></p>
+</blockquote>
+<p>最後に、次の注意を加えます。</p>
+<blockquote>
+<p>ただし、同じ時間に変化しただけで因果関係は断定しません。次にどの条件を変えて検証するかを決める材料として使います。</p>
+</blockquote>
+<p>この図の直後には、PromQLの選択や時間同期は現時点では人が行い、Agentまでの一気通貫化は今後の改善候補であることも明記されています（<a href="https://tako-chan0511.github.io/vive-with-gemini/ai-agile-vive-with-gemini-5-3.html" title="5.3 現在のAI活動 | Vive with Gemini">5.3 現在のAI活動</a>）。</p>
+<h3 id="10351100--評価コスト">10:35–11:00 — 評価コスト</h3>
+<h4 id="画面-9">画面</h4>
+<p>「評価コストの低減を計測する」へ移動します。</p>
+<h4 id="話す内容-6">話す内容</h4>
+<blockquote>
+<p>削減対象はツール料金だけではありません。条件設定、結果収集、Excel転記、グラフ作成、メトリクスの時間同期、再作業も総コストです。</p>
+<p>削減時間と削減率は、現在計測中です。</p>
+</blockquote>
+<p>箇条書きは読みません。</p>
+<h3 id="11001125--gitlabと1週間スプリント">11:00–11:25 — GitLabと1週間スプリント</h3>
+<h4 id="画面-10">画面</h4>
+<p>「5️⃣ GitLab Issueを利用した1週間スプリント」の図を中央にします。</p>
+<h4 id="話す内容-7">話す内容</h4>
+<blockquote>
+<p>評価で見つかった課題はGitLab Issueへ戻します。1週間スプリントで次の設定変更や検証を行い、結果をまた評価へ返します。</p>
+</blockquote>
+<h3 id="11251210--次の改善へ戻す全体ループ">11:25–12:10 — ④次の改善へ戻す：全体ループ</h3>
+<h4 id="画面-11">画面</h4>
+<p>「6️⃣ 4本柱を1つのフィードバックループへ」の図を中央にします。</p>
+<h4 id="話す内容-8">話す内容</h4>
+<blockquote>
+<p>ユーザーと対話する。GitLab Issueへ整理する。AIの支援を受けて設計・実装する。人が承認する。閉域MaaSで実行する。GuideLLMで性能を測る。Copilot Agentで評価ブックへまとめる。vLLMとGPUメトリクスで背景を調べる。人が次の改善を判断し、GitLab Issueへ戻す。</p>
+</blockquote>
+<p>現在の本文にあるループは、GuideLLMから人の判断までで、Copilot AgentとvLLMメトリクスの記載が省略されています。口頭では上記のように補ってください（<a href="https://tako-chan0511.github.io/vive-with-gemini/ai-agile-vive-with-gemini-5-3.html" title="5.3 現在のAI活動 | Vive with Gemini">5.3 現在のAI活動</a>）。</p>
+<h3 id="12101255--roi最大化">12:10–12:55 — ROI最大化</h3>
+<h4 id="画面-12">画面</h4>
+<p>「7️⃣ Vive with Geminiの“方言”『ROI最大化』」の図を中央にします。</p>
+<h4 id="話す内容-9">話す内容</h4>
+<blockquote>
+<p>Vive with GeminiでいうROI最大化は、厳密な財務指標ではありません。</p>
+<p>今回の価値は、多様なモデルを同じ条件で比較できること、再現できること、関係者が共通形式で判断できることです。</p>
+<p>コストには、手作業、待ち時間、確認、再作業、運用負荷を含めます。</p>
+</blockquote>
+<p>Agentへつなげます。</p>
+<blockquote>
+<p>Copilot Agentは、測定結果を判断可能な情報へ変換するまでの総コストを下げる具体例です。</p>
+</blockquote>
+<h3 id="12551320--kpi">12:55–13:20 — KPI</h3>
+<h4 id="画面-13">画面</h4>
+<p>「8️⃣ 代表KPI」へ移動します。</p>
+<h4 id="話す内容-10">話す内容</h4>
+<blockquote>
+<p>特に、評価開始からレポート完成までの時間と、比較可能な評価済みモデル数を追います。</p>
+<p>数値効果は現在計測中で、AI単独の効果とは断定しません。</p>
+</blockquote>
+<h3 id="13201340--締め画面への移動">13:20–13:40 — 締め画面への移動</h3>
+<p>右側の目次から「結び」へ移動し、画面を整えます。</p>
+<p>この20秒は、話す時間ではなく、遅れを吸収するバッファとして利用します。</p>
+<h2 id="4-結び13401430">4. 結び（13:40–14:30）</h2>
+<blockquote>
+<p>今日お伝えしたかったことは四つです。</p>
+<p>一つ目、AIは判断を任せる道具ではなく、フィードバックを増やす相棒です。</p>
+<p>二つ目、ルール、自動テスト、人の確認によって開発ループを短くします。</p>
+<p>三つ目、GuideLLMで外から見た性能を測り、vLLMと基盤メトリクスで内側の状態を調べます。</p>
+<p>四つ目、Copilot Agentで結果を評価ブックへまとめ、関係者が同じ形式で再利用できる状態にしました。</p>
+</blockquote>
+<p>最後はゆっくり話します。</p>
+<blockquote>
+<p><strong>測る、まとめる、共有する、理由を探る。これらを標準化し、人は次の判断に集中する。</strong></p>
+<p><strong>モデルを増やしても、評価作業を同じ割合で増やさない。</strong></p>
+<p>それが、Vive with GeminiでいうROI最大化です。</p>
+</blockquote>
+<h2 id="付録本文の微修正案">付録：本文の微修正案</h2>
+<p>発表は口頭補足だけでも成立しますが、本文との完全な整合性を取るなら、次の2か所を直すと完成度が上がります。</p>
+<h3 id="a-5章本日の流れ">A. 5章「本日の流れ」</h3>
+<p>現在は5.3を「GuideLLM／Excelによるモデル性能評価自動化」と紹介しており、Copilot AgentとvLLMメトリクスが反映されていません（<a href="https://tako-chan0511.github.io/vive-with-gemini/ai-agile-vive-with-gemini-5.html" title="5. AI開発事例発表会 | Vive with Gemini">5. AI開発事例発表会</a>）。</p>
+<h4 id="変更案">変更案</h4>
+<pre class="hljs"><code><div><span class="hljs-bullet">-</span> 5.3 NOW：現在のMaaS（モデル提供サービス）活動
+<span class="hljs-bullet">  -</span> 閉域環境向けMaaS基盤と、
+<span class="hljs-code">    GuideLLM／Copilot Agent／vLLMメトリクスをつないだ
+    モデル性能評価・分析の自動化
+</span></div></code></pre>
+<h3 id="b-534本柱を1つのフィードバックループへ">B. 5.3「4本柱を1つのフィードバックループへ」</h3>
+<h4 id="変更案-1">変更案</h4>
+<pre class="hljs"><code><div><span class="hljs-quote">&gt; ユーザーと対話する</span>
+<span class="hljs-quote">&gt; → GitLab Issueへ整理する</span>
+<span class="hljs-quote">&gt; → AIの支援を受けて設計・実装する</span>
+<span class="hljs-quote">&gt; → 人がレビュー・承認する</span>
+<span class="hljs-quote">&gt; → 閉域MaaSで実行・計測する</span>
+<span class="hljs-quote">&gt; → GuideLLMで性能を比較する</span>
+<span class="hljs-quote">&gt; → Copilot Agentで評価ブックへまとめる</span>
+<span class="hljs-quote">&gt; → vLLM／基盤メトリクスと突き合わせる</span>
+<span class="hljs-quote">&gt; → 人が次の改善を判断する</span>
+<span class="hljs-quote">&gt; → 次のGitLab Issueへ戻す</span>
+</div></code></pre>
+<p>これで、**Agent図は「まとめる」、vLLM図は「理由を探る」、全体ループ図は「次の改善へ戻す」**という明確な役割分担になります。</p>
+<h2 id="参考資料">参考資料</h2>
+<ul>
+<li><a href="https://tako-chan0511.github.io/vive-with-gemini/ai-agile-vive-with-gemini-5-3.html" title="5.3 現在のAI活動 | Vive with Gemini">5.3 現在のAI活動</a></li>
+<li><a href="https://tako-chan0511.github.io/vive-with-gemini/ai-agile-vive-with-gemini-5.html" title="5. AI開発事例発表会 | Vive with Gemini">5. AI開発事例発表会</a></li>
+</ul>
+
+</body>
+</html>
