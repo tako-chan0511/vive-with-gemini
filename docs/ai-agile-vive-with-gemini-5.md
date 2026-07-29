@@ -15,6 +15,12 @@ AIは提案や確認を支援し、最終判断と責任は人が持ちます。
 開発・学習・改善を進める実践と、その取り組み全体の総称です。
 本発表では、その中からAI駆動開発とMaaS評価自動化の実践を紹介します。
 
+<PresenterStop
+  label="冒頭メッセージとVive with Geminiの説明"
+  next="自己紹介へスクロール"
+  time="0:25"
+/>
+
 ---
 
 ## 自己紹介
@@ -49,6 +55,12 @@ ChatGPTやGeminiと対話しながら**26個のアプリ**を開発しました�
 - [技術・スキル一覧：SkillTrail](https://hara0511skilltrail.vercel.app/)
 - [詳しい作者プロフィール](./profile)
 
+<PresenterStop
+  label="自己紹介はここまで"
+  next="本日の流れへスクロール"
+  time="0:50"
+/>
+
 ---
 
 ## 本日の流れ
@@ -64,5 +76,11 @@ ChatGPTやGeminiと対話しながら**26個のアプリ**を開発しました�
 > AIと人が共に考え、短いフィードバックループで<br>
 > 提供価値を高めながら総コストを抑える、<br>
 > Vive with Geminiでいう「ROI最大化」を目指す実践事例です。**
+
+<PresenterStop
+  label="導入はここまで"
+  next="5.1 WHYへ移動"
+  time="1:10"
+/>
 
 👉 [発表を始める：5.1 AIは「道具」でなく「相棒」](./ai-agile-vive-with-gemini-5-1)
