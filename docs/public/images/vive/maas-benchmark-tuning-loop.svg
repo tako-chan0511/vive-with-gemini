@@ -5,8 +5,8 @@
      viewBox="0 0 1200 675"
      role="img"
      aria-labelledby="benchmark-tuning-title benchmark-tuning-desc">
-  <title id="benchmark-tuning-title">MaaS性能ベンチマークの入力・出力とvLLM設定調整</title>
-  <desc id="benchmark-tuning-desc">左側の入力は、GuideLLMのワークロード条件と、デプロイ時のvLLM設定の二つに分かれる。両方をOpenShift上のvLLM MaaSエンドポイントへ与え、右側でGuideLLM性能結果とOpenShiftのPromQLメトリクスを同じ時間帯で確認する。人が結果をレビューして次のワークロード条件とvLLM設定を判断する。これは自動チューニングや因果関係の断定を示すものではなく、回答品質評価は別に行う。gpu-memory-utilizationはvLLMの設定値であり、測定されたGPU利用率ではない。</desc>
+  <title id="benchmark-tuning-title">推論サービス性能ベンチマークの入力・出力とvLLM設定調整</title>
+  <desc id="benchmark-tuning-desc">左側の入力は、GuideLLMのワークロード条件と、デプロイ時のvLLM設定の二つに分かれる。両方をOpenShift上のvLLM推論サービスエンドポイントへ与え、右側でGuideLLM性能結果とOpenShiftのPromQLメトリクスを同じ時間帯で確認する。人が結果をレビューして次のワークロード条件とvLLM設定を判断する。これは自動チューニングや因果関係の断定を示すものではなく、回答品質評価は別に行う。gpu-memory-utilizationはvLLMの設定値であり、測定されたGPU利用率ではない。</desc>
 
   <defs>
     <marker id="tuning-arrow-solid"
@@ -87,14 +87,14 @@
         text-anchor="middle"
         font-size="30"
         font-weight="700"
-        fill="#FFFFFF">MaaS性能ベンチマーク：2つの入力と2つの出力</text>
+        fill="#FFFFFF">推論サービス性能ベンチマーク：2つの入力と2つの出力</text>
 
   <!-- Column labels -->
   <rect x="36" y="90" width="326" height="38" rx="12" fill="#2F80ED"/>
   <text class="section-label" x="199" y="116" text-anchor="middle">INPUT：評価・デプロイ条件</text>
 
   <rect x="431" y="90" width="338" height="38" rx="12" fill="#2E8B57"/>
-  <text class="section-label" x="600" y="116" text-anchor="middle">MaaS：評価対象</text>
+  <text class="section-label" x="600" y="116" text-anchor="middle">推論サービス：評価対象</text>
 
   <rect x="838" y="90" width="326" height="38" rx="12" fill="#7B61A8"/>
   <text class="section-label" x="1001" y="116" text-anchor="middle">OUTPUT：性能・基盤指標</text>
@@ -133,9 +133,12 @@
   <text class="card-title" x="600" y="244" text-anchor="middle">OpenShift</text>
   <text class="card-text" x="600" y="272" text-anchor="middle">配置・実行・資源管理</text>
 
-  <text class="card-title" x="600" y="358" text-anchor="middle">vLLM MaaSエンドポイント</text>
-  <text class="card-text" x="600" y="388" text-anchor="middle">選択したモデル／GPU構成</text>
-  <text class="card-text" x="600" y="416" text-anchor="middle">デプロイ設定を反映して性能評価</text>
+  <text class="card-title" x="600" y="348" text-anchor="middle" style="font-size: 18px">
+    <tspan x="600">vLLM</tspan>
+    <tspan x="600" dy="24">推論サービスエンドポイント</tspan>
+  </text>
+  <text class="card-text" x="600" y="400" text-anchor="middle">選択したモデル／GPU構成</text>
+  <text class="card-text" x="600" y="425" text-anchor="middle">デプロイ設定を反映して性能評価</text>
 
   <!-- Output cards -->
   <g filter="url(#tuning-shadow)">
