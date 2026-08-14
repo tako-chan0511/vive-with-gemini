@@ -17,12 +17,21 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+# Microsoft Office / LibreOffice lock files
+~$*
+.~lock.*#
+# Windows metadata sidecars copied into WSL
+*:Zone.Identifier
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
 .vercel
+
+# Python cache
+__pycache__/
+*.py[cod]
 
 #領域対策
 # VitePress build/cache
