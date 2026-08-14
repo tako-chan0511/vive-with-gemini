@@ -20,6 +20,9 @@ dist-ssr
 # Microsoft Office / LibreOffice lock files
 ~$*
 .~lock.*#
+# PowerPoint binaries are published as GitHub Release assets, not Git objects.
+*.ppt
+*.pptx
 # Windows metadata sidecars copied into WSL
 *:Zone.Identifier
 *.suo
