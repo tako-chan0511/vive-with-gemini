@@ -1,31 +1,33 @@
 #!/usr/bin/env python3
-"""Update the self-introduction slide in Agile_AI_Partnership.pptx.
+"""Update display slide 3, the self-introduction timeline.
 
-The target slide is located by its existing ``PublicLink_02`` shape, so the
-script works both before and after the three section dividers are inserted.
-Only the full-slide background picture is replaced; the precise public link,
-slide order, QR codes, and every other slide remain untouched.
-
-Run after the link repair (and normally after section insertion):
-
-    PYTHONPATH=/tmp/agile_ppt_deps \
-      python3 scripts/update_agile_ai_partnership_profile_slide.py
+Only the full-slide background picture is replaced.  The existing clickable
+public-link overlay, slide order, and every other presentation member remain
+untouched.  The working deck and public download are updated together.
 """
 
 from __future__ import annotations
 
 import hashlib
+import os
+import posixpath
 import shutil
 import tempfile
 import zipfile
+from io import BytesIO
 from pathlib import Path
+from xml.etree import ElementTree as ET
 
 from PIL import Image, ImageDraw, ImageFont
-from pptx import Presentation
 
 
 ROOT = Path(__file__).resolve().parents[1]
 PRESENTATION = ROOT / "presentation" / "Agile_AI_Partnership.pptx"
+PUBLIC_DOWNLOAD = ROOT / "docs" / "public" / "downloads" / "Agile_AI_Partnership.pptx"
+PREVIEW = ROOT / "presentation" / "assets" / "Agile_AI_Partnership_3P_Profile_Timeline.png"
+LOCK_FILE = PRESENTATION.parent / "~$Agile_AI_Partnership.pptx"
+
+DISPLAY_SLIDE_NUMBER = 3
 
 IMAGE_W = 1376
 IMAGE_H = 768
@@ -45,6 +47,11 @@ SLATE = (81, 94, 110)
 PALE_GOLD = (239, 228, 206)
 NAV_LINE = (216, 201, 172)
 WHITE = (255, 255, 255)
+
+NS_P = "http://schemas.openxmlformats.org/presentationml/2006/main"
+NS_A = "http://schemas.openxmlformats.org/drawingml/2006/main"
+NS_R = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+NS_REL = "http://schemas.openxmlformats.org/package/2006/relationships"
 
 
 def font(size: int, *, bold: bool = False) -> ImageFont.FreeTypeFont:
@@ -105,9 +112,15 @@ def make_profile_image(output: Path) -> None:
 
     draw.text((64, 118), "64歳からの挑戦。67歳のいまも、初挑戦。", font=font(42, bold=True), fill=NAVY)
     draw.text(
-        (66, 181),
-        "この3年間で、資格取得から26個のアプリへ。現在はAIモデル作成・評価とインフラ構築に挑戦中。",
-        font=font(20),
+        (66, 177),
+        "ChatGPTが注目を集め始めた2023年初頭から、半年間でAI関連資格を取得。",
+        font=font(18),
+        fill=SLATE,
+    )
+    draw.text(
+        (66, 207),
+        "AIを活用し、シンプルなゲームアプリ26本を制作・公開。現在は、AIモデルの作成・評価とインフラ構築に挑戦中。",
+        font=font(18),
         fill=SLATE,
     )
 
@@ -156,26 +169,56 @@ def make_profile_image(output: Path) -> None:
     image.save(output, format="PNG")
 
 
-def find_profile_slide(prs: Presentation):
+def locate_display_slide_background(
+    archive: zipfile.ZipFile, display_number: int
+) -> tuple[str, str]:
+    presentation = ET.fromstring(archive.read("ppt/presentation.xml"))
+    presentation_rels = ET.fromstring(
+        archive.read("ppt/_rels/presentation.xml.rels")
+    )
+    presentation_targets = {
+        relation.attrib["Id"]: relation.attrib["Target"]
+        for relation in presentation_rels.findall(f"{{{NS_REL}}}Relationship")
+    }
+    slide_ids = list(presentation.find(f"{{{NS_P}}}sldIdLst"))
+    if not 1 <= display_number <= len(slide_ids):
+        raise SystemExit(
+            f"Display slide {display_number} is outside the {len(slide_ids)}-slide deck"
+        )
+    slide_relation_id = slide_ids[display_number - 1].attrib[f"{{{NS_R}}}id"]
+    slide_member = posixpath.normpath(
+        posixpath.join("ppt", presentation_targets[slide_relation_id])
+    )
+    slide_rels_member = posixpath.join(
+        posixpath.dirname(slide_member),
+        "_rels",
+        posixpath.basename(slide_member) + ".rels",
+    )
+
+    slide = ET.fromstring(archive.read(slide_member))
+    first_picture = slide.find(f".//{{{NS_P}}}pic")
+    if first_picture is None:
+        raise SystemExit(f"{slide_member} has no background picture")
+    blip = first_picture.find(f"./{{{NS_P}}}blipFill/{{{NS_A}}}blip")
+    if blip is None:
+        raise SystemExit(f"{slide_member} has no embedded image reference")
+    image_relation_id = blip.attrib[f"{{{NS_R}}}embed"]
+
+    slide_rels = ET.fromstring(archive.read(slide_rels_member))
     matches = [
-        slide
-        for slide in prs.slides
-        if any(shape.name == "PublicLink_02" for shape in slide.shapes)
+        relation
+        for relation in slide_rels.findall(f"{{{NS_REL}}}Relationship")
+        if relation.attrib.get("Id") == image_relation_id
     ]
     if len(matches) != 1:
-        raise SystemExit(f"Expected one profile slide, found {len(matches)}")
-    return matches[0]
-
-
-def locate_background_media(slide) -> tuple[str, bytes]:
-    pictures = [shape for shape in slide.shapes if hasattr(shape, "image")]
-    backgrounds = [shape for shape in pictures if shape.name != "PublicLink_02"]
-    if len(backgrounds) != 1:
-        raise SystemExit(f"Expected one profile background, found {len(backgrounds)}")
-    background = backgrounds[0]
-    rel_id = background._element.blipFill.blip.rEmbed
-    partname = str(slide.part.rels[rel_id].target_part.partname).lstrip("/")
-    return partname, background.image.blob
+        raise SystemExit(
+            f"Expected one background relationship for {image_relation_id}, "
+            f"found {len(matches)}"
+        )
+    media_member = posixpath.normpath(
+        posixpath.join(posixpath.dirname(slide_member), matches[0].attrib["Target"])
+    )
+    return slide_member, media_member
 
 
 def replace_zip_member(source: Path, output: Path, member: str, data: bytes) -> None:
@@ -193,37 +236,142 @@ def replace_zip_member(source: Path, output: Path, member: str, data: bytes) -> 
         raise SystemExit(f"Expected one ZIP member named {member}, found {replaced}")
 
 
+def archive_payload_hashes(path: Path) -> dict[str, str]:
+    with zipfile.ZipFile(path, "r") as archive:
+        return {
+            member: hashlib.sha256(archive.read(member)).hexdigest()
+            for member in archive.namelist()
+        }
+
+
+def validate_output(
+    path: Path,
+    *,
+    slide_member: str,
+    media_member: str,
+    expected_image: bytes,
+    baseline_hashes: dict[str, str],
+) -> None:
+    with zipfile.ZipFile(path, "r") as archive:
+        bad_member = archive.testzip()
+        if bad_member is not None:
+            raise SystemExit(f"CRC failure in {path}: {bad_member}")
+        for member in archive.namelist():
+            if member.endswith((".xml", ".rels")):
+                ET.fromstring(archive.read(member))
+        if archive.read(media_member) != expected_image:
+            raise SystemExit(f"Profile background was not replaced in {path}")
+        rendered = Image.open(BytesIO(archive.read(media_member)))
+        rendered.load()
+        if rendered.size != IMAGE_SIZE or rendered.mode != "RGB":
+            raise SystemExit(
+                f"Unexpected profile image in {path}: {rendered.size}/{rendered.mode}"
+            )
+        if slide_member not in archive.namelist():
+            raise SystemExit(f"Missing target slide in {path}: {slide_member}")
+
+    current_hashes = archive_payload_hashes(path)
+    changed = sorted(
+        member
+        for member in baseline_hashes
+        if current_hashes.get(member) != baseline_hashes[member]
+    )
+    if set(current_hashes) != set(baseline_hashes) or changed != [media_member]:
+        raise SystemExit(
+            f"Unexpected PPTX payload changes in {path}: changed={changed}"
+        )
+
+
+def temporary_path(parent: Path, suffix: str) -> Path:
+    descriptor, name = tempfile.mkstemp(
+        prefix=".Agile_AI_Partnership.profile.", suffix=suffix, dir=parent
+    )
+    os.close(descriptor)
+    return Path(name)
+
+
 def build() -> Path:
-    if not PRESENTATION.exists():
-        raise SystemExit(f"Presentation not found: {PRESENTATION}")
+    for deck in (PRESENTATION, PUBLIC_DOWNLOAD):
+        if not deck.exists():
+            raise SystemExit(f"Presentation not found: {deck}")
+    if LOCK_FILE.exists():
+        raise SystemExit(
+            f"PowerPoint lock file exists; close the deck before updating: {LOCK_FILE}"
+        )
     if not REGULAR_FONT.exists() or not BOLD_FONT.exists():
         raise SystemExit("Noto Sans CJK fonts are required")
+    if hashlib.sha256(PRESENTATION.read_bytes()).digest() != hashlib.sha256(
+        PUBLIC_DOWNLOAD.read_bytes()
+    ).digest():
+        raise SystemExit(
+            "Working and public PPTX copies differ; reconcile them before updating slide 3"
+        )
 
     assets = Path(tempfile.mkdtemp(prefix="agile-ai-profile-", dir="/tmp"))
     profile_image = assets / "profile-slide.png"
     make_profile_image(profile_image)
-
-    prs = Presentation(PRESENTATION)
-    slide = find_profile_slide(prs)
-    media_member, current_image = locate_background_media(slide)
     profile_bytes = profile_image.read_bytes()
-    if hashlib.sha256(current_image).digest() == hashlib.sha256(profile_bytes).digest():
-        print(PRESENTATION)
-        print("profile_slide=already_current changed=false")
-        return PRESENTATION
+    PREVIEW.parent.mkdir(parents=True, exist_ok=True)
 
-    backup = Path("/tmp") / f"{PRESENTATION.stem}.before-profile-update.pptx"
-    temporary_output = PRESENTATION.with_name(
-        f".{PRESENTATION.stem}.profile.tmp{PRESENTATION.suffix}"
-    )
-    shutil.copy2(PRESENTATION, backup)
-    replace_zip_member(PRESENTATION, temporary_output, media_member, profile_bytes)
-    temporary_output.replace(PRESENTATION)
+    with zipfile.ZipFile(PRESENTATION, "r") as archive:
+        slide_member, media_member = locate_display_slide_background(
+            archive, DISPLAY_SLIDE_NUMBER
+        )
+        current_image = archive.read(media_member)
+    baseline_hashes = archive_payload_hashes(PRESENTATION)
+
+    preview_temp = temporary_path(PREVIEW.parent, ".png")
+    main_temp = temporary_path(PRESENTATION.parent, ".pptx")
+    public_temp = temporary_path(PUBLIC_DOWNLOAD.parent, ".pptx")
+    try:
+        shutil.copy2(profile_image, preview_temp)
+        if current_image == profile_bytes:
+            preview_temp.replace(PREVIEW)
+            main_temp.unlink(missing_ok=True)
+            public_temp.unlink(missing_ok=True)
+            print(PRESENTATION)
+            print("profile_slide=already_current changed=false copies_match=true")
+            return PRESENTATION
+
+        replace_zip_member(PRESENTATION, main_temp, media_member, profile_bytes)
+        shutil.copy2(main_temp, public_temp)
+        validate_output(
+            main_temp,
+            slide_member=slide_member,
+            media_member=media_member,
+            expected_image=profile_bytes,
+            baseline_hashes=baseline_hashes,
+        )
+        validate_output(
+            public_temp,
+            slide_member=slide_member,
+            media_member=media_member,
+            expected_image=profile_bytes,
+            baseline_hashes=baseline_hashes,
+        )
+        if hashlib.sha256(main_temp.read_bytes()).digest() != hashlib.sha256(
+            public_temp.read_bytes()
+        ).digest():
+            raise SystemExit("Updated working and public PPTX copies do not match")
+
+        backup = Path("/tmp") / f"{PRESENTATION.stem}.before-slide3-copy-update.pptx"
+        shutil.copy2(PRESENTATION, backup)
+        main_temp.replace(PRESENTATION)
+        public_temp.replace(PUBLIC_DOWNLOAD)
+        preview_temp.replace(PREVIEW)
+    finally:
+        shutil.rmtree(assets, ignore_errors=True)
+        main_temp.unlink(missing_ok=True)
+        public_temp.unlink(missing_ok=True)
+        preview_temp.unlink(missing_ok=True)
 
     print(PRESENTATION)
+    print(PUBLIC_DOWNLOAD)
+    print(f"preview={PREVIEW}")
     print(
-        "profile_slide=updated age=67 experience_years=3 apps=26 "
-        f"free_tier=true member={media_member}"
+        "profile_slide=updated display_slide=3 apps=26 "
+        f"slide_member={slide_member} background_member={media_member} "
+        "copies_match=true"
     )
     return PRESENTATION
 
