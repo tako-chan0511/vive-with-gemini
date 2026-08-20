@@ -2,9 +2,9 @@
 """Turn display slide 21 into a compact three-point closing recap.
 
 The deck stores its final slide as a full-slide PNG with separate clickable
-URL and QR overlays.  This script replaces only the background PNG in both the
-working presentation and the public download, preserving every relationship,
-link, slide-order entry, and overlay.
+URL and QR overlays.  This script replaces only the background PNG in the
+ignored working presentation, preserving every relationship, link, slide-order
+entry, and overlay.  Publish the reviewed deck to the GitHub Release separately.
 """
 
 from __future__ import annotations
@@ -21,10 +21,8 @@ from xml.etree import ElementTree as ET
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
-
 ROOT = Path(__file__).resolve().parents[1]
 PRESENTATION = ROOT / "presentation" / "Agile_AI_Partnership.pptx"
-PUBLIC_DOWNLOAD = ROOT / "docs" / "public" / "downloads" / "Agile_AI_Partnership.pptx"
 PREVIEW = ROOT / "presentation" / "assets" / "Agile_AI_Partnership_21P_Closing.png"
 
 DISPLAY_SLIDE_NUMBER = 21
@@ -48,10 +46,6 @@ NS_REL = "http://schemas.openxmlformats.org/package/2006/relationships"
 
 def font(size: int, *, bold: bool = False) -> ImageFont.FreeTypeFont:
     return ImageFont.truetype(str(BOLD_FONT if bold else REGULAR_FONT), size)
-
-
-def archive_hash(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def locate_display_slide_background(
@@ -364,12 +358,9 @@ def temporary_path(parent: Path, stem: str) -> Path:
         return Path(temporary.name)
 
 
-def build() -> tuple[Path, Path]:
-    for path in (PRESENTATION, PUBLIC_DOWNLOAD):
-        if not path.exists():
-            raise SystemExit(f"Presentation not found: {path}")
-    if archive_hash(PRESENTATION) != archive_hash(PUBLIC_DOWNLOAD):
-        raise SystemExit("Working presentation and public download must match before update")
+def build() -> Path:
+    if not PRESENTATION.exists():
+        raise SystemExit(f"Presentation not found: {PRESENTATION}")
     lock = PRESENTATION.parent / f"~${PRESENTATION.name}"
     if lock.exists():
         raise SystemExit(f"PowerPoint appears to be open; close it before updating: {lock}")
@@ -389,32 +380,24 @@ def build() -> tuple[Path, Path]:
     payload = buffer.getvalue()
 
     presentation_temp = temporary_path(PRESENTATION.parent, PRESENTATION.stem)
-    public_temp = temporary_path(PUBLIC_DOWNLOAD.parent, PUBLIC_DOWNLOAD.stem)
     try:
         replace_zip_member(PRESENTATION, presentation_temp, background_member, payload)
         validate_output(PRESENTATION, presentation_temp, background_member)
-        shutil.copy2(presentation_temp, public_temp)
-        if archive_hash(presentation_temp) != archive_hash(public_temp):
-            raise SystemExit("Prepared presentation copies do not match")
 
         PREVIEW.parent.mkdir(parents=True, exist_ok=True)
         updated.save(PREVIEW, format="PNG", optimize=True)
         presentation_temp.chmod(0o644)
-        public_temp.chmod(0o644)
         presentation_temp.replace(PRESENTATION)
-        public_temp.replace(PUBLIC_DOWNLOAD)
     finally:
         presentation_temp.unlink(missing_ok=True)
-        public_temp.unlink(missing_ok=True)
 
     print(PRESENTATION)
-    print(PUBLIC_DOWNLOAD)
     print(f"preview={PREVIEW}")
     print(
         f"display_slide={DISPLAY_SLIDE_NUMBER} slide_member={slide_member} "
-        f"background_member={background_member} copies_match=true"
+        f"background_member={background_member} release_publish_required=true"
     )
-    return PRESENTATION, PUBLIC_DOWNLOAD
+    return PRESENTATION
 
 
 if __name__ == "__main__":

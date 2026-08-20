@@ -1,10 +1,6 @@
-<script setup>
-import { withBase } from 'vitepress'
-</script>
-
 # 5. AI開発事例発表会
 
-<span aria-hidden="true">📎</span> <a :href="withBase('/downloads/Agile_AI_Partnership.pptx')" download="Agile_AI_Partnership.pptx" type="application/vnd.openxmlformats-officedocument.presentationml.presentation">発表資料「Agile AI Partnership」（PowerPoint・PPTX、約14 MB）をダウンロード</a>
+<span aria-hidden="true">📎</span> <a href="https://github.com/tako-chan0511/vive-with-gemini/releases/download/agile-ai-partnership/Agile_AI_Partnership.pptx" type="application/vnd.openxmlformats-officedocument.presentationml.presentation">発表資料「Agile AI Partnership」（PowerPoint・PPTX、約14 MB）をダウンロード</a>
 
 ## AIは「道具」でなく「相棒」
 

@@ -10,6 +10,15 @@
 
 ## ファイル
 
+PowerPoint本体は容量対策のため、Gitの通常履歴には保存せず、
+GitHub Release `agile-ai-partnership` で公開します。
+`presentation` 配下の `.pptx` はローカル作業・生成ファイルです。
+新しいcloneで作業版を用意する場合は、次を実行してください。
+
+```bash
+python3 scripts/publish_agile_ai_partnership.py init
+```
+
 - `ai-developer-meeting-vive-with-gemini-10slides.pptx`：10枚のPowerPoint。各スライドに発表者ノートを収録
 - `ai-developer-meeting-vive-with-gemini-presenterstop-24slides.pptx`：PresenterStopごとの24枚版（元ファイル）
 - `ai-developer-meeting-vive-with-gemini-presenterstop-25slides.pptx`：各ページの公開参照リンクと「今回、伝えたかったこと」を追加した25枚版
@@ -47,6 +56,40 @@ PYTHONPATH=/tmp/vive_ppt_deps python3 scripts/build_ai_developer_meeting_deck.py
 ```
 
 PowerPointを修正した場合は、再生成で上書きされるため注意してください。
+
+## Agile AI Partnershipの公開と3世代管理
+
+編集対象は `presentation/Agile_AI_Partnership.pptx`、正式公開先は固定タグ
+`agile-ai-partnership` のGitHub Releaseです。公開前にPowerPointを閉じ、
+GitHub CLIで認証した状態で次を実行します。
+
+```bash
+python3 scripts/publish_agile_ai_partnership.py status
+python3 scripts/publish_agile_ai_partnership.py publish --dry-run
+python3 scripts/publish_agile_ai_partnership.py publish
+```
+
+スライド枚数を意図的に増減した場合だけ、確認後に
+`--allow-slide-count-change` を付けて公開します。
+
+Releaseには `Agile_AI_Partnership.pptx`（現行版）と
+`Agile_AI_Partnership_previous-1.pptx`、
+`Agile_AI_Partnership_previous-2.pptx` の最大3世代を維持します。
+旧版はローカルの `presentation/history/Agile_AI_Partnership/` にも復旧用として
+保存され、Gitには追加されません。直前版を作業ファイルへ戻す場合は次を
+実行します。
+
+```bash
+python3 scripts/publish_agile_ai_partnership.py restore 1
+```
+
+公開URLは常に次のままです。
+
+<https://github.com/tako-chan0511/vive-with-gemini/releases/download/agile-ai-partnership/Agile_AI_Partnership.pptx>
+
+Release移行は今後のPPTX更新によるGit容量増加を止めますが、過去にcommit済みの
+PPTX blobを履歴から削除するものではありません。小さな修正はレビュー後に
+Releaseへ公開し、PPTXそのものはcommitしません。
 
 ## 読み取り専用で開く場合
 

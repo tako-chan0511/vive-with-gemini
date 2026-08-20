@@ -3,7 +3,8 @@
 
 Only the full-slide background picture is replaced.  The existing clickable
 public-link overlay, slide order, and every other presentation member remain
-untouched.  The working deck and public download are updated together.
+untouched.  This updates the ignored working deck only; publish it separately
+with ``publish_agile_ai_partnership.py`` after review.
 """
 
 from __future__ import annotations
@@ -20,10 +21,8 @@ from xml.etree import ElementTree as ET
 
 from PIL import Image, ImageDraw, ImageFont
 
-
 ROOT = Path(__file__).resolve().parents[1]
 PRESENTATION = ROOT / "presentation" / "Agile_AI_Partnership.pptx"
-PUBLIC_DOWNLOAD = ROOT / "docs" / "public" / "downloads" / "Agile_AI_Partnership.pptx"
 PREVIEW = ROOT / "presentation" / "assets" / "Agile_AI_Partnership_3P_Profile_Timeline.png"
 LOCK_FILE = PRESENTATION.parent / "~$Agile_AI_Partnership.pptx"
 
@@ -291,22 +290,14 @@ def temporary_path(parent: Path, suffix: str) -> Path:
 
 
 def build() -> Path:
-    for deck in (PRESENTATION, PUBLIC_DOWNLOAD):
-        if not deck.exists():
-            raise SystemExit(f"Presentation not found: {deck}")
+    if not PRESENTATION.exists():
+        raise SystemExit(f"Presentation not found: {PRESENTATION}")
     if LOCK_FILE.exists():
         raise SystemExit(
             f"PowerPoint lock file exists; close the deck before updating: {LOCK_FILE}"
         )
     if not REGULAR_FONT.exists() or not BOLD_FONT.exists():
         raise SystemExit("Noto Sans CJK fonts are required")
-    if hashlib.sha256(PRESENTATION.read_bytes()).digest() != hashlib.sha256(
-        PUBLIC_DOWNLOAD.read_bytes()
-    ).digest():
-        raise SystemExit(
-            "Working and public PPTX copies differ; reconcile them before updating slide 3"
-        )
-
     assets = Path(tempfile.mkdtemp(prefix="agile-ai-profile-", dir="/tmp"))
     profile_image = assets / "profile-slide.png"
     make_profile_image(profile_image)
@@ -322,19 +313,16 @@ def build() -> Path:
 
     preview_temp = temporary_path(PREVIEW.parent, ".png")
     main_temp = temporary_path(PRESENTATION.parent, ".pptx")
-    public_temp = temporary_path(PUBLIC_DOWNLOAD.parent, ".pptx")
     try:
         shutil.copy2(profile_image, preview_temp)
         if current_image == profile_bytes:
             preview_temp.replace(PREVIEW)
             main_temp.unlink(missing_ok=True)
-            public_temp.unlink(missing_ok=True)
             print(PRESENTATION)
-            print("profile_slide=already_current changed=false copies_match=true")
+            print("profile_slide=already_current changed=false")
             return PRESENTATION
 
         replace_zip_member(PRESENTATION, main_temp, media_member, profile_bytes)
-        shutil.copy2(main_temp, public_temp)
         validate_output(
             main_temp,
             slide_member=slide_member,
@@ -342,36 +330,21 @@ def build() -> Path:
             expected_image=profile_bytes,
             baseline_hashes=baseline_hashes,
         )
-        validate_output(
-            public_temp,
-            slide_member=slide_member,
-            media_member=media_member,
-            expected_image=profile_bytes,
-            baseline_hashes=baseline_hashes,
-        )
-        if hashlib.sha256(main_temp.read_bytes()).digest() != hashlib.sha256(
-            public_temp.read_bytes()
-        ).digest():
-            raise SystemExit("Updated working and public PPTX copies do not match")
-
         backup = Path("/tmp") / f"{PRESENTATION.stem}.before-slide3-copy-update.pptx"
         shutil.copy2(PRESENTATION, backup)
         main_temp.replace(PRESENTATION)
-        public_temp.replace(PUBLIC_DOWNLOAD)
         preview_temp.replace(PREVIEW)
     finally:
         shutil.rmtree(assets, ignore_errors=True)
         main_temp.unlink(missing_ok=True)
-        public_temp.unlink(missing_ok=True)
         preview_temp.unlink(missing_ok=True)
 
     print(PRESENTATION)
-    print(PUBLIC_DOWNLOAD)
     print(f"preview={PREVIEW}")
     print(
         "profile_slide=updated display_slide=3 apps=26 "
         f"slide_member={slide_member} background_member={media_member} "
-        "copies_match=true"
+        "release_publish_required=true"
     )
     return PRESENTATION
 
